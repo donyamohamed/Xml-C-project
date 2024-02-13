@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="sIdvalidate">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{1|2}(S)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tIdvalidate">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{1|2}(T)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="cIdvalidate">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{1|2}(C)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="namevalidate">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z]{3,}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="statusenum">
+		<xs:restriction base="xs:integer">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="-1"/>
+			<xs:enumeration value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="integer">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Courses">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="course" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="courseId" type="cIdvalidate"/>
+							<xs:element name="courseName" type="namevalidate"/>
+							<xs:element name="sessionsNumber" type="integer"/>
+							<xs:element name="description" type="xs:string"/>
+							<xs:element name="teacherId" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="studentId" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="session" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="date" type="xs:date"/>
+																<xs:element name="status" type="statusenum"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="id" type="sIdvalidate" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="id" type="tIdvalidate" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
