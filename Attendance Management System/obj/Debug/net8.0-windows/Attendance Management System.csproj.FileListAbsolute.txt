@@ -33,3 +33,21 @@ G:\ITI\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\refin
 G:\ITI\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance Management System.pdb
 G:\ITI\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance Management System.genruntimeconfig.cache
 G:\ITI\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\ref\Attendance Management System.dll
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\bin\Debug\net8.0-windows\Attendance Management System.exe
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\bin\Debug\net8.0-windows\Attendance Management System.deps.json
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\bin\Debug\net8.0-windows\Attendance Management System.runtimeconfig.json
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\bin\Debug\net8.0-windows\Attendance Management System.dll
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\bin\Debug\net8.0-windows\Attendance Management System.pdb
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance_Management_System.Forms.FormLogin.resources
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance_Management_System.Properties.Resources.resources
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance Management System.csproj.GenerateResource.cache
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance Management System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance Management System.AssemblyInfoInputs.cache
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance Management System.AssemblyInfo.cs
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance Management System.csproj.CoreCompileInputs.cache
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance Management System.sourcelink.json
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance Management System.dll
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\refint\Attendance Management System.dll
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance Management System.pdb
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance Management System.genruntimeconfig.cache
+C:\Users\Asmaa Elfatairy\Desktop\asmaa branch xml\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\ref\Attendance Management System.dll
