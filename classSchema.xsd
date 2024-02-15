@@ -15,9 +15,9 @@
 			<xs:pattern value="\d{1|2}(C)"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="namevalidate">
+	<xs:simpleType name="csIdvalidate">
 		<xs:restriction base="xs:string">
-			<xs:pattern value="[a-zA-Z]{3,}"/>
+			<xs:pattern value="\d{1|2}(CS)"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="statusenum">
@@ -32,16 +32,30 @@
 			<xs:minInclusive value="1"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:element name="Courses">
+	<xs:element name="Classes">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="course" maxOccurs="unbounded">
+				<xs:element name="class" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:sequence>
+							<xs:element name="classId" type="csIdvalidate"/>
 							<xs:element name="courseId" type="cIdvalidate"/>
-							<xs:element name="courseName" type="namevalidate"/>
-							<xs:element name="sessionsNumber" type="integer"/>
-							<xs:element name="description" type="xs:string"/>
+							<xs:element name="teacherId" maxOccurs="unbounded" type="tIdvalidate"/>
+							<xs:element name="studentId" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="session" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="date" type="xs:date"/>
+													<xs:element name="status" type="statusenum"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="id" type="sIdvalidate" use="required"/>
+								</xs:complexType>
+							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
