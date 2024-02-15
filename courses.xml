@@ -1,85 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Courses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="F:\xml-c# project\courseSchema2.xsd">
+<Courses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="courseSchema2.xsd">
 	<course>
 		<courseId>1C</courseId>
 		<courseName>Xml</courseName>
 		<sessionsNumber>4</sessionsNumber>
 		<description>drftgyhujk</description>
-		<teacherId id="1T">
-			<studentId id="1S">
-				<session>
-					<date>2022-03-22</date>
-					<status>1</status>
-				</session>
-				<session>
-					<date>2022-03-24</date>
-					<status>-1</status>
-				</session>
-				<session>
-					<date>2022-03-25</date>
-					<status>-1</status>
-				</session>
-				<session>
-					<date>2022-03-26</date>
-					<status>-1</status>
-				</session>
-			</studentId>
-			<studentId id="2S">
-				<session>
-					<date>2022-03-24</date>
-					<status>1</status>
-				</session>
-				<session>
-					<date>2022-03-25</date>
-					<status>-1</status>
-				</session>
-				<session>
-					<date>2022-03-26</date>
-					<status>-1</status>
-				</session>
-				<session>
-					<date>2022-03-28</date>
-					<status>-1</status>
-				</session>
-			</studentId>
-		</teacherId>
-		<teacherId id="2T">
-			<studentId id="1S">
-				<session>
-					<date>2023-04-04</date>
-					<status>1</status>
-				</session>
-				<session>
-					<date>2023-04-05</date>
-					<status>-1</status>
-				</session>
-				<session>
-					<date>2023-04-06</date>
-					<status>-1</status>
-				</session>
-				<session>
-					<date>2023-04-07</date>
-					<status>-1</status>
-				</session>
-			</studentId>
-			<studentId id="3S">
-				<session>
-					<date>2024-01-04</date>
-					<status>1</status>
-				</session>
-				<session>
-					<date>2024-01-05</date>
-					<status>-1</status>
-				</session>
-				<session>
-					<date>2024-01-06</date>
-					<status>-1</status>
-				</session>
-				<session>
-					<date>2024-01-07</date>
-					<status>-1</status>
-				</session>
-			</studentId>
-		</teacherId>
+	</course>
+	<course>
+		<courseId>2C</courseId>
+		<courseName>Java</courseName>
+		<sessionsNumber>3</sessionsNumber>
+		<description>drftgyhujk</description>
 	</course>
 </Courses>
