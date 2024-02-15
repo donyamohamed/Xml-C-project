@@ -33,3 +33,12 @@ G:\ITI\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\refin
 G:\ITI\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance Management System.pdb
 G:\ITI\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance Management System.genruntimeconfig.cache
 G:\ITI\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\ref\Attendance Management System.dll
+G:\ITI\Xml-C-project\Attendance Management System\bin\Debug\net8.0-windows\aa\Attendance Management System.resources.dll
+G:\ITI\Xml-C-project\Attendance Management System\bin\Debug\net8.0-windows\ar-EG\Attendance Management System.resources.dll
+G:\ITI\Xml-C-project\Attendance Management System\bin\Debug\net8.0-windows\ar\Attendance Management System.resources.dll
+G:\ITI\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance_Management_System.Forms.FormLogin.aa.resources
+G:\ITI\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance_Management_System.Forms.FormLogin.ar-EG.resources
+G:\ITI\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\Attendance_Management_System.Forms.FormLogin.ar.resources
+G:\ITI\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\aa\Attendance Management System.resources.dll
+G:\ITI\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\ar-EG\Attendance Management System.resources.dll
+G:\ITI\Xml-C-project\Attendance Management System\obj\Debug\net8.0-windows\ar\Attendance Management System.resources.dll

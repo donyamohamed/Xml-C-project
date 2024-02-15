@@ -56,8 +56,11 @@ namespace Attendance_Management_System.Forms
         private void pictureBoxShow_Click(object sender, EventArgs e)
         {
             textBoxPassword.UseSystemPasswordChar = false;
-            pictureBoxShow.Hide();
-            pictureBoxHide.Show();
+            // pictureBoxShow.Hide();
+            pictureBoxShow.Visible = false;
+
+            // pictureBoxHide.Show();
+            pictureBoxHide.Visible = true;
         }
 
         private void pictureBoxHide_Click(object sender, EventArgs e)
@@ -69,7 +72,7 @@ namespace Attendance_Management_System.Forms
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            pictureBoxHide.Hide();
+            //pictureBoxHide.Hide();
             pictureBoxError.Hide();
             labelInvalidUserName.Hide();
         }
