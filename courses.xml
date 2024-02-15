@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Courses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="F:\xml-c# project\courseSchema2.xsd">
+<Courses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="courseSchema2.xsd">
 	<course>
 		<courseId>1C</courseId>
 		<courseName>Xml</courseName>
