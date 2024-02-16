@@ -14,9 +14,9 @@ namespace Attendance_Management_System.Forms
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
 
-
             ApplicationConfiguration.Initialize();
             Application.Run(new FormLogin());
+
 
 
             Course course1 = new Course("1C", "math", "any text", 5);
@@ -46,6 +46,21 @@ namespace Attendance_Management_System.Forms
             {
                 MessageBox.Show(student.ToString());
             }
+            */
+
+            // Try to get data of Coures >_< //
+            XmlDocument courseDoc = new XmlDocument();
+            courseDoc.Load("../../../../courses.xml");
+
+            List<Course> courses = GetCourses(courseDoc);
+            Console.WriteLine(courses.ToString());
+
+
+            /*
+            XmlNodeList nodeList;
+            XmlNode root = courseDoc.DocumentElement;
+
+            nodeList = root.SelectNodes("descendant::course");
             */
 
         }
@@ -80,6 +95,31 @@ namespace Attendance_Management_System.Forms
     
         */
 
+        static List<Course> GetCourses(XmlDocument courseDoc)
+        {
+            List<Course> courses = new List<Course>();
 
+            // Select all courses nodes
+            XmlNodeList courseNodes = courseDoc.SelectNodes("//course");
+            // XmlNodeList studentNodes = usersDoc.SelectNodes("//user[@role='student']");
+            // foreach (XmlNode studentNode in studentNodes)
+            foreach (XmlNode courseNode in courseNodes)
+            {
+                //  Course information
+
+                string courseId = courseNode.SelectSingleNode("courseId").InnerText;
+                string courseName = courseNode.SelectSingleNode("courseName").InnerText;
+                int sessionsNumber = Convert.ToInt32(courseNode.SelectSingleNode("sessionsNumber").InnerText);
+                string description = courseNode.SelectSingleNode("description").InnerText;
+
+                // Create Student object and add to list
+                //Student student = new Student(id, firstName, lastName, age, email, password, phone, address);
+                Course course = new Course(courseId, courseName, description, sessionsNumber);
+                courses.Add(course);
+                // Course.Add(student);
+            }
+
+            return courses;
+        }
     }
 }
