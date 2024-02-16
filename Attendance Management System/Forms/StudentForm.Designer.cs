@@ -31,6 +31,8 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             studentGrid = new DataGridView();
             date = new DataGridViewTextBoxColumn();
             courseName = new DataGridViewTextBoxColumn();
@@ -41,16 +43,8 @@
             labelName = new Label();
             label2 = new Label();
             labelID = new Label();
-            comStudentFilter = new ComboBox();
-            groupBox1 = new GroupBox();
-            labelAddress = new Label();
-            label4 = new Label();
-            labelEmail = new Label();
-            labele = new Label();
-            labelAge = new Label();
-            label3 = new Label();
+            textSearch = new TextBox();
             ((System.ComponentModel.ISupportInitialize)studentGrid).BeginInit();
-            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // studentGrid
@@ -62,197 +56,171 @@
             dataGridViewCellStyle1.Padding = new Padding(5);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             studentGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            studentGrid.BackgroundColor = Color.WhiteSmoke;
+            studentGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            studentGrid.BackgroundColor = Color.White;
+            studentGrid.BorderStyle = BorderStyle.None;
+            studentGrid.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.Orchid;
             dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Orchid;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             studentGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             studentGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             studentGrid.Columns.AddRange(new DataGridViewColumn[] { date, courseName, teacherId, sessionNo, status });
-            studentGrid.Location = new Point(76, 339);
-            studentGrid.Name = "studentGrid";
-            studentGrid.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.SkyBlue;
             dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            studentGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            studentGrid.Size = new Size(799, 315);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Orchid;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            studentGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            studentGrid.GridColor = SystemColors.ActiveCaption;
+            studentGrid.Location = new Point(104, 258);
+            studentGrid.Margin = new Padding(4, 3, 4, 3);
+            studentGrid.Name = "studentGrid";
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.Lavender;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            studentGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            studentGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            studentGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            studentGrid.Size = new Size(1003, 334);
             studentGrid.TabIndex = 0;
             // 
             // date
             // 
+            date.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             date.HeaderText = "Date";
             date.MinimumWidth = 6;
             date.Name = "date";
-            date.Width = 125;
             // 
             // courseName
             // 
+            courseName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             courseName.HeaderText = "Course Name";
             courseName.MinimumWidth = 6;
             courseName.Name = "courseName";
-            courseName.Width = 170;
             // 
             // teacherId
             // 
+            teacherId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             teacherId.HeaderText = "Teacher ID";
             teacherId.MinimumWidth = 6;
             teacherId.Name = "teacherId";
-            teacherId.Width = 125;
             // 
             // sessionNo
             // 
+            sessionNo.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             sessionNo.HeaderText = "Session No";
             sessionNo.MinimumWidth = 6;
             sessionNo.Name = "sessionNo";
-            sessionNo.Width = 125;
             // 
             // status
             // 
+            status.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             status.HeaderText = "Attendance Status";
             status.MinimumWidth = 6;
             status.Name = "status";
-            status.Width = 200;
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(427, 52);
+            label1.Font = new Font("Lucida Calligraphy", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Purple;
+            label1.Location = new Point(104, 105);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(75, 20);
+            label1.Size = new Size(251, 36);
             label1.TabIndex = 1;
-            label1.Text = "Welcome ";
+            label1.Text = "Welcome Back:";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // labelName
             // 
+            labelName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             labelName.AutoSize = true;
-            labelName.Location = new Point(508, 52);
+            labelName.Font = new Font("Lucida Calligraphy", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelName.ForeColor = Color.DarkMagenta;
+            labelName.Location = new Point(354, 105);
+            labelName.Margin = new Padding(4, 0, 4, 0);
             labelName.Name = "labelName";
-            labelName.Size = new Size(46, 20);
+            labelName.Size = new Size(102, 36);
             labelName.TabIndex = 2;
             labelName.Text = "name";
+            labelName.TextAlign = ContentAlignment.TopCenter;
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.BackColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(100, 45);
+            label2.Font = new Font("Lucida Calligraphy", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Purple;
+            label2.Location = new Point(915, 110);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(60, 20);
+            label2.Size = new Size(128, 29);
             label2.TabIndex = 3;
             label2.Text = "Your ID:";
+            label2.TextAlign = ContentAlignment.TopCenter;
             // 
             // labelID
             // 
+            labelID.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             labelID.AutoSize = true;
-            labelID.Location = new Point(166, 45);
+            labelID.Font = new Font("Lucida Calligraphy", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelID.ForeColor = Color.DarkMagenta;
+            labelID.Location = new Point(1041, 110);
+            labelID.Margin = new Padding(4, 0, 4, 0);
             labelID.Name = "labelID";
-            labelID.Size = new Size(22, 20);
+            labelID.Size = new Size(39, 29);
             labelID.TabIndex = 4;
             labelID.Text = "id";
+            labelID.TextAlign = ContentAlignment.TopCenter;
             // 
-            // comStudentFilter
+            // textSearch
             // 
-            comStudentFilter.FormattingEnabled = true;
-            comStudentFilter.Items.AddRange(new object[] { "Date", "Course Name", "Teacher ID", "Attendance Status" });
-            comStudentFilter.Location = new Point(724, 287);
-            comStudentFilter.Name = "comStudentFilter";
-            comStudentFilter.Size = new Size(151, 28);
-            comStudentFilter.TabIndex = 5;
-            comStudentFilter.Text = "Filter Data";
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(labelAddress);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(labelEmail);
-            groupBox1.Controls.Add(labele);
-            groupBox1.Controls.Add(labelAge);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(labelID);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(76, 112);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(799, 125);
-            groupBox1.TabIndex = 6;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Profile Data";
-            // 
-            // labelAddress
-            // 
-            labelAddress.AutoSize = true;
-            labelAddress.Location = new Point(605, 89);
-            labelAddress.Name = "labelAddress";
-            labelAddress.Size = new Size(35, 20);
-            labelAddress.TabIndex = 10;
-            labelAddress.Text = "add";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(534, 89);
-            label4.Name = "label4";
-            label4.Size = new Size(65, 20);
-            label4.TabIndex = 9;
-            label4.Text = "Address:";
-            // 
-            // labelEmail
-            // 
-            labelEmail.AutoSize = true;
-            labelEmail.Location = new Point(605, 45);
-            labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(38, 20);
-            labelEmail.TabIndex = 8;
-            labelEmail.Text = "ema";
-            // 
-            // labele
-            // 
-            labele.AutoSize = true;
-            labele.Location = new Point(534, 45);
-            labele.Name = "labele";
-            labele.Size = new Size(49, 20);
-            labele.TabIndex = 7;
-            labele.Text = "Email:";
-            // 
-            // labelAge
-            // 
-            labelAge.AutoSize = true;
-            labelAge.Location = new Point(166, 89);
-            labelAge.Name = "labelAge";
-            labelAge.Size = new Size(34, 20);
-            labelAge.TabIndex = 6;
-            labelAge.Text = "age";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(121, 89);
-            label3.Name = "label3";
-            label3.Size = new Size(39, 20);
-            label3.TabIndex = 5;
-            label3.Text = "Age:";
+            textSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            textSearch.Cursor = Cursors.IBeam;
+            textSearch.Location = new Point(924, 201);
+            textSearch.Name = "textSearch";
+            textSearch.Size = new Size(183, 30);
+            textSearch.TabIndex = 6;
+            textSearch.Text = "Search";
             // 
             // StudentForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(969, 684);
-            Controls.Add(groupBox1);
-            Controls.Add(comStudentFilter);
+            ClientSize = new Size(1211, 787);
+            Controls.Add(textSearch);
             Controls.Add(studentGrid);
             Controls.Add(label1);
             Controls.Add(labelName);
+            Controls.Add(label2);
+            Controls.Add(labelID);
+            Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "StudentForm";
+            Padding = new Padding(0, 5, 60, 20);
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "StudentForm";
+            WindowState = FormWindowState.Maximized;
             Load += StudentForm_Load;
             ((System.ComponentModel.ISupportInitialize)studentGrid).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -264,18 +232,11 @@
         private Label labelName;
         private Label label2;
         private Label labelID;
-        private ComboBox comStudentFilter;
+        private TextBox textSearch;
         private DataGridViewTextBoxColumn date;
         private DataGridViewTextBoxColumn courseName;
         private DataGridViewTextBoxColumn teacherId;
         private DataGridViewTextBoxColumn sessionNo;
         private DataGridViewTextBoxColumn status;
-        private GroupBox groupBox1;
-        private Label labele;
-        private Label labelAge;
-        private Label label3;
-        private Label labelAddress;
-        private Label label4;
-        private Label labelEmail;
     }
 }

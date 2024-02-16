@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\ITI\\Xml-C-project\\Attendance Management System\\Attendance Management System.csproj": {}
+    "C:\\Users\\Asmaa Elfatairy\\Desktop\\asmaa branch xml\\Xml-C-project\\Attendance Management System\\Attendance Management System.csproj": {}
   },
   "projects": {
-    "G:\\ITI\\Xml-C-project\\Attendance Management System\\Attendance Management System.csproj": {
+    "C:\\Users\\Asmaa Elfatairy\\Desktop\\asmaa branch xml\\Xml-C-project\\Attendance Management System\\Attendance Management System.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\ITI\\Xml-C-project\\Attendance Management System\\Attendance Management System.csproj",
+        "projectUniqueName": "C:\\Users\\Asmaa Elfatairy\\Desktop\\asmaa branch xml\\Xml-C-project\\Attendance Management System\\Attendance Management System.csproj",
         "projectName": "Attendance Management System",
-        "projectPath": "G:\\ITI\\Xml-C-project\\Attendance Management System\\Attendance Management System.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "G:\\ITI\\Xml-C-project\\Attendance Management System\\obj\\",
+        "projectPath": "C:\\Users\\Asmaa Elfatairy\\Desktop\\asmaa branch xml\\Xml-C-project\\Attendance Management System\\Attendance Management System.csproj",
+        "packagesPath": "C:\\Users\\Asmaa Elfatairy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Asmaa Elfatairy\\Desktop\\asmaa branch xml\\Xml-C-project\\Attendance Management System\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Asmaa Elfatairy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
