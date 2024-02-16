@@ -31,16 +31,16 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             studentGrid = new DataGridView();
-            label1 = new Label();
-            labelName = new Label();
-            label2 = new Label();
-            labelID = new Label();
-            comStudentFilter = new ComboBox();
             date = new DataGridViewTextBoxColumn();
             courseName = new DataGridViewTextBoxColumn();
             teacherId = new DataGridViewTextBoxColumn();
             sessionNo = new DataGridViewTextBoxColumn();
             status = new DataGridViewTextBoxColumn();
+            label1 = new Label();
+            labelName = new Label();
+            label2 = new Label();
+            labelID = new Label();
+            comStudentFilter = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)studentGrid).BeginInit();
             SuspendLayout();
             // 
@@ -69,52 +69,6 @@
             studentGrid.RowHeadersWidth = 51;
             studentGrid.Size = new Size(799, 105);
             studentGrid.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(326, 43);
-            label1.Name = "label1";
-            label1.Size = new Size(75, 20);
-            label1.TabIndex = 1;
-            label1.Text = "Welcome ";
-            // 
-            // labelName
-            // 
-            labelName.AutoSize = true;
-            labelName.Location = new Point(419, 43);
-            labelName.Name = "labelName";
-            labelName.Size = new Size(0, 20);
-            labelName.TabIndex = 2;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(546, 43);
-            label2.Name = "label2";
-            label2.Size = new Size(60, 20);
-            label2.TabIndex = 3;
-            label2.Text = "Your ID:";
-            // 
-            // labelID
-            // 
-            labelID.AutoSize = true;
-            labelID.Location = new Point(639, 43);
-            labelID.Name = "labelID";
-            labelID.Size = new Size(0, 20);
-            labelID.TabIndex = 4;
-            // 
-            // comStudentFilter
-            // 
-            comStudentFilter.FormattingEnabled = true;
-            comStudentFilter.Items.AddRange(new object[] { "Date", "Course Name", "Teacher ID", "Attendance Status" });
-            comStudentFilter.Location = new Point(724, 128);
-            comStudentFilter.Name = "comStudentFilter";
-            comStudentFilter.Size = new Size(151, 28);
-            comStudentFilter.TabIndex = 5;
-            comStudentFilter.Text = "Filter Data";
             // 
             // date
             // 
@@ -150,6 +104,52 @@
             status.MinimumWidth = 6;
             status.Name = "status";
             status.Width = 200;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(297, 43);
+            label1.Name = "label1";
+            label1.Size = new Size(75, 20);
+            label1.TabIndex = 1;
+            label1.Text = "Welcome ";
+            // 
+            // labelName
+            // 
+            labelName.AutoSize = true;
+            labelName.Location = new Point(378, 43);
+            labelName.Name = "labelName";
+            labelName.Size = new Size(0, 20);
+            labelName.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = SystemColors.ControlLightLight;
+            label2.Location = new Point(615, 43);
+            label2.Name = "label2";
+            label2.Size = new Size(60, 20);
+            label2.TabIndex = 3;
+            label2.Text = "Your ID:";
+            // 
+            // labelID
+            // 
+            labelID.AutoSize = true;
+            labelID.Location = new Point(681, 43);
+            labelID.Name = "labelID";
+            labelID.Size = new Size(0, 20);
+            labelID.TabIndex = 4;
+            // 
+            // comStudentFilter
+            // 
+            comStudentFilter.FormattingEnabled = true;
+            comStudentFilter.Items.AddRange(new object[] { "Date", "Course Name", "Teacher ID", "Attendance Status" });
+            comStudentFilter.Location = new Point(724, 128);
+            comStudentFilter.Name = "comStudentFilter";
+            comStudentFilter.Size = new Size(151, 28);
+            comStudentFilter.TabIndex = 5;
+            comStudentFilter.Text = "Filter Data";
             // 
             // StudentForm
             // 
