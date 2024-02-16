@@ -8,19 +8,19 @@
     "net8.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Asmaa Elfatairy\\.nuget\\packages\\": {}
+    "C:\\Users\\DELL\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asmaa Elfatairy\\Desktop\\asmaa branch xml\\Xml-C-project\\Attendance Management System\\Attendance Management System.csproj",
+      "projectUniqueName": "G:\\ITI\\Xml-C-project\\Attendance Management System\\Attendance Management System.csproj",
       "projectName": "Attendance Management System",
-      "projectPath": "C:\\Users\\Asmaa Elfatairy\\Desktop\\asmaa branch xml\\Xml-C-project\\Attendance Management System\\Attendance Management System.csproj",
-      "packagesPath": "C:\\Users\\Asmaa Elfatairy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asmaa Elfatairy\\Desktop\\asmaa branch xml\\Xml-C-project\\Attendance Management System\\obj\\",
+      "projectPath": "G:\\ITI\\Xml-C-project\\Attendance Management System\\Attendance Management System.csproj",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+      "outputPath": "G:\\ITI\\Xml-C-project\\Attendance Management System\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Asmaa Elfatairy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -19,6 +19,15 @@ namespace Attendance_Management_System.Forms
             Application.Run(new FormLogin());
 
 
+            Course course1 = new Course("1C", "math", "any text", 5);
+            Console.WriteLine(course1.Id);
+            Console.WriteLine(course1.Name);
+            Console.WriteLine(course1.Description);
+            Console.WriteLine(course1.Numberofsessions);
+            Console.WriteLine(course1.ToString());
+
+
+
 
             /*
              * 
@@ -70,5 +79,7 @@ namespace Attendance_Management_System.Forms
         }
     
         */
+
+
     }
 }
