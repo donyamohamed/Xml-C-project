@@ -1,0 +1,18 @@
+G:\ITI\Xml-C-project\Attendance Management System\bin\Release\net8.0-windows\Attendance Management System.exe
+G:\ITI\Xml-C-project\Attendance Management System\bin\Release\net8.0-windows\Attendance Management System.deps.json
+G:\ITI\Xml-C-project\Attendance Management System\bin\Release\net8.0-windows\Attendance Management System.runtimeconfig.json
+G:\ITI\Xml-C-project\Attendance Management System\bin\Release\net8.0-windows\Attendance Management System.dll
+G:\ITI\Xml-C-project\Attendance Management System\bin\Release\net8.0-windows\Attendance Management System.pdb
+G:\ITI\Xml-C-project\Attendance Management System\obj\Release\net8.0-windows\Attendance_Management_System.Forms.FormLogin.resources
+G:\ITI\Xml-C-project\Attendance Management System\obj\Release\net8.0-windows\Attendance_Management_System.Properties.Resources.resources
+G:\ITI\Xml-C-project\Attendance Management System\obj\Release\net8.0-windows\Attendance Management System.csproj.GenerateResource.cache
+G:\ITI\Xml-C-project\Attendance Management System\obj\Release\net8.0-windows\Attendance Management System.GeneratedMSBuildEditorConfig.editorconfig
+G:\ITI\Xml-C-project\Attendance Management System\obj\Release\net8.0-windows\Attendance Management System.AssemblyInfoInputs.cache
+G:\ITI\Xml-C-project\Attendance Management System\obj\Release\net8.0-windows\Attendance Management System.AssemblyInfo.cs
+G:\ITI\Xml-C-project\Attendance Management System\obj\Release\net8.0-windows\Attendance Management System.csproj.CoreCompileInputs.cache
+G:\ITI\Xml-C-project\Attendance Management System\obj\Release\net8.0-windows\Attendance Management System.sourcelink.json
+G:\ITI\Xml-C-project\Attendance Management System\obj\Release\net8.0-windows\Attendance Management System.dll
+G:\ITI\Xml-C-project\Attendance Management System\obj\Release\net8.0-windows\refint\Attendance Management System.dll
+G:\ITI\Xml-C-project\Attendance Management System\obj\Release\net8.0-windows\Attendance Management System.pdb
+G:\ITI\Xml-C-project\Attendance Management System\obj\Release\net8.0-windows\Attendance Management System.genruntimeconfig.cache
+G:\ITI\Xml-C-project\Attendance Management System\obj\Release\net8.0-windows\ref\Attendance Management System.dll

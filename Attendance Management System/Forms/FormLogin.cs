@@ -15,9 +15,9 @@ namespace Attendance_Management_System.Forms
     public struct Person
     {
         public string Name;
-        public int Password;
+        public string Password;
 
-        public Person(string name, int password)
+        public Person(string name, string password)
         {
             Name = name;
             Password = password;
@@ -25,7 +25,7 @@ namespace Attendance_Management_System.Forms
     }
     public partial class FormLogin : Form
     {
-        Person p1 = new Person("ali", 123456789);
+        Person p1 = new Person("admin", "123456789");
 
 
         public FormLogin()
@@ -45,12 +45,12 @@ namespace Attendance_Management_System.Forms
 
         private void pictureBoxHide_MouseHover(object sender, EventArgs e)
         {
-            toolTip.SetToolTip(pictureBoxShow, "Show Password");
+            // toolTip.SetToolTip(pictureBoxShow, "Show Password");
         }
 
         private void pictureBoxHide_MouseHover_1(object sender, EventArgs e)
         {
-            toolTip.SetToolTip(pictureBoxHide, "Hide Password");
+            // toolTip.SetToolTip(pictureBoxHide, "Hide Password");
         }
 
         private void pictureBoxShow_Click(object sender, EventArgs e)
@@ -72,6 +72,7 @@ namespace Attendance_Management_System.Forms
             pictureBoxHide.Hide();
             pictureBoxError.Hide();
             labelInvalidUserName.Hide();
+
         }
 
         private void pictureBoxClose_MouseHover(object sender, EventArgs e)
@@ -89,15 +90,28 @@ namespace Attendance_Management_System.Forms
         {
             textBoxName.Text = string.Empty;
             textBoxPassword.Text = string.Empty;
+            pictureBoxError.Hide();
+            labelInvalidUserName.Hide();
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            if(p1.Name == textBoxName.ToString().Trim() && p1.Password == 123456789)
+            if (p1.Name == textBoxName.Text.ToLower().Trim() && p1.Password == textBoxPassword.Text)
+            //if(p1.Name == textBoxName.ToString())
+            // if(true)
             {
-
-
+                // Configure message box
+                string message = "This password is Correct";
+                string caption = "Wellcome";
+                // Show message box
+                MessageBox.Show(message, caption);
+            }
+            else
+            {
+                pictureBoxError.Show();
+                labelInvalidUserName.Show();
             }
         }
+
     }
 }
