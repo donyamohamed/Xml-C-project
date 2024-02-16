@@ -40,6 +40,10 @@ namespace Attendance_Management_System.Forms
             {
                 labelName.Text = loggedUser.FirstName+" "+loggedUser.LastName;
                 labelID.Text = loggedUser.Id;
+                labelAge.Text =   loggedUser.Age.ToString();
+                labelEmail.Text = loggedUser.Email;
+                labelAddress.Text = loggedUser.Address;
+
             }
         }
 
