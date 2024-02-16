@@ -30,6 +30,7 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             studentGrid = new DataGridView();
             date = new DataGridViewTextBoxColumn();
             courseName = new DataGridViewTextBoxColumn();
@@ -49,13 +50,13 @@
             studentGrid.AllowUserToAddRows = false;
             studentGrid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new Font("Times New Roman", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.Padding = new Padding(5);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             studentGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            studentGrid.BackgroundColor = Color.Purple;
+            studentGrid.BackgroundColor = Color.WhiteSmoke;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.BackColor = Color.Orchid;
             dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
@@ -67,7 +68,10 @@
             studentGrid.Location = new Point(76, 184);
             studentGrid.Name = "studentGrid";
             studentGrid.RowHeadersWidth = 51;
-            studentGrid.Size = new Size(799, 105);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            studentGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            studentGrid.Size = new Size(799, 315);
             studentGrid.TabIndex = 0;
             // 
             // date
