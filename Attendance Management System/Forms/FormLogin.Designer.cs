@@ -112,7 +112,7 @@
             // 
             textBoxPassword.Location = new Point(46, 204);
             textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(398, 27);
+            textBoxPassword.Size = new Size(398, 32);
             textBoxPassword.TabIndex = 2;
             textBoxPassword.UseSystemPasswordChar = true;
             // 
@@ -147,7 +147,7 @@
             labelInvalidUserName.ForeColor = Color.Red;
             labelInvalidUserName.Location = new Point(118, 250);
             labelInvalidUserName.Name = "labelInvalidUserName";
-            labelInvalidUserName.Size = new Size(152, 21);
+            labelInvalidUserName.Size = new Size(188, 23);
             labelInvalidUserName.TabIndex = 5;
             labelInvalidUserName.Text = "Invalid User Name";
             labelInvalidUserName.Visible = false;
@@ -201,7 +201,7 @@
             label1.ForeColor = SystemColors.HotTrack;
             label1.Location = new Point(46, 166);
             label1.Name = "label1";
-            label1.Size = new Size(127, 21);
+            label1.Size = new Size(159, 23);
             label1.TabIndex = 0;
             label1.Text = "User Password: ";
             // 
@@ -209,7 +209,7 @@
             // 
             textBoxName.Location = new Point(46, 107);
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(425, 27);
+            textBoxName.Size = new Size(425, 32);
             textBoxName.TabIndex = 1;
             textBoxName.Text = "Your Name ...";
             // 
@@ -220,7 +220,7 @@
             UserName.ForeColor = SystemColors.HotTrack;
             UserName.Location = new Point(46, 69);
             UserName.Name = "UserName";
-            UserName.Size = new Size(103, 21);
+            UserName.Size = new Size(129, 23);
             UserName.TabIndex = 0;
             UserName.Text = "User Name: ";
             // 
@@ -252,13 +252,13 @@
             label2.ForeColor = Color.Purple;
             label2.Location = new Point(299, 101);
             label2.Name = "label2";
-            label2.Size = new Size(678, 50);
+            label2.Size = new Size(845, 62);
             label2.TabIndex = 0;
             label2.Text = "Attendance Management System";
             // 
             // FormLogin
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1200, 749);
