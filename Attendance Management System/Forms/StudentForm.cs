@@ -30,29 +30,30 @@ namespace Attendance_Management_System.Forms
                 LoadSessionDataForUser(loggedUser.Id);
                 PopulateDataGridView();
             }
+            textSearch.TextChanged += txtSearch_TextChanged;
 
-        
         }
 
         private void StudentForm_Load(object sender, EventArgs e)
         {
             if (loggedUser != null)
             {
-                labelName.Text = loggedUser.FirstName+" "+loggedUser.LastName;
+                labelName.Text = loggedUser.FirstName+" "+loggedUser.LastName +"  ^_^";
                 labelID.Text = loggedUser.Id;
-                labelAge.Text =   loggedUser.Age.ToString();
-                labelEmail.Text = loggedUser.Email;
-                labelAddress.Text = loggedUser.Address;
-
+     
             }
         }
 
-        //get data for this user id
+        //get data for ---> this user id
         private void LoadSessionDataForUser(string userId)
         {
         
             XmlDocument classesDoc = new XmlDocument();
-            classesDoc.Load("../../../../class.xml"); 
+            classesDoc.Load("../../../../class.xml");
+
+            //to get course name load course
+            XmlDocument coursesDoc = new XmlDocument();
+            coursesDoc.Load("../../../../courses.xml");
 
             XmlNodeList classNodes = classesDoc.SelectNodes($"//class[studentId/@id='{userId}']");
 
@@ -62,7 +63,11 @@ namespace Attendance_Management_System.Forms
                 string courseId = classNode.SelectSingleNode("courseId").InnerText;
                 string teacherId = classNode.SelectSingleNode("teacherId").InnerText;
 
-              
+                //get course name
+                XmlNode courseNode = coursesDoc.SelectSingleNode($"//course[courseId='{courseId}']");
+                string courseName = courseNode.SelectSingleNode("courseName").InnerText;
+             
+
                 XmlNodeList sessionNodes = classNode.SelectNodes($"studentId[@id='{userId}']/session");
                 int sessionNumber = 1; 
                 foreach (XmlNode sessionNode in sessionNodes)
@@ -71,7 +76,7 @@ namespace Attendance_Management_System.Forms
                     int status = int.Parse(sessionNode.SelectSingleNode("status").InnerText);
 
                 
-                    sessionData.Add((date, courseId, teacherId, sessionNumber, status));
+                    sessionData.Add((date, courseName, teacherId, sessionNumber, status));
 
                    
                     sessionNumber++;
@@ -101,6 +106,48 @@ namespace Attendance_Management_System.Forms
                 studentGrid.Rows.Add(session.date, session.courseName, session.teacherId,session.sessionNumber, attendanceStatus);
             }
         }
-    }
+        //end poplateData grid
+        //start search section
+        // but convert first status to string
+        private string GetAttendanceStatusString(int status)
+        {
+            switch (status)
+            {
+                case -1:
+                    return "Absent";
+                case 0:
+                    return "Pending";
+                case 1:
+                    return "Attend";
+                default:
+                    return "";
+            }
+        }
 
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = textSearch.Text.ToLower(); 
+
+          
+            studentGrid.Rows.Clear();
+
+          
+            var filteredSessions = sessionData.Where(session =>
+                session.date.ToLower().Contains(searchText) ||
+                session.courseName.ToLower().Contains(searchText) ||
+                session.teacherId.ToLower().Contains(searchText) ||
+                session.sessionNumber.ToString().Contains(searchText) ||
+                GetAttendanceStatusString(session.status).ToLower().Contains(searchText) 
+            );
+
+            //  filtered data
+            foreach (var session in filteredSessions)
+            {
+                string attendanceStatus = GetAttendanceStatusString(session.status); 
+                studentGrid.Rows.Add(session.date, session.courseName, session.teacherId, session.sessionNumber, attendanceStatus);
+            }
+        }
+    }
 }
+
+
