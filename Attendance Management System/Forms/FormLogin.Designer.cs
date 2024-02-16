@@ -55,98 +55,61 @@
             // 
             // pictureBoxClose
             // 
-            pictureBoxClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            resources.ApplyResources(pictureBoxClose, "pictureBoxClose");
             pictureBoxClose.BorderStyle = BorderStyle.Fixed3D;
             pictureBoxClose.Cursor = Cursors.Hand;
             pictureBoxClose.Image = Properties.Resources.Delete_Red_X_Button_Transparent;
-            pictureBoxClose.Location = new Point(1138, 12);
             pictureBoxClose.Name = "pictureBoxClose";
-            pictureBoxClose.Size = new Size(50, 50);
-            pictureBoxClose.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxClose.TabIndex = 0;
             pictureBoxClose.TabStop = false;
             pictureBoxClose.Click += pictureBoxClose_Click;
             pictureBoxClose.MouseHover += pictureBoxClose_MouseHover;
             // 
             // pictureBoxMinimize
             // 
-            pictureBoxMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            resources.ApplyResources(pictureBoxMinimize, "pictureBoxMinimize");
             pictureBoxMinimize.BorderStyle = BorderStyle.Fixed3D;
             pictureBoxMinimize.Cursor = Cursors.Hand;
-            pictureBoxMinimize.Image = (Image)resources.GetObject("pictureBoxMinimize.Image");
-            pictureBoxMinimize.Location = new Point(1073, 12);
             pictureBoxMinimize.Name = "pictureBoxMinimize";
-            pictureBoxMinimize.Size = new Size(50, 50);
-            pictureBoxMinimize.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxMinimize.TabIndex = 0;
             pictureBoxMinimize.TabStop = false;
             pictureBoxMinimize.Click += pictureBoxMinimize_Click;
             pictureBoxMinimize.MouseHover += pictureBoxMinimize_MouseHover;
             // 
             // pictureBox1
             // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
             pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(781, 200);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(342, 350);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 30F, FontStyle.Bold | FontStyle.Italic);
+            resources.ApplyResources(label2, "label2");
             label2.ForeColor = Color.Purple;
-            label2.Location = new Point(299, 101);
             label2.Name = "label2";
-            label2.Size = new Size(678, 50);
-            label2.TabIndex = 0;
-            label2.Text = "Attendance Management System";
             // 
             // UserName
             // 
-            UserName.AutoSize = true;
-            UserName.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            resources.ApplyResources(UserName, "UserName");
             UserName.ForeColor = SystemColors.HotTrack;
-            UserName.Location = new Point(148, 292);
             UserName.Name = "UserName";
-            UserName.Size = new Size(103, 21);
-            UserName.TabIndex = 0;
-            UserName.Text = "User Name: ";
             // 
             // textBoxName
             // 
-            textBoxName.Location = new Point(148, 316);
+            resources.ApplyResources(textBoxName, "textBoxName");
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(425, 27);
-            textBoxName.TabIndex = 1;
-            textBoxName.Text = "Your Name ...";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            resources.ApplyResources(label1, "label1");
             label1.ForeColor = SystemColors.HotTrack;
-            label1.Location = new Point(148, 369);
             label1.Name = "label1";
-            label1.Size = new Size(127, 21);
-            label1.TabIndex = 0;
-            label1.Text = "User Password: ";
             // 
             // pictureBoxShow
             // 
             pictureBoxShow.BorderStyle = BorderStyle.Fixed3D;
             pictureBoxShow.Cursor = Cursors.Hand;
-            pictureBoxShow.Image = (Image)resources.GetObject("pictureBoxShow.Image");
-            pictureBoxShow.Location = new Point(546, 393);
-            pictureBoxShow.Margin = new Padding(0);
+            resources.ApplyResources(pictureBoxShow, "pictureBoxShow");
             pictureBoxShow.Name = "pictureBoxShow";
-            pictureBoxShow.Size = new Size(27, 27);
-            pictureBoxShow.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxShow.TabIndex = 0;
             pictureBoxShow.TabStop = false;
             pictureBoxShow.Click += pictureBoxShow_Click;
             pictureBoxShow.MouseHover += pictureBoxHide_MouseHover;
@@ -155,54 +118,31 @@
             // 
             pictureBoxHide.BorderStyle = BorderStyle.Fixed3D;
             pictureBoxHide.Cursor = Cursors.Hand;
-            pictureBoxHide.Image = (Image)resources.GetObject("pictureBoxHide.Image");
-            pictureBoxHide.Location = new Point(546, 393);
-            pictureBoxHide.Margin = new Padding(0);
+            resources.ApplyResources(pictureBoxHide, "pictureBoxHide");
             pictureBoxHide.Name = "pictureBoxHide";
-            pictureBoxHide.Size = new Size(27, 27);
-            pictureBoxHide.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxHide.TabIndex = 0;
             pictureBoxHide.TabStop = false;
-            pictureBoxHide.Visible = false;
             pictureBoxHide.Click += pictureBoxHide_Click;
             pictureBoxHide.MouseHover += pictureBoxHide_MouseHover_1;
             // 
             // pictureBoxError
             // 
-            pictureBoxError.Anchor = AnchorStyles.None;
-            pictureBoxError.Image = (Image)resources.GetObject("pictureBoxError.Image");
-            pictureBoxError.Location = new Point(200, 456);
-            pictureBoxError.Margin = new Padding(1);
+            resources.ApplyResources(pictureBoxError, "pictureBoxError");
             pictureBoxError.Name = "pictureBoxError";
-            pictureBoxError.Size = new Size(27, 27);
-            pictureBoxError.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxError.TabIndex = 0;
             pictureBoxError.TabStop = false;
             // 
             // labelInvalidUserName
             // 
-            labelInvalidUserName.Anchor = AnchorStyles.None;
-            labelInvalidUserName.AutoSize = true;
-            labelInvalidUserName.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            resources.ApplyResources(labelInvalidUserName, "labelInvalidUserName");
             labelInvalidUserName.ForeColor = Color.Red;
-            labelInvalidUserName.Location = new Point(239, 458);
-            labelInvalidUserName.Margin = new Padding(1);
             labelInvalidUserName.Name = "labelInvalidUserName";
-            labelInvalidUserName.Size = new Size(152, 21);
-            labelInvalidUserName.TabIndex = 0;
-            labelInvalidUserName.Text = "Invalid User Name";
-            labelInvalidUserName.TextAlign = ContentAlignment.MiddleCenter;
             labelInvalidUserName.UseWaitCursor = true;
             // 
             // buttonClear
             // 
             buttonClear.BackColor = Color.Purple;
             buttonClear.ForeColor = Color.White;
-            buttonClear.Location = new Point(173, 594);
+            resources.ApplyResources(buttonClear, "buttonClear");
             buttonClear.Name = "buttonClear";
-            buttonClear.Size = new Size(178, 29);
-            buttonClear.TabIndex = 3;
-            buttonClear.Text = "Clear";
             buttonClear.UseVisualStyleBackColor = false;
             buttonClear.Click += buttonClear_Click;
             // 
@@ -210,28 +150,22 @@
             // 
             buttonLogin.BackColor = Color.Green;
             buttonLogin.ForeColor = Color.White;
-            buttonLogin.Location = new Point(369, 594);
+            resources.ApplyResources(buttonLogin, "buttonLogin");
             buttonLogin.Name = "buttonLogin";
-            buttonLogin.Size = new Size(185, 29);
-            buttonLogin.TabIndex = 4;
-            buttonLogin.Text = "Log in";
             buttonLogin.UseVisualStyleBackColor = false;
             buttonLogin.Click += buttonLogin_Click;
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Location = new Point(148, 393);
+            resources.ApplyResources(textBoxPassword, "textBoxPassword");
             textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(425, 27);
-            textBoxPassword.TabIndex = 2;
             textBoxPassword.UseSystemPasswordChar = true;
             // 
             // FormLogin
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1200, 749);
             Controls.Add(pictureBoxError);
             Controls.Add(labelInvalidUserName);
             Controls.Add(pictureBoxHide);
@@ -246,14 +180,9 @@
             Controls.Add(UserName);
             Controls.Add(label1);
             Controls.Add(textBoxName);
-            Font = new Font("Century Gothic", 12F);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(6, 5, 6, 5);
             Name = "FormLogin";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Login";
             WindowState = FormWindowState.Maximized;
             Load += FormLogin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).EndInit();
