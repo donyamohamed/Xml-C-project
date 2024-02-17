@@ -288,15 +288,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-<<<<<<< HEAD
             ClientSize = new Size(1211, 787);
             Controls.Add(butReport);
             Controls.Add(textSearch);
-=======
-            ClientSize = new Size(848, 513);
-            Controls.Add(groupBox1);
-            Controls.Add(comStudentFilter);
->>>>>>> 2d529c3698d0f1a33381f1098d163f4894924348
             Controls.Add(studentGrid);
             Controls.Add(label1);
             Controls.Add(labelName);
