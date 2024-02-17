@@ -8,14 +8,14 @@ namespace Attendance_Management_System.Forms
     {
         public static string usersPath = "../../../../users.xml";
         public static string coursesPath = "../../../../courses.xml";
-        public static string classesPath = "../../../../classes.xml";
+        public static string claSSesPath = "../../../../class.xml";
 
         public static List<classes.User> users = UserParser.ParseUsers(usersPath);
         // Accessable from any form by Program.users
         public static List<classes.Course> courses = ParseCourses(coursesPath);
         // Accessable from any form by Program.courses
-        // public static List<classes.Class> classes = ClassParser.ParseClasses(classesPath);
-        // Accessable from any form by Program.classes
+        public static List<classes.Class> claSSes = ClassParser.ParseClasses(claSSesPath);
+        // Accessable from any form by Program.claSSes
 
         /// <summary>
         ///  The main entry point for the application.
@@ -79,7 +79,7 @@ namespace Attendance_Management_System.Forms
 
         }
 
-        
+        /*
         static List<Student> GetStudents(XmlDocument usersDoc)
         {
             List<Student> students = new List<Student>();
@@ -106,7 +106,7 @@ namespace Attendance_Management_System.Forms
 
             return students;
         }
-    
+        */
         
 
 

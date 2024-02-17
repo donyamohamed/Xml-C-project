@@ -18,7 +18,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Attendance_Management_System.Forms
 {
-
+    /*
     public struct Person
     {
         public string Name;
@@ -32,15 +32,21 @@ namespace Attendance_Management_System.Forms
             Email = email;
         }
     }
+    */
     public partial class FormLogin : Form
     {
-        Person p1 = new Person("admin", "123456789", "admin@admin.com");
+        // public static Admin meAdmin = new Admin();
+        // meAdmin is Accessable from any form by FormLogin.meAdmin
+        public static Teacher meTeacher = new Teacher();
+        // meTeacher is Accessable from any form by FormLogin.meTeacher
+        // public static Student meStudent = new Student();
+        // meStudent is Accessable from any form by formLogin.meStudent
 
 
         public FormLogin()
         {
             // when the form is created, get the users from the xml file and store them in the users list
-            List<classes.User> users = UserParser.ParseUsers("../../../../users.xml");
+            // List<classes.User> users = UserParser.ParseUsers("../../../../users.xml");
             InitializeComponent();
         }
 
@@ -163,17 +169,17 @@ namespace Attendance_Management_System.Forms
                 {
                     if (user.Role == "admin")
                     {
-                        Admin admin = (Admin)user;
+                        Admin meAdmin = (Admin)user;
                         return true;
                     }
                     else if (user.Role == "teacher")
                     {
-                        Teacher teacher = (Teacher)user;
+                        meTeacher = (Teacher)user;
                         return true;
                     }
                     else if (user.Role == "student")
                     {
-                        Student student = (Student)user;
+                        Student meStudent = (Student)user;
                         return true;
                     }
                 }

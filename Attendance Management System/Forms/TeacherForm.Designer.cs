@@ -36,6 +36,7 @@
             labelWellcome = new Label();
             labelTeacher_Name = new Label();
             groupBoxProfileData = new GroupBox();
+            labelTID = new Label();
             labelAddress = new Label();
             labelTAddress = new Label();
             labelEmail = new Label();
@@ -43,8 +44,8 @@
             labelAge = new Label();
             labelTAge = new Label();
             labelID = new Label();
-            labelTID = new Label();
             pictureBox1 = new PictureBox();
+            buttonMyCourses = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).BeginInit();
             groupBoxProfileData.SuspendLayout();
@@ -122,6 +123,16 @@
             groupBoxProfileData.TabStop = false;
             groupBoxProfileData.Text = "Profile Data";
             // 
+            // labelTID
+            // 
+            labelTID.AutoSize = true;
+            labelTID.ForeColor = Color.White;
+            labelTID.Location = new Point(6, 33);
+            labelTID.Name = "labelTID";
+            labelTID.Size = new Size(35, 21);
+            labelTID.TabIndex = 1;
+            labelTID.Text = "ID: ";
+            // 
             // labelAddress
             // 
             labelAddress.ForeColor = Color.White;
@@ -190,16 +201,6 @@
             labelID.TabIndex = 0;
             labelID.Text = "id";
             // 
-            // labelTID
-            // 
-            labelTID.AutoSize = true;
-            labelTID.ForeColor = Color.White;
-            labelTID.Location = new Point(6, 33);
-            labelTID.Name = "labelTID";
-            labelTID.Size = new Size(35, 21);
-            labelTID.TabIndex = 1;
-            labelTID.Text = "ID: ";
-            // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -212,12 +213,24 @@
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
+            // buttonMyCourses
+            // 
+            buttonMyCourses.BackColor = Color.Green;
+            buttonMyCourses.Location = new Point(126, 308);
+            buttonMyCourses.Name = "buttonMyCourses";
+            buttonMyCourses.Size = new Size(239, 78);
+            buttonMyCourses.TabIndex = 4;
+            buttonMyCourses.Text = "Get My Courses";
+            buttonMyCourses.UseVisualStyleBackColor = false;
+            buttonMyCourses.Click += buttonMyCourses_Click;
+            // 
             // TeacherForm
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1200, 749);
+            Controls.Add(buttonMyCourses);
             Controls.Add(pictureBox1);
             Controls.Add(groupBoxProfileData);
             Controls.Add(labelTeacher_Name);
@@ -258,5 +271,6 @@
         private Label labelID;
         private Label labelTID;
         private PictureBox pictureBox1;
+        private Button buttonMyCourses;
     }
 }
