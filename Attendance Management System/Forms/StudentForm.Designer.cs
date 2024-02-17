@@ -73,13 +73,14 @@
             studentGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             studentGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             studentGrid.Columns.AddRange(new DataGridViewColumn[] { date, courseName, teacherId, sessionNo, status });
-            studentGrid.Location = new Point(76, 339);
+            studentGrid.Location = new Point(66, 254);
+            studentGrid.Margin = new Padding(3, 2, 3, 2);
             studentGrid.Name = "studentGrid";
             studentGrid.RowHeadersWidth = 51;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             studentGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            studentGrid.Size = new Size(799, 315);
+            studentGrid.Size = new Size(699, 236);
             studentGrid.TabIndex = 0;
             // 
             // date
@@ -121,18 +122,18 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(427, 52);
+            label1.Location = new Point(374, 39);
             label1.Name = "label1";
-            label1.Size = new Size(75, 20);
+            label1.Size = new Size(60, 15);
             label1.TabIndex = 1;
             label1.Text = "Welcome ";
             // 
             // labelName
             // 
             labelName.AutoSize = true;
-            labelName.Location = new Point(508, 52);
+            labelName.Location = new Point(444, 39);
             labelName.Name = "labelName";
-            labelName.Size = new Size(46, 20);
+            labelName.Size = new Size(37, 15);
             labelName.TabIndex = 2;
             labelName.Text = "name";
             // 
@@ -140,18 +141,18 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(100, 45);
+            label2.Location = new Point(88, 34);
             label2.Name = "label2";
-            label2.Size = new Size(60, 20);
+            label2.Size = new Size(48, 15);
             label2.TabIndex = 3;
             label2.Text = "Your ID:";
             // 
             // labelID
             // 
             labelID.AutoSize = true;
-            labelID.Location = new Point(166, 45);
+            labelID.Location = new Point(145, 34);
             labelID.Name = "labelID";
-            labelID.Size = new Size(22, 20);
+            labelID.Size = new Size(17, 15);
             labelID.TabIndex = 4;
             labelID.Text = "id";
             // 
@@ -159,9 +160,10 @@
             // 
             comStudentFilter.FormattingEnabled = true;
             comStudentFilter.Items.AddRange(new object[] { "Date", "Course Name", "Teacher ID", "Attendance Status" });
-            comStudentFilter.Location = new Point(724, 287);
+            comStudentFilter.Location = new Point(634, 215);
+            comStudentFilter.Margin = new Padding(3, 2, 3, 2);
             comStudentFilter.Name = "comStudentFilter";
-            comStudentFilter.Size = new Size(151, 28);
+            comStudentFilter.Size = new Size(133, 23);
             comStudentFilter.TabIndex = 5;
             comStudentFilter.Text = "Filter Data";
             // 
@@ -175,9 +177,11 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(labelID);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(76, 112);
+            groupBox1.Location = new Point(66, 84);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(799, 125);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(699, 94);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             groupBox1.Text = "Profile Data";
@@ -185,68 +189,69 @@
             // labelAddress
             // 
             labelAddress.AutoSize = true;
-            labelAddress.Location = new Point(605, 89);
+            labelAddress.Location = new Point(529, 67);
             labelAddress.Name = "labelAddress";
-            labelAddress.Size = new Size(35, 20);
+            labelAddress.Size = new Size(27, 15);
             labelAddress.TabIndex = 10;
             labelAddress.Text = "add";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(534, 89);
+            label4.Location = new Point(467, 67);
             label4.Name = "label4";
-            label4.Size = new Size(65, 20);
+            label4.Size = new Size(52, 15);
             label4.TabIndex = 9;
             label4.Text = "Address:";
             // 
             // labelEmail
             // 
             labelEmail.AutoSize = true;
-            labelEmail.Location = new Point(605, 45);
+            labelEmail.Location = new Point(529, 34);
             labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(38, 20);
+            labelEmail.Size = new Size(30, 15);
             labelEmail.TabIndex = 8;
             labelEmail.Text = "ema";
             // 
             // labele
             // 
             labele.AutoSize = true;
-            labele.Location = new Point(534, 45);
+            labele.Location = new Point(467, 34);
             labele.Name = "labele";
-            labele.Size = new Size(49, 20);
+            labele.Size = new Size(39, 15);
             labele.TabIndex = 7;
             labele.Text = "Email:";
             // 
             // labelAge
             // 
             labelAge.AutoSize = true;
-            labelAge.Location = new Point(166, 89);
+            labelAge.Location = new Point(145, 67);
             labelAge.Name = "labelAge";
-            labelAge.Size = new Size(34, 20);
+            labelAge.Size = new Size(26, 15);
             labelAge.TabIndex = 6;
             labelAge.Text = "age";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(121, 89);
+            label3.Location = new Point(106, 67);
             label3.Name = "label3";
-            label3.Size = new Size(39, 20);
+            label3.Size = new Size(31, 15);
             label3.TabIndex = 5;
             label3.Text = "Age:";
             // 
             // StudentForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(969, 684);
+            ClientSize = new Size(848, 513);
             Controls.Add(groupBox1);
             Controls.Add(comStudentFilter);
             Controls.Add(studentGrid);
             Controls.Add(label1);
             Controls.Add(labelName);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "StudentForm";
             Text = "StudentForm";
             Load += StudentForm_Load;

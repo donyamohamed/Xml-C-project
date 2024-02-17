@@ -24,7 +24,7 @@ namespace Attendance_Management_System.classes
                 int sessionsNumber = int.Parse(node.SelectSingleNode("sessionsNumber").InnerText);
                 string description = node.SelectSingleNode("description").InnerText;
 
-                courses.Add(new Course(courseId, courseName, sessionsNumber, description));
+                courses.Add(new Course(courseId, courseName, description, sessionsNumber));
             }
 
             return courses;

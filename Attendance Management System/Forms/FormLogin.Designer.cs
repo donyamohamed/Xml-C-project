@@ -35,8 +35,8 @@
             pictureBox1 = new PictureBox();
             label2 = new Label();
             toolTip = new ToolTip(components);
-            UserName = new Label();
-            textBoxName = new TextBox();
+            UserEmail = new Label();
+            textBoxEmail = new TextBox();
             label1 = new Label();
             pictureBoxShow = new PictureBox();
             pictureBoxHide = new PictureBox();
@@ -45,6 +45,7 @@
             buttonClear = new Button();
             buttonLogin = new Button();
             textBoxPassword = new TextBox();
+            buttonLanguage = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -55,333 +56,141 @@
             // 
             // pictureBoxClose
             // 
-            pictureBoxClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            resources.ApplyResources(pictureBoxClose, "pictureBoxClose");
             pictureBoxClose.BorderStyle = BorderStyle.Fixed3D;
             pictureBoxClose.Cursor = Cursors.Hand;
             pictureBoxClose.Image = Properties.Resources.Delete_Red_X_Button_Transparent;
-            pictureBoxClose.Location = new Point(1138, 12);
             pictureBoxClose.Name = "pictureBoxClose";
-            pictureBoxClose.Size = new Size(50, 50);
-            pictureBoxClose.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxClose.TabIndex = 0;
             pictureBoxClose.TabStop = false;
+            toolTip.SetToolTip(pictureBoxClose, resources.GetString("pictureBoxClose.ToolTip"));
             pictureBoxClose.Click += pictureBoxClose_Click;
             pictureBoxClose.MouseHover += pictureBoxClose_MouseHover;
             // 
             // pictureBoxMinimize
             // 
-            pictureBoxMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            resources.ApplyResources(pictureBoxMinimize, "pictureBoxMinimize");
             pictureBoxMinimize.BorderStyle = BorderStyle.Fixed3D;
             pictureBoxMinimize.Cursor = Cursors.Hand;
-            pictureBoxMinimize.Image = (Image)resources.GetObject("pictureBoxMinimize.Image");
-            pictureBoxMinimize.Location = new Point(1073, 12);
             pictureBoxMinimize.Name = "pictureBoxMinimize";
-            pictureBoxMinimize.Size = new Size(50, 50);
-            pictureBoxMinimize.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxMinimize.TabIndex = 0;
             pictureBoxMinimize.TabStop = false;
+            toolTip.SetToolTip(pictureBoxMinimize, resources.GetString("pictureBoxMinimize.ToolTip"));
             pictureBoxMinimize.Click += pictureBoxMinimize_Click;
             pictureBoxMinimize.MouseHover += pictureBoxMinimize_MouseHover;
             // 
-<<<<<<< HEAD
-            // groupBox1
-            // 
-            groupBox1.Anchor = AnchorStyles.None;
-            groupBox1.Controls.Add(textBoxPassword);
-            groupBox1.Controls.Add(buttonLogin);
-            groupBox1.Controls.Add(buttonClear);
-            groupBox1.Controls.Add(labelInvalidUserName);
-            groupBox1.Controls.Add(pictureBoxError);
-            groupBox1.Controls.Add(pictureBoxHide);
-            groupBox1.Controls.Add(pictureBoxShow);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(textBoxName);
-            groupBox1.Controls.Add(UserName);
-            groupBox1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.ForeColor = Color.Blue;
-            groupBox1.Location = new Point(100, 200);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(500, 350);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Log in";
-            // 
-            // textBoxPassword
-            // 
-            textBoxPassword.Location = new Point(46, 204);
-            textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(398, 32);
-            textBoxPassword.TabIndex = 2;
-            textBoxPassword.UseSystemPasswordChar = true;
-            // 
-            // buttonLogin
-            // 
-            buttonLogin.BackColor = Color.Green;
-            buttonLogin.ForeColor = Color.White;
-            buttonLogin.Location = new Point(269, 301);
-            buttonLogin.Name = "buttonLogin";
-            buttonLogin.Size = new Size(185, 29);
-            buttonLogin.TabIndex = 7;
-            buttonLogin.Text = "Log in";
-            buttonLogin.UseVisualStyleBackColor = false;
-            buttonLogin.Click += buttonLogin_Click;
-            // 
-            // buttonClear
-            // 
-            buttonClear.BackColor = Color.Purple;
-            buttonClear.ForeColor = Color.White;
-            buttonClear.Location = new Point(73, 301);
-            buttonClear.Name = "buttonClear";
-            buttonClear.Size = new Size(178, 29);
-            buttonClear.TabIndex = 6;
-            buttonClear.Text = "Clear";
-            buttonClear.UseVisualStyleBackColor = false;
-            buttonClear.Click += buttonClear_Click;
-            // 
-            // labelInvalidUserName
-            // 
-            labelInvalidUserName.AutoSize = true;
-            labelInvalidUserName.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            labelInvalidUserName.ForeColor = Color.Red;
-            labelInvalidUserName.Location = new Point(118, 250);
-            labelInvalidUserName.Name = "labelInvalidUserName";
-            labelInvalidUserName.Size = new Size(188, 23);
-            labelInvalidUserName.TabIndex = 5;
-            labelInvalidUserName.Text = "Invalid User Name";
-            labelInvalidUserName.Visible = false;
-            // 
-            // pictureBoxError
-            // 
-            pictureBoxError.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBoxError.Cursor = Cursors.Hand;
-            pictureBoxError.Image = (Image)resources.GetObject("pictureBoxError.Image");
-            pictureBoxError.Location = new Point(66, 247);
-            pictureBoxError.Name = "pictureBoxError";
-            pictureBoxError.Size = new Size(27, 27);
-            pictureBoxError.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxError.TabIndex = 4;
-            pictureBoxError.TabStop = false;
-            pictureBoxError.Visible = false;
-            // 
-            // pictureBoxHide
-            // 
-            pictureBoxHide.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBoxHide.Cursor = Cursors.Hand;
-            pictureBoxHide.Image = (Image)resources.GetObject("pictureBoxHide.Image");
-            pictureBoxHide.Location = new Point(444, 244);
-            pictureBoxHide.Name = "pictureBoxHide";
-            pictureBoxHide.Size = new Size(27, 27);
-            pictureBoxHide.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxHide.TabIndex = 3;
-            pictureBoxHide.TabStop = false;
-            pictureBoxHide.Click += pictureBoxHide_Click;
-            pictureBoxHide.MouseHover += pictureBoxHide_MouseHover_1;
-            // 
-            // pictureBoxShow
-            // 
-            pictureBoxShow.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBoxShow.Cursor = Cursors.Hand;
-            pictureBoxShow.Image = (Image)resources.GetObject("pictureBoxShow.Image");
-            pictureBoxShow.Location = new Point(444, 204);
-            pictureBoxShow.Name = "pictureBoxShow";
-            pictureBoxShow.Size = new Size(27, 27);
-            pictureBoxShow.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxShow.TabIndex = 2;
-            pictureBoxShow.TabStop = false;
-            pictureBoxShow.Visible = false;
-            pictureBoxShow.Click += pictureBoxShow_Click;
-            pictureBoxShow.MouseHover += pictureBoxHide_MouseHover;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.HotTrack;
-            label1.Location = new Point(46, 166);
-            label1.Name = "label1";
-            label1.Size = new Size(159, 23);
-            label1.TabIndex = 0;
-            label1.Text = "User Password: ";
-            // 
-            // textBoxName
-            // 
-            textBoxName.Location = new Point(46, 107);
-            textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(425, 32);
-            textBoxName.TabIndex = 1;
-            textBoxName.Text = "Your Name ...";
-            // 
-            // UserName
-            // 
-            UserName.AutoSize = true;
-            UserName.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            UserName.ForeColor = SystemColors.HotTrack;
-            UserName.Location = new Point(46, 69);
-            UserName.Name = "UserName";
-            UserName.Size = new Size(129, 23);
-            UserName.TabIndex = 0;
-            UserName.Text = "User Name: ";
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Purple;
-            panel1.ForeColor = Color.Purple;
-            panel1.Location = new Point(674, 166);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(11, 457);
-            panel1.TabIndex = 2;
-            // 
-=======
->>>>>>> 3c1a1d1ae0ae6f96b83e7476a2e834ca9bbe191b
             // pictureBox1
             // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
             pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(781, 200);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(342, 350);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            toolTip.SetToolTip(pictureBox1, resources.GetString("pictureBox1.ToolTip"));
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 30F, FontStyle.Bold | FontStyle.Italic);
+            resources.ApplyResources(label2, "label2");
             label2.ForeColor = Color.Purple;
-            label2.Location = new Point(299, 101);
             label2.Name = "label2";
-            label2.Size = new Size(845, 62);
-            label2.TabIndex = 0;
-            label2.Text = "Attendance Management System";
+            toolTip.SetToolTip(label2, resources.GetString("label2.ToolTip"));
             // 
-            // UserName
+            // UserEmail
             // 
-            UserName.AutoSize = true;
-            UserName.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            UserName.ForeColor = SystemColors.HotTrack;
-            UserName.Location = new Point(148, 292);
-            UserName.Name = "UserName";
-            UserName.Size = new Size(103, 21);
-            UserName.TabIndex = 0;
-            UserName.Text = "User Name: ";
+            resources.ApplyResources(UserEmail, "UserEmail");
+            UserEmail.ForeColor = SystemColors.HotTrack;
+            UserEmail.Name = "UserEmail";
+            toolTip.SetToolTip(UserEmail, resources.GetString("UserEmail.ToolTip"));
             // 
-            // textBoxName
+            // textBoxEmail
             // 
-            textBoxName.Location = new Point(148, 316);
-            textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(425, 27);
-            textBoxName.TabIndex = 1;
-            textBoxName.Text = "Your Name ...";
+            resources.ApplyResources(textBoxEmail, "textBoxEmail");
+            textBoxEmail.Name = "textBoxEmail";
+            toolTip.SetToolTip(textBoxEmail, resources.GetString("textBoxEmail.ToolTip"));
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            resources.ApplyResources(label1, "label1");
             label1.ForeColor = SystemColors.HotTrack;
-            label1.Location = new Point(148, 369);
             label1.Name = "label1";
-            label1.Size = new Size(127, 21);
-            label1.TabIndex = 0;
-            label1.Text = "User Password: ";
+            toolTip.SetToolTip(label1, resources.GetString("label1.ToolTip"));
             // 
             // pictureBoxShow
             // 
+            resources.ApplyResources(pictureBoxShow, "pictureBoxShow");
             pictureBoxShow.BorderStyle = BorderStyle.Fixed3D;
             pictureBoxShow.Cursor = Cursors.Hand;
-            pictureBoxShow.Image = (Image)resources.GetObject("pictureBoxShow.Image");
-            pictureBoxShow.Location = new Point(546, 393);
-            pictureBoxShow.Margin = new Padding(0);
             pictureBoxShow.Name = "pictureBoxShow";
-            pictureBoxShow.Size = new Size(27, 27);
-            pictureBoxShow.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxShow.TabIndex = 0;
             pictureBoxShow.TabStop = false;
+            toolTip.SetToolTip(pictureBoxShow, resources.GetString("pictureBoxShow.ToolTip"));
             pictureBoxShow.Click += pictureBoxShow_Click;
             pictureBoxShow.MouseHover += pictureBoxHide_MouseHover;
             // 
             // pictureBoxHide
             // 
+            resources.ApplyResources(pictureBoxHide, "pictureBoxHide");
             pictureBoxHide.BorderStyle = BorderStyle.Fixed3D;
             pictureBoxHide.Cursor = Cursors.Hand;
-            pictureBoxHide.Image = (Image)resources.GetObject("pictureBoxHide.Image");
-            pictureBoxHide.Location = new Point(546, 393);
-            pictureBoxHide.Margin = new Padding(0);
             pictureBoxHide.Name = "pictureBoxHide";
-            pictureBoxHide.Size = new Size(27, 27);
-            pictureBoxHide.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxHide.TabIndex = 0;
             pictureBoxHide.TabStop = false;
-            pictureBoxHide.Visible = false;
+            toolTip.SetToolTip(pictureBoxHide, resources.GetString("pictureBoxHide.ToolTip"));
             pictureBoxHide.Click += pictureBoxHide_Click;
             pictureBoxHide.MouseHover += pictureBoxHide_MouseHover_1;
             // 
             // pictureBoxError
             // 
-            pictureBoxError.Anchor = AnchorStyles.None;
-            pictureBoxError.Image = (Image)resources.GetObject("pictureBoxError.Image");
-            pictureBoxError.Location = new Point(200, 456);
-            pictureBoxError.Margin = new Padding(1);
+            resources.ApplyResources(pictureBoxError, "pictureBoxError");
+            pictureBoxError.Cursor = Cursors.Hand;
             pictureBoxError.Name = "pictureBoxError";
-            pictureBoxError.Size = new Size(27, 27);
-            pictureBoxError.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxError.TabIndex = 0;
             pictureBoxError.TabStop = false;
+            toolTip.SetToolTip(pictureBoxError, resources.GetString("pictureBoxError.ToolTip"));
             // 
             // labelInvalidUserName
             // 
-            labelInvalidUserName.Anchor = AnchorStyles.None;
-            labelInvalidUserName.AutoSize = true;
-            labelInvalidUserName.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            resources.ApplyResources(labelInvalidUserName, "labelInvalidUserName");
             labelInvalidUserName.ForeColor = Color.Red;
-            labelInvalidUserName.Location = new Point(239, 458);
-            labelInvalidUserName.Margin = new Padding(1);
             labelInvalidUserName.Name = "labelInvalidUserName";
-            labelInvalidUserName.Size = new Size(152, 21);
-            labelInvalidUserName.TabIndex = 0;
-            labelInvalidUserName.Text = "Invalid User Name";
-            labelInvalidUserName.TextAlign = ContentAlignment.MiddleCenter;
-            labelInvalidUserName.UseWaitCursor = true;
+            toolTip.SetToolTip(labelInvalidUserName, resources.GetString("labelInvalidUserName.ToolTip"));
             // 
             // buttonClear
             // 
+            resources.ApplyResources(buttonClear, "buttonClear");
             buttonClear.BackColor = Color.Purple;
             buttonClear.ForeColor = Color.White;
-            buttonClear.Location = new Point(173, 594);
             buttonClear.Name = "buttonClear";
-            buttonClear.Size = new Size(178, 29);
-            buttonClear.TabIndex = 3;
-            buttonClear.Text = "Clear";
+            toolTip.SetToolTip(buttonClear, resources.GetString("buttonClear.ToolTip"));
             buttonClear.UseVisualStyleBackColor = false;
             buttonClear.Click += buttonClear_Click;
             // 
             // buttonLogin
             // 
+            resources.ApplyResources(buttonLogin, "buttonLogin");
             buttonLogin.BackColor = Color.Green;
             buttonLogin.ForeColor = Color.White;
-            buttonLogin.Location = new Point(369, 594);
             buttonLogin.Name = "buttonLogin";
-            buttonLogin.Size = new Size(185, 29);
-            buttonLogin.TabIndex = 4;
-            buttonLogin.Text = "Log in";
+            toolTip.SetToolTip(buttonLogin, resources.GetString("buttonLogin.ToolTip"));
             buttonLogin.UseVisualStyleBackColor = false;
             buttonLogin.Click += buttonLogin_Click;
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Location = new Point(148, 393);
+            resources.ApplyResources(textBoxPassword, "textBoxPassword");
             textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(425, 27);
-            textBoxPassword.TabIndex = 2;
+            toolTip.SetToolTip(textBoxPassword, resources.GetString("textBoxPassword.ToolTip"));
             textBoxPassword.UseSystemPasswordChar = true;
+            // 
+            // buttonLanguage
+            // 
+            resources.ApplyResources(buttonLanguage, "buttonLanguage");
+            buttonLanguage.BackColor = Color.Green;
+            buttonLanguage.Name = "buttonLanguage";
+            toolTip.SetToolTip(buttonLanguage, resources.GetString("buttonLanguage.ToolTip"));
+            buttonLanguage.UseVisualStyleBackColor = false;
+            buttonLanguage.Click += buttonLanguage_Click;
             // 
             // FormLogin
             // 
-            AutoScaleDimensions = new SizeF(12F, 23F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1200, 749);
+            Controls.Add(buttonLanguage);
             Controls.Add(pictureBoxError);
             Controls.Add(labelInvalidUserName);
             Controls.Add(pictureBoxHide);
@@ -393,17 +202,13 @@
             Controls.Add(pictureBox1);
             Controls.Add(pictureBoxMinimize);
             Controls.Add(pictureBoxClose);
-            Controls.Add(UserName);
+            Controls.Add(UserEmail);
             Controls.Add(label1);
-            Controls.Add(textBoxName);
-            Font = new Font("Century Gothic", 12F);
+            Controls.Add(textBoxEmail);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(6, 5, 6, 5);
             Name = "FormLogin";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Login";
+            toolTip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             WindowState = FormWindowState.Maximized;
             Load += FormLogin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).EndInit();
@@ -423,8 +228,8 @@
         private PictureBox pictureBox1;
         private Label label2;
         private ToolTip toolTip;
-        private Label UserName;
-        private TextBox textBoxName;
+        private Label UserEmail;
+        private TextBox textBoxEmail;
         private Label label1;
         private PictureBox pictureBoxShow;
         private PictureBox pictureBoxHide;
@@ -433,5 +238,6 @@
         private Button buttonClear;
         private Button buttonLogin;
         private TextBox textBoxPassword;
+        private Button buttonLanguage;
     }
 }
