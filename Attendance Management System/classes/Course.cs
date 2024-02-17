@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Attendance_Management_System.classes
 {
-    internal class Course
+   public class Course
     {
         public string Id { get; set; }
         public string Name { get; set; }
@@ -22,6 +22,7 @@ namespace Attendance_Management_System.classes
             Numberofsessions = _Numberofsessions;
 
         }
+        public Course() { }
 
         public override string ToString()
         {
