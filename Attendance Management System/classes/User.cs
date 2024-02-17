@@ -33,7 +33,7 @@ namespace Attendance_Management_System.classes
             Role = _role;
         }
 
-       
+       protected User() { }
         public override string ToString()
         {
             return $"ID: {Id}, Name: {FirstName +" "+ LastName}";

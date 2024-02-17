@@ -1,10 +1,22 @@
 using Attendance_Management_System.classes;
 using System.Xml;
+using static Attendance_Management_System.classes.CourseParser;
 
 namespace Attendance_Management_System.Forms
 {
     internal static class Program
     {
+        public static string usersPath = "../../../../users.xml";
+        public static string coursesPath = "../../../../courses.xml";
+        public static string claSSesPath = "../../../../class.xml";
+
+        public static List<classes.User> users = UserParser.ParseUsers(usersPath);
+        // Accessable from any form by Program.users
+        public static List<classes.Course> courses = ParseCourses(coursesPath);
+        // Accessable from any form by Program.courses
+        public static List<classes.Class> claSSes = ClassParser.ParseClasses(claSSesPath);
+        // Accessable from any form by Program.claSSes
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -18,14 +30,14 @@ namespace Attendance_Management_System.Forms
             Application.Run(new StudentForm());
 
 
-
+            /*
             Course course1 = new Course("1C", "math", "any text", 5);
             Console.WriteLine(course1.Id);
             Console.WriteLine(course1.Name);
             Console.WriteLine(course1.Description);
             Console.WriteLine(course1.Numberofsessions);
             Console.WriteLine(course1.ToString());
-
+            */
 
 
 
@@ -49,11 +61,13 @@ namespace Attendance_Management_System.Forms
             */
 
             // Try to get data of Coures >_< //
-            XmlDocument courseDoc = new XmlDocument();
-            courseDoc.Load("../../../../courses.xml");
+            // XmlDocument courseDoc = new XmlDocument();
+            // courseDoc.Load("../../../../courses.xml");
 
-            List<Course> courses = GetCourses(courseDoc);
-            Console.WriteLine(courses.ToString());
+            // List<Course> Courses = ParseCourses("../../../../courses.xml");
+            // CourseList Courses = new CourseList();
+            // List<Course> courses = GetCourses(courseDoc);
+            // Console.WriteLine(Courses.ToString());
 
 
             /*
@@ -92,9 +106,40 @@ namespace Attendance_Management_System.Forms
 
             return students;
         }
-    
         */
+        
 
+
+/*        public static class CourseList
+        {
+            public static List<Course> Courses { get; private set;}
+            
+            static CourseList()
+            {
+                XmlDocument courseDoc = new XmlDocument();
+                courseDoc.Load("../../../../courses.xml");
+
+                Courses = new List<Course>();
+                XmlNodeList courseNodes = courseDoc.SelectNodes("//course");
+
+
+                foreach (XmlNode courseNode in courseNodes)
+                {
+                    string courseId = courseNode.SelectSingleNode("courseId").InnerText;
+                    string courseName = courseNode.SelectSingleNode("courseName").InnerText;
+                    int sessionsNumber = Convert.ToInt32(courseNode.SelectSingleNode("sessionsNumber").InnerText);
+                    string description = courseNode.SelectSingleNode("description").InnerText;
+
+                    Course course = new Course(courseId, courseName, description, sessionsNumber);
+                    Courses.Add(course);
+                }
+
+
+            }
+
+        }
+*/        
+/*        
         static List<Course> GetCourses(XmlDocument courseDoc)
         {
             List<Course> courses = new List<Course>();
@@ -121,5 +166,6 @@ namespace Attendance_Management_System.Forms
 
             return courses;
         }
+*/
     }
 }
