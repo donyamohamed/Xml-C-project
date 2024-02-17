@@ -31,6 +31,8 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             studentGrid = new DataGridView();
             date = new DataGridViewTextBoxColumn();
             courseName = new DataGridViewTextBoxColumn();
@@ -41,16 +43,8 @@
             labelName = new Label();
             label2 = new Label();
             labelID = new Label();
-            comStudentFilter = new ComboBox();
-            groupBox1 = new GroupBox();
-            labelAddress = new Label();
-            label4 = new Label();
-            labelEmail = new Label();
-            labele = new Label();
-            labelAge = new Label();
-            label3 = new Label();
+            textSearch = new TextBox();
             ((System.ComponentModel.ISupportInitialize)studentGrid).BeginInit();
-            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // studentGrid
@@ -62,17 +56,21 @@
             dataGridViewCellStyle1.Padding = new Padding(5);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             studentGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            studentGrid.BackgroundColor = Color.WhiteSmoke;
+            studentGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            studentGrid.BackgroundColor = Color.White;
+            studentGrid.BorderStyle = BorderStyle.None;
+            studentGrid.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.Orchid;
             dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Orchid;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             studentGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             studentGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             studentGrid.Columns.AddRange(new DataGridViewColumn[] { date, courseName, teacherId, sessionNo, status });
+
             studentGrid.Location = new Point(66, 254);
             studentGrid.Margin = new Padding(3, 2, 3, 2);
             studentGrid.Name = "studentGrid";
@@ -81,80 +79,97 @@
             dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             studentGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
             studentGrid.Size = new Size(699, 236);
+
             studentGrid.TabIndex = 0;
             // 
             // date
             // 
+            date.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             date.HeaderText = "Date";
             date.MinimumWidth = 6;
             date.Name = "date";
-            date.Width = 125;
             // 
             // courseName
             // 
+            courseName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             courseName.HeaderText = "Course Name";
             courseName.MinimumWidth = 6;
             courseName.Name = "courseName";
-            courseName.Width = 170;
             // 
             // teacherId
             // 
+            teacherId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             teacherId.HeaderText = "Teacher ID";
             teacherId.MinimumWidth = 6;
             teacherId.Name = "teacherId";
-            teacherId.Width = 125;
             // 
             // sessionNo
             // 
+            sessionNo.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             sessionNo.HeaderText = "Session No";
             sessionNo.MinimumWidth = 6;
             sessionNo.Name = "sessionNo";
-            sessionNo.Width = 125;
             // 
             // status
             // 
+            status.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             status.HeaderText = "Attendance Status";
             status.MinimumWidth = 6;
             status.Name = "status";
-            status.Width = 200;
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ButtonHighlight;
+
             label1.Location = new Point(374, 39);
             label1.Name = "label1";
             label1.Size = new Size(60, 15);
+
             label1.TabIndex = 1;
-            label1.Text = "Welcome ";
+            label1.Text = "Welcome Back:";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // labelName
             // 
+            labelName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             labelName.AutoSize = true;
+
             labelName.Location = new Point(444, 39);
             labelName.Name = "labelName";
             labelName.Size = new Size(37, 15);
+
             labelName.TabIndex = 2;
             labelName.Text = "name";
+            labelName.TextAlign = ContentAlignment.TopCenter;
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.BackColor = SystemColors.ControlLightLight;
+
             label2.Location = new Point(88, 34);
             label2.Name = "label2";
             label2.Size = new Size(48, 15);
+
             label2.TabIndex = 3;
             label2.Text = "Your ID:";
+            label2.TextAlign = ContentAlignment.TopCenter;
             // 
             // labelID
             // 
+            labelID.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             labelID.AutoSize = true;
+
             labelID.Location = new Point(145, 34);
             labelID.Name = "labelID";
             labelID.Size = new Size(17, 15);
+
             labelID.TabIndex = 4;
             labelID.Text = "id";
+            labelID.TextAlign = ContentAlignment.TopCenter;
             // 
             // comStudentFilter
             // 
@@ -252,12 +267,14 @@
             Controls.Add(label1);
             Controls.Add(labelName);
             Margin = new Padding(3, 2, 3, 2);
+
             Name = "StudentForm";
+            Padding = new Padding(0, 5, 60, 20);
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "StudentForm";
+            WindowState = FormWindowState.Maximized;
             Load += StudentForm_Load;
             ((System.ComponentModel.ISupportInitialize)studentGrid).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -269,18 +286,11 @@
         private Label labelName;
         private Label label2;
         private Label labelID;
-        private ComboBox comStudentFilter;
+        private TextBox textSearch;
         private DataGridViewTextBoxColumn date;
         private DataGridViewTextBoxColumn courseName;
         private DataGridViewTextBoxColumn teacherId;
         private DataGridViewTextBoxColumn sessionNo;
         private DataGridViewTextBoxColumn status;
-        private GroupBox groupBox1;
-        private Label labele;
-        private Label labelAge;
-        private Label label3;
-        private Label labelAddress;
-        private Label label4;
-        private Label labelEmail;
     }
 }
