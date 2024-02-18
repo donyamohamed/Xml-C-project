@@ -10,7 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Attendance_Management_System.classes.CourseParser;
+using static Attendance_Management_System.classes.User;
 using Microsoft.VisualBasic.Logging;
+using System.Reflection.Emit;
+
 
 namespace Attendance_Management_System.Forms
 {
@@ -36,8 +39,10 @@ namespace Attendance_Management_System.Forms
 
         public TeacherForm()
         {
-            // get list of courses by CourseParser
-            List<Course> Courses = ParseCourses("../../../../courses.xml");
+
+
+
+
             InitializeComponent();
         }
 
@@ -54,9 +59,77 @@ namespace Attendance_Management_System.Forms
         private void buttonMyCourses_Click(object sender, EventArgs e)
         {
             // get list of meTeacher's courses by Teacher.getCoursesIDbyTeacherID
-           MessageBox.Show("You are teaching the following courses: ");
+            MessageBox.Show("You are teaching the following courses: ");
 
             FormLogin.meTeacher.getCoursesIDbyTeacherID(FormLogin.meTeacher.Id);
+        }
+
+        private void TeacherForm_Load(object sender, EventArgs e)
+        {
+            // get list of courses by CourseParser
+            // List<Course> Courses = ParseCourses("../../../../courses.xml");
+            // FormLogin.meTeacher;
+            labelID.Text = FormLogin.meTeacher.Id.ToString();
+            labelAge.Text = FormLogin.meTeacher.Age.ToString();
+            labelEmail.Text = FormLogin.meTeacher.Email.ToString();
+            // labelPhoneNmber.Text = FormLogin.meTeacher.Phone.ToString();
+            textBoxPhoneNumber.Text = FormLogin.meTeacher.Phone.ToString();
+            textBoxAddress.Text = FormLogin.meTeacher.Address.ToString();
+            textBoxAddress.ReadOnly = true;
+            labelTeacher_Name.Text = FormLogin.meTeacher.FirstName.ToString() + " " + FormLogin.meTeacher.LastName.ToString();
+
+            listBoxCourses.Text = FormLogin.meTeacher.getCoursesIDbyTeacherID(FormLogin.meTeacher.Id).ToString();
+
+        }
+
+        private void buttonEditYourData_Click(object sender, EventArgs e)
+        {
+            if (buttonEditYourData.Text == "Edit Your Data")
+            {
+                buttonEditYourData.Text = "Save Your Data";
+                textBoxAddress.ReadOnly = false;
+                textBoxAddress.BorderStyle = BorderStyle.FixedSingle;
+                textBoxPhoneNumber.ReadOnly = false;
+                textBoxPhoneNumber.BorderStyle = BorderStyle.FixedSingle;
+
+                labelID.Visible = false;
+            }
+            else if (buttonEditYourData.Text == "Save Your Data")
+            {
+                buttonEditYourData.Text = "Edit Your Data";
+                textBoxAddress.ReadOnly = true;
+                textBoxAddress.BorderStyle = BorderStyle.None;
+                textBoxPhoneNumber.ReadOnly = false;
+                textBoxPhoneNumber.BorderStyle = BorderStyle.None;
+                labelID.Visible = true;
+
+                FormLogin.meTeacher.changeTeacherData(
+                    FormLogin.meTeacher.FirstName,
+                    FormLogin.meTeacher.LastName,
+                    FormLogin.meTeacher.Age,
+                    FormLogin.meTeacher.Email,
+                    FormLogin.meTeacher.Password,
+                    textBoxPhoneNumber.Text,
+                    textBoxAddress.Text
+                    );
+            }
+
+
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            textBoxPhoneNumber.Text = FormLogin.meTeacher.Phone.ToString();
+            textBoxAddress.Text = FormLogin.meTeacher.Address.ToString();
+            textBoxAddress.ReadOnly = true;
+
+            buttonEditYourData.Text = "Edit Your Data";
+            textBoxAddress.ReadOnly = true;
+            textBoxAddress.BorderStyle = BorderStyle.None;
+            textBoxPhoneNumber.ReadOnly = false;
+            textBoxPhoneNumber.BorderStyle = BorderStyle.None;
+            labelID.Visible = true;
+
         }
     }
 }
