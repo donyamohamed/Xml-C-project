@@ -9,7 +9,7 @@ using System.Xml.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Attendance_Management_System.classes.CourseParser;
+// using static Attendance_Management_System.classes.CourseParser;
 using static Attendance_Management_System.classes.User;
 using Microsoft.VisualBasic.Logging;
 using System.Reflection.Emit;
