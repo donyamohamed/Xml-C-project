@@ -66,6 +66,7 @@ namespace Attendance_Management_System.Forms
 
         private void TeacherForm_Load(object sender, EventArgs e)
         {
+
             // get list of courses by CourseParser
             // List<Course> Courses = ParseCourses("../../../../courses.xml");
             // FormLogin.meTeacher;
@@ -129,6 +130,7 @@ namespace Attendance_Management_System.Forms
             textBoxPhoneNumber.ReadOnly = false;
             textBoxPhoneNumber.BorderStyle = BorderStyle.None;
             labelID.Visible = true;
+
 
         }
     }
