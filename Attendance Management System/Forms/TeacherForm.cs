@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 // using static Attendance_Management_System.classes.CourseParser;
 using static Attendance_Management_System.classes.User;
+using static Attendance_Management_System.classes.Teacher;
+using static Attendance_Management_System.classes.Course;
+using static Attendance_Management_System.classes.RenderTable;
 using Microsoft.VisualBasic.Logging;
 using System.Reflection.Emit;
 
@@ -19,7 +22,9 @@ namespace Attendance_Management_System.Forms
 {
     public partial class TeacherForm : Form
     {
-
+        public static List<string> myCourses = getCoursesIDbyTeacherID(FormLogin.meTeacher.Id);
+        public static List<Course> myCoursesObj = getListofCourse(myCourses);
+        // public static List<Course> myCoursesObj = getCourseByID()
         /*IEnumerable<string> meTeacher = from user in XDocument.Load("../../../../users.xml").Descendants("Users")
                                          where user.Element("id").Value == FormLogin.meTeacher.Id
                                         select user.Element("id").Value;
@@ -61,11 +66,24 @@ namespace Attendance_Management_System.Forms
             // get list of meTeacher's courses by Teacher.getCoursesIDbyTeacherID
             MessageBox.Show("You are teaching the following courses: ");
 
-            FormLogin.meTeacher.getCoursesIDbyTeacherID(FormLogin.meTeacher.Id);
+            getCoursesIDbyTeacherID(FormLogin.meTeacher.Id);
         }
 
         private void TeacherForm_Load(object sender, EventArgs e)
         {
+            dataGridViewCourses.DataSource = RenderDateTable(myCoursesObj);
+            //dataGridViewCourses.DataSource = RenderDateTable(Program.courses);
+            // DataTable table = new DataTable();
+            // table.Columns.Add("ID", typeof(string));
+            // table.Columns.Add("Name", typeof(string));
+            // table.Columns.Add("Description", typeof(string));
+            // table.Columns.Add("Number of Sessions", typeof(int));
+            // foreach (var course in myCoursesObj)
+            // {
+            //     table.Rows.Add(course.Id, course.Name, course.Description, course.Numberofsessions);
+            // }
+            // dataGridViewCourses.DataSource = table;
+
             // get list of courses by CourseParser
             // List<Course> Courses = ParseCourses("../../../../courses.xml");
             // FormLogin.meTeacher;
@@ -78,7 +96,8 @@ namespace Attendance_Management_System.Forms
             textBoxAddress.ReadOnly = true;
             labelTeacher_Name.Text = FormLogin.meTeacher.FirstName.ToString() + " " + FormLogin.meTeacher.LastName.ToString();
 
-            listBoxCourses.Text = FormLogin.meTeacher.getCoursesIDbyTeacherID(FormLogin.meTeacher.Id).ToString();
+            // listBoxCourses.DataSource = FormLogin.meTeacher.getCoursesIDbyTeacherID(FormLogin.meTeacher.Id).ToString();
+            listBoxCourses.DataSource = myCourses;
 
         }
 
@@ -131,5 +150,6 @@ namespace Attendance_Management_System.Forms
             labelID.Visible = true;
 
         }
+
     }
 }

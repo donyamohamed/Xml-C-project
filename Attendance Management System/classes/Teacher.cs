@@ -77,25 +77,28 @@ namespace Attendance_Management_System.classes
         {
             return $"Teacher - {base.ToString()}";
         }
-        public List<string> getCoursesIDbyTeacherID(string TID)
+
+        public static Teacher getTeacherByTeacherID(string TID)
         {
-            List<string> teacherCourses = new List<string>();
-            /*
-            foreach (XElement course in XDocument.Load("../../../../class.xml").Descendants("Classes"))
+            Teacher teacher = new Teacher();
+            foreach (Teacher teach in Program.users)
             {
-                if (course.Element("teacherId").Value == TID)
+                if (teach.Id == TID)
                 {
-                    teacherCourses.Add(course.Element("courseId").Value);
-                    MessageBox.Show(course.Element("courseId").Value);
+                    teacher = teach;
                 }
             }
-            */
+            return teacher;
+        }
+        public static List<string> getCoursesIDbyTeacherID(string TID)
+        {
+            List<string> teacherCourses = new List<string>();
             foreach (Class claSS in Program.claSSes)
             {
                 if (claSS.TeacherId == TID)
                 {
                     teacherCourses.Add(claSS.CourseId);
-                    MessageBox.Show(claSS.CourseId);
+                    // MessageBox.Show(claSS.CourseId);
                 }
             }
             

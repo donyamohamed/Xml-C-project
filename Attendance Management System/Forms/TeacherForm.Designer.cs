@@ -36,6 +36,9 @@
             labelWellcome = new Label();
             labelTeacher_Name = new Label();
             groupBoxProfileData = new GroupBox();
+            listBoxCourses = new ListBox();
+            labelYourCourses = new Label();
+            buttonCancel = new Button();
             textBoxPhoneNumber = new TextBox();
             textBoxAddress = new TextBox();
             buttonEditYourData = new Button();
@@ -49,12 +52,18 @@
             labelID = new Label();
             pictureBox1 = new PictureBox();
             buttonMyCourses = new Button();
-            listBoxCourses = new ListBox();
-            buttonCancel = new Button();
+            dataGridViewCourses = new DataGridView();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            descriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            numberofsessionsDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            courseBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).BeginInit();
             groupBoxProfileData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCourses).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)courseBindingSource).BeginInit();
             SuspendLayout();
             // 
             // pictureBoxMinimize
@@ -110,6 +119,8 @@
             // groupBoxProfileData
             // 
             groupBoxProfileData.BackColor = Color.MediumOrchid;
+            groupBoxProfileData.Controls.Add(listBoxCourses);
+            groupBoxProfileData.Controls.Add(labelYourCourses);
             groupBoxProfileData.Controls.Add(buttonCancel);
             groupBoxProfileData.Controls.Add(textBoxPhoneNumber);
             groupBoxProfileData.Controls.Add(textBoxAddress);
@@ -127,10 +138,41 @@
             groupBoxProfileData.Margin = new Padding(3, 2, 3, 2);
             groupBoxProfileData.Name = "groupBoxProfileData";
             groupBoxProfileData.Padding = new Padding(3, 2, 3, 2);
-            groupBoxProfileData.Size = new Size(684, 148);
+            groupBoxProfileData.Size = new Size(1176, 148);
             groupBoxProfileData.TabIndex = 0;
             groupBoxProfileData.TabStop = false;
             groupBoxProfileData.Text = "Profile Data";
+            // 
+            // listBoxCourses
+            // 
+            listBoxCourses.FormattingEnabled = true;
+            listBoxCourses.ItemHeight = 21;
+            listBoxCourses.Location = new Point(830, 22);
+            listBoxCourses.Name = "listBoxCourses";
+            listBoxCourses.Size = new Size(120, 88);
+            listBoxCourses.TabIndex = 5;
+            // 
+            // labelYourCourses
+            // 
+            labelYourCourses.AutoSize = true;
+            labelYourCourses.ForeColor = Color.White;
+            labelYourCourses.Location = new Point(690, 22);
+            labelYourCourses.Name = "labelYourCourses";
+            labelYourCourses.Size = new Size(118, 21);
+            labelYourCourses.TabIndex = 8;
+            labelYourCourses.Text = "Your Courses: ";
+            // 
+            // buttonCancel
+            // 
+            buttonCancel.BackColor = Color.Red;
+            buttonCancel.ForeColor = Color.White;
+            buttonCancel.Location = new Point(532, 99);
+            buttonCancel.Name = "buttonCancel";
+            buttonCancel.Size = new Size(131, 36);
+            buttonCancel.TabIndex = 2;
+            buttonCancel.Text = "Cancel";
+            buttonCancel.UseVisualStyleBackColor = false;
+            buttonCancel.Click += buttonCancel_Click;
             // 
             // textBoxPhoneNumber
             // 
@@ -252,7 +294,7 @@
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(781, 173);
+            pictureBox1.Location = new Point(781, 270);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(342, 350);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -262,7 +304,7 @@
             // buttonMyCourses
             // 
             buttonMyCourses.BackColor = Color.Green;
-            buttonMyCourses.Location = new Point(126, 308);
+            buttonMyCourses.Location = new Point(18, 659);
             buttonMyCourses.Name = "buttonMyCourses";
             buttonMyCourses.Size = new Size(239, 78);
             buttonMyCourses.TabIndex = 4;
@@ -270,26 +312,46 @@
             buttonMyCourses.UseVisualStyleBackColor = false;
             buttonMyCourses.Click += buttonMyCourses_Click;
             // 
-            // listBoxCourses
+            // dataGridViewCourses
             // 
-            listBoxCourses.FormattingEnabled = true;
-            listBoxCourses.ItemHeight = 21;
-            listBoxCourses.Location = new Point(468, 334);
-            listBoxCourses.Name = "listBoxCourses";
-            listBoxCourses.Size = new Size(120, 88);
-            listBoxCourses.TabIndex = 5;
+            dataGridViewCourses.AllowUserToOrderColumns = true;
+            dataGridViewCourses.AutoGenerateColumns = false;
+            dataGridViewCourses.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCourses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCourses.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, descriptionDataGridViewTextBoxColumn, numberofsessionsDataGridViewTextBoxColumn });
+            dataGridViewCourses.DataSource = courseBindingSource;
+            dataGridViewCourses.Location = new Point(12, 270);
+            dataGridViewCourses.Name = "dataGridViewCourses";
+            dataGridViewCourses.Size = new Size(628, 150);
+            dataGridViewCourses.TabIndex = 5;
             // 
-            // buttonCancel
+            // idDataGridViewTextBoxColumn
             // 
-            buttonCancel.BackColor = Color.Red;
-            buttonCancel.ForeColor = Color.White;
-            buttonCancel.Location = new Point(532, 99);
-            buttonCancel.Name = "buttonCancel";
-            buttonCancel.Size = new Size(131, 36);
-            buttonCancel.TabIndex = 2;
-            buttonCancel.Text = "Cancel";
-            buttonCancel.UseVisualStyleBackColor = false;
-            buttonCancel.Click += buttonCancel_Click;
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // numberofsessionsDataGridViewTextBoxColumn
+            // 
+            numberofsessionsDataGridViewTextBoxColumn.DataPropertyName = "Numberofsessions";
+            numberofsessionsDataGridViewTextBoxColumn.HeaderText = "Numberofsessions";
+            numberofsessionsDataGridViewTextBoxColumn.Name = "numberofsessionsDataGridViewTextBoxColumn";
+            // 
+            // courseBindingSource
+            // 
+            courseBindingSource.DataSource = typeof(classes.Course);
             // 
             // TeacherForm
             // 
@@ -297,7 +359,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1200, 749);
-            Controls.Add(listBoxCourses);
+            Controls.Add(dataGridViewCourses);
             Controls.Add(buttonMyCourses);
             Controls.Add(pictureBox1);
             Controls.Add(groupBoxProfileData);
@@ -319,6 +381,8 @@
             groupBoxProfileData.ResumeLayout(false);
             groupBoxProfileData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCourses).EndInit();
+            ((System.ComponentModel.ISupportInitialize)courseBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -347,5 +411,12 @@
         private TextBox textBoxAddress;
         private TextBox textBoxPhoneNumber;
         private Button buttonCancel;
+        private Label labelYourCourses;
+        private DataGridView dataGridViewCourses;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn numberofsessionsDataGridViewTextBoxColumn;
+        private BindingSource courseBindingSource;
     }
 }
