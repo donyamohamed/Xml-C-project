@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-/*
+
 namespace Attendance_Management_System.classes
 {
     public static class CourseParser
@@ -31,4 +31,3 @@ namespace Attendance_Management_System.classes
         }
     }
 }
-*/
