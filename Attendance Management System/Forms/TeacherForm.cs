@@ -54,9 +54,14 @@ namespace Attendance_Management_System.Forms
         private void buttonMyCourses_Click(object sender, EventArgs e)
         {
             // get list of meTeacher's courses by Teacher.getCoursesIDbyTeacherID
-           MessageBox.Show("You are teaching the following courses: ");
+            MessageBox.Show("You are teaching the following courses: ");
 
             FormLogin.meTeacher.getCoursesIDbyTeacherID(FormLogin.meTeacher.Id);
+        }
+
+        private void TeacherForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
