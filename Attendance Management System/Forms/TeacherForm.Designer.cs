@@ -101,7 +101,7 @@
             labelWellcome.ForeColor = Color.Purple;
             labelWellcome.Location = new Point(48, 39);
             labelWellcome.Name = "labelWellcome";
-            labelWellcome.Size = new Size(220, 50);
+            labelWellcome.Size = new Size(271, 62);
             labelWellcome.TabIndex = 0;
             labelWellcome.Text = "Wellcome";
             // 
@@ -112,7 +112,7 @@
             labelTeacher_Name.ForeColor = Color.Purple;
             labelTeacher_Name.Location = new Point(274, 39);
             labelTeacher_Name.Name = "labelTeacher_Name";
-            labelTeacher_Name.Size = new Size(320, 50);
+            labelTeacher_Name.Size = new Size(397, 62);
             labelTeacher_Name.TabIndex = 0;
             labelTeacher_Name.Text = "Teacher_Name";
             // 
@@ -226,7 +226,7 @@
             labelTID.ForeColor = Color.White;
             labelTID.Location = new Point(6, 33);
             labelTID.Name = "labelTID";
-            labelTID.Size = new Size(35, 21);
+            labelTID.Size = new Size(41, 23);
             labelTID.TabIndex = 1;
             labelTID.Text = "ID: ";
             // 
@@ -236,7 +236,7 @@
             labelTAddress.ForeColor = Color.White;
             labelTAddress.Location = new Point(6, 66);
             labelTAddress.Name = "labelTAddress";
-            labelTAddress.Size = new Size(76, 21);
+            labelTAddress.Size = new Size(93, 23);
             labelTAddress.TabIndex = 0;
             labelTAddress.Text = "Address:";
             // 
@@ -255,7 +255,7 @@
             labelTEmail.ForeColor = Color.White;
             labelTEmail.Location = new Point(201, 33);
             labelTEmail.Name = "labelTEmail";
-            labelTEmail.Size = new Size(55, 21);
+            labelTEmail.Size = new Size(67, 23);
             labelTEmail.TabIndex = 0;
             labelTEmail.Text = "Email:";
             // 
@@ -265,7 +265,7 @@
             labelAge.ForeColor = Color.White;
             labelAge.Location = new Point(457, 33);
             labelAge.Name = "labelAge";
-            labelAge.Size = new Size(42, 21);
+            labelAge.Size = new Size(50, 23);
             labelAge.TabIndex = 0;
             labelAge.Text = "age";
             // 
@@ -275,7 +275,7 @@
             labelTAge.ForeColor = Color.White;
             labelTAge.Location = new Point(403, 33);
             labelTAge.Name = "labelTAge";
-            labelTAge.Size = new Size(48, 21);
+            labelTAge.Size = new Size(56, 23);
             labelTAge.TabIndex = 0;
             labelTAge.Text = "Age:";
             // 
@@ -285,7 +285,7 @@
             labelID.ForeColor = Color.White;
             labelID.Location = new Point(47, 33);
             labelID.Name = "labelID";
-            labelID.Size = new Size(24, 21);
+            labelID.Size = new Size(27, 23);
             labelID.TabIndex = 0;
             labelID.Text = "id";
             // 
@@ -355,7 +355,7 @@
             // 
             // TeacherForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1200, 749);
