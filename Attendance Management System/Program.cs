@@ -27,7 +27,8 @@ namespace Attendance_Management_System.Forms
             // see https://aka.ms/applicationconfiguration.
 
             ApplicationConfiguration.Initialize();
-            Application.Run(new StudentForm());
+           // Application.Run(new StudentForm());
+            Application.Run(new FormLogin());
 
 
             /*

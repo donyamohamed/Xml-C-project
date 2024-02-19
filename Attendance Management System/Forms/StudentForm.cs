@@ -4,32 +4,30 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Threading;
 
 namespace Attendance_Management_System.Forms
 {
     public partial class StudentForm : Form
     {
-        List<User> users;
-        List<Student> students;
+        private string selectedLanguage;
         Student loggedUser;
-        private List<(string date, string courseName, string teacherId,int sessionNumber, int status)> sessionData = new List<(string date, string courseName, string teacherId,int sessionNumber, int status)>();
+        private List<(string date, string courseName, string teacherId, int sessionNumber, int status)> sessionData = new List<(string date, string courseName, string teacherId, int sessionNumber, int status)>();
 
         public StudentForm()
         {
+
             InitializeComponent();
-            users = UserParser.ParseUsers("../../../../users.xml");
-            students = users.Where(u => u.Role == "student").Select(u => u as Student).ToList();
-            if (students.Any())
-            {
-                loggedUser = students.First();
-                LoadSessionDataForUser(loggedUser.Id);
-                PopulateDataGridView();
-            }
+
+            loggedUser = FormLogin.meStudent;
+            LoadSessionDataForUser(loggedUser.Id);
+            PopulateDataGridView();
             textSearch.TextChanged += txtSearch_TextChanged;
 
         }
@@ -38,16 +36,15 @@ namespace Attendance_Management_System.Forms
         {
             if (loggedUser != null)
             {
-                labelName.Text = loggedUser.FirstName+" "+loggedUser.LastName +"  ^_^";
-                labelID.Text = loggedUser.Id;
-     
+                labelName.Text = $"{loggedUser.FirstName}  {loggedUser.LastName}   ^_^";
+                labStdId.Text = loggedUser.Id;
+
             }
         }
 
         //get data for ---> this user id
         private void LoadSessionDataForUser(string userId)
         {
-        
             XmlDocument classesDoc = new XmlDocument();
             classesDoc.Load("../../../../class.xml");
 
@@ -55,9 +52,12 @@ namespace Attendance_Management_System.Forms
             XmlDocument coursesDoc = new XmlDocument();
             coursesDoc.Load("../../../../courses.xml");
 
+
+            //dynamic classesDoc = Program.claSSes;
+            //  dynamic coursesDoc = Program.courses;
+
             XmlNodeList classNodes = classesDoc.SelectNodes($"//class[studentId/@id='{userId}']");
 
-         
             foreach (XmlNode classNode in classNodes)
             {
                 string courseId = classNode.SelectSingleNode("courseId").InnerText;
@@ -66,19 +66,18 @@ namespace Attendance_Management_System.Forms
                 //get course name
                 XmlNode courseNode = coursesDoc.SelectSingleNode($"//course[courseId='{courseId}']");
                 string courseName = courseNode.SelectSingleNode("courseName").InnerText;
-             
 
                 XmlNodeList sessionNodes = classNode.SelectNodes($"studentId[@id='{userId}']/session");
-                int sessionNumber = 1; 
+                int sessionNumber = 1;
                 foreach (XmlNode sessionNode in sessionNodes)
                 {
                     string date = sessionNode.SelectSingleNode("date").InnerText;
                     int status = int.Parse(sessionNode.SelectSingleNode("status").InnerText);
 
-                
+
                     sessionData.Add((date, courseName, teacherId, sessionNumber, status));
 
-                   
+
                     sessionNumber++;
                 }
             }
@@ -86,10 +85,10 @@ namespace Attendance_Management_System.Forms
 
         private void PopulateDataGridView()
         {
-            string attendanceStatus="";
+            string attendanceStatus = "";
             foreach (var session in sessionData)
             {
-               
+
                 switch (session.status)
                 {
                     case -1:
@@ -101,9 +100,9 @@ namespace Attendance_Management_System.Forms
                     case 1:
                         attendanceStatus = "Attend";
                         break;
-      
+
                 }
-                studentGrid.Rows.Add(session.date, session.courseName, session.teacherId,session.sessionNumber, attendanceStatus);
+                studentGrid.Rows.Add(session.date, session.courseName, session.teacherId, session.sessionNumber, attendanceStatus);
             }
         }
         //end poplateData grid
@@ -126,26 +125,82 @@ namespace Attendance_Management_System.Forms
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            string searchText = textSearch.Text.ToLower(); 
+            string searchText = textSearch.Text.ToLower();
 
-          
+
             studentGrid.Rows.Clear();
 
-          
+
             var filteredSessions = sessionData.Where(session =>
                 session.date.ToLower().Contains(searchText) ||
                 session.courseName.ToLower().Contains(searchText) ||
                 session.teacherId.ToLower().Contains(searchText) ||
                 session.sessionNumber.ToString().Contains(searchText) ||
-                GetAttendanceStatusString(session.status).ToLower().Contains(searchText) 
+                GetAttendanceStatusString(session.status).ToLower().Contains(searchText)
             );
 
             //  filtered data
             foreach (var session in filteredSessions)
             {
-                string attendanceStatus = GetAttendanceStatusString(session.status); 
+                string attendanceStatus = GetAttendanceStatusString(session.status);
                 studentGrid.Rows.Add(session.date, session.courseName, session.teacherId, session.sessionNumber, attendanceStatus);
             }
+        }
+
+       
+      
+
+        private void pictureBoxClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void pictureBoxMinm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxLang_Click(object sender, EventArgs e)
+        {
+            string newCulture;
+
+            if (lang.Text == "en")
+            {
+                lang.Text = "ar";
+                newCulture = "en";
+               
+            }
+            else
+            {
+                lang.Text = "en";
+                newCulture = "ar";
+            }
+
+            // Change the current UI culture
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(newCulture);
+
+       
+
+
+            // Update the UI
+            UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
+
+            labelName.Text = $"{loggedUser.FirstName}  {loggedUser.LastName}   ^_^";
+         labStdId.Text = loggedUser.Id;
+
+
+            studentGrid.Rows.Clear();
+
+
+            sessionData.Clear();
+            LoadSessionDataForUser(loggedUser.Id);
+
+
+            PopulateDataGridView();
         }
     }
 }
