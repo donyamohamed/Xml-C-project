@@ -36,8 +36,11 @@
             labelWellcome = new Label();
             labelTeacher_Name = new Label();
             groupBoxProfileData = new GroupBox();
+            textBoxPhoneNumber = new TextBox();
+            textBoxAddress = new TextBox();
+            buttonEditYourData = new Button();
+            labelPhone = new Label();
             labelTID = new Label();
-            labelAddress = new Label();
             labelTAddress = new Label();
             labelEmail = new Label();
             labelTEmail = new Label();
@@ -46,6 +49,8 @@
             labelID = new Label();
             pictureBox1 = new PictureBox();
             buttonMyCourses = new Button();
+            listBoxCourses = new ListBox();
+            buttonCancel = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).BeginInit();
             groupBoxProfileData.SuspendLayout();
@@ -87,7 +92,7 @@
             labelWellcome.ForeColor = Color.Purple;
             labelWellcome.Location = new Point(48, 39);
             labelWellcome.Name = "labelWellcome";
-            labelWellcome.Size = new Size(220, 50);
+            labelWellcome.Size = new Size(271, 62);
             labelWellcome.TabIndex = 0;
             labelWellcome.Text = "Wellcome";
             // 
@@ -98,15 +103,19 @@
             labelTeacher_Name.ForeColor = Color.Purple;
             labelTeacher_Name.Location = new Point(274, 39);
             labelTeacher_Name.Name = "labelTeacher_Name";
-            labelTeacher_Name.Size = new Size(320, 50);
+            labelTeacher_Name.Size = new Size(397, 62);
             labelTeacher_Name.TabIndex = 0;
             labelTeacher_Name.Text = "Teacher_Name";
             // 
             // groupBoxProfileData
             // 
             groupBoxProfileData.BackColor = Color.MediumOrchid;
+            groupBoxProfileData.Controls.Add(buttonCancel);
+            groupBoxProfileData.Controls.Add(textBoxPhoneNumber);
+            groupBoxProfileData.Controls.Add(textBoxAddress);
+            groupBoxProfileData.Controls.Add(buttonEditYourData);
+            groupBoxProfileData.Controls.Add(labelPhone);
             groupBoxProfileData.Controls.Add(labelTID);
-            groupBoxProfileData.Controls.Add(labelAddress);
             groupBoxProfileData.Controls.Add(labelTAddress);
             groupBoxProfileData.Controls.Add(labelEmail);
             groupBoxProfileData.Controls.Add(labelTEmail);
@@ -118,10 +127,56 @@
             groupBoxProfileData.Margin = new Padding(3, 2, 3, 2);
             groupBoxProfileData.Name = "groupBoxProfileData";
             groupBoxProfileData.Padding = new Padding(3, 2, 3, 2);
-            groupBoxProfileData.Size = new Size(582, 122);
+            groupBoxProfileData.Size = new Size(684, 148);
             groupBoxProfileData.TabIndex = 0;
             groupBoxProfileData.TabStop = false;
             groupBoxProfileData.Text = "Profile Data";
+            // 
+            // textBoxPhoneNumber
+            // 
+            textBoxPhoneNumber.BackColor = Color.MediumOrchid;
+            textBoxPhoneNumber.BorderStyle = BorderStyle.None;
+            textBoxPhoneNumber.Location = new Point(456, 66);
+            textBoxPhoneNumber.Multiline = true;
+            textBoxPhoneNumber.Name = "textBoxPhoneNumber";
+            textBoxPhoneNumber.PlaceholderText = "Your Phone NUmber ...";
+            textBoxPhoneNumber.ReadOnly = true;
+            textBoxPhoneNumber.Size = new Size(218, 21);
+            textBoxPhoneNumber.TabIndex = 7;
+            // 
+            // textBoxAddress
+            // 
+            textBoxAddress.BackColor = Color.MediumOrchid;
+            textBoxAddress.BorderStyle = BorderStyle.None;
+            textBoxAddress.Location = new Point(88, 66);
+            textBoxAddress.Multiline = true;
+            textBoxAddress.Name = "textBoxAddress";
+            textBoxAddress.PlaceholderText = "Your Address ...";
+            textBoxAddress.ReadOnly = true;
+            textBoxAddress.Size = new Size(218, 69);
+            textBoxAddress.TabIndex = 6;
+            // 
+            // buttonEditYourData
+            // 
+            buttonEditYourData.BackColor = Color.Green;
+            buttonEditYourData.ForeColor = Color.White;
+            buttonEditYourData.Location = new Point(355, 99);
+            buttonEditYourData.Name = "buttonEditYourData";
+            buttonEditYourData.Size = new Size(171, 36);
+            buttonEditYourData.TabIndex = 1;
+            buttonEditYourData.Text = "Edit Your Data";
+            buttonEditYourData.UseVisualStyleBackColor = false;
+            buttonEditYourData.Click += buttonEditYourData_Click;
+            // 
+            // labelPhone
+            // 
+            labelPhone.AutoSize = true;
+            labelPhone.ForeColor = Color.White;
+            labelPhone.Location = new Point(317, 66);
+            labelPhone.Name = "labelPhone";
+            labelPhone.Size = new Size(134, 21);
+            labelPhone.TabIndex = 2;
+            labelPhone.Text = "Phone Number :";
             // 
             // labelTID
             // 
@@ -129,33 +184,24 @@
             labelTID.ForeColor = Color.White;
             labelTID.Location = new Point(6, 33);
             labelTID.Name = "labelTID";
-            labelTID.Size = new Size(35, 21);
+            labelTID.Size = new Size(41, 23);
             labelTID.TabIndex = 1;
             labelTID.Text = "ID: ";
-            // 
-            // labelAddress
-            // 
-            labelAddress.ForeColor = Color.White;
-            labelAddress.Location = new Point(399, 66);
-            labelAddress.Name = "labelAddress";
-            labelAddress.Size = new Size(183, 21);
-            labelAddress.TabIndex = 0;
-            labelAddress.Text = "add";
             // 
             // labelTAddress
             // 
             labelTAddress.AutoSize = true;
             labelTAddress.ForeColor = Color.White;
-            labelTAddress.Location = new Point(317, 66);
+            labelTAddress.Location = new Point(6, 66);
             labelTAddress.Name = "labelTAddress";
-            labelTAddress.Size = new Size(76, 21);
+            labelTAddress.Size = new Size(93, 23);
             labelTAddress.TabIndex = 0;
             labelTAddress.Text = "Address:";
             // 
             // labelEmail
             // 
             labelEmail.ForeColor = Color.White;
-            labelEmail.Location = new Point(378, 33);
+            labelEmail.Location = new Point(262, 33);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new Size(198, 21);
             labelEmail.TabIndex = 0;
@@ -165,9 +211,9 @@
             // 
             labelTEmail.AutoSize = true;
             labelTEmail.ForeColor = Color.White;
-            labelTEmail.Location = new Point(317, 33);
+            labelTEmail.Location = new Point(201, 33);
             labelTEmail.Name = "labelTEmail";
-            labelTEmail.Size = new Size(55, 21);
+            labelTEmail.Size = new Size(67, 23);
             labelTEmail.TabIndex = 0;
             labelTEmail.Text = "Email:";
             // 
@@ -175,9 +221,9 @@
             // 
             labelAge.AutoSize = true;
             labelAge.ForeColor = Color.White;
-            labelAge.Location = new Point(60, 66);
+            labelAge.Location = new Point(457, 33);
             labelAge.Name = "labelAge";
-            labelAge.Size = new Size(42, 21);
+            labelAge.Size = new Size(50, 23);
             labelAge.TabIndex = 0;
             labelAge.Text = "age";
             // 
@@ -185,9 +231,9 @@
             // 
             labelTAge.AutoSize = true;
             labelTAge.ForeColor = Color.White;
-            labelTAge.Location = new Point(6, 66);
+            labelTAge.Location = new Point(403, 33);
             labelTAge.Name = "labelTAge";
-            labelTAge.Size = new Size(48, 21);
+            labelTAge.Size = new Size(56, 23);
             labelTAge.TabIndex = 0;
             labelTAge.Text = "Age:";
             // 
@@ -197,7 +243,7 @@
             labelID.ForeColor = Color.White;
             labelID.Location = new Point(47, 33);
             labelID.Name = "labelID";
-            labelID.Size = new Size(24, 21);
+            labelID.Size = new Size(27, 23);
             labelID.TabIndex = 0;
             labelID.Text = "id";
             // 
@@ -224,12 +270,34 @@
             buttonMyCourses.UseVisualStyleBackColor = false;
             buttonMyCourses.Click += buttonMyCourses_Click;
             // 
+            // listBoxCourses
+            // 
+            listBoxCourses.FormattingEnabled = true;
+            listBoxCourses.ItemHeight = 21;
+            listBoxCourses.Location = new Point(468, 334);
+            listBoxCourses.Name = "listBoxCourses";
+            listBoxCourses.Size = new Size(120, 88);
+            listBoxCourses.TabIndex = 5;
+            // 
+            // buttonCancel
+            // 
+            buttonCancel.BackColor = Color.Red;
+            buttonCancel.ForeColor = Color.White;
+            buttonCancel.Location = new Point(532, 99);
+            buttonCancel.Name = "buttonCancel";
+            buttonCancel.Size = new Size(131, 36);
+            buttonCancel.TabIndex = 2;
+            buttonCancel.Text = "Cancel";
+            buttonCancel.UseVisualStyleBackColor = false;
+            buttonCancel.Click += buttonCancel_Click;
+            // 
             // TeacherForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1200, 749);
+            Controls.Add(listBoxCourses);
             Controls.Add(buttonMyCourses);
             Controls.Add(pictureBox1);
             Controls.Add(groupBoxProfileData);
@@ -245,6 +313,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TeacherForm";
             WindowState = FormWindowState.Maximized;
+            Load += TeacherForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).EndInit();
             groupBoxProfileData.ResumeLayout(false);
@@ -262,15 +331,21 @@
         private Label labelWellcome;
         private Label labelTeacher_Name;
         private GroupBox groupBoxProfileData;
-        private Label labelAddress;
         private Label labelTAddress;
         private Label labelEmail;
         private Label labelTEmail;
         private Label labelAge;
         private Label labelTAge;
-        private Label labelID;
         private Label labelTID;
         private PictureBox pictureBox1;
         private Button buttonMyCourses;
+        private Label labelPhoneNmber;
+        private Label labelPhone;
+        private Button buttonEditYourData;
+        private Label labelID;
+        private ListBox listBoxCourses;
+        private TextBox textBoxAddress;
+        private TextBox textBoxPhoneNumber;
+        private Button buttonCancel;
     }
 }

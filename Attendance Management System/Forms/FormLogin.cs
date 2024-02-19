@@ -35,8 +35,8 @@ namespace Attendance_Management_System.Forms
     */
     public partial class FormLogin : Form
     {
-        // public static Admin meAdmin = new Admin();
-        // meAdmin is Accessable from any form by FormLogin.meAdmin
+         public static Admin adminUser = new Admin();
+        //meAdmin is Accessable from any form by FormLogin.meAdmin
         public static Teacher meTeacher = new Teacher();
         // meTeacher is Accessable from any form by FormLogin.meTeacher
         public static Student meStudent = new Student();
@@ -123,7 +123,7 @@ namespace Attendance_Management_System.Forms
                 TeacherForm teacherForm = new TeacherForm();
 
                 // open AdminForm
-                // AdminForm adminForm = new AdminForm();
+                AdminForm adminForm = new AdminForm();
 
                 // open the form according to the role of the user
                 foreach (var user in Program.users)
@@ -132,8 +132,8 @@ namespace Attendance_Management_System.Forms
                     {
                         if (user.Role == "admin")
                         {
-                            // adminForm.Show();
-                            // Hide();
+                            adminForm.Show(); // Assuming you have a method to display admin buttons
+                            Hide();
                         }
                         else if (user.Role == "teacher")
                         {
@@ -169,7 +169,7 @@ namespace Attendance_Management_System.Forms
                 {
                     if (user.Role == "admin")
                     {
-                        Admin meAdmin = (Admin)user;
+                        Admin adminUser = (Admin)user;
                         return true;
                     }
                     else if (user.Role == "teacher")
