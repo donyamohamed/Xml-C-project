@@ -12,10 +12,10 @@ namespace Attendance_Management_System.classes
         public string StudentId { get; set; }
         public List<Session> Sessions { get; set; }
 
-        public StudentSessions(string studentId)
+        public StudentSessions(string studentId, List<Session> _Sessions = null)
         {
             StudentId = studentId;
-            Sessions = new List<Session>();
+            Sessions = _Sessions;
         }
     }
 }
