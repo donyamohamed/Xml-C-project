@@ -9,11 +9,12 @@ using System.Xml.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-// using static Attendance_Management_System.classes.CourseParser;
 using static Attendance_Management_System.classes.User;
 using static Attendance_Management_System.classes.Teacher;
 using static Attendance_Management_System.classes.Course;
 using static Attendance_Management_System.classes.RenderTable;
+using static Attendance_Management_System.classes.RenderAttendanceTable;
+using static Attendance_Management_System.classes.Class;
 using Microsoft.VisualBasic.Logging;
 using System.Reflection.Emit;
 
@@ -24,23 +25,9 @@ namespace Attendance_Management_System.Forms
     {
         public static List<string> myCourses = getCoursesIDbyTeacherID(FormLogin.meTeacher.Id);
         public static List<Course> myCoursesObj = getListofCourse(myCourses);
+        public static List<StudentSessions> myStdSessionsObj = getListofStudentSessions(myCourses);
+        public static List<Session> mySessionsObj = getListofSessions(myCourses);
         // public static List<Course> myCoursesObj = getCourseByID()
-        /*IEnumerable<string> meTeacher = from user in XDocument.Load("../../../../users.xml").Descendants("Users")
-                                         where user.Element("id").Value == FormLogin.meTeacher.Id
-                                        select user.Element("id").Value;
-                                          /*
-                                         select new Teacher // ("1", "fname", "lname", 20, "anymail", "123", "010", "address");
-                                          {
-                                              Id = user.Element("id").Value,
-                                              FirstName = user.Element("firstName").Value,
-                                              LastName = user.Element("lastName").Value,
-                                              Age = int.Parse(user.Element("age").Value),
-                                              Email = user.Element("email").Value,
-                                              Password = user.Element("password").Value,
-                                              Phone = user.Element("phone").Value,
-                                              Address = user.Element("address").Value
-                                          };
-                                          */
 
         public TeacherForm()
         {
@@ -64,29 +51,61 @@ namespace Attendance_Management_System.Forms
         private void buttonMyCourses_Click(object sender, EventArgs e)
         {
             // get list of meTeacher's courses by Teacher.getCoursesIDbyTeacherID
-            MessageBox.Show("You are teaching the following courses: ");
-
             getCoursesIDbyTeacherID(FormLogin.meTeacher.Id);
         }
 
         private void TeacherForm_Load(object sender, EventArgs e)
         {
+            //Console.WriteLine(Program.claSSes);
             dataGridViewCourses.DataSource = RenderDateTable(myCoursesObj);
-            //dataGridViewCourses.DataSource = RenderDateTable(Program.courses);
-            // DataTable table = new DataTable();
-            // table.Columns.Add("ID", typeof(string));
-            // table.Columns.Add("Name", typeof(string));
-            // table.Columns.Add("Description", typeof(string));
-            // table.Columns.Add("Number of Sessions", typeof(int));
-            // foreach (var course in myCoursesObj)
-            // {
-            //     table.Rows.Add(course.Id, course.Name, course.Description, course.Numberofsessions);
-            // }
-            // dataGridViewCourses.DataSource = table;
+            // dataGridViewAttendance.DataSource = RenderDateTable(mySessionsObj);
+            dataGridViewDateStatus.DataSource = RenderDateTable(mySessionsObj);
 
-            // get list of courses by CourseParser
-            // List<Course> Courses = ParseCourses("../../../../courses.xml");
-            // FormLogin.meTeacher;
+
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("Stduent ID / Session Date", typeof(string));
+
+            foreach (Session session in mySessionsObj)
+            {
+                string columnName = session.Date.ToString();
+
+                // Check if the column already exists
+                if (!dataTable.Columns.Contains(columnName))
+                {
+                    dataTable.Columns.Add(columnName, typeof(string));
+                }
+            }
+
+            foreach (StudentSessions SS in myStdSessionsObj)
+            {
+                DataRow row = dataTable.NewRow();
+                // make this row red 
+
+
+                row["Stduent ID / Session Date"] = SS.StudentId;
+
+                foreach (Session session in mySessionsObj)
+                {
+                    var matchingSession = SS.Sessions.FirstOrDefault(s => s.Date == session.Date);
+
+                    if (matchingSession != null)
+                    {
+                        row[session.Date.ToString()] = matchingSession.Status == 1 ? "Attend" : "Absent";
+                    }
+                    else
+                    {
+                        // Handle the case where a matching session is not found
+                        row[session.Date.ToString()] = "N/A";
+                    }
+                }
+
+                dataTable.Rows.Add(row);
+            }
+
+            dataGridViewAttendance.DataSource = dataTable;
+
+
+
             labelID.Text = FormLogin.meTeacher.Id.ToString();
             labelAge.Text = FormLogin.meTeacher.Age.ToString();
             labelEmail.Text = FormLogin.meTeacher.Email.ToString();
@@ -152,5 +171,159 @@ namespace Attendance_Management_System.Forms
 
         }
 
+        private void dataGridViewAttendance_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Chagne the Color of the row
+            if (e.RowIndex % 2 == 0)
+            {
+                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
+            }
+            else
+            {
+                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+            }
+            // if cell contains "Absent" then change the color to red 
+            // else if cell contains "Attend" then change the color to green
+            if (e.Value != null && e.Value.ToString() == "Absent")
+            {
+                e.CellStyle.BackColor = Color.Red;
+            }
+            else if (e.Value != null && e.Value.ToString() == "Attend")
+            {
+                e.CellStyle.BackColor = Color.Green;
+            }
+            else
+            {
+                e.CellStyle.BackColor = Color.Orange;
+            }
+        }
+
+        private void dataGridViewCourses_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indexRow = e.RowIndex;
+            DataGridViewRow row = dataGridViewCourses.Rows[indexRow];
+            textBoxCouseID.Text = row.Cells[0].Value.ToString();
+            textBoxCourseName.Text = row.Cells[1].Value.ToString();
+            textBoxCourseDescription.Text = row.Cells[2].Value.ToString();
+            textBoxCourseSessions.Text = row.Cells[3].Value.ToString();
+
+
+
+            // textBoxID.Text = row.Cells[0].Value.ToString();
+            // textBoxName.Text = row.Cells[1].Value.ToString();
+            // textBoxDescription.Text = row.Cells[2].Value.ToString();
+
+        }
+
+        private void dataGridViewDateStatus_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indexRow = e.RowIndex;
+            if (indexRow < 0)
+            {
+                return;
+            }
+            DataGridViewRow row = dataGridViewDateStatus.Rows[indexRow];
+            textBoxDate.Text = row.Cells[0].Value.ToString();
+        }
+
+        private void buttonGenATTTAble_Click(object sender, EventArgs e)
+        {
+            dataGridViewStudentStatus.DataSource = RenderAttTable(textBoxDate.Text, myStdSessionsObj);
+
+        }
+
+        class Obj
+        {
+            public string StudentID { get; set; }
+            public string Status { get; set; }
+            public string Name { get; set; }
+            // constructor
+            public Obj(string studentId, string status, string name)
+            {
+                StudentID = studentId;
+                Status = status;
+                Name = name;
+            }
+
+        }
+
+        List<Obj> selectedStudents = new List<Obj>();
+
+        private void dataGridViewStudentStatus_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indexRow = e.RowIndex;
+            DataGridViewRow row = dataGridViewStudentStatus.Rows[indexRow];
+
+
+            Obj selectedStudent = new Obj(
+                row.Cells[0].Value.ToString(),
+                row.Cells[1].Value.ToString(),
+                row.Cells[2].Value.ToString()
+                );
+
+            if (selectedStudents.Contains(selectedStudent))
+            {
+                // If the student is already in the list, remove them (deselect)
+                selectedStudents.Remove(selectedStudent);
+            }
+            else
+            {
+                // If the student is not in the list, add them (select)
+                selectedStudents.Add(selectedStudent);
+            }
+            // check if the selectedStudents contains the student or not 
+            if (selectedStudents.Count > 0)
+            {
+                buttonAttend.Visible = true;
+                buttonAbsent.Visible = true;
+            }
+            else
+            {
+                buttonAttend.Visible = false;
+                buttonAbsent.Visible = false;
+            }
+        }
+
+        private void buttonAttend_Click(object sender, EventArgs e)
+        {
+            // make the selected students present 
+            foreach (var student in selectedStudents)
+            {
+                student.Status = "Attend";
+                changeStudentAttendance(FormLogin.meTeacher.Id, textBoxCouseID.Text, student.StudentID, Convert.ToDateTime(textBoxDate.Text), 1);
+            }
+            dataGridViewStudentStatus.DataSource = RenderAttTable(textBoxDate.Text, myStdSessionsObj);
+        }
+
+
+        /*
+        private void dataGridViewStudentStatus_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // get list with selected Rows in the dataGridViewStudentStatus 
+            // to change the status of the selected students
+            int indexRow = e.RowIndex;
+
+            if (indexRow < 0)
+            {
+                return;
+            }
+
+            // get the selected row data in a list 
+            // when the user select on the row add to the list
+            // when the user deselect the row remove from the list
+
+            List<Obj> thisStd = new List<Obj>();
+
+            Data
+
+
+            DataGridViewRow row = dataGridViewStudentStatus.Rows[indexRow];
+            textBoxStudentID.Text = row.Cells[0].Value.ToString();
+            textBoxStatus.Text = row.Cells[1].Value.ToString();
+            textBoxName.Text = row.Cells[2].Value.ToString();
+
+
+        }
+        */
     }
 }

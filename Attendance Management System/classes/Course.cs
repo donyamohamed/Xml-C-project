@@ -41,15 +41,24 @@ namespace Attendance_Management_System.classes
             }
             return course;
         }
-        public static List<Course> getListofCourse(List<string> CID)
+        public static List<Course> getListofCourse(List<string> CIDs)
         {
             List<Course> courses = new List<Course>();
             foreach (var cour in Program.courses)
             {
-                if (CID.Contains(cour.Id))
+                foreach (var CID in CIDs)
+                {
+                    if (CID == cour.Id)
+                    {
+                        courses.Add(cour);
+                    }
+                }
+                /*
+                if (CIDs.Contains(cour.Id))
                 {
                     courses.Add(cour);
                 }
+                */
             }
             return courses;
         }

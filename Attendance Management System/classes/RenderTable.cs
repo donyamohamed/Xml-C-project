@@ -12,6 +12,7 @@ namespace Attendance_Management_System.classes
         public static DataTable RenderDateTable<T>(List<T> myList)
         {
             DataTable table = new DataTable();
+            int indexRow;
             foreach (var key in myList.ElementAt(0).GetType().GetProperties())
             {
                 table.Columns.Add(key.Name, key.PropertyType);
@@ -27,30 +28,5 @@ namespace Attendance_Management_System.classes
             }
             return table;
         }
-        /*
-        public static string RenderDataTable(List<string> columns, List<string[]> rows)
-        {
-            string table = "<table class='table table-striped table-bordered table-hover' id='dataTables-example'>";
-            table += "<thead><tr>";
-            foreach (string column in columns)
-            {
-                table += "<th>" + column + "</th>";
-            }
-            table += "</tr></thead>";
-            table += "<tbody>";
-            foreach (string[] row in rows)
-            {
-                table += "<tr>";
-                foreach (string cell in row)
-                {
-                    table += "<td>" + cell + "</td>";
-                }
-                table += "</tr>";
-            }
-            table += "</tbody>";
-            table += "</table>";
-            return table;
-        }
-        */
     }
 }

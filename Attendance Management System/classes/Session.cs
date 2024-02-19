@@ -17,4 +17,5 @@ namespace Attendance_Management_System.classes
             Status = status;
         }
     }
+    
 }
