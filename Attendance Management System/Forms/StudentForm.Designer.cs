@@ -173,10 +173,11 @@
             // butReport
             // 
             resources.ApplyResources(butReport, "butReport");
-            butReport.BackColor = Color.Purple;
+            butReport.BackColor = Color.Orchid;
             butReport.ForeColor = SystemColors.ButtonHighlight;
             butReport.Name = "butReport";
             butReport.UseVisualStyleBackColor = false;
+            butReport.Click += butReport_Click;
             // 
             // lang
             // 
@@ -208,6 +209,7 @@
             pictureBox1.Image = Properties.Resources.Webalys_Kameleon_pics_Student_3_512;
             pictureBox1.Name = "pictureBox1";
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel2
             // 
@@ -258,13 +260,12 @@
             Controls.Add(labelName);
             Name = "StudentForm";
             WindowState = FormWindowState.Maximized;
-//            Load += StudentForm_Load;
+            Load += StudentForm_Load;
             ((System.ComponentModel.ISupportInitialize)studentGrid).EndInit();
             panelCourses.ResumeLayout(false);
             panelCourses.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLang).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinm).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).EndInit();
@@ -281,12 +282,6 @@
         private Label labelID;
         private TextBox textSearch;
         private Button butReport;
-      //  private PictureBox picChangeLangEn;
-        private DataGridViewTextBoxColumn date;
-        private DataGridViewTextBoxColumn courseName;
-        private DataGridViewTextBoxColumn teacherId;
-        private DataGridViewTextBoxColumn sessionNo;
-        private DataGridViewTextBoxColumn status;
         private Label lang;
         private Panel panelCourses;
         private Label labStdId;
@@ -296,5 +291,10 @@
         private PictureBox pictureBoxClose;
         private PictureBox pictureBoxMinm;
         private PictureBox pictureBoxLang;
+        private DataGridViewTextBoxColumn date;
+        private DataGridViewTextBoxColumn courseName;
+        private DataGridViewTextBoxColumn teacherId;
+        private DataGridViewTextBoxColumn sessionNo;
+        private DataGridViewTextBoxColumn status;
     }
 }
