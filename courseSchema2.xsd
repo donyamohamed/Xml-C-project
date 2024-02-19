@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="cIdvalidate">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{1|2}(C)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="namevalidate">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z]{3,}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="integer">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Courses">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="course" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="course" type="CourseType"/>
+	<xs:complexType name="CourseType">
+		<xs:sequence>
+			<xs:element name="courseId" type="cIdvalidate"/>
+			<xs:element name="courseName" type="namevalidate"/>
+			<xs:element name="sessionsNumber" type="integer"/>
+			<xs:element name="description" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

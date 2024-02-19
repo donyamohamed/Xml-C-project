@@ -1,0 +1,44 @@
+# General
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Binaries
+bin/
+obj/
+
+# Visual Studio files
+.vscode/
+.vs/
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.[Cc]ache
+*.ilk
+*.log
+*.dll
+*.exe
+*.pdb
+*.log
+*.ilk
+*.meta
+*_ReSharper*
+
+# Resharper
+resharper/
+*.resharper
+*.sln.idea
+
+# Rider
+.idea/
+*.csproj.user
+*.suo
+*.sln.ide
+*.pidb
+*.userprefs
