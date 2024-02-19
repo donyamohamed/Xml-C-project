@@ -47,7 +47,7 @@
             textSearch = new TextBox();
             butReport = new Button();
             lang = new Label();
-            panel1 = new Panel();
+            panelCourses = new Panel();
             labStdId = new Label();
             label3 = new Label();
             pictureBox1 = new PictureBox();
@@ -56,7 +56,7 @@
             pictureBoxMinm = new PictureBox();
             pictureBoxClose = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)studentGrid).BeginInit();
-            panel1.SuspendLayout();
+            panelCourses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLang).BeginInit();
@@ -183,14 +183,14 @@
             resources.ApplyResources(lang, "lang");
             lang.Name = "lang";
             // 
-            // panel1
+            // panelCourses
             // 
-            resources.ApplyResources(panel1, "panel1");
-            panel1.BackColor = Color.Thistle;
-            panel1.Controls.Add(labStdId);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Name = "panel1";
+            resources.ApplyResources(panelCourses, "panelCourses");
+            panelCourses.BackColor = Color.Thistle;
+            panelCourses.Controls.Add(labStdId);
+            panelCourses.Controls.Add(label3);
+            panelCourses.Controls.Add(pictureBox1);
+            panelCourses.Name = "panelCourses";
             // 
             // labStdId
             // 
@@ -250,7 +250,7 @@
             BackColor = Color.White;
             ControlBox = false;
             Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(panelCourses);
             Controls.Add(butReport);
             Controls.Add(textSearch);
             Controls.Add(studentGrid);
@@ -258,12 +258,13 @@
             Controls.Add(labelName);
             Name = "StudentForm";
             WindowState = FormWindowState.Maximized;
-            Load += StudentForm_Load;
+//            Load += StudentForm_Load;
             ((System.ComponentModel.ISupportInitialize)studentGrid).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panelCourses.ResumeLayout(false);
+            panelCourses.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLang).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinm).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).EndInit();
@@ -287,7 +288,7 @@
         private DataGridViewTextBoxColumn sessionNo;
         private DataGridViewTextBoxColumn status;
         private Label lang;
-        private Panel panel1;
+        private Panel panelCourses;
         private Label labStdId;
         private Label label3;
         private PictureBox pictureBox1;
