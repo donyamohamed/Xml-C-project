@@ -17,13 +17,28 @@ namespace Attendance_Management_System.classes
             doc.Load(filePath);
 
             XmlNodeList classNodes = doc.SelectNodes("//class");
-            foreach (XmlNode node in classNodes)
+            foreach (XmlNode classNode in classNodes)
             {
-                string classId = node.SelectSingleNode("classId").InnerText;
-                string courseId = node.SelectSingleNode("courseId").InnerText;
-                string teacherId = node.SelectSingleNode("teacherId").InnerText;
-
-                classes.Add(new Class(classId, courseId, teacherId));
+                string classId = classNode.SelectSingleNode("classId").InnerText;
+                string courseId = classNode.SelectSingleNode("courseId").InnerText;
+                string teacherId = classNode.SelectSingleNode("teacherId").InnerText;
+                List<StudentSessions> SSlist = new List<StudentSessions>();
+                XmlNodeList studentNodes = classNode.SelectNodes("studentId");
+                foreach (XmlNode studentNode in studentNodes)
+                {
+                    List<Session> sessions = new List<Session>();
+                    XmlNodeList sessionNodes = studentNode.SelectNodes("session");
+                    foreach (XmlNode sessionNode in sessionNodes)
+                    {
+                        Session session = new Session(
+                            DateTime.Parse(sessionNode.SelectSingleNode("date").InnerText),
+                            int.Parse(sessionNode.SelectSingleNode("status").InnerText)
+                        );
+                        sessions.Add(session);
+                    }
+                    SSlist.Add(new StudentSessions(studentNode.Attributes["id"].Value, sessions));
+                }
+                classes.Add(new Class(classId, courseId, teacherId, SSlist));
             }
 
             return classes;

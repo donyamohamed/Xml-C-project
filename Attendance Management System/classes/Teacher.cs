@@ -23,79 +23,32 @@ namespace Attendance_Management_System.classes
 
         public Teacher() : base() { }
 
-
-
-        /*
-        IEnumerable<string> teacherCourses = new List<string>();
-
-        teacherCourses = from course in XDocument.Load("../../../../class.xml").Descendants("Classes")
-                                             where course.Element("teacherId").Value == TID.ToString()
-                                             select course.Element("courseId").Value;
-        return teacherCourses.ToString();
-        */
-
-
-        /*
-        public List<Course> getTeacherCoursesById(string TId)
-        {
-            IEnumerable<Course> teacherCourses = from courseId in XDocument.Load("../../../../class.xml").Descendants("Classes")
-                                                 where courseId.Element("teacherId").Value == TId.ToString()
-                                                 select new Course
-                                                 {
-                                                     Id = courseId.Element("id").Value,
-                                                     Name = courseId.Element("name").Value,
-                                                     Description = courseId.Element("description").Value,
-                                                     Numberofsessions = int.Parse(courseId.Element("numberofsessions").Value)
-                                                 };
-            return teacherCourses.ToList();
-        }
-        */
-
-        // returns a list of courses that the teacher is teaching
-        // this method will be called from the teacher's dashboard
-        // the teacher's id will be passed as a parameter (TId)
-        /*
-         * There is no teacher ID in the XML file of Courses -_-
-        public List<Course> getTeacherCoursesById(string TId)
-        {
-            IEnumerable<Course> teacherCourses = from course in XDocument.Load("../../../../courses.xml").Descendants("course")
-                                                 where course.Element("teacherId").Value == TId.ToString()
-                                                 select new Course
-                                                 {
-                                                     Id = course.Element("id").Value,
-                                                     Name = course.Element("name").Value,
-                                                     Description = course.Element("description").Value,
-                                                     Numberofsessions = int.Parse(course.Element("numberofsessions").Value)
-                                                 };
-            return teacherCourses.ToList();
-        }
-        */
-
-
-
         public override string ToString()
         {
             return $"Teacher - {base.ToString()}";
         }
-        public List<string> getCoursesIDbyTeacherID(string TID)
+
+        public static Teacher getTeacherByTeacherID(string TID)
         {
-            List<string> teacherCourses = new List<string>();
-            /*
-            foreach (XElement course in XDocument.Load("../../../../class.xml").Descendants("Classes"))
+            Teacher teacher = new Teacher();
+            foreach (Teacher teach in Program.users)
             {
-                if (course.Element("teacherId").Value == TID)
+                if (teach.Id == TID)
                 {
-                    teacherCourses.Add(course.Element("courseId").Value);
-                    MessageBox.Show(course.Element("courseId").Value);
+                    teacher = teach;
                 }
             }
-            */
+            return teacher;
+        }
+        public static List<string> getCoursesIDbyTeacherID(string TID)
+        {
+            List<string> teacherCourses = new List<string>();
             foreach (Class claSS in Program.claSSes)
             {
                 if (claSS.TeacherId == TID)
                 {
                     teacherCourses.Add(claSS.CourseId);
-                    MessageBox.Show(claSS.CourseId);
+                    // MessageBox.Show(claSS.CourseId);
                 }
             }
             
@@ -131,6 +84,104 @@ namespace Attendance_Management_System.classes
             this.Phone = phone;
             this.Address = address;
             return true;
+        }
+
+        public static List<Session> getListofSessions(List<string> CIDs)
+        {
+            List<Session> sessions = new List<Session>();
+            foreach (string CID in CIDs)
+            {
+                foreach (Class claSS in Program.claSSes)
+                {
+                    if (claSS.CourseId == CID)
+                    {
+                        foreach (StudentSessions SS in claSS.StudentSessions)
+                        {
+                            foreach (Session S in SS.Sessions)
+                            {
+                                sessions.Add(S);
+                            }
+                        }
+                    }
+                }
+            }
+            return sessions;
+        }
+        public class Student_Status
+        {
+            public string studentID { get; set; }
+            public int status { get; set; }
+        }
+
+        // get list student, status in specific course and specific date
+        
+        public static List<Student_Status> getListofStudentStatus (string CIDs, DateTime date)
+        {
+            List<Student_Status> stdst = new List<Student_Status>();
+            foreach (Class claSS in Program.claSSes)
+            {
+                if (claSS.CourseId == CIDs)
+                {
+                    foreach (StudentSessions SS in claSS.StudentSessions)
+                    {
+                        foreach (Session S in SS.Sessions)
+                        {
+                            if (S.Date == date)
+                            {
+                                Student_Status std = new Student_Status();
+                                std.studentID = SS.StudentId;
+                                std.status = S.Status;
+                                stdst.Add(std);
+                            }
+                        }
+                    }
+                }
+            }
+            return stdst;
+        }
+       
+        public static List<StudentSessions> getListofStudentSessions(List<string> CIDs)
+        {
+            List<StudentSessions> studentSessions = new List<StudentSessions>();
+            foreach (string CID in CIDs)
+            {
+                foreach (Class claSS in Program.claSSes)
+                {
+                    if (claSS.CourseId == CID)
+                    {
+                        foreach (StudentSessions SS in claSS.StudentSessions)
+                        {
+                            studentSessions.Add(SS);
+                        }
+                    }
+                }
+            }
+            return studentSessions;
+        }
+
+        public static void changeStudentAttendance(string TID, string CID, string SID, DateTime date, int status)
+        {
+            foreach (Class claSS in Program.claSSes)
+            {
+                if (claSS.TeacherId == TID && claSS.CourseId == CID)
+                {
+                    foreach (StudentSessions SS in claSS.StudentSessions)
+                    {
+                        if (SS.StudentId == SID)
+                        {
+                            foreach (Session S in SS.Sessions)
+                            {
+                                if(S.Date == date)
+                                {
+                                    S.Status = status;
+                                    MessageBox.Show(TID + " " + CID + " " + SID + " " + date + " " + status);
+                                    // break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
     }
