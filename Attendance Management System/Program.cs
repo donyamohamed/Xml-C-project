@@ -1,6 +1,6 @@
 using Attendance_Management_System.classes;
 using System.Xml;
-using static Attendance_Management_System.classes.CourseParser;
+// using static Attendance_Management_System.classes.CourseParser;
 
 namespace Attendance_Management_System.Forms
 {
@@ -12,7 +12,7 @@ namespace Attendance_Management_System.Forms
 
         public static List<classes.User> users = UserParser.ParseUsers(usersPath);
         // Accessable from any form by Program.users
-        public static List<classes.Course> courses = ParseCourses(coursesPath);
+        public static List<classes.Course> courses = CourseParser.ParseCourses(coursesPath);
         // Accessable from any form by Program.courses
         public static List<classes.Class> claSSes = ClassParser.ParseClasses(claSSesPath);
         // Accessable from any form by Program.claSSes
@@ -27,7 +27,7 @@ namespace Attendance_Management_System.Forms
             // see https://aka.ms/applicationconfiguration.
 
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormLogin());
+            Application.Run(new testAdmin());
 
 
             /*
