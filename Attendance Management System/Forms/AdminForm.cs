@@ -22,7 +22,7 @@ namespace Attendance_Management_System.Forms
         }
         private void Teachers_Data_Click(object sender, EventArgs e)
         {
-            TeacherAdminForm teacherAdminForm = new TeacherAdminForm();
+            TeacherAdminForm teacherAdminForm = new TeacherAdminForm("teacher");
             teacherAdminForm.Show();
             Hide();
 
