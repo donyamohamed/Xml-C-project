@@ -39,7 +39,7 @@ namespace Attendance_Management_System.Forms
         //meAdmin is Accessable from any form by FormLogin.meAdmin
         public static Teacher meTeacher = new Teacher();
         // meTeacher is Accessable from any form by FormLogin.meTeacher
-        // public static Student meStudent = new Student();
+        public static Student meStudent = new Student();
         // meStudent is Accessable from any form by formLogin.meStudent
 
 
@@ -179,7 +179,7 @@ namespace Attendance_Management_System.Forms
                     }
                     else if (user.Role == "student")
                     {
-                        Student meStudent = (Student)user;
+                       meStudent = (Student)user;
                         return true;
                     }
                 }

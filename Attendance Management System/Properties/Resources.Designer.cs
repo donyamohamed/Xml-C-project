@@ -63,9 +63,59 @@ namespace Attendance_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3403551_200 {
+            get {
+                object obj = ResourceManager.GetObject("3403551-200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Delete_Red_X_Button_Transparent {
             get {
                 object obj = ResourceManager.GetObject("Delete-Red-X-Button-Transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete_Red_X_Button_Transparent1 {
+            get {
+                object obj = ResourceManager.GetObject("Delete-Red-X-Button-Transparent1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lang {
+            get {
+                object obj = ResourceManager.GetObject("lang", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lang1 {
+            get {
+                object obj = ResourceManager.GetObject("lang1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Webalys_Kameleon_pics_Student_3_512 {
+            get {
+                object obj = ResourceManager.GetObject("Webalys-Kameleon.pics-Student-3.512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

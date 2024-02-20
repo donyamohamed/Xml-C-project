@@ -15,7 +15,6 @@ namespace Attendance_Management_System.classes
         {
        
         }
-
         public Student() : base() { }
         public override string ToString()
         {
