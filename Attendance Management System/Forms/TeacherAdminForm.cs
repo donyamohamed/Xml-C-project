@@ -75,12 +75,14 @@ namespace Attendance_Management_System.Forms
                 dataTable.Columns.Add("Password");
                 dataTable.Columns.Add("Phone");
                 dataTable.Columns.Add("Address");
+                dataTable.Columns.Add("Delete", typeof(Image));
 
                 // Populate DataTable with teacher data
                 foreach (var user in teachers)
                 {
                     if (user != null)
                     {
+                        Image deleteImage = Image.FromFile("../../../../Assets/delete.png");
                         dataTable.Rows.Add(
                             user.Id,
                             user.FirstName,
@@ -89,8 +91,10 @@ namespace Attendance_Management_System.Forms
                             user.Email,
                             user.Password,
                             user.Phone,
-                            user.Address
+                            user.Address,
+                            deleteImage
                         );
+
                     }
                 }
 
@@ -116,12 +120,35 @@ namespace Attendance_Management_System.Forms
             Hide();
         }
 
-        private void pictureBoxMinimize_Click(object sender, EventArgs e)
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            FormLogin Formlogin = new FormLogin();
+            Formlogin.Show();
+            Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TeacherAdminForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void minimizebox_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
 
-        private void pictureBoxClose_Click(object sender, EventArgs e)
+        private void closebox_Click(object sender, EventArgs e)
         {
             Close();
         }
