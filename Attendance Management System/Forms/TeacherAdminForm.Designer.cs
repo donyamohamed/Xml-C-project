@@ -132,7 +132,7 @@ namespace Attendance_Management_System.Forms
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             teacherGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            teacherGrid.Size = new Size(1516, 1110);
+            teacherGrid.Size = new Size(1442, 1110);
             teacherGrid.TabIndex = 0;
             teacherGrid.CellContentClick += TeacherGrid_CellContentClick;
             // 
@@ -146,7 +146,7 @@ namespace Attendance_Management_System.Forms
             // 
             // teacherFname
             // 
-            teacherFname.HeaderText = "Teacher Fname";
+            teacherFname.HeaderText = "Fname";
             teacherFname.MinimumWidth = 6;
             teacherFname.Name = "teacherFname";
             teacherFname.ReadOnly = true;
@@ -154,7 +154,7 @@ namespace Attendance_Management_System.Forms
             // 
             // teacherLname
             // 
-            teacherLname.HeaderText = "Teacher Lname";
+            teacherLname.HeaderText = "Lname";
             teacherLname.MinimumWidth = 6;
             teacherLname.Name = "teacherLname";
             teacherLname.ReadOnly = true;
@@ -564,6 +564,7 @@ namespace Attendance_Management_System.Forms
             button4.TabIndex = 14;
             button4.Text = "Teachers";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // pictureBox7
             // 
@@ -643,6 +644,7 @@ namespace Attendance_Management_System.Forms
             button7.TabIndex = 6;
             button7.Text = "Students";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // TeacherAdminForm
             // 
@@ -712,6 +714,8 @@ namespace Attendance_Management_System.Forms
         private Button button7;
         private Button logout_button;
         private Button teacherData;
+        private PictureBox minimizebox;
+        private PictureBox closebox;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn teacherFname;
         private DataGridViewTextBoxColumn teacherLname;
@@ -723,7 +727,5 @@ namespace Attendance_Management_System.Forms
         private DataGridViewTextBoxColumn delete;
         private DataGridViewTextBoxColumn update;
         private DataGridViewTextBoxColumn add;
-        private PictureBox minimizebox;
-        private PictureBox closebox;
     }
 }

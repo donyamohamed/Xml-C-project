@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Attendance_Management_System.classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using System.Xml;
 
 namespace Attendance_Management_System.Forms
 {
     public partial class testAdmin : Form
     {
+        private string role;
         public testAdmin()
         {
             InitializeComponent();
@@ -29,7 +33,10 @@ namespace Attendance_Management_System.Forms
 
         private void Teacherbutton_Click(object sender, EventArgs e)
         {
-            TeacherAdminForm teacherAdminForm = new TeacherAdminForm();
+            role = "teacher";
+          
+            TeacherAdminForm teacherAdminForm = new TeacherAdminForm(role);
+            teacherAdminForm.Role = role;
             teacherAdminForm.Show();
             Hide();
         }
@@ -43,7 +50,11 @@ namespace Attendance_Management_System.Forms
 
         private void student_data_Click(object sender, EventArgs e)
         {
-
+            role = "student";
+            TeacherAdminForm studentAdminForm = new TeacherAdminForm(role);
+            studentAdminForm.Role = role;
+            studentAdminForm.Show();
+            Hide();
         }
 
         private void classes_data_Click(object sender, EventArgs e)
@@ -70,5 +81,8 @@ namespace Attendance_Management_System.Forms
         {
             Close();
         }
+
+        // test student 
+   
     }
 }
