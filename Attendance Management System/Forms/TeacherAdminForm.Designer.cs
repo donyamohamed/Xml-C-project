@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Xml.Linq;
 using Font = System.Drawing.Font;
+using Microsoft.Win32.SafeHandles;
 
 namespace Attendance_Management_System.Forms
 {
@@ -37,21 +38,9 @@ namespace Attendance_Management_System.Forms
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherAdminForm));
             teacherGrid = new DataGridView();
-            id = new DataGridViewTextBoxColumn();
-            teacherFname = new DataGridViewTextBoxColumn();
-            teacherLname = new DataGridViewTextBoxColumn();
-            age = new DataGridViewTextBoxColumn();
-            email = new DataGridViewTextBoxColumn();
-            password = new DataGridViewTextBoxColumn();
-            phone = new DataGridViewTextBoxColumn();
-            address = new DataGridViewTextBoxColumn();
-            delete = new DataGridViewTextBoxColumn();
-            update = new DataGridViewTextBoxColumn();
-            add = new DataGridViewTextBoxColumn();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel3 = new Panel();
             closebox = new PictureBox();
@@ -83,6 +72,17 @@ namespace Attendance_Management_System.Forms
             button5 = new Button();
             button6 = new Button();
             button7 = new Button();
+            id = new DataGridViewTextBoxColumn();
+            teacherFname = new DataGridViewTextBoxColumn();
+            teacherLname = new DataGridViewTextBoxColumn();
+            age = new DataGridViewTextBoxColumn();
+            email = new DataGridViewTextBoxColumn();
+            password = new DataGridViewTextBoxColumn();
+            phone = new DataGridViewTextBoxColumn();
+            address = new DataGridViewTextBoxColumn();
+            delete = new DataGridViewImageColumn();
+            update = new DataGridViewImageColumn();
+            add = new DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)teacherGrid).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)closebox).BeginInit();
@@ -129,103 +129,12 @@ namespace Attendance_Management_System.Forms
             teacherGrid.Name = "teacherGrid";
             teacherGrid.ReadOnly = true;
             teacherGrid.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            teacherGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            teacherGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
             teacherGrid.Size = new Size(1516, 1110);
             teacherGrid.TabIndex = 0;
             teacherGrid.CellContentClick += TeacherGrid_CellContentClick;
-            // 
-            // id
-            // 
-            id.HeaderText = "ID";
-            id.MinimumWidth = 6;
-            id.Name = "id";
-            id.ReadOnly = true;
-            id.Width = 125;
-            // 
-            // teacherFname
-            // 
-            teacherFname.HeaderText = "Teacher Fname";
-            teacherFname.MinimumWidth = 6;
-            teacherFname.Name = "teacherFname";
-            teacherFname.ReadOnly = true;
-            teacherFname.Width = 170;
-            // 
-            // teacherLname
-            // 
-            teacherLname.HeaderText = "Teacher Lname";
-            teacherLname.MinimumWidth = 6;
-            teacherLname.Name = "teacherLname";
-            teacherLname.ReadOnly = true;
-            teacherLname.Width = 125;
-            // 
-            // age
-            // 
-            age.HeaderText = "Age";
-            age.MinimumWidth = 6;
-            age.Name = "age";
-            age.ReadOnly = true;
-            age.Width = 125;
-            // 
-            // email
-            // 
-            email.HeaderText = "Email";
-            email.MinimumWidth = 6;
-            email.Name = "email";
-            email.ReadOnly = true;
-            email.Width = 200;
-            // 
-            // password
-            // 
-            password.HeaderText = "Password";
-            password.MinimumWidth = 6;
-            password.Name = "password";
-            password.ReadOnly = true;
-            password.Width = 125;
-            // 
-            // phone
-            // 
-            phone.HeaderText = "Phone";
-            phone.MinimumWidth = 11;
-            phone.Name = "phone";
-            phone.ReadOnly = true;
-            phone.Width = 125;
-            // 
-            // address
-            // 
-            address.HeaderText = "Address";
-            address.MinimumWidth = 6;
-            address.Name = "address";
-            address.ReadOnly = true;
-            address.Width = 125;
-            // 
-            // delete
-            // 
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewCellStyle3.Padding = new Padding(5);
-            delete.DefaultCellStyle = dataGridViewCellStyle3;
-            delete.HeaderText = "Delete";
-            delete.MinimumWidth = 6;
-            delete.Name = "delete";
-            delete.ReadOnly = true;
-            delete.Width = 125;
-            // 
-            // update
-            // 
-            update.HeaderText = "Updata";
-            update.MinimumWidth = 6;
-            update.Name = "update";
-            update.ReadOnly = true;
-            update.Width = 125;
-            // 
-            // add
-            // 
-            add.HeaderText = "Add";
-            add.MinimumWidth = 6;
-            add.Name = "add";
-            add.ReadOnly = true;
-            add.Width = 125;
             // 
             // panel3
             // 
@@ -644,6 +553,100 @@ namespace Attendance_Management_System.Forms
             button7.Text = "Students";
             button7.UseVisualStyleBackColor = true;
             // 
+            // id
+            // 
+            id.HeaderText = "ID";
+            id.MinimumWidth = 6;
+            id.Name = "id";
+            id.ReadOnly = true;
+            id.Width = 125;
+            // 
+            // teacherFname
+            // 
+            teacherFname.HeaderText = "Teacher Fname";
+            teacherFname.MinimumWidth = 6;
+            teacherFname.Name = "teacherFname";
+            teacherFname.ReadOnly = true;
+            teacherFname.Width = 170;
+            // 
+            // teacherLname
+            // 
+            teacherLname.HeaderText = "Teacher Lname";
+            teacherLname.MinimumWidth = 6;
+            teacherLname.Name = "teacherLname";
+            teacherLname.ReadOnly = true;
+            teacherLname.Width = 125;
+            // 
+            // age
+            // 
+            age.HeaderText = "Age";
+            age.MinimumWidth = 6;
+            age.Name = "age";
+            age.ReadOnly = true;
+            age.Width = 125;
+            // 
+            // email
+            // 
+            email.HeaderText = "Email";
+            email.MinimumWidth = 6;
+            email.Name = "email";
+            email.ReadOnly = true;
+            email.Width = 200;
+            // 
+            // password
+            // 
+            password.HeaderText = "Password";
+            password.MinimumWidth = 6;
+            password.Name = "password";
+            password.ReadOnly = true;
+            password.Width = 125;
+            // 
+            // phone
+            // 
+            phone.HeaderText = "Phone";
+            phone.MinimumWidth = 11;
+            phone.Name = "phone";
+            phone.ReadOnly = true;
+            phone.Width = 125;
+            // 
+            // address
+            // 
+            address.HeaderText = "Address";
+            address.MinimumWidth = 6;
+            address.Name = "address";
+            address.ReadOnly = true;
+            address.Width = 125;
+            // 
+            // delete
+            // 
+            delete.HeaderText = "Delete";
+            delete.Image = (System.Drawing.Image)resources.GetObject("delete.Image");
+            delete.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            delete.MinimumWidth = 6;
+            delete.Name = "delete";
+            delete.ReadOnly = true;
+            delete.Width = 125;
+            // 
+            // update
+            // 
+            update.HeaderText = "Update";
+            update.Image = (System.Drawing.Image)resources.GetObject("update.Image");
+            update.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            update.MinimumWidth = 6;
+            update.Name = "update";
+            update.ReadOnly = true;
+            update.Width = 125;
+            // 
+            // add
+            // 
+            add.HeaderText = "Add";
+            add.Image = (System.Drawing.Image)resources.GetObject("add.Image");
+            add.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            add.MinimumWidth = 6;
+            add.Name = "add";
+            add.ReadOnly = true;
+            add.Width = 125;
+            // 
             // TeacherAdminForm
             // 
             AutoScaleDimensions = new SizeF(14F, 35F);
@@ -712,6 +715,8 @@ namespace Attendance_Management_System.Forms
         private Button button7;
         private Button logout_button;
         private Button teacherData;
+        private PictureBox minimizebox;
+        private PictureBox closebox;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn teacherFname;
         private DataGridViewTextBoxColumn teacherLname;
@@ -720,10 +725,8 @@ namespace Attendance_Management_System.Forms
         private DataGridViewTextBoxColumn password;
         private DataGridViewTextBoxColumn phone;
         private DataGridViewTextBoxColumn address;
-        private DataGridViewTextBoxColumn delete;
-        private DataGridViewTextBoxColumn update;
-        private DataGridViewTextBoxColumn add;
-        private PictureBox minimizebox;
-        private PictureBox closebox;
+        private DataGridViewImageColumn delete;
+        private DataGridViewImageColumn update;
+        private DataGridViewImageColumn add;
     }
 }

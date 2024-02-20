@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,5 +71,29 @@ namespace Attendance_Management_System.Forms
         {
             Close();
         }
+
+        private void languagebutton_Click(object sender, EventArgs e)
+        {
+            lang.Text = (lang.Text == "en") ? "ar" : "en";
+            UpdateLanguage();
+        }
+        private void UpdateLanguage()
+        {
+            string newCulture = (lang.Text == "en") ? "en" : "ar";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(newCulture);
+            CultureInfo.CurrentCulture = new CultureInfo(newCulture);
+            CultureInfo.CurrentUICulture = new CultureInfo(newCulture);
+            UpdateUI();
+
+        }
+        private void UpdateUI()
+        {
+            this.Controls.Clear();
+            this.InitializeComponent();
+
+        }
+
+
+
     }
 }

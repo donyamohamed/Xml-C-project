@@ -91,6 +91,7 @@
             label2.ForeColor = Color.Purple;
             label2.Name = "label2";
             toolTip.SetToolTip(label2, resources.GetString("label2.ToolTip"));
+            
             // 
             // UserEmail
             // 
