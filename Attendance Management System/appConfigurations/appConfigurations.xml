@@ -4,6 +4,7 @@
         <name>Attendance Management System</name>
         <version>1.0</version>
         <description>Attendance Management System Description</description>
+        <createdDate>2021-06-01</createdDate>
         <dataPathes>
             <Users>../../../../users.xml</Users>
             <!-- <Users>G:\ITI\Xml-C-project\users.xml</Users> -->
@@ -17,7 +18,6 @@
             <author>Author 2</author>
             <author>Author 3</author>
         </authors>
-        <createdDate>2021-06-01</createdDate>
         <appSettings>
             <!-- updateInterval in minutes -->
             <backupInterval>5</backupInterval>

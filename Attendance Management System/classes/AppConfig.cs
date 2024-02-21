@@ -14,6 +14,7 @@ namespace Attendance_Management_System.classes
         public string AppName           {get; set;}
         public string AppVersion        {get; set;}
         public string AppDescription    {get; set;}
+        public DateOnly AppCreationDate {get; set;}
         public string UsersFilePath     {get; set;}
         public string CoursesFilePath   {get; set;}
         public string ClassesFilePath { get; set;}
@@ -29,6 +30,7 @@ namespace Attendance_Management_System.classes
             string _AppName,
             string _AppVersion,
             string _AppDescription,
+            DateOnly _AppCreationDate,
             string _UsersFilePath,
             string _CoursesFilePath,
             string _ClassesFilePath,
@@ -41,6 +43,7 @@ namespace Attendance_Management_System.classes
             AppName = _AppName;
             AppVersion = _AppVersion;
             AppDescription = _AppDescription;
+            AppCreationDate = _AppCreationDate;
             UsersFilePath = _UsersFilePath;
             CoursesFilePath = _CoursesFilePath;
             ClassesFilePath = _ClassesFilePath;

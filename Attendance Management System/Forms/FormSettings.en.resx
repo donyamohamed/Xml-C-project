@@ -239,20 +239,17 @@
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 95</value>
-  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>678, 50</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Attendance System Management</value>
   </data>
-  <data name="label2.ToolTip" xml:space="preserve">
-    <value />
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>457, 306</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>About The System</value>
   </data>
   <data name="labelAppCreationDate.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt, style=Bold, Italic</value>
@@ -261,22 +258,16 @@
     <value>NoControl</value>
   </data>
   <data name="labelAppCreationDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 95</value>
+    <value>165, 115</value>
   </data>
   <data name="labelAppCreationDate.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="labelAppCreationDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 21</value>
-  </data>
-  <data name="labelAppCreationDate.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>286, 21</value>
   </data>
   <data name="labelAppCreationDate.Text" xml:space="preserve">
     <value>App Description</value>
-  </data>
-  <data name="labelAppCreationDate.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt, style=Bold, Italic</value>
@@ -285,7 +276,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 95</value>
+    <value>6, 115</value>
   </data>
   <data name="label9.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
@@ -293,14 +284,8 @@
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 21</value>
   </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
   <data name="label9.Text" xml:space="preserve">
     <value>App Creation Date:</value>
-  </data>
-  <data name="label9.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="listBoxDevelopers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>On</value>
@@ -308,17 +293,8 @@
   <data name="listBoxDevelopers.ItemHeight" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="listBoxDevelopers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 199</value>
-  </data>
   <data name="listBoxDevelopers.Size" type="System.Drawing.Size, System.Drawing">
     <value>304, 88</value>
-  </data>
-  <data name="listBoxDevelopers.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="listBoxDevelopers.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt, style=Bold, Italic</value>
@@ -327,7 +303,7 @@
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 199</value>
+    <value>6, 195</value>
   </data>
   <data name="label8.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
@@ -335,62 +311,8 @@
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 21</value>
   </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
   <data name="label8.Text" xml:space="preserve">
     <value>App Developers</value>
-  </data>
-  <data name="label8.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 12pt, style=Bold, Italic</value>
-  </data>
-  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 167</value>
-  </data>
-  <data name="label3.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 21</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>App Name</value>
-  </data>
-  <data name="label3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 12pt, style=Bold, Italic</value>
-  </data>
-  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 167</value>
-  </data>
-  <data name="label6.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 21</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>App Name:</value>
-  </data>
-  <data name="label6.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="labelAppDescription.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt, style=Bold, Italic</value>
@@ -399,22 +321,16 @@
     <value>NoControl</value>
   </data>
   <data name="labelAppDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 130</value>
+    <value>147, 155</value>
   </data>
   <data name="labelAppDescription.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="labelAppDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 21</value>
-  </data>
-  <data name="labelAppDescription.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>304, 21</value>
   </data>
   <data name="labelAppDescription.Text" xml:space="preserve">
     <value>App Description</value>
-  </data>
-  <data name="labelAppDescription.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt, style=Bold, Italic</value>
@@ -423,7 +339,7 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 130</value>
+    <value>6, 155</value>
   </data>
   <data name="label5.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
@@ -431,14 +347,8 @@
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 21</value>
   </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>App Description:</value>
-  </data>
-  <data name="label5.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="labelAppVersion.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt, style=Bold, Italic</value>
@@ -447,22 +357,16 @@
     <value>NoControl</value>
   </data>
   <data name="labelAppVersion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 65</value>
+    <value>116, 75</value>
   </data>
   <data name="labelAppVersion.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="labelAppVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 21</value>
-  </data>
-  <data name="labelAppVersion.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>335, 21</value>
   </data>
   <data name="labelAppVersion.Text" xml:space="preserve">
     <value>App Version</value>
-  </data>
-  <data name="labelAppVersion.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt, style=Bold, Italic</value>
@@ -471,7 +375,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 65</value>
+    <value>6, 75</value>
   </data>
   <data name="label4.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
@@ -479,14 +383,8 @@
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 21</value>
   </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
   <data name="label4.Text" xml:space="preserve">
     <value>App Version:</value>
-  </data>
-  <data name="label4.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="labelAppName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt, style=Bold, Italic</value>
@@ -495,22 +393,16 @@
     <value>NoControl</value>
   </data>
   <data name="labelAppName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 35</value>
+    <value>109, 35</value>
   </data>
   <data name="labelAppName.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="labelAppName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 21</value>
-  </data>
-  <data name="labelAppName.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>342, 21</value>
   </data>
   <data name="labelAppName.Text" xml:space="preserve">
     <value>App Name</value>
-  </data>
-  <data name="labelAppName.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="UserEmail.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt, style=Bold, Italic</value>
@@ -518,38 +410,104 @@
   <data name="UserEmail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="UserEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 35</value>
-  </data>
   <data name="UserEmail.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="UserEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 21</value>
   </data>
-  <data name="UserEmail.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="UserEmail.Text" xml:space="preserve">
     <value>App Name:</value>
   </data>
-  <data name="UserEmail.ToolTip" xml:space="preserve">
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 306</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>System Configurations</value>
+  </data>
+  <data name="numericUpDownBackup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 27</value>
+  </data>
+  <data name="listBoxSysLang.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
+  </data>
+  <data name="listBoxSysLang.ItemHeight" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="listBoxSysLang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 88</value>
+  </data>
+  <data name="listBoxDateFormat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
+  </data>
+  <data name="listBoxDateFormat.ItemHeight" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="listBoxDateFormat.Items" xml:space="preserve">
+    <value>yyyy-MM-dd</value>
+  </data>
+  <data name="listBoxDateFormat.Items1" xml:space="preserve">
+    <value>dd-MM-yyyy</value>
+  </data>
+  <data name="listBoxDateFormat.Items2" xml:space="preserve">
+    <value>MM-dd-yyyy</value>
+  </data>
+  <data name="listBoxDateFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>197, 199</value>
+  </data>
+  <data name="listBoxDateFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 88</value>
+  </data>
+  <data name="listBoxDateFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="listBoxDateFormat.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 165</value>
+  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt, style=Bold, Italic</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>457, 385</value>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="label11.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>groupBoxInfo</value>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
   </data>
-  <data name="groupBox1.ToolTip" xml:space="preserve">
-    <value />
+  <data name="label11.Text" xml:space="preserve">
+    <value>System Date Format</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label7.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 21</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>System Language</value>
+  </data>
+  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+  </data>
+  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label10.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 21</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Backup Interval (in minutes)</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1200, 749</value>

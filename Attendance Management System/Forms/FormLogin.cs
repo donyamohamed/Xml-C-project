@@ -165,7 +165,7 @@ namespace Attendance_Management_System.Forms
                     }
                     else if (user.Role == "student")
                     {
-                       meStudent = (Student)user;
+                        meStudent = (Student)user;
                         return true;
                     }
                 }
@@ -204,7 +204,7 @@ namespace Attendance_Management_System.Forms
 
         private void buttonSetTimerBackup_Click(object sender, EventArgs e)
         {
-            if(buttonSetTimerBackup.Text == "Set Timer for Backup")
+            if (buttonSetTimerBackup.Text == "Set Timer for Backup")
             {
                 textBoxSetTimerBackup.Visible = true;
                 buttonSetTimerBackup.Text = "Save";
@@ -216,6 +216,14 @@ namespace Attendance_Management_System.Forms
                 // Save the time in the configuration file
                 // 
             }
+        }
+
+        private void pictureBoxSettings_Click(object sender, EventArgs e)
+        {
+            AdminForm adminFormSettings = new AdminForm();
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
+            this.Hide();
         }
     }
 }

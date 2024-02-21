@@ -40,7 +40,8 @@ namespace Attendance_Management_System.Forms
             // UserParser.SaveUsersAsXml(users, "usersPath");
 
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormLogin());
+            // Application.Run(new FormLogin());
+            Application.Run(new FormSettings());
         }
     }
 }

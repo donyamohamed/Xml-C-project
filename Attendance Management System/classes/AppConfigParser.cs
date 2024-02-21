@@ -26,6 +26,7 @@ namespace Attendance_Management_System.classes
                 appConfig.AppName = appConfigNode.SelectSingleNode("name").InnerText;
                 appConfig.AppVersion = appConfigNode.SelectSingleNode("version").InnerText;
                 appConfig.AppDescription = appConfigNode.SelectSingleNode("description").InnerText;
+                appConfig.AppCreationDate = DateOnly.Parse(appConfigNode.SelectSingleNode("createdDate").InnerText);
                 appConfig.UsersFilePath = appConfigNode.SelectSingleNode("dataPathes/Users").InnerText;
                 appConfig.CoursesFilePath = appConfigNode.SelectSingleNode("dataPathes/Courses").InnerText;
                 appConfig.ClassesFilePath = appConfigNode.SelectSingleNode("dataPathes/Classes").InnerText;
@@ -66,6 +67,10 @@ namespace Attendance_Management_System.classes
             description.InnerText = appConfig.AppDescription;
             appConfiguration.AppendChild(description);
 
+            XmlElement createdDate = doc.CreateElement("createdDate");
+            createdDate.InnerText = appConfig.AppCreationDate.ToString();
+            appConfiguration.AppendChild(createdDate);
+
             XmlElement dataPathes = doc.CreateElement("dataPathes");
             appConfiguration.AppendChild(dataPathes);
 
@@ -90,10 +95,6 @@ namespace Attendance_Management_System.classes
                 authorElement.InnerText = author;
                 authors.AppendChild(authorElement);
             }
-
-            XmlElement createdDate = doc.CreateElement("createdDate");
-            createdDate.InnerText = DateTime.Now.ToString("yyyy-MM-dd");
-            appConfiguration.AppendChild(createdDate);
 
             XmlElement appSettings = doc.CreateElement("appSettings");
             appConfiguration.AppendChild(appSettings);

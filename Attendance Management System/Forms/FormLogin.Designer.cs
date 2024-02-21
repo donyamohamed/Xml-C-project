@@ -48,12 +48,14 @@
             buttonLanguage = new Button();
             buttonSetTimerBackup = new Button();
             textBoxSetTimerBackup = new TextBox();
+            pictureBoxSettings = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxShow).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxHide).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxError).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSettings).BeginInit();
             SuspendLayout();
             // 
             // pictureBoxClose
@@ -200,11 +202,22 @@
             textBoxSetTimerBackup.Name = "textBoxSetTimerBackup";
             toolTip.SetToolTip(textBoxSetTimerBackup, resources.GetString("textBoxSetTimerBackup.ToolTip"));
             // 
+            // pictureBoxSettings
+            // 
+            resources.ApplyResources(pictureBoxSettings, "pictureBoxSettings");
+            pictureBoxSettings.Cursor = Cursors.Hand;
+            pictureBoxSettings.Image = Properties.Resources.OIP;
+            pictureBoxSettings.Name = "pictureBoxSettings";
+            pictureBoxSettings.TabStop = false;
+            toolTip.SetToolTip(pictureBoxSettings, resources.GetString("pictureBoxSettings.ToolTip"));
+            pictureBoxSettings.Click += pictureBoxSettings_Click;
+            // 
             // FormLogin
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(pictureBoxSettings);
             Controls.Add(textBoxSetTimerBackup);
             Controls.Add(buttonSetTimerBackup);
             Controls.Add(buttonLanguage);
@@ -234,6 +247,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxShow).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxHide).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxError).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSettings).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -258,5 +272,6 @@
         private Button buttonLanguage;
         private Button buttonSetTimerBackup;
         private TextBox textBoxSetTimerBackup;
+        private PictureBox pictureBoxSettings;
     }
 }
