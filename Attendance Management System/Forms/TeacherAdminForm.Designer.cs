@@ -111,7 +111,6 @@ namespace Attendance_Management_System.Forms
             dataGridViewCellStyle1.Padding = new Padding(5);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             teacherGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            teacherGrid.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             teacherGrid.BackgroundColor = SystemColors.Control;
             teacherGrid.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
