@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appConfigurations>
+    <appConfiguration>
+        <name>Attendance Management System</name>
+        <version>1.0</version>
+        <description>Attendance Management System Description</description>
+        <dataPathes>
+            <Users>../../../../users.xml</Users>
+            <!-- <Users>G:\ITI\Xml-C-project\users.xml</Users> -->
+            <Courses>../../../../courses.xml</Courses>
+            <!-- <Courses>G:\ITI\Xml-C-project\courses.xml</Courses> -->
+            <Classes>../../../../class.xml</Classes>
+            <!-- <Classes>G:\ITI\Xml-C-project\class.xml</Classes> -->
+        </dataPathes>
+        <authors>
+            <author>Author 1</author>
+            <author>Author 2</author>
+            <author>Author 3</author>
+        </authors>
+        <createdDate>2021-06-01</createdDate>
+        <appSettings>
+            <!-- updateInterval in minutes -->
+            <backupInterval>5</backupInterval>
+            <language>English</language>
+            <language>Arabic</language>s
+            <DateFormat>dd-MM-yyyy</DateFormat>
+            <DateFormat>MM-dd-yyyy</DateFormat>
+            <DateFormat>yyyy-MM-dd</DateFormat>
+        </appSettings>
+    </appConfiguration>
+</appConfigurations>

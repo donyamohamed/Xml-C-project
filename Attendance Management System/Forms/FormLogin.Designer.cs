@@ -46,6 +46,8 @@
             buttonLogin = new Button();
             textBoxPassword = new TextBox();
             buttonLanguage = new Button();
+            buttonSetTimerBackup = new Button();
+            textBoxSetTimerBackup = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -185,11 +187,28 @@
             buttonLanguage.UseVisualStyleBackColor = false;
             buttonLanguage.Click += buttonLanguage_Click;
             // 
+            // buttonSetTimerBackup
+            // 
+            resources.ApplyResources(buttonSetTimerBackup, "buttonSetTimerBackup");
+            buttonSetTimerBackup.BackColor = Color.Green;
+            buttonSetTimerBackup.Name = "buttonSetTimerBackup";
+            toolTip.SetToolTip(buttonSetTimerBackup, resources.GetString("buttonSetTimerBackup.ToolTip"));
+            buttonSetTimerBackup.UseVisualStyleBackColor = false;
+            buttonSetTimerBackup.Click += buttonSetTimerBackup_Click;
+            // 
+            // textBoxSetTimerBackup
+            // 
+            resources.ApplyResources(textBoxSetTimerBackup, "textBoxSetTimerBackup");
+            textBoxSetTimerBackup.Name = "textBoxSetTimerBackup";
+            toolTip.SetToolTip(textBoxSetTimerBackup, resources.GetString("textBoxSetTimerBackup.ToolTip"));
+            // 
             // FormLogin
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(textBoxSetTimerBackup);
+            Controls.Add(buttonSetTimerBackup);
             Controls.Add(buttonLanguage);
             Controls.Add(pictureBoxError);
             Controls.Add(labelInvalidUserName);
@@ -239,5 +258,7 @@
         private Button buttonLogin;
         private TextBox textBoxPassword;
         private Button buttonLanguage;
+        private Button buttonSetTimerBackup;
+        private TextBox textBoxSetTimerBackup;
     }
 }

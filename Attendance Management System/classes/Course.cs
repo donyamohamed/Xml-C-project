@@ -53,12 +53,6 @@ namespace Attendance_Management_System.classes
                         courses.Add(cour);
                     }
                 }
-                /*
-                if (CIDs.Contains(cour.Id))
-                {
-                    courses.Add(cour);
-                }
-                */
             }
             return courses;
         }

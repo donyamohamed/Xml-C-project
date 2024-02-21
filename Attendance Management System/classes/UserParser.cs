@@ -59,6 +59,65 @@ namespace Attendance_Management_System.classes
 
             return users;
         }
+        public static void SaveUsersAsXml(List<User> users, string filePath)
+        {
+            XmlDocument doc = new XmlDocument();
+
+            // Create the XML Declaration, and append it to XML document
+            XmlDeclaration xmlDeclaration = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
+            doc.AppendChild(xmlDeclaration);
+
+            XmlElement root = doc.CreateElement("Users");
+            // set attributes
+            root.SetAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
+            XmlAttribute att = doc.CreateAttribute("xsi", "noNamespaceSchemaLocation", "http://www.w3.org/2001/XMLSchema-instance");
+            att.Value = filePath;
+            root.Attributes.Append(att);
+
+            // foreach user in the list
+            foreach (User user in users)
+            {
+                XmlElement userElement = doc.CreateElement("user");
+                userElement.SetAttribute("role", user.GetType().Name.ToLower());
+
+                XmlElement id = doc.CreateElement("id");
+                id.InnerText = user.Id;
+                userElement.AppendChild(id);
+
+                XmlElement fname = doc.CreateElement("fname");
+                fname.InnerText = user.FirstName;
+                userElement.AppendChild(fname);
+
+                XmlElement lname = doc.CreateElement("lname");
+                lname.InnerText = user.LastName;
+                userElement.AppendChild(lname);
+
+                XmlElement age = doc.CreateElement("age");
+                age.InnerText = user.Age.ToString();
+                userElement.AppendChild(age);
+
+                XmlElement email = doc.CreateElement("email");
+                email.InnerText = user.Email;
+                userElement.AppendChild(email);
+
+                XmlElement password = doc.CreateElement("password");
+                password.InnerText = user.Password;
+                userElement.AppendChild(password);
+
+                XmlElement phone = doc.CreateElement("phone");
+                phone.InnerText = user.Phone;
+                userElement.AppendChild(phone);
+
+                XmlElement address = doc.CreateElement("address");
+                address.InnerText = user.Address;
+                userElement.AppendChild(address);
+
+                root.AppendChild(userElement);
+            }
+
+            doc.AppendChild(root);
+            doc.Save(filePath);
+        }
     }
 }
 

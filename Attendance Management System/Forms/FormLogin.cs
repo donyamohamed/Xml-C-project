@@ -18,28 +18,13 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Attendance_Management_System.Forms
 {
-    /*
-    public struct Person
-    {
-        public string Name;
-        public string Password;
-        public string Email;
-
-        public Person(string name, string password, string email)
-        {
-            Name = name;
-            Password = password;
-            Email = email;
-        }
-    }
-    */
     public partial class FormLogin : Form
     {
-         public static Admin adminUser = new Admin();
+        public static Admin adminUser = new Admin();
         //meAdmin is Accessable from any form by FormLogin.meAdmin
         public static Teacher meTeacher = new Teacher();
         // meTeacher is Accessable from any form by FormLogin.meTeacher
-        // public static Student meStudent = new Student();
+        public static Student meStudent = new Student();
         // meStudent is Accessable from any form by formLogin.meStudent
 
 
@@ -163,6 +148,7 @@ namespace Attendance_Management_System.Forms
 
         private static Boolean ValidateUser(string email, string password)
         {
+            // foreach (var user in Program.users)
             foreach (var user in Program.users)
             {
                 if (user.Email == email && user.Password == password)
@@ -214,6 +200,22 @@ namespace Attendance_Management_System.Forms
             this.Controls.Clear();
             this.InitializeComponent();
 
+        }
+
+        private void buttonSetTimerBackup_Click(object sender, EventArgs e)
+        {
+            if(buttonSetTimerBackup.Text == "Set Timer for Backup")
+            {
+                textBoxSetTimerBackup.Visible = true;
+                buttonSetTimerBackup.Text = "Save";
+            }
+            else
+            {
+                buttonSetTimerBackup.Text = "Set Timer for Backup";
+                textBoxSetTimerBackup.Visible = false;
+                // Save the time in the configuration file
+                // 
+            }
         }
     }
 }
