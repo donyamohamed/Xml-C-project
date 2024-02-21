@@ -275,9 +275,10 @@ namespace Attendance_Management_System.Forms
             // 
             // closebox
             // 
+            closebox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             closebox.Image = (Image)resources.GetObject("closebox.Image");
             closebox.ImeMode = ImeMode.NoControl;
-            closebox.Location = new Point(996, 0);
+            closebox.Location = new Point(989, 3);
             closebox.Name = "closebox";
             closebox.Size = new Size(43, 43);
             closebox.SizeMode = PictureBoxSizeMode.Zoom;
@@ -287,9 +288,10 @@ namespace Attendance_Management_System.Forms
             // 
             // minimizebox
             // 
+            minimizebox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             minimizebox.Image = (Image)resources.GetObject("minimizebox.Image");
             minimizebox.ImeMode = ImeMode.NoControl;
-            minimizebox.Location = new Point(948, 0);
+            minimizebox.Location = new Point(931, 3);
             minimizebox.Name = "minimizebox";
             minimizebox.Size = new Size(52, 43);
             minimizebox.SizeMode = PictureBoxSizeMode.Zoom;
@@ -317,7 +319,9 @@ namespace Attendance_Management_System.Forms
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "testAdmin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "testAdmin";
+            WindowState = FormWindowState.Maximized;
             Load += testAdmin_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();

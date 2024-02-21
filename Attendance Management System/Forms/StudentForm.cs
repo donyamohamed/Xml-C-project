@@ -57,8 +57,8 @@ namespace Attendance_Management_System.Forms
 
             foreach (XmlNode classNode in classNodes)
             {
-                string courseId = classNode.SelectSingleNode("courseId").InnerText;
-                string teacherId = classNode.SelectSingleNode("teacherId").InnerText;
+                string courseId = classNode.SelectSingleNode("courseId")?.InnerText;
+                string teacherId = classNode.SelectSingleNode("teacherId")?.InnerText;
               
 
 
@@ -68,10 +68,10 @@ namespace Attendance_Management_System.Forms
                 // Retrieve teacher's name using teacher ID
                
              
-                XmlNode teacherNode = usersDoc.SelectSingleNode($"//user[id='{teacherId}']");
+                XmlNode teacherNode = usersDoc?.SelectSingleNode($"//user[id='{teacherId}']");
               
 
-                string teacherName = $"{teacherNode.SelectSingleNode("fname").InnerText} {teacherNode.SelectSingleNode("lname").InnerText}";
+                string teacherName = $"{teacherNode?.SelectSingleNode("fname").InnerText} {teacherNode.SelectSingleNode("lname")?.InnerText}";
 
 
                 XmlNodeList sessionNodes = classNode.SelectNodes($"studentId[@id='{userId}']/session");
@@ -79,8 +79,8 @@ namespace Attendance_Management_System.Forms
 
                 foreach (XmlNode sessionNode in sessionNodes)
                 {
-                    string date = sessionNode.SelectSingleNode("date").InnerText;
-                    string status = sessionNode.SelectSingleNode("status").InnerText;
+                    string date = sessionNode.SelectSingleNode("date")?.InnerText;
+                    string status = sessionNode.SelectSingleNode("status")?.InnerText;
 
                     sessionData.Add((date, courseName, teacherName, sessionNumber, status));
                     sessionNumber++;
@@ -142,8 +142,22 @@ namespace Attendance_Management_System.Forms
             int buttonWidth = panelCourses.Width - 20;
             int buttonHeight = 40;
             int buttonSpacing = 5;
-            int buttonTop = 280;
+            int buttonTop = 330;
 
+            Button allCourse = new Button
+            {
+                Name = "allCourses",
+                Text = "All",
+                AutoSize = false,
+                Size = new Size(buttonWidth, buttonHeight),
+                Location = new Point(5, 285),
+                BackColor = Color.White
+            };
+            panelCourses.Controls.Add(allCourse);
+
+            allCourse.Click += (sender, e) => PopulateDataGridView();
+
+            
             foreach (var session in sessionData)
             {
                 string courseName = session.courseName;

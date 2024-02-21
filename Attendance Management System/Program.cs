@@ -32,52 +32,10 @@ namespace Attendance_Management_System.Forms
             Application.Run(new testAdmin());
 
 
-            /*
-            Course course1 = new Course("1C", "math", "any text", 5);
-            Console.WriteLine(course1.Id);
-            Console.WriteLine(course1.Name);
-            Console.WriteLine(course1.Description);
-            Console.WriteLine(course1.Numberofsessions);
-            Console.WriteLine(course1.ToString());
-            */
 
 
 
-            /*
-             * 
-             
-            // --------------->  just try get data of student :)
-             
-           
-            XmlDocument usersDoc = new XmlDocument();
-            usersDoc.Load("../../../../users.xml"); // default->  bin/depug folder
-
-           
-            List<Student> students = GetStudents(usersDoc);
-
-           
-            foreach (var student in students)
-            {
-                MessageBox.Show(student.ToString());
-            }
-            */
-
-            // Try to get data of Coures >_< //
-            // XmlDocument courseDoc = new XmlDocument();
-            // courseDoc.Load("../../../../courses.xml");
-
-            // List<Course> Courses = ParseCourses("../../../../courses.xml");
-            // CourseList Courses = new CourseList();
-            // List<Course> courses = GetCourses(courseDoc);
-            // Console.WriteLine(Courses.ToString());
-
-
-            /*
-            XmlNodeList nodeList;
-            XmlNode root = courseDoc.DocumentElement;
-
-            nodeList = root.SelectNodes("descendant::course");
-            */
+          
 
         }
 
