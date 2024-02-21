@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentAdminForm));
             SuspendLayout();
             // 
             // StudentAdminForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1400, 635);
             Name = "StudentAdminForm";
-            Text = "StudentAdminForm";
             ResumeLayout(false);
         }
 
