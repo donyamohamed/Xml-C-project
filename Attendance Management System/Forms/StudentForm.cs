@@ -24,10 +24,17 @@ namespace Attendance_Management_System.Forms
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.newCulture);
             InitializeForm();
         }
-
         private void InitializeForm()
         {
             loggedUser = FormLogin.meStudent;
+           
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.newCulture);
+            UpdateLanguage(); // Call the method to update the language
+            InitializeFormComponents();
+        }
+
+        private void InitializeFormComponents()
+        {
             LoadSessionDataForUser(loggedUser.Id);
             PopulateDataGridView();
             textSearch.TextChanged += TxtSearch_TextChanged;
