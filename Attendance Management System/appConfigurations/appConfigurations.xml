@@ -22,7 +22,7 @@
             <!-- updateInterval in minutes -->
             <backupInterval>5</backupInterval>
             <language>English</language>
-            <language>Arabic</language>s
+            <language>Arabic</language>
             <DateFormat>dd-MM-yyyy</DateFormat>
             <DateFormat>MM-dd-yyyy</DateFormat>
             <DateFormat>yyyy-MM-dd</DateFormat>

@@ -59,7 +59,6 @@
             // pictureBoxClose
             // 
             resources.ApplyResources(pictureBoxClose, "pictureBoxClose");
-            pictureBoxClose.BorderStyle = BorderStyle.Fixed3D;
             pictureBoxClose.Cursor = Cursors.Hand;
             pictureBoxClose.Image = Properties.Resources.Delete_Red_X_Button_Transparent;
             pictureBoxClose.Name = "pictureBoxClose";
@@ -71,7 +70,6 @@
             // pictureBoxMinimize
             // 
             resources.ApplyResources(pictureBoxMinimize, "pictureBoxMinimize");
-            pictureBoxMinimize.BorderStyle = BorderStyle.Fixed3D;
             pictureBoxMinimize.Cursor = Cursors.Hand;
             pictureBoxMinimize.Name = "pictureBoxMinimize";
             pictureBoxMinimize.TabStop = false;

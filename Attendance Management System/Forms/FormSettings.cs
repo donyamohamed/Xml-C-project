@@ -16,5 +16,20 @@ namespace Attendance_Management_System.Forms
         {
             InitializeComponent();
         }
+
+        private void FormSettings_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void pictureBoxMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
     }
 }
