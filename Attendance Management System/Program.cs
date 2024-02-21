@@ -6,6 +6,8 @@ namespace Attendance_Management_System.Forms
 {
     internal static class Program
     {
+        public static string newCulture = "en";
+
         public static string usersPath = "../../../../users.xml";
         public static string coursesPath = "../../../../courses.xml";
         public static string claSSesPath = "../../../../class.xml";
