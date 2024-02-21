@@ -6,6 +6,7 @@ namespace Attendance_Management_System.Forms
 {
     internal static class Program
     {
+        public static string newCulture = "en";
         public static string appConfigPath = "G:\\ITI\\Xml-C-project\\Attendance Management System\\appConfigurations\\appConfigurations.xml";
         public static AppConfig appConfig = AppConfigParser.ParseAppConfig(appConfigPath);
         

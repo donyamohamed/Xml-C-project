@@ -21,8 +21,8 @@ namespace Attendance_Management_System.classes
         public static class AppSettings
         {
             public static int BackupInterval   {get; set;}
-            public static string[] Languages   {get; set;}
-            public static string[] DateFormats {get; set;}
+            public static string Languages   {get; set;}
+            public static string DateFormats {get; set;}
 }
 
         public AppConfig(
@@ -34,8 +34,8 @@ namespace Attendance_Management_System.classes
             string _ClassesFilePath,
             string[] _Authors,
             int _BackupInterval,
-            string[] _Languages,
-            string[] _DateFormats
+            string _Languages,
+            string _DateFormats
             ) 
         {
             AppName = _AppName;
@@ -63,9 +63,12 @@ namespace Attendance_Management_System.classes
         <version>1.0</version>
         <description>Attendance Management System Description</description>
         <dataPathes>
-            <Users>data/Users.xml</Users>
-            <Courses>data/Courses.xml</Courses>
-            <Sessions>data/Sessions.xml</Sessions>
+            <Users>../../../../users.xml</Users>
+            <!-- <Users>G:\ITI\Xml-C-project\users.xml</Users> -->
+            <Courses>../../../../courses.xml</Courses>
+            <!-- <Courses>G:\ITI\Xml-C-project\courses.xml</Courses> -->
+            <Classes>../../../../class.xml</Classes>
+            <!-- <Classes>G:\ITI\Xml-C-project\class.xml</Classes> -->
         </dataPathes>
         <authors>
             <author>Author 1</author>
@@ -75,11 +78,8 @@ namespace Attendance_Management_System.classes
         <createdDate>2021-06-01</createdDate>
         <appSettings>
             <!-- updateInterval in minutes -->
-            <updateInterval>5</updateInterval>
+            <backupInterval>5</backupInterval>
             <language>English</language>
-            <language>Arabic</language>s
-            <DateFormat>dd-MM-yyyy</DateFormat>
-            <DateFormat>MM-dd-yyyy</DateFormat>
             <DateFormat>yyyy-MM-dd</DateFormat>
         </appSettings>
     </appConfiguration>

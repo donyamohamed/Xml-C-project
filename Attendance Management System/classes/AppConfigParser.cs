@@ -36,23 +36,11 @@ namespace Attendance_Management_System.classes
                     appConfig.Authors[i] = authorsNodes[i].InnerText;
                 }
                 AppSettings.BackupInterval = int.Parse(appConfigNode.SelectSingleNode("appSettings/backupInterval").InnerText);
-                XmlNodeList appSettingsNodes = appConfigNode.SelectNodes("appSettings");
-                XmlNodeList languagesNodes = appSettingsNodes[0].SelectNodes("language");
-                AppSettings.Languages = new string[languagesNodes.Count];
-                for (int i = 0; i < languagesNodes.Count; i++)
-                {
-                    AppSettings.Languages[i] = languagesNodes[i].InnerText;
+                AppSettings.Languages = appConfigNode.SelectSingleNode("appSettings/language").InnerText;
+                AppSettings.DateFormats = appConfigNode.SelectSingleNode("appSettings/DateFormat").InnerText;
                 }
-                XmlNodeList dateFormatsNodes = appSettingsNodes[0].SelectNodes("DateFormat");
-                AppSettings.DateFormats = new string[dateFormatsNodes.Count];
-                for (int i = 0; i < dateFormatsNodes.Count; i++)
-                {
-                    AppSettings.DateFormats[i] = dateFormatsNodes[i].InnerText;
-                }
-            }
             return appConfig;
-        }
-
+            }
         public static void SaveAppConfigAsXml(AppConfig appConfig, string filePath)
         {
             XmlDocument doc = new XmlDocument();
@@ -114,19 +102,10 @@ namespace Attendance_Management_System.classes
             updateInterval.InnerText = AppSettings.BackupInterval.ToString();
             appSettings.AppendChild(updateInterval);
 
-            foreach (string language in AppSettings.Languages)
-            {
-                XmlElement languageElement = doc.CreateElement("language");
-                languageElement.InnerText = language;
-                appSettings.AppendChild(languageElement);
-            }
+            XmlElement language = doc.CreateElement("language");
+            language.InnerText = AppSettings.Languages;
+            appSettings.AppendChild(language);
 
-            foreach (string dateFormat in AppSettings.DateFormats)
-            {
-                XmlElement dateFormatElement = doc.CreateElement("DateFormat");
-                dateFormatElement.InnerText = dateFormat;
-                appSettings.AppendChild(dateFormatElement);
-            }
             root.AppendChild(appConfiguration);
             doc.AppendChild(root);
             doc.Save(filePath);
@@ -135,19 +114,19 @@ namespace Attendance_Management_System.classes
 
     }
     /*
-<? xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <appConfigurations>
     <appConfiguration>
         <name>Attendance Management System</name>
         <version>1.0</version>
         <description>Attendance Management System Description</description>
         <dataPathes>
-            <!-- <Users>../../../../users.xml</Users> -->
-            <Users>G:\ITI\Xml-C-project\users.xml</Users>
-            <!-- <Courses>../../../../courses.xml</Courses> -->
-            <Courses>G:\ITI\Xml-C-project\courses.xml</Courses>
-            <!-- <Classes>../../../../class.xml</Classes> -->
-            <Classes>G:\ITI\Xml-C-project\class.xml</Classes>
+            <Users>../../../../users.xml</Users>
+            <!-- <Users>G:\ITI\Xml-C-project\users.xml</Users> -->
+            <Courses>../../../../courses.xml</Courses>
+            <!-- <Courses>G:\ITI\Xml-C-project\courses.xml</Courses> -->
+            <Classes>../../../../class.xml</Classes>
+            <!-- <Classes>G:\ITI\Xml-C-project\class.xml</Classes> -->
         </dataPathes>
         <authors>
             <author>Author 1</author>
@@ -159,9 +138,6 @@ namespace Attendance_Management_System.classes
             <!-- updateInterval in minutes -->
             <backupInterval>5</backupInterval>
             <language>English</language>
-            <language>Arabic</language> s
-            <DateFormat>dd-MM-yyyy</DateFormat>
-            <DateFormat>MM-dd-yyyy</DateFormat>
             <DateFormat>yyyy-MM-dd</DateFormat>
         </appSettings>
     </appConfiguration>
