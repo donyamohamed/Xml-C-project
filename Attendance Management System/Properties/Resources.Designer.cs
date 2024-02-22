@@ -73,6 +73,16 @@ namespace Attendance_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete__1_ {
+            get {
+                object obj = ResourceManager.GetObject("delete (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Delete_Red_X_Button_Transparent {
             get {
                 object obj = ResourceManager.GetObject("Delete-Red-X-Button-Transparent", resourceCulture);
@@ -86,6 +96,16 @@ namespace Attendance_Management_System.Properties {
         internal static System.Drawing.Bitmap Delete_Red_X_Button_Transparent1 {
             get {
                 object obj = ResourceManager.GetObject("Delete-Red-X-Button-Transparent1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DeleteIcon {
+            get {
+                object obj = ResourceManager.GetObject("DeleteIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

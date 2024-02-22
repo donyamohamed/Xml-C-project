@@ -59,7 +59,10 @@ namespace Attendance_Management_System.Forms
 
         private void classes_data_Click(object sender, EventArgs e)
         {
+            classAdmin classAdmin1 = new classAdmin();
 
+            classAdmin1.Show();
+            Hide();
         }
 
         private void course_data_Click(object sender, EventArgs e)

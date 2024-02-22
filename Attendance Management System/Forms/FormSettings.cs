@@ -22,20 +22,20 @@ namespace Attendance_Management_System.Forms
         {
             timer1.Start();
             labelDteTimeNow.Text = DateTime.Now.ToString(AppConfig.AppSettings.DateFormats);
-            labelAppName.Text = Program.appConfig.AppName;
-            labelAppVersion.Text = Program.appConfig.AppVersion;
-            labelAppCreationDate.Text = Program.appConfig.AppCreationDate.ToString();
-            labelAppDescription.Text = Program.appConfig.AppDescription;
+            // labelAppName.Text = Program.appConfig.AppName;
+            // labelAppVersion.Text = Program.appConfig.AppVersion;
+            // labelAppCreationDate.Text = Program.appConfig.AppCreationDate.ToString();
+            // labelAppDescription.Text = Program.appConfig.AppDescription;
             //listBoxDevelopers.Text = string.Join(", ", Program.appConfig.Authors);
-            foreach (string author in Program.appConfig.Authors)
-            {
-                listBoxDevelopers.Items.Add(author);
-            }
-            numericUpDownBackup.Value = AppConfig.AppSettings.BackupInterval;
+            //foreach (string author in Program.appConfig.Authors)
+            //{
+            //    listBoxDevelopers.Items.Add(author);
+            //}
+            //numericUpDownBackup.Value = AppConfig.AppSettings.BackupInterval;
             // numericUpDownBackup.Accelerations = new NumericUpDownAcceleration[] { new NumericUpDownAcceleration(60*Program.timeInterval, 5) };
             listBoxSysLang.Text = AppConfig.AppSettings.Language;
             listBoxDateFormat.Text = AppConfig.AppSettings.DateFormats;
-            listBoxBackupFileLocations.DataSource = new string[] { Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath };
+            // listBoxBackupFileLocations.DataSource = new string[] { Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath };
 
         }
 
@@ -66,11 +66,12 @@ namespace Attendance_Management_System.Forms
             AppConfig.AppSettings.Language = listBoxSysLang.Text;
             AppConfig.AppSettings.DateFormats = listBoxDateFormat.Text;
             //         public static void SaveAppConfigAsXml(AppConfig appConfig, string filePath)
-            AppConfigParser.SaveAppConfigAsXml(Program.appConfig, Program.appConfigPath);
-            labelshowdate.Text = DateTime.Now.ToString(AppConfig.AppSettings.DateFormats);
-            MessageBox.Show("Settings saved successfully", "Settings", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            // set the open date and time to the current date and time
-            Program.appOpenDateandTime = DateTime.Now;
+
+            // AppConfigParser.SaveAppConfigAsXml(Program.appConfig, Program.appConfigPath);
+            // labelshowdate.Text = DateTime.Now.ToString(AppConfig.AppSettings.DateFormats);
+            // MessageBox.Show("Settings saved successfully", "Settings", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // // set the open date and time to the current date and time
+            // Program.appOpenDateandTime = DateTime.Now;
         }
 
         private void timer1_Tick(object sender, EventArgs e)

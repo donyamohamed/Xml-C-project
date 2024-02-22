@@ -7,13 +7,15 @@ namespace Attendance_Management_System.Forms
     internal static class Program
     {
 
+        public static string newCulture = "en";
+
         public static DateTime appOpenDateandTime = DateTime.Now;
         public static DateTime backupDateandTime = DateTime.Now.AddMinutes(AppConfig.AppSettings.BackupInterval);
         
 
-        public static string newCulture = "en";
+        //public static string newCulture = "en";
         public static string appLanguage = AppConfig.AppSettings.Language;
-        public static string appConfigPath = "G:\\ITI\\Xml-C-project\\Attendance Management System\\appConfigurations\\appConfigurations.xml";
+        public static string appConfigPath = "C:\\Users\\Orginal\\Downloads\\Donyabranch\\Xml-C-project\\Attendance Management System\\appConfigurations\\appConfigurations.xml";
         public static AppConfig appConfig = AppConfigParser.ParseAppConfig(appConfigPath);
         
         public static string usersPath = appConfig.UsersFilePath;
@@ -44,6 +46,7 @@ namespace Attendance_Management_System.Forms
             // see https://aka.ms/applicationconfiguration.
 
             ApplicationConfiguration.Initialize();
+            //Application.Run(new classAdmin());
 
             Application.Run(new FormLogin());
             // Application.Run(new FormSettings());
