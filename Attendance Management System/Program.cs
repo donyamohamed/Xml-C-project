@@ -64,5 +64,18 @@ namespace Attendance_Management_System.Forms
             CourseParser.SaveCoursesAsXml(courses, coursesPath);
             ClassParser.SaveClassesAsXml(claSSes, claSSesPath);
         }
+
+        /// <summary>
+        /// The GetDataFromXml method to get the data (users, courses, classes) from the xml files
+        /// </summary>
+        /// <param name="usersPath"></param>
+        /// <param name="coursesPath"></param>
+        /// <param name="claSSesPath"></param>
+            public static void GetDataFromXml(string usersPath, string coursesPath, string claSSesPath)
+        {
+            users = UserParser.ParseUsers(usersPath);
+            courses = CourseParser.ParseCourses(coursesPath);
+            claSSes = ClassParser.ParseClasses(claSSesPath);
+        }
     }
 }

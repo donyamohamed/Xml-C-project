@@ -257,6 +257,7 @@ namespace Attendance_Management_System.Forms
 
                 labelOpenDateTime.Text = Program.appOpenDateandTime.ToString(AppConfig.AppSettings.DateFormats)
                  + " " + Program.appOpenDateandTime.ToShortTimeString();
+
             }
 
 

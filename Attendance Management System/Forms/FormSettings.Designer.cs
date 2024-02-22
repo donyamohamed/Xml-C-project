@@ -58,12 +58,17 @@
             label10 = new Label();
             label3 = new Label();
             labelDteTimeNow = new Label();
+            button1 = new Button();
+            groupBox3 = new GroupBox();
+            listBoxBackupFileLocations = new ListBox();
+            label13 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownBackup).BeginInit();
+            groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -282,6 +287,40 @@
             labelDteTimeNow.Name = "labelDteTimeNow";
             toolTip1.SetToolTip(labelDteTimeNow, resources.GetString("labelDteTimeNow.ToolTip"));
             // 
+            // button1
+            // 
+            resources.ApplyResources(button1, "button1");
+            button1.BackColor = Color.Green;
+            button1.ForeColor = Color.White;
+            button1.Name = "button1";
+            toolTip1.SetToolTip(button1, resources.GetString("button1.ToolTip"));
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // groupBox3
+            // 
+            resources.ApplyResources(groupBox3, "groupBox3");
+            groupBox3.Controls.Add(listBoxBackupFileLocations);
+            groupBox3.Controls.Add(label13);
+            groupBox3.Controls.Add(button1);
+            groupBox3.Name = "groupBox3";
+            groupBox3.TabStop = false;
+            toolTip1.SetToolTip(groupBox3, resources.GetString("groupBox3.ToolTip"));
+            // 
+            // listBoxBackupFileLocations
+            // 
+            resources.ApplyResources(listBoxBackupFileLocations, "listBoxBackupFileLocations");
+            listBoxBackupFileLocations.FormattingEnabled = true;
+            listBoxBackupFileLocations.Items.AddRange(new object[] { resources.GetString("listBoxBackupFileLocations.Items"), resources.GetString("listBoxBackupFileLocations.Items1"), resources.GetString("listBoxBackupFileLocations.Items2") });
+            listBoxBackupFileLocations.Name = "listBoxBackupFileLocations";
+            toolTip1.SetToolTip(listBoxBackupFileLocations, resources.GetString("listBoxBackupFileLocations.ToolTip"));
+            // 
+            // label13
+            // 
+            resources.ApplyResources(label13, "label13");
+            label13.ForeColor = SystemColors.HotTrack;
+            label13.Name = "label13";
+            toolTip1.SetToolTip(label13, resources.GetString("label13.ToolTip"));
+            // 
             // timer1
             // 
             timer1.Tick += timer1_Tick;
@@ -291,6 +330,7 @@
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(groupBox3);
             Controls.Add(labelDteTimeNow);
             Controls.Add(label3);
             Controls.Add(groupBox2);
@@ -310,6 +350,7 @@
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numericUpDownBackup).EndInit();
+            groupBox3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -346,5 +387,9 @@
         private Label label6;
         private Label label12;
         private Label labelshowdate;
+        private Button button1;
+        private GroupBox groupBox3;
+        private ListBox listBoxBackupFileLocations;
+        private Label label13;
     }
 }

@@ -35,7 +35,7 @@ namespace Attendance_Management_System.Forms
             // numericUpDownBackup.Accelerations = new NumericUpDownAcceleration[] { new NumericUpDownAcceleration(60*Program.timeInterval, 5) };
             listBoxSysLang.Text = AppConfig.AppSettings.Language;
             listBoxDateFormat.Text = AppConfig.AppSettings.DateFormats;
-
+            listBoxBackupFileLocations.DataSource = new string[] { Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath };
 
         }
 
@@ -52,9 +52,9 @@ namespace Attendance_Management_System.Forms
         private void buttonLoginSaveSettings_Click(object sender, EventArgs e)
         {
 
-            
-            // validate the backup interval value > 5 & < 60
-            if (numericUpDownBackup.Value < 5 || numericUpDownBackup.Value > 60)
+
+            // validate the backup interval value > 5 & < 60 // < 1 just for testing purposes
+            if (numericUpDownBackup.Value > 1 && numericUpDownBackup.Value < 60)
             {
                 MessageBox.Show("Backup interval must be between 5 and 60 minutes", "Settings", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -83,7 +83,8 @@ namespace Attendance_Management_System.Forms
             //labelDteTimeNow.Enabled = true;
             // labelDteTimeNow.Text = DateTime.Now.ToString(AppConfig.AppSettings.DateFormats);
             //labelDteTimeNow.Text = DateTime.Now.ToShortDateString(AppConfig.AppSettings.DateFormats);
-            
+
         }
+
     }
 }

@@ -575,6 +575,60 @@
   <data name="labelDteTimeNow.Text" xml:space="preserve">
     <value>Current Date ...</value>
   </data>
+  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 22pt</value>
+  </data>
+  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>255, 52</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Restore Backups</value>
+  </data>
+  <data name="listBoxBackupFileLocations.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
+  </data>
+  <data name="listBoxBackupFileLocations.ItemHeight" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="listBoxBackupFileLocations.Items" xml:space="preserve">
+    <value>Program.appConfig.UsersBackupFilePath</value>
+  </data>
+  <data name="listBoxBackupFileLocations.Items1" xml:space="preserve">
+    <value>Program.appConfig.CoursesBackupFilePath</value>
+  </data>
+  <data name="listBoxBackupFileLocations.Items2" xml:space="preserve">
+    <value>Program.appConfig.ClassesBackupFilePath</value>
+  </data>
+  <data name="listBoxBackupFileLocations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 26</value>
+  </data>
+  <data name="listBoxBackupFileLocations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 67</value>
+  </data>
+  <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+  </data>
+  <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label13.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Backup File Location</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 217</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>App Data Info.</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1200, 749</value>
   </data>
