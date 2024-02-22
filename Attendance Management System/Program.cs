@@ -6,6 +6,7 @@ namespace Attendance_Management_System.Forms
 {
     internal static class Program
     {
+
         public static DateTime appOpenDateandTime = DateTime.Now;
         public static DateTime backupDateandTime = DateTime.Now.AddMinutes(AppConfig.AppSettings.BackupInterval);
         
