@@ -110,6 +110,7 @@
             dataGridViewCellStyle5.BackColor = Color.FromArgb(224, 224, 224);
             dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             studentGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
+          //  studentGrid.CellContentClick += studentGrid_CellContentClick;
             // 
             // date
             // 

@@ -21,20 +21,12 @@ namespace Attendance_Management_System.Forms
         public StudentForm()
         {
             InitializeComponent();
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.newCulture);
             InitializeForm();
         }
+
         private void InitializeForm()
         {
             loggedUser = FormLogin.meStudent;
-           
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.newCulture);
-            UpdateLanguage(); // Call the method to update the language
-            InitializeFormComponents();
-        }
-
-        private void InitializeFormComponents()
-        {
             LoadSessionDataForUser(loggedUser.Id);
             PopulateDataGridView();
             textSearch.TextChanged += TxtSearch_TextChanged;
@@ -59,17 +51,17 @@ namespace Attendance_Management_System.Forms
             {
                 string courseId = classNode.SelectSingleNode("courseId")?.InnerText;
                 string teacherId = classNode.SelectSingleNode("teacherId")?.InnerText;
-              
+
 
 
                 XmlNode courseNode = coursesDoc.SelectSingleNode($"//course[courseId='{courseId}']");
                 string courseName = courseNode.SelectSingleNode("courseName").InnerText;
 
                 // Retrieve teacher's name using teacher ID
-               
-             
+
+
                 XmlNode teacherNode = usersDoc?.SelectSingleNode($"//user[id='{teacherId}']");
-              
+
 
                 string teacherName = $"{teacherNode?.SelectSingleNode("fname").InnerText} {teacherNode.SelectSingleNode("lname")?.InnerText}";
 
@@ -157,7 +149,7 @@ namespace Attendance_Management_System.Forms
 
             allCourse.Click += (sender, e) => PopulateDataGridView();
 
-            
+
             foreach (var session in sessionData)
             {
                 string courseName = session.courseName;
@@ -212,31 +204,17 @@ namespace Attendance_Management_System.Forms
 
         private void pictureBoxLang_Click(object sender, EventArgs e)
         {
-            if(Program.newCulture == "en")
-            {
-                Program.newCulture = "ar";
-                InitializeComponent();
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.newCulture);
-                InitializeForm();
-            } else if (Program.newCulture == "ar")
-            {
-                Program.newCulture = "en";
-                InitializeComponent();
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.newCulture);
-                InitializeForm();
-            }
-            // lang.Text = (lang.Text == "en") ? "ar" : "en";
-            // UpdateLanguage();
+            lang.Text = (lang.Text == "en") ? "ar" : "en";
+            UpdateLanguage();
         }
 
         private void UpdateLanguage()
         {
-            string newCulture = (lang.Text == "en") ? "ar" : "en";
+            string newCulture = (lang.Text == "en") ? "en" : "ar";
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(newCulture);
             CultureInfo.CurrentCulture = new CultureInfo(newCulture);
             CultureInfo.CurrentUICulture = new CultureInfo(newCulture);
-            // UpdateUserInfo();
-            this.InitializeComponent();
+            UpdateUserInfo();
 
         }
 
