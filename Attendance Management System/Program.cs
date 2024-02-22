@@ -48,7 +48,7 @@ namespace Attendance_Management_System.Forms
             ApplicationConfiguration.Initialize();
             //Application.Run(new classAdmin());
 
-            Application.Run(new FormLogin());
+            Application.Run(new testAdmin());
             // Application.Run(new FormSettings());
 
             // Application.Run(new testAdmin());
