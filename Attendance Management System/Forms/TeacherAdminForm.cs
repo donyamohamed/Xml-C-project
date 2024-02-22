@@ -246,53 +246,81 @@ namespace Attendance_Management_System.Forms
             teacherAdminForm.Show();
             Hide();
         }
-        // handle delete btn
 
-        private void TeacherGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
-            if (e.ColumnIndex == teacherGrid.Columns["Delete"].Index && e.RowIndex != -1)
+            try
             {
+                string searchText = textBox1.Text.ToLower(); // Convert search text to lowercase for case-insensitive search
 
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this row?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                // Clear any previous filters
+                ((DataTable)teacherGrid.DataSource).DefaultView.RowFilter = "";
 
-                if (result == DialogResult.Yes)
+                if (!string.IsNullOrEmpty(searchText))
                 {
+                    // Build a filter expression for each column
+                    StringBuilder filterExpression = new StringBuilder();
 
-
-                    string idToDelete = teacherGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString();
-
-
-                    if (Role == "teacher")
+                    foreach (DataColumn column in ((DataTable)teacherGrid.DataSource).Columns)
                     {
-                        Teacher teacherToRemove = teachers.FirstOrDefault(t => t.Id == idToDelete);
-                        if (teacherToRemove != null)
-                        {
-                            teachers.Remove(teacherToRemove);
-                            users.Remove(teacherToRemove);
-                        }
-                    }
-                    else if (Role == "student")
-                    {
-                        Student studentToRemove = students.FirstOrDefault(s => s.Id == idToDelete);
-                        if (studentToRemove != null)
-                        {
-                            students.Remove(studentToRemove);
-                            users.Remove(studentToRemove);
-                        }
+                        if (filterExpression.Length > 0)
+                            filterExpression.Append(" OR ");
+
+                        filterExpression.Append($"CONVERT({column.ColumnName}, 'System.String') LIKE '%{searchText}%'");
                     }
 
-                    teacherGrid.Rows.RemoveAt(e.RowIndex);
+                    // Apply the filter
+                    ((DataTable)teacherGrid.DataSource).DefaultView.RowFilter = filterExpression.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error searching data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            // handle delete btn
+        }
 
+            private void TeacherGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            {
+                if (e.ColumnIndex == teacherGrid.Columns["Delete"].Index && e.RowIndex != -1)
+                {
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this row?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    UserParser.UpdateUsers(users, "../../../../users.xml");
-                    foreach
-                        (var user in users)
+                    if (result == DialogResult.Yes)
                     {
-                        MessageBox.Show(user.ToString());
+                        string idToDelete = teacherGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+
+                        if (Role == "teacher")
+                        {
+                            Teacher teacherToRemove = teachers.FirstOrDefault(t => t.Id == idToDelete);
+                            if (teacherToRemove != null)
+                            {
+                                teachers.Remove(teacherToRemove);
+                                users.Remove(teacherToRemove);
+                            }
+                        }
+                        else if (Role == "student")
+                        {
+                            Student studentToRemove = students.FirstOrDefault(s => s.Id == idToDelete);
+                            if (studentToRemove != null)
+                            {
+                                students.Remove(studentToRemove);
+                                users.Remove(studentToRemove);
+                            }
+                        }
+
+                        teacherGrid.Rows.RemoveAt(e.RowIndex);
+
+                        UserParser.UpdateUsers(users, "../../../../users.xml");
+
+                        foreach (var user in users)
+                        {
+                            MessageBox.Show(user.ToString());
+                        }
                     }
                 }
             }
+
         }
 
         private void btnInsertUser_Click(object sender, EventArgs e)
@@ -301,4 +329,3 @@ namespace Attendance_Management_System.Forms
             insform.ShowDialog();
         }
     }
-}

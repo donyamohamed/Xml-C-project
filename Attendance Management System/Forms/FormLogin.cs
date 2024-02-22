@@ -18,24 +18,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Attendance_Management_System.Forms
 {
-    /*
-    public struct Person
-    {
-        public string Name;
-        public string Password;
-        public string Email;
-
-        public Person(string name, string password, string email)
-        {
-            Name = name;
-            Password = password;
-            Email = email;
-        }
-    }
-    */
     public partial class FormLogin : Form
     {
-         public static Admin adminUser = new Admin();
+        public static Admin adminUser = new Admin();
         //meAdmin is Accessable from any form by FormLogin.meAdmin
         public static Teacher meTeacher = new Teacher();
         // meTeacher is Accessable from any form by FormLogin.meTeacher
@@ -86,9 +71,18 @@ namespace Attendance_Management_System.Forms
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
+            // Thread.CurrentThread.CurrentUICulture = 
+                // new CultureInfo(Program.appLanguage);
+                // new CultureInfo(Program.newCulture);
+            timerBackup.Start();
+            labelOpenDateTime.Text = Program.appOpenDateandTime.ToString(AppConfig.AppSettings.DateFormats) + " " + Program.appOpenDateandTime.ToShortTimeString();
             pictureBoxHide.Hide();
             pictureBoxError.Hide();
             labelInvalidUserName.Hide();
+
+            // test the backup method
+            // Program.SaveDataAsXml(Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath);
+
 
         }
 
@@ -163,6 +157,7 @@ namespace Attendance_Management_System.Forms
 
         private static Boolean ValidateUser(string email, string password)
         {
+            // foreach (var user in Program.users)
             foreach (var user in Program.users)
             {
                 if (user.Email == email && user.Password == password)
@@ -179,7 +174,7 @@ namespace Attendance_Management_System.Forms
                     }
                     else if (user.Role == "student")
                     {
-                       meStudent = (Student)user;
+                        meStudent = (Student)user;
                         return true;
                     }
                 }
@@ -213,6 +208,61 @@ namespace Attendance_Management_System.Forms
         {
             this.Controls.Clear();
             this.InitializeComponent();
+
+        }
+
+        private void buttonSetTimerBackup_Click(object sender, EventArgs e)
+        {
+            if (buttonSetTimerBackup.Text == "Set Timer for Backup")
+            {
+                textBoxSetTimerBackup.Visible = true;
+                buttonSetTimerBackup.Text = "Save";
+            }
+            else
+            {
+                buttonSetTimerBackup.Text = "Set Timer for Backup";
+                textBoxSetTimerBackup.Visible = false;
+                // Save the time in the configuration file
+                // 
+            }
+        }
+
+        private void pictureBoxSettings_Click(object sender, EventArgs e)
+        {
+            // AdminForm adminFormSettings = new AdminForm();
+            // FormLogin formLogin = new FormLogin();
+            // formLogin.Show();
+            // this.Hide();
+
+            // show th form login and hide the settings form
+            FormSettings formSettings = new FormSettings();
+            formSettings.Show();
+            Hide();
+        }
+        /// <summary>
+        /// The timerBackup_Tick method to backup the data (users, courses, classes)
+        /// every time interval (user can set it from 5 to 60 min) to the xml files
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timerBackup_Tick(object sender, EventArgs e)
+        {
+            
+            TimeSpan timeSpan = DateTime.Now - Program.appOpenDateandTime;
+            // labelOpenDateTime.Text = timeSpan.ToString(@"dd\.hh\:mm\:ss");
+            labelBackupIn.Text = 
+                timeSpan.ToString(@"dd\.hh\:mm\:ss");
+                // DateTime.Now.ToString();
+            if (timeSpan.TotalMinutes >= AppConfig.AppSettings.BackupInterval)
+            {
+                Program.SaveDataAsXml(Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath);
+                Program.appOpenDateandTime = DateTime.Now;
+
+                labelOpenDateTime.Text = Program.appOpenDateandTime.ToString(AppConfig.AppSettings.DateFormats)
+                 + " " + Program.appOpenDateandTime.ToShortTimeString();
+
+            }
+
 
         }
     }

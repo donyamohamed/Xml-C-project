@@ -59,12 +59,19 @@ namespace Attendance_Management_System.Forms
 
         private void classes_data_Click(object sender, EventArgs e)
         {
+            classAdmin classAdmin1 = new classAdmin();
 
+            classAdmin1.Show();
+            Hide();
         }
 
         private void course_data_Click(object sender, EventArgs e)
         {
-
+            role = "course";
+            TeacherAdminForm courseAdminForm = new TeacherAdminForm(role);
+            courseAdminForm.Role = role;
+            courseAdminForm.Show();
+            Hide();
         }
 
         private void admin_profile_Click(object sender, EventArgs e)

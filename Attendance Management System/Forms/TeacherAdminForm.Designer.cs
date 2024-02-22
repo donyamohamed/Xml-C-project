@@ -83,6 +83,8 @@ namespace Attendance_Management_System.Forms
             button6 = new Button();
             button7 = new Button();
             btnInsertUser = new Button();
+            textBox1 = new TextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)teacherGrid).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)closebox).BeginInit();
@@ -108,7 +110,7 @@ namespace Attendance_Management_System.Forms
             teacherGrid.AllowUserToAddRows = false;
             teacherGrid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 8.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 7.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.Padding = new Padding(5);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             teacherGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -116,7 +118,7 @@ namespace Attendance_Management_System.Forms
             teacherGrid.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.Orchid;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 15F);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
             dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle2.Padding = new Padding(5);
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 192, 192);
@@ -250,7 +252,7 @@ namespace Attendance_Management_System.Forms
             closebox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             closebox.Image = (System.Drawing.Image)resources.GetObject("closebox.Image");
             closebox.ImeMode = ImeMode.NoControl;
-            closebox.Location = new Point(1877, 3);
+            closebox.Location = new Point(1881, 0);
             closebox.Name = "closebox";
             closebox.Size = new Size(43, 43);
             closebox.SizeMode = PictureBoxSizeMode.Zoom;
@@ -263,7 +265,7 @@ namespace Attendance_Management_System.Forms
             minimizebox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             minimizebox.Image = (System.Drawing.Image)resources.GetObject("minimizebox.Image");
             minimizebox.ImeMode = ImeMode.NoControl;
-            minimizebox.Location = new Point(1828, 3);
+            minimizebox.Location = new Point(1832, 0);
             minimizebox.Name = "minimizebox";
             minimizebox.Size = new Size(52, 43);
             minimizebox.SizeMode = PictureBoxSizeMode.Zoom;
@@ -661,6 +663,22 @@ namespace Attendance_Management_System.Forms
             btnInsertUser.Text = "Add User";
             btnInsertUser.UseVisualStyleBackColor = true;
             btnInsertUser.Click += btnInsertUser_Click;
+            // textBox1
+            // 
+            textBox1.Location = new Point(664, 220);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(184, 41);
+            textBox1.TabIndex = 5;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(564, 220);
+            label1.Name = "label1";
+            label1.Size = new Size(94, 35);
+            label1.TabIndex = 6;
+            label1.Text = "Search:";
             // 
             // TeacherAdminForm
             // 
@@ -669,6 +687,8 @@ namespace Attendance_Management_System.Forms
             AutoSize = true;
             ClientSize = new Size(1924, 1055);
             Controls.Add(btnInsertUser);
+            Controls.Add(label1);
+            Controls.Add(textBox1);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(teacherGrid);
@@ -699,6 +719,7 @@ namespace Attendance_Management_System.Forms
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -746,5 +767,7 @@ namespace Attendance_Management_System.Forms
         private DataGridViewImageColumn delete;
         private DataGridViewImageColumn update;
         private Button btnInsertUser;
+        private TextBox textBox1;
+        private Label label1;
     }
 }
