@@ -81,7 +81,7 @@ namespace Attendance_Management_System.Forms
             labelInvalidUserName.Hide();
 
             // test the backup method
-            Program.SaveDataAsXml(Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath);
+            // Program.SaveDataAsXml(Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath);
 
 
         }
