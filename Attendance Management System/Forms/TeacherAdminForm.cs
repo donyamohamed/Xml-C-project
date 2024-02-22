@@ -30,9 +30,9 @@ namespace Attendance_Management_System.Forms
             InitializeComponent();
             Role = role;
             InitializeDataGridView();
-            MessageBox.Show(Role);
+            //MessageBox.Show(Role);
 
-            users = UserParser.ParseUsers("../../../../users.xml");
+  
 
             if (!string.IsNullOrEmpty(Role))
             {
@@ -54,7 +54,7 @@ namespace Attendance_Management_System.Forms
             // Set up DataGridView properties
             teacherGrid.AutoGenerateColumns = false;
             teacherGrid.AllowUserToAddRows = false;
-
+            teacherGrid.RowTemplate.Height = 60;
             // Define DataGridView columns
             id.DataPropertyName = "ID";
             teacherFname.DataPropertyName = "Fname";
@@ -64,6 +64,8 @@ namespace Attendance_Management_System.Forms
             password.DataPropertyName = "Password";
             phone.DataPropertyName = "Phone";
             address.DataPropertyName = "Address";
+ 
+       
         }
 
         /*  private void LoadTeacherData()
@@ -120,6 +122,8 @@ namespace Attendance_Management_System.Forms
 
         private void LoadUserData(string role)
         {
+            users = UserParser.ParseUsers("../../../../users.xml"); 
+
             try
             {
                 if (role == "teacher")
@@ -157,6 +161,7 @@ namespace Attendance_Management_System.Forms
                 if (item != null)
                 {
                     Image deleteImage = Image.FromFile("../../../../Assets/delete.png");
+               
                     dataTable.Rows.Add(
                         GetPropertyValue(item, "Id"),
                         GetPropertyValue(item, "FirstName"),
@@ -180,11 +185,7 @@ namespace Attendance_Management_System.Forms
         }
 
 
-        private void TeacherGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // This event is typically used for handling user interactions with the cells.
-            // If you don't have specific actions to perform on cell click, you can leave this empty.
-        }
+  
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -229,6 +230,7 @@ namespace Attendance_Management_System.Forms
         private void button7_Click(object sender, EventArgs e)
         {
             string role = "student";
+            LoadUserData(role);
             TeacherAdminForm studentAdminForm = new TeacherAdminForm(role);
             studentAdminForm.Role = role;
             studentAdminForm.Show();
@@ -237,8 +239,8 @@ namespace Attendance_Management_System.Forms
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string role = "teacher";
-
+           string role = "teacher";
+            LoadUserData(role);
             TeacherAdminForm teacherAdminForm = new TeacherAdminForm(role);
             teacherAdminForm.Role = role;
             teacherAdminForm.Show();
@@ -275,8 +277,56 @@ namespace Attendance_Management_System.Forms
             {
                 MessageBox.Show("Error searching data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        // handle delete btn
+     
+        private void TeacherGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+          
+            if (e.ColumnIndex == teacherGrid.Columns["Delete"].Index && e.RowIndex != -1)
+            {
+    
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this row?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                  
+                  
+                    string idToDelete = teacherGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+
+                 
+                    if (Role == "teacher")
+                    {
+                        Teacher teacherToRemove = teachers.FirstOrDefault(t => t.Id == idToDelete);
+                        if (teacherToRemove != null)
+                        {
+                            teachers.Remove(teacherToRemove);
+                            users.Remove(teacherToRemove); 
+                        }
+                    }
+                    else if (Role == "student")
+                    {
+                        Student studentToRemove = students.FirstOrDefault(s => s.Id == idToDelete);
+                        if (studentToRemove != null)
+                        {
+                            students.Remove(studentToRemove);
+                            users.Remove(studentToRemove);
+                        }
+                    }
+
+                    teacherGrid.Rows.RemoveAt(e.RowIndex);
+
+                 
+                    UserParser.UpdateUsers(users, "../../../../users.xml");
+                    foreach
+                        (var user in users)
+                    {
+                        MessageBox.Show(user.ToString());
+                    }
+                }
+            }
         }
 
 
     }
+}
 }

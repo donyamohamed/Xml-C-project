@@ -38,6 +38,7 @@ namespace Attendance_Management_System.Forms
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherAdminForm));
             teacherGrid = new DataGridView();
             id = new DataGridViewTextBoxColumn();
@@ -112,37 +113,48 @@ namespace Attendance_Management_System.Forms
             dataGridViewCellStyle1.Padding = new Padding(5);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             teacherGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            teacherGrid.BackgroundColor = Color.WhiteSmoke;
+            teacherGrid.BackgroundColor = SystemColors.Control;
             teacherGrid.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.Orchid;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
             dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new Padding(5);
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 192, 192);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             teacherGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             teacherGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             teacherGrid.Columns.AddRange(new DataGridViewColumn[] { id, teacherFname, teacherLname, age, email, password, phone, address, delete, update });
-            teacherGrid.Location = new Point(512, 270);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 15F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new Padding(5);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            teacherGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            teacherGrid.Location = new Point(472, 270);
             teacherGrid.Margin = new Padding(5);
             teacherGrid.Name = "teacherGrid";
             teacherGrid.ReadOnly = true;
             teacherGrid.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            teacherGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            teacherGrid.Size = new Size(1390, 1090);
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.Padding = new Padding(5, 10, 5, 10);
+            teacherGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            teacherGrid.Size = new Size(1372, 467);
             teacherGrid.TabIndex = 0;
             teacherGrid.CellContentClick += TeacherGrid_CellContentClick;
             // 
             // id
             // 
+            id.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             id.HeaderText = "ID";
-            id.MinimumWidth = 6;
+            id.MinimumWidth = 10;
             id.Name = "id";
             id.ReadOnly = true;
-            id.Width = 125;
             // 
             // teacherFname
             // 
@@ -236,6 +248,7 @@ namespace Attendance_Management_System.Forms
             // 
             // closebox
             // 
+            closebox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             closebox.Image = (System.Drawing.Image)resources.GetObject("closebox.Image");
             closebox.ImeMode = ImeMode.NoControl;
             closebox.Location = new Point(1881, 0);
@@ -248,6 +261,7 @@ namespace Attendance_Management_System.Forms
             // 
             // minimizebox
             // 
+            minimizebox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             minimizebox.Image = (System.Drawing.Image)resources.GetObject("minimizebox.Image");
             minimizebox.ImeMode = ImeMode.NoControl;
             minimizebox.Location = new Point(1832, 0);
@@ -671,7 +685,9 @@ namespace Attendance_Management_System.Forms
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             Name = "TeacherAdminForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminTeacherForm";
+            WindowState = FormWindowState.Maximized;
             Load += TeacherAdminForm_Load;
             ((System.ComponentModel.ISupportInitialize)teacherGrid).EndInit();
             panel3.ResumeLayout(false);

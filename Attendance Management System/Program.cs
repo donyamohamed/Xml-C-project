@@ -9,9 +9,19 @@ namespace Attendance_Management_System.Forms
 
         public static string newCulture = "en";
 
-        public static string usersPath = "../../../../users.xml";
-        public static string coursesPath = "../../../../courses.xml";
-        public static string claSSesPath = "../../../../class.xml";
+        public static DateTime appOpenDateandTime = DateTime.Now;
+        public static DateTime backupDateandTime = DateTime.Now.AddMinutes(AppConfig.AppSettings.BackupInterval);
+        
+
+        public static string newCulture = "en";
+        public static string appLanguage = AppConfig.AppSettings.Language;
+        public static string appConfigPath = "G:\\ITI\\Xml-C-project\\Attendance Management System\\appConfigurations\\appConfigurations.xml";
+        public static AppConfig appConfig = AppConfigParser.ParseAppConfig(appConfigPath);
+        
+        public static string usersPath = appConfig.UsersFilePath;
+        // public static string usersPath = "../../../../users.xml";
+        public static string coursesPath = appConfig.CoursesFilePath;
+        public static string claSSesPath = appConfig.ClassesFilePath;
 
         public static List<classes.User> users = UserParser.ParseUsers(usersPath);
         // Accessable from any form by Program.users
@@ -19,6 +29,12 @@ namespace Attendance_Management_System.Forms
         // Accessable from any form by Program.courses
         public static List<classes.Class> claSSes = ClassParser.ParseClasses(claSSesPath);
         // Accessable from any form by Program.claSSes
+
+        // set time interval for the timer every 5 minutes
+        public static int timeInterval = 300000; // 5 minutes
+
+        // Test the backup method 
+        
 
         /// <summary>
         ///  The main entry point for the application.
@@ -32,57 +48,20 @@ namespace Attendance_Management_System.Forms
             ApplicationConfiguration.Initialize();
             Application.Run(new classAdmin());
 
+            //Application.Run(new FormLogin());
+            // Application.Run(new FormSettings());
 
-            /*
-            Course course1 = new Course("1C", "math", "any text", 5);
-            Console.WriteLine(course1.Id);
-            Console.WriteLine(course1.Name);
-            Console.WriteLine(course1.Description);
-            Console.WriteLine(course1.Numberofsessions);
-            Console.WriteLine(course1.ToString());
-            */
+            // Application.Run(new testAdmin());
 
 
 
-            /*
-             * 
-             
-            // --------------->  just try get data of student :)
-             
-           
-            XmlDocument usersDoc = new XmlDocument();
-            usersDoc.Load("../../../../users.xml"); // default->  bin/depug folder
-
-           
-            List<Student> students = GetStudents(usersDoc);
-
-           
-            foreach (var student in students)
-            {
-                MessageBox.Show(student.ToString());
-            }
-            */
-
-            // Try to get data of Coures >_< //
-            // XmlDocument courseDoc = new XmlDocument();
-            // courseDoc.Load("../../../../courses.xml");
-
-            // List<Course> Courses = ParseCourses("../../../../courses.xml");
-            // CourseList Courses = new CourseList();
-            // List<Course> courses = GetCourses(courseDoc);
-            // Console.WriteLine(Courses.ToString());
 
 
-            /*
-            XmlNodeList nodeList;
-            XmlNode root = courseDoc.DocumentElement;
-
-            nodeList = root.SelectNodes("descendant::course");
-            */
+          
 
         }
 
-        /*
+        
         static List<Student> GetStudents(XmlDocument usersDoc)
         {
             List<Student> students = new List<Student>();
@@ -108,67 +87,39 @@ namespace Attendance_Management_System.Forms
             }
 
             return students;
+
         }
-        */
         
+        ///
+        ///<summary>
+        /// The AppSettings method to set the application settings (language, date format, backup interval)
+        /// </summary>
+        /// in progress ...
 
-
-/*        public static class CourseList
+        ///
+        ///<summary>
+            /// The Backup method to backup the data (users, courses, classes) 
+            /// every time interval (user can set it from 5 to 60 min) to the xml files
+        ///</summary>
+            public static void SaveDataAsXml(string usersPath, string coursesPath, string claSSesPath)
         {
-            public static List<Course> Courses { get; private set;}
-            
-            static CourseList()
-            {
-                XmlDocument courseDoc = new XmlDocument();
-                courseDoc.Load("../../../../courses.xml");
-
-                Courses = new List<Course>();
-                XmlNodeList courseNodes = courseDoc.SelectNodes("//course");
-
-
-                foreach (XmlNode courseNode in courseNodes)
-                {
-                    string courseId = courseNode.SelectSingleNode("courseId").InnerText;
-                    string courseName = courseNode.SelectSingleNode("courseName").InnerText;
-                    int sessionsNumber = Convert.ToInt32(courseNode.SelectSingleNode("sessionsNumber").InnerText);
-                    string description = courseNode.SelectSingleNode("description").InnerText;
-
-                    Course course = new Course(courseId, courseName, description, sessionsNumber);
-                    Courses.Add(course);
-                }
-
-
-            }
-
+            UserParser.SaveUsersAsXml(users, usersPath);
+            CourseParser.SaveCoursesAsXml(courses, coursesPath);
+            ClassParser.SaveClassesAsXml(claSSes, claSSesPath);
         }
-*/        
-/*        
-        static List<Course> GetCourses(XmlDocument courseDoc)
+
+        /// <summary>
+        /// The GetDataFromXml method to get the data (users, courses, classes) from the xml files
+        /// </summary>
+        /// <param name="usersPath"></param>
+        /// <param name="coursesPath"></param>
+        /// <param name="claSSesPath"></param>
+            public static void GetDataFromXml(string usersPath, string coursesPath, string claSSesPath)
         {
-            List<Course> courses = new List<Course>();
-
-            // Select all courses nodes
-            XmlNodeList courseNodes = courseDoc.SelectNodes("//course");
-            // XmlNodeList studentNodes = usersDoc.SelectNodes("//user[@role='student']");
-            // foreach (XmlNode studentNode in studentNodes)
-            foreach (XmlNode courseNode in courseNodes)
-            {
-                //  Course information
-
-                string courseId = courseNode.SelectSingleNode("courseId").InnerText;
-                string courseName = courseNode.SelectSingleNode("courseName").InnerText;
-                int sessionsNumber = Convert.ToInt32(courseNode.SelectSingleNode("sessionsNumber").InnerText);
-                string description = courseNode.SelectSingleNode("description").InnerText;
-
-                // Create Student object and add to list
-                //Student student = new Student(id, firstName, lastName, age, email, password, phone, address);
-                Course course = new Course(courseId, courseName, description, sessionsNumber);
-                courses.Add(course);
-                // Course.Add(student);
-            }
-
-            return courses;
+            users = UserParser.ParseUsers(usersPath);
+            courses = CourseParser.ParseCourses(coursesPath);
+            claSSes = ClassParser.ParseClasses(claSSesPath);
         }
-*/
+        
     }
 }
