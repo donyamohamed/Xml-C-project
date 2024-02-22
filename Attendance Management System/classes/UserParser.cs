@@ -59,6 +59,7 @@ namespace Attendance_Management_System.classes
 
             return users;
         }
+
         public static void SaveUsersAsXml(List<User> users, string filePath)
         {
             XmlDocument doc = new XmlDocument();
@@ -118,6 +119,46 @@ namespace Attendance_Management_System.classes
             doc.AppendChild(root);
             doc.Save(filePath);
         }
+        // end get data from xml
+        // start update data in xml
+        public static void UpdateUsers(List<User> users, string xmlFilePath)
+        {
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(xmlFilePath);
+
+                XmlNodeList userNodes = doc.SelectNodes("//user");
+                foreach (XmlNode userNode in userNodes)
+                {
+                    string id = userNode.SelectSingleNode("id").InnerText;
+
+                    User userToUpdate = users.FirstOrDefault(u => u.Id == id);
+                    if (userToUpdate != null)
+                    {
+                  
+                        userNode.SelectSingleNode("fname").InnerText = userToUpdate.FirstName;
+                        userNode.SelectSingleNode("lname").InnerText = userToUpdate.LastName;
+                        userNode.SelectSingleNode("age").InnerText = userToUpdate.Age.ToString();
+                        userNode.SelectSingleNode("email").InnerText = userToUpdate.Email;
+                        userNode.SelectSingleNode("password").InnerText = userToUpdate.Password;
+                        userNode.SelectSingleNode("phone").InnerText = userToUpdate.Phone;
+                        userNode.SelectSingleNode("address").InnerText = userToUpdate.Address;
+                    }
+                }
+
+           
+                doc.Save(xmlFilePath);
+              
+              
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error updating XML file: " + ex.Message);
+             
+            }
+        }
+
     }
 }
 
