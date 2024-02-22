@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-// suing the classes namespace to access the AppConfig class
 using Attendance_Management_System.classes;
 
 namespace Attendance_Management_System.Forms
@@ -21,6 +20,8 @@ namespace Attendance_Management_System.Forms
 
         private void FormSettings_Load(object sender, EventArgs e)
         {
+            timer1.Start();
+            labelDteTimeNow.Text = DateTime.Now.ToString(AppConfig.AppSettings.DateFormats);
             labelAppName.Text = Program.appConfig.AppName;
             labelAppVersion.Text = Program.appConfig.AppVersion;
             labelAppCreationDate.Text = Program.appConfig.AppCreationDate.ToString();
@@ -32,7 +33,7 @@ namespace Attendance_Management_System.Forms
             }
             numericUpDownBackup.Value = AppConfig.AppSettings.BackupInterval;
             // numericUpDownBackup.Accelerations = new NumericUpDownAcceleration[] { new NumericUpDownAcceleration(60*Program.timeInterval, 5) };
-            listBoxSysLang.Text = AppConfig.AppSettings.Languages;
+            listBoxSysLang.Text = AppConfig.AppSettings.Language;
             listBoxDateFormat.Text = AppConfig.AppSettings.DateFormats;
 
 
@@ -46,6 +47,43 @@ namespace Attendance_Management_System.Forms
         private void pictureBoxMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void buttonLoginSaveSettings_Click(object sender, EventArgs e)
+        {
+
+            
+            // validate the backup interval value > 5 & < 60
+            if (numericUpDownBackup.Value < 5 || numericUpDownBackup.Value > 60)
+            {
+                MessageBox.Show("Backup interval must be between 5 and 60 minutes", "Settings", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            // numericUpDownBackup.Value = AppConfig.AppSettings.BackupInterval;
+            AppConfig.AppSettings.BackupInterval = (int)numericUpDownBackup.Value;
+            AppConfig.AppSettings.Language = listBoxSysLang.Text;
+            AppConfig.AppSettings.DateFormats = listBoxDateFormat.Text;
+            //         public static void SaveAppConfigAsXml(AppConfig appConfig, string filePath)
+            AppConfigParser.SaveAppConfigAsXml(Program.appConfig, Program.appConfigPath);
+            labelshowdate.Text = DateTime.Now.ToString(AppConfig.AppSettings.DateFormats);
+            MessageBox.Show("Settings saved successfully", "Settings", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // set the open date and time to the current date and time
+            Program.appOpenDateandTime = DateTime.Now;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            labelDteTimeNow.Text = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
+            timer1.Start();
+
+
+            // labelDteTimeNow.Text = DateTime.Now.ToString(AppConfig.AppSettings.DateFormats);
+            //labelDteTimeNow.Enabled = true;
+            // labelDteTimeNow.Text = DateTime.Now.ToString(AppConfig.AppSettings.DateFormats);
+            //labelDteTimeNow.Text = DateTime.Now.ToShortDateString(AppConfig.AppSettings.DateFormats);
+            
         }
     }
 }

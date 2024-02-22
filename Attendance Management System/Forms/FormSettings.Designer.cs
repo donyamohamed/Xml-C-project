@@ -47,12 +47,18 @@
             labelAppName = new Label();
             UserEmail = new Label();
             groupBox2 = new GroupBox();
+            labelshowdate = new Label();
+            buttonLoginSaveSettings = new Button();
+            label12 = new Label();
             numericUpDownBackup = new NumericUpDown();
             listBoxSysLang = new ListBox();
             listBoxDateFormat = new ListBox();
             label11 = new Label();
             label7 = new Label();
             label10 = new Label();
+            label3 = new Label();
+            labelDteTimeNow = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
             groupBox1.SuspendLayout();
@@ -112,7 +118,7 @@
             // labelAppCreationDate
             // 
             resources.ApplyResources(labelAppCreationDate, "labelAppCreationDate");
-            labelAppCreationDate.ForeColor = SystemColors.HotTrack;
+            labelAppCreationDate.ForeColor = Color.Black;
             labelAppCreationDate.Name = "labelAppCreationDate";
             toolTip1.SetToolTip(labelAppCreationDate, resources.GetString("labelAppCreationDate.ToolTip"));
             // 
@@ -140,7 +146,7 @@
             // labelAppDescription
             // 
             resources.ApplyResources(labelAppDescription, "labelAppDescription");
-            labelAppDescription.ForeColor = SystemColors.HotTrack;
+            labelAppDescription.ForeColor = Color.Black;
             labelAppDescription.Name = "labelAppDescription";
             toolTip1.SetToolTip(labelAppDescription, resources.GetString("labelAppDescription.ToolTip"));
             // 
@@ -154,7 +160,7 @@
             // labelAppVersion
             // 
             resources.ApplyResources(labelAppVersion, "labelAppVersion");
-            labelAppVersion.ForeColor = SystemColors.HotTrack;
+            labelAppVersion.ForeColor = Color.Black;
             labelAppVersion.Name = "labelAppVersion";
             toolTip1.SetToolTip(labelAppVersion, resources.GetString("labelAppVersion.ToolTip"));
             // 
@@ -168,7 +174,7 @@
             // labelAppName
             // 
             resources.ApplyResources(labelAppName, "labelAppName");
-            labelAppName.ForeColor = SystemColors.HotTrack;
+            labelAppName.ForeColor = Color.Black;
             labelAppName.Name = "labelAppName";
             toolTip1.SetToolTip(labelAppName, resources.GetString("labelAppName.ToolTip"));
             // 
@@ -182,6 +188,9 @@
             // groupBox2
             // 
             resources.ApplyResources(groupBox2, "groupBox2");
+            groupBox2.Controls.Add(labelshowdate);
+            groupBox2.Controls.Add(buttonLoginSaveSettings);
+            groupBox2.Controls.Add(label12);
             groupBox2.Controls.Add(numericUpDownBackup);
             groupBox2.Controls.Add(listBoxSysLang);
             groupBox2.Controls.Add(listBoxDateFormat);
@@ -191,6 +200,30 @@
             groupBox2.Name = "groupBox2";
             groupBox2.TabStop = false;
             toolTip1.SetToolTip(groupBox2, resources.GetString("groupBox2.ToolTip"));
+            // 
+            // labelshowdate
+            // 
+            resources.ApplyResources(labelshowdate, "labelshowdate");
+            labelshowdate.ForeColor = Color.Black;
+            labelshowdate.Name = "labelshowdate";
+            toolTip1.SetToolTip(labelshowdate, resources.GetString("labelshowdate.ToolTip"));
+            // 
+            // buttonLoginSaveSettings
+            // 
+            resources.ApplyResources(buttonLoginSaveSettings, "buttonLoginSaveSettings");
+            buttonLoginSaveSettings.BackColor = Color.Green;
+            buttonLoginSaveSettings.ForeColor = Color.White;
+            buttonLoginSaveSettings.Name = "buttonLoginSaveSettings";
+            toolTip1.SetToolTip(buttonLoginSaveSettings, resources.GetString("buttonLoginSaveSettings.ToolTip"));
+            buttonLoginSaveSettings.UseVisualStyleBackColor = false;
+            buttonLoginSaveSettings.Click += buttonLoginSaveSettings_Click;
+            // 
+            // label12
+            // 
+            resources.ApplyResources(label12, "label12");
+            label12.ForeColor = SystemColors.HotTrack;
+            label12.Name = "label12";
+            toolTip1.SetToolTip(label12, resources.GetString("label12.ToolTip"));
             // 
             // numericUpDownBackup
             // 
@@ -235,11 +268,31 @@
             label10.Name = "label10";
             toolTip1.SetToolTip(label10, resources.GetString("label10.ToolTip"));
             // 
+            // label3
+            // 
+            resources.ApplyResources(label3, "label3");
+            label3.ForeColor = Color.Purple;
+            label3.Name = "label3";
+            toolTip1.SetToolTip(label3, resources.GetString("label3.ToolTip"));
+            // 
+            // labelDteTimeNow
+            // 
+            resources.ApplyResources(labelDteTimeNow, "labelDteTimeNow");
+            labelDteTimeNow.ForeColor = Color.Black;
+            labelDteTimeNow.Name = "labelDteTimeNow";
+            toolTip1.SetToolTip(labelDteTimeNow, resources.GetString("labelDteTimeNow.ToolTip"));
+            // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
             // FormSettings
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(labelDteTimeNow);
+            Controls.Add(label3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label2);
@@ -286,5 +339,12 @@
         private Label label10;
         private ListBox listBoxSysLang;
         private NumericUpDown numericUpDownBackup;
+        private Button buttonLoginSaveSettings;
+        private Label label3;
+        private Label labelDteTimeNow;
+        private System.Windows.Forms.Timer timer1;
+        private Label label6;
+        private Label label12;
+        private Label labelshowdate;
     }
 }

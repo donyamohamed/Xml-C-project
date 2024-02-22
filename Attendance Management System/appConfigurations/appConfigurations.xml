@@ -1,27 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <appConfigurations>
     <appConfiguration>
         <name>Attendance Management System</name>
         <version>1.0</version>
         <description>Attendance Management System Description</description>
-        <createdDate>2021-06-01</createdDate>
+        <createdDate>6/1/2021</createdDate>
         <dataPathes>
             <Users>../../../../users.xml</Users>
-            <!-- <Users>G:\ITI\Xml-C-project\users.xml</Users> -->
             <Courses>../../../../courses.xml</Courses>
-            <!-- <Courses>G:\ITI\Xml-C-project\courses.xml</Courses> -->
-            <Classes>../../../../class.xml</Classes>
-            <!-- <Classes>G:\ITI\Xml-C-project\class.xml</Classes> -->
+            <Sessions>../../../../class.xml</Sessions>
         </dataPathes>
+        <backupPathes>
+            <Users>../../../backup/usersBackup.xml</Users>
+            <Courses>../../../backup/coursesBackup.xml</Courses>
+            <Sessions>../../../backup/classBackup.xml</Sessions>
+        </backupPathes>
         <authors>
             <author>Author 1</author>
             <author>Author 2</author>
             <author>Author 3</author>
         </authors>
         <appSettings>
-            <!-- updateInterval in minutes -->
-            <backupInterval>5</backupInterval>
-            <language>English</language>
+            <updateInterval>1</updateInterval>
+            <language>en</language>
             <DateFormat>yyyy-MM-dd</DateFormat>
         </appSettings>
     </appConfiguration>

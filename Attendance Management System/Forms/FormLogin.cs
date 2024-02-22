@@ -71,9 +71,15 @@ namespace Attendance_Management_System.Forms
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
+            timerBackup.Start();
+            labelOpenDateTime.Text = Program.appOpenDateandTime.ToString(AppConfig.AppSettings.DateFormats) + " " + Program.appOpenDateandTime.ToShortTimeString();
             pictureBoxHide.Hide();
             pictureBoxError.Hide();
             labelInvalidUserName.Hide();
+
+            // test the backup method
+            Program.SaveDataAsXml(Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath);
+
 
         }
 
@@ -220,10 +226,40 @@ namespace Attendance_Management_System.Forms
 
         private void pictureBoxSettings_Click(object sender, EventArgs e)
         {
-            AdminForm adminFormSettings = new AdminForm();
-            FormLogin formLogin = new FormLogin();
-            formLogin.Show();
-            this.Hide();
+            // AdminForm adminFormSettings = new AdminForm();
+            // FormLogin formLogin = new FormLogin();
+            // formLogin.Show();
+            // this.Hide();
+
+            // show th form login and hide the settings form
+            FormSettings formSettings = new FormSettings();
+            formSettings.Show();
+            Hide();
+        }
+        /// <summary>
+        /// The timerBackup_Tick method to backup the data (users, courses, classes)
+        /// every time interval (user can set it from 5 to 60 min) to the xml files
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timerBackup_Tick(object sender, EventArgs e)
+        {
+            
+            TimeSpan timeSpan = DateTime.Now - Program.appOpenDateandTime;
+            // labelOpenDateTime.Text = timeSpan.ToString(@"dd\.hh\:mm\:ss");
+            labelBackupIn.Text = 
+                timeSpan.ToString(@"dd\.hh\:mm\:ss");
+                // DateTime.Now.ToString();
+            if (timeSpan.TotalMinutes >= AppConfig.AppSettings.BackupInterval)
+            {
+                Program.SaveDataAsXml(Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath);
+                Program.appOpenDateandTime = DateTime.Now;
+
+                labelOpenDateTime.Text = Program.appOpenDateandTime.ToString(AppConfig.AppSettings.DateFormats)
+                 + " " + Program.appOpenDateandTime.ToShortTimeString();
+            }
+
+
         }
     }
 }

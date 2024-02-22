@@ -5,43 +5,56 @@ using System.Text;
 using System.Threading.Tasks;
 using static Attendance_Management_System.classes.AppConfig;
 using System.Xml;
+using System.Data.SqlTypes;
+using static System.Windows.Forms.AxHost;
+using static System.Windows.Forms.LinkLabel;
 
 namespace Attendance_Management_System.classes
 {
     public static class AppConfigParser
     {
-        public static string AppName { get; private set; }
-
         public static AppConfig ParseAppConfig(string xmlFilePath)
         {
             AppConfig appConfig = new AppConfig();
 
-            // parse the xml file and fill the appConfig object
-            XmlDocument doc = new XmlDocument();
-            doc.Load(xmlFilePath);
-
-            XmlNodeList appConfigNodes = doc.SelectNodes("//appConfiguration");
-            foreach (XmlNode appConfigNode in appConfigNodes)
+            try
             {
-                appConfig.AppName = appConfigNode.SelectSingleNode("name").InnerText;
-                appConfig.AppVersion = appConfigNode.SelectSingleNode("version").InnerText;
-                appConfig.AppDescription = appConfigNode.SelectSingleNode("description").InnerText;
-                appConfig.AppCreationDate = DateOnly.Parse(appConfigNode.SelectSingleNode("createdDate").InnerText);
-                appConfig.UsersFilePath = appConfigNode.SelectSingleNode("dataPathes/Users").InnerText;
-                appConfig.CoursesFilePath = appConfigNode.SelectSingleNode("dataPathes/Courses").InnerText;
-                appConfig.ClassesFilePath = appConfigNode.SelectSingleNode("dataPathes/Classes").InnerText;
-                XmlNodeList authorsNodes = appConfigNode.SelectNodes("authors/author");
-                appConfig.Authors = new string[authorsNodes.Count];
-                for (int i = 0; i < authorsNodes.Count; i++)
+
+                XmlDocument doc = new();
+                doc.Load(xmlFilePath);
+                XmlNodeList appConfigNodes = doc.SelectNodes("//appConfiguration");
+
+                foreach (XmlNode appConfigNode in appConfigNodes)
                 {
-                    appConfig.Authors[i] = authorsNodes[i].InnerText;
+                    appConfig.AppName = appConfigNode.SelectSingleNode("name").InnerText;
+                    appConfig.AppVersion = appConfigNode.SelectSingleNode("version").InnerText;
+                    appConfig.AppDescription = appConfigNode.SelectSingleNode("description").InnerText;
+                    appConfig.AppCreationDate = DateOnly.Parse(appConfigNode.SelectSingleNode("createdDate").InnerText);
+                    appConfig.UsersFilePath = appConfigNode.SelectSingleNode("dataPathes/Users").InnerText;
+                    appConfig.CoursesFilePath = appConfigNode.SelectSingleNode("dataPathes/Courses").InnerText;
+                    appConfig.ClassesFilePath = appConfigNode.SelectSingleNode("dataPathes/Sessions").InnerText;
+                    appConfig.UsersBackupFilePath = appConfigNode.SelectSingleNode("backupPathes/Users").InnerText;
+                    appConfig.CoursesBackupFilePath = appConfigNode.SelectSingleNode("backupPathes/Courses").InnerText;
+                    appConfig.ClassesBackupFilePath = appConfigNode.SelectSingleNode("backupPathes/Sessions").InnerText;
+                    XmlNodeList authorsNodes = appConfigNode.SelectNodes("authors/author");
+                    appConfig.Authors = new string[authorsNodes.Count];
+                    for (int i = 0; i < authorsNodes.Count; i++)
+                    {
+                        appConfig.Authors[i] = authorsNodes[i].InnerText;
+                    }
+                    AppSettings.BackupInterval = int.Parse(appConfigNode.SelectSingleNode("appSettings/updateInterval").InnerText);
+                    AppSettings.Language = appConfigNode.SelectSingleNode("appSettings/language").InnerText;
+                    AppSettings.DateFormats = appConfigNode.SelectSingleNode("appSettings/DateFormat").InnerText;
                 }
-                AppSettings.BackupInterval = int.Parse(appConfigNode.SelectSingleNode("appSettings/backupInterval").InnerText);
-                AppSettings.Languages = appConfigNode.SelectSingleNode("appSettings/language").InnerText;
-                AppSettings.DateFormats = appConfigNode.SelectSingleNode("appSettings/DateFormat").InnerText;
-                }
-            return appConfig;
             }
+            catch (Exception ex)
+            {
+                // Handle the exception or log the error message
+                Console.WriteLine("Error loading XML file: " + ex.Message);
+            }
+
+            return appConfig;
+        }
         public static void SaveAppConfigAsXml(AppConfig appConfig, string filePath)
         {
             XmlDocument doc = new XmlDocument();
@@ -86,6 +99,21 @@ namespace Attendance_Management_System.classes
             Sessions.InnerText = appConfig.ClassesFilePath;
             dataPathes.AppendChild(Sessions);
 
+            XmlElement backup = doc.CreateElement("backupPathes");
+            appConfiguration.AppendChild(backup);
+
+            XmlElement UsersBackup = doc.CreateElement("Users");
+            UsersBackup.InnerText = appConfig.UsersBackupFilePath;
+            backup.AppendChild(UsersBackup);
+
+            XmlElement CoursesBackup = doc.CreateElement("Courses");
+            CoursesBackup.InnerText = appConfig.CoursesBackupFilePath;
+            backup.AppendChild(CoursesBackup);
+
+            XmlElement SessionsBackup = doc.CreateElement("Sessions");
+            SessionsBackup.InnerText = appConfig.ClassesBackupFilePath;
+            backup.AppendChild(SessionsBackup);
+
             XmlElement authors = doc.CreateElement("authors");
             appConfiguration.AppendChild(authors);
 
@@ -104,8 +132,12 @@ namespace Attendance_Management_System.classes
             appSettings.AppendChild(updateInterval);
 
             XmlElement language = doc.CreateElement("language");
-            language.InnerText = AppSettings.Languages;
+            language.InnerText = AppSettings.Language;
             appSettings.AppendChild(language);
+
+            XmlElement DateFormat = doc.CreateElement("DateFormat");
+            DateFormat.InnerText = AppSettings.DateFormats;
+            appSettings.AppendChild(DateFormat);
 
             root.AppendChild(appConfiguration);
             doc.AppendChild(root);
@@ -121,24 +153,25 @@ namespace Attendance_Management_System.classes
         <name>Attendance Management System</name>
         <version>1.0</version>
         <description>Attendance Management System Description</description>
+        <createdDate>6/1/2021</createdDate>
         <dataPathes>
             <Users>../../../../users.xml</Users>
-            <!-- <Users>G:\ITI\Xml-C-project\users.xml</Users> -->
             <Courses>../../../../courses.xml</Courses>
-            <!-- <Courses>G:\ITI\Xml-C-project\courses.xml</Courses> -->
-            <Classes>../../../../class.xml</Classes>
-            <!-- <Classes>G:\ITI\Xml-C-project\class.xml</Classes> -->
+            <Sessions>../../../../class.xml</Sessions>
         </dataPathes>
+        <backupPathes>
+            <Users>../../../backup/usersBackup.xml</Users>
+            <Courses>../../../backup/coursesBackup.xml</Courses>
+            <Sessions>../../../backup/classBackup.xml</Sessions>
+        </backupPathes>
         <authors>
             <author>Author 1</author>
             <author>Author 2</author>
             <author>Author 3</author>
         </authors>
-        <createdDate>2021-06-01</createdDate>
         <appSettings>
-            <!-- updateInterval in minutes -->
-            <backupInterval>5</backupInterval>
-            <language>English</language>
+            <updateInterval>50</updateInterval>
+            <language>en</language>
             <DateFormat>yyyy-MM-dd</DateFormat>
         </appSettings>
     </appConfiguration>

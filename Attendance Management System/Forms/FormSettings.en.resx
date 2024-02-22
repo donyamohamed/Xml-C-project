@@ -245,14 +245,8 @@
   <data name="label2.Text" xml:space="preserve">
     <value>Attendance System Management</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>457, 306</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>About The System</value>
-  </data>
   <data name="labelAppCreationDate.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+    <value>Century Gothic, 12pt</value>
   </data>
   <data name="labelAppCreationDate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -315,7 +309,7 @@
     <value>App Developers</value>
   </data>
   <data name="labelAppDescription.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+    <value>Century Gothic, 12pt</value>
   </data>
   <data name="labelAppDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -351,7 +345,7 @@
     <value>App Description:</value>
   </data>
   <data name="labelAppVersion.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+    <value>Century Gothic, 12pt</value>
   </data>
   <data name="labelAppVersion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -387,7 +381,7 @@
     <value>App Version:</value>
   </data>
   <data name="labelAppName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+    <value>Century Gothic, 12pt</value>
   </data>
   <data name="labelAppName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -419,11 +413,53 @@
   <data name="UserEmail.Text" xml:space="preserve">
     <value>App Name:</value>
   </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>510, 306</value>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>457, 306</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>System Configurations</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>About The System</value>
+  </data>
+  <data name="labelshowdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt</value>
+  </data>
+  <data name="labelshowdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelshowdate.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="labelshowdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
+  </data>
+  <data name="labelshowdate.Text" xml:space="preserve">
+    <value>save your changes</value>
+  </data>
+  <data name="buttonLoginSaveSettings.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 22pt</value>
+  </data>
+  <data name="buttonLoginSaveSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonLoginSaveSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>255, 52</value>
+  </data>
+  <data name="buttonLoginSaveSettings.Text" xml:space="preserve">
+    <value>Save Settings</value>
+  </data>
+  <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+  </data>
+  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label12.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Settings Changed at: </value>
   </data>
   <data name="numericUpDownBackup.Size" type="System.Drawing.Size, System.Drawing">
     <value>269, 27</value>
@@ -435,7 +471,7 @@
     <value>21</value>
   </data>
   <data name="listBoxSysLang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 88</value>
+    <value>304, 46</value>
   </data>
   <data name="listBoxDateFormat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>On</value>
@@ -443,32 +479,20 @@
   <data name="listBoxDateFormat.ItemHeight" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="listBoxDateFormat.Items" xml:space="preserve">
-    <value>yyyy-MM-dd</value>
-  </data>
-  <data name="listBoxDateFormat.Items1" xml:space="preserve">
-    <value>dd-MM-yyyy</value>
-  </data>
-  <data name="listBoxDateFormat.Items2" xml:space="preserve">
-    <value>MM-dd-yyyy</value>
-  </data>
   <data name="listBoxDateFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>197, 199</value>
+    <value>197, 119</value>
   </data>
   <data name="listBoxDateFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>304, 88</value>
-  </data>
-  <data name="listBoxDateFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="listBoxDateFormat.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt, style=Bold, Italic</value>
   </data>
   <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 119</value>
   </data>
   <data name="label11.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
@@ -508,6 +532,48 @@
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>Backup Interval (in minutes)</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 306</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>System Configurations</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt, style=Bold</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 23</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 16</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Current Date</value>
+  </data>
+  <data name="labelDteTimeNow.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelDteTimeNow.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt, style=Bold</value>
+  </data>
+  <data name="labelDteTimeNow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelDteTimeNow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 16</value>
+  </data>
+  <data name="labelDteTimeNow.Text" xml:space="preserve">
+    <value>Current Date ...</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1200, 749</value>

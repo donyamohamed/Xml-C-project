@@ -6,7 +6,12 @@ namespace Attendance_Management_System.Forms
 {
     internal static class Program
     {
+        public static DateTime appOpenDateandTime = DateTime.Now;
+        public static DateTime backupDateandTime = DateTime.Now.AddMinutes(AppConfig.AppSettings.BackupInterval);
+        
+
         public static string newCulture = "en";
+        public static string appLanguage = AppConfig.AppSettings.Language;
         public static string appConfigPath = "G:\\ITI\\Xml-C-project\\Attendance Management System\\appConfigurations\\appConfigurations.xml";
         public static AppConfig appConfig = AppConfigParser.ParseAppConfig(appConfigPath);
         
@@ -25,6 +30,9 @@ namespace Attendance_Management_System.Forms
         // set time interval for the timer every 5 minutes
         public static int timeInterval = 300000; // 5 minutes
 
+        // Test the backup method 
+        
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -34,14 +42,27 @@ namespace Attendance_Management_System.Forms
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
 
-            // testing conveting claSS to XML file
-            // ClassParser.SaveClassesAsXml(claSSes, "claSSesPath");
-            // CourseParser.SaveCoursesAsXml(courses, "coursesPath");
-            // UserParser.SaveUsersAsXml(users, "usersPath");
-
             ApplicationConfiguration.Initialize();
-            // Application.Run(new FormLogin());
-            Application.Run(new FormSettings());
+            Application.Run(new FormLogin());
+            // Application.Run(new FormSettings());
+        }
+        
+        ///
+        ///<summary>
+        /// The AppSettings method to set the application settings (language, date format, backup interval)
+        /// </summary>
+        /// in progress ...
+
+        ///
+        ///<summary>
+            /// The Backup method to backup the data (users, courses, classes) 
+            /// every time interval (user can set it from 5 to 60 min) to the xml files
+        ///</summary>
+            public static void SaveDataAsXml(string usersPath, string coursesPath, string claSSesPath)
+        {
+            UserParser.SaveUsersAsXml(users, usersPath);
+            CourseParser.SaveCoursesAsXml(courses, coursesPath);
+            ClassParser.SaveClassesAsXml(claSSes, claSSesPath);
         }
     }
 }

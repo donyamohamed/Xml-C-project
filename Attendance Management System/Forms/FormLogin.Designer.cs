@@ -49,6 +49,11 @@
             buttonSetTimerBackup = new Button();
             textBoxSetTimerBackup = new TextBox();
             pictureBoxSettings = new PictureBox();
+            labelOpenDateTime = new Label();
+            label3 = new Label();
+            labelBackupIn = new Label();
+            label5 = new Label();
+            timerBackup = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -212,11 +217,47 @@
             toolTip.SetToolTip(pictureBoxSettings, resources.GetString("pictureBoxSettings.ToolTip"));
             pictureBoxSettings.Click += pictureBoxSettings_Click;
             // 
+            // labelOpenDateTime
+            // 
+            resources.ApplyResources(labelOpenDateTime, "labelOpenDateTime");
+            labelOpenDateTime.ForeColor = Color.Black;
+            labelOpenDateTime.Name = "labelOpenDateTime";
+            toolTip.SetToolTip(labelOpenDateTime, resources.GetString("labelOpenDateTime.ToolTip"));
+            // 
+            // label3
+            // 
+            resources.ApplyResources(label3, "label3");
+            label3.ForeColor = Color.Purple;
+            label3.Name = "label3";
+            toolTip.SetToolTip(label3, resources.GetString("label3.ToolTip"));
+            // 
+            // labelBackupIn
+            // 
+            resources.ApplyResources(labelBackupIn, "labelBackupIn");
+            labelBackupIn.ForeColor = Color.Black;
+            labelBackupIn.Name = "labelBackupIn";
+            toolTip.SetToolTip(labelBackupIn, resources.GetString("labelBackupIn.ToolTip"));
+            // 
+            // label5
+            // 
+            resources.ApplyResources(label5, "label5");
+            label5.ForeColor = Color.Purple;
+            label5.Name = "label5";
+            toolTip.SetToolTip(label5, resources.GetString("label5.ToolTip"));
+            // 
+            // timerBackup
+            // 
+            timerBackup.Tick += timerBackup_Tick;
+            // 
             // FormLogin
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(labelBackupIn);
+            Controls.Add(label5);
+            Controls.Add(labelOpenDateTime);
+            Controls.Add(label3);
             Controls.Add(pictureBoxSettings);
             Controls.Add(textBoxSetTimerBackup);
             Controls.Add(buttonSetTimerBackup);
@@ -273,5 +314,10 @@
         private Button buttonSetTimerBackup;
         private TextBox textBoxSetTimerBackup;
         private PictureBox pictureBoxSettings;
+        private Label labelOpenDateTime;
+        private Label label3;
+        private Label labelBackupIn;
+        private Label label5;
+        public System.Windows.Forms.Timer timerBackup;
     }
 }
