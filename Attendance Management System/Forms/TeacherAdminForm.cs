@@ -297,7 +297,7 @@ namespace Attendance_Management_System.Forms
 
         private void btnInsertUser_Click(object sender, EventArgs e)
         {
-            InsertUserForm insform = new InsertUserForm(users);
+            InsertUserForm insform = new InsertUserForm(users,Role);
             insform.ShowDialog();
         }
     }

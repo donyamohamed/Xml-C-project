@@ -15,27 +15,28 @@ namespace Attendance_Management_System.Forms
     {
         private string NextUserId;
         private List<User> users;
-        public InsertUserForm(List<User> existingUsers)
+        public InsertUserForm(List<User> existingUsers,string role)
         {
             InitializeComponent();
             users = existingUsers;
-            TexUserID.Text = GetNextUserId();
+            TexUserID.Text = GetNextUserId(role);
 
         }
-        private string GetNextUserId()
+        private string GetNextUserId(string role)
         {
             // If there are no existing users, return "1U" as the first user ID
             if (users.Count == 0)
             {
-                return  "1U";
+                return "1" + role[0].ToString().ToUpper(); // Initialize with '1' and the first character of the role in uppercase
             }
 
-            // Extract numerical part from the existing user IDs, convert to integers, and find the maximum
-            int maxId = users.Max(u => int.Parse(u.Id.Substring(0, u.Id.Length - 1)));
+            // Extract numerical part from the existing user IDs based on the role, convert to integers, and find the maximum
+            int maxId = users.Where(u => u.Id.EndsWith(role[0].ToString().ToUpper())).Max(u => int.Parse(u.Id.Substring(0, u.Id.Length - 1)));
 
             // Increment the maximum ID by one to get the next ID
-            return (maxId + 1).ToString() + "U";
+            return (maxId + 1).ToString() + role[0].ToString().ToUpper();
         }
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
