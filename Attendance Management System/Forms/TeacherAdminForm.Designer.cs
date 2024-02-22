@@ -108,7 +108,7 @@ namespace Attendance_Management_System.Forms
             teacherGrid.AllowUserToAddRows = false;
             teacherGrid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 8.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 7.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.Padding = new Padding(5);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             teacherGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -116,7 +116,7 @@ namespace Attendance_Management_System.Forms
             teacherGrid.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.Orchid;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 15F);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
             dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 192, 192);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
