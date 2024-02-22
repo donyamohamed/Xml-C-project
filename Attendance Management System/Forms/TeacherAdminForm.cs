@@ -332,6 +332,8 @@ namespace Attendance_Management_System.Forms
                 {
                     string idToDelete = teacherGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString();
 
+                    Console.WriteLine($"Attempting to delete row at index {e.RowIndex}");
+
                     if (Role == "teacher")
                     {
                         Teacher teacherToRemove = teachers.FirstOrDefault(t => t.Id == idToDelete);
@@ -341,11 +343,13 @@ namespace Attendance_Management_System.Forms
                             users.Remove(teacherToRemove);
 
                             // Update the XML file
-                            UserParser.UpdateUsers(users, "../../../../users.xml");
+                            UserParser.RemoveUserById(users, "../../../../users.xml","../../../../class.xml", idToDelete);
 
                             // Update the DataGridView
                             teachers.Remove(teacherToRemove);
                             PopulateGrid(teachers);
+
+                            Console.WriteLine($"Row deleted successfully. Remaining rows: {teacherGrid.Rows.Count}");
                         }
                     }
                     else if (Role == "student")
@@ -357,11 +361,13 @@ namespace Attendance_Management_System.Forms
                             users.Remove(studentToRemove);
 
                             // Update the XML file
-                            UserParser.UpdateUsers(users, "../../../../users.xml");
+                            UserParser.RemoveUserById(users, "../../../../users.xml", "../../../../class.xml", idToDelete);
 
                             // Update the DataGridView
                             students.Remove(studentToRemove);
                             PopulateGrid(students);
+
+                            Console.WriteLine($"Row deleted successfully. Remaining rows: {teacherGrid.Rows.Count}");
                         }
                     }
 
@@ -369,6 +375,8 @@ namespace Attendance_Management_System.Forms
                 }
             }
         }
+
+
 
         private void btnInsertUser_Click(object sender, EventArgs e)
         {
