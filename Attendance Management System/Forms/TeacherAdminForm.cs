@@ -32,7 +32,7 @@ namespace Attendance_Management_System.Forms
             InitializeDataGridView();
             //MessageBox.Show(Role);
 
-  
+
 
             if (!string.IsNullOrEmpty(Role))
             {
@@ -64,8 +64,8 @@ namespace Attendance_Management_System.Forms
             password.DataPropertyName = "Password";
             phone.DataPropertyName = "Phone";
             address.DataPropertyName = "Address";
- 
-       
+
+
         }
 
         /*  private void LoadTeacherData()
@@ -122,7 +122,7 @@ namespace Attendance_Management_System.Forms
 
         private void LoadUserData(string role)
         {
-            users = UserParser.ParseUsers("../../../../users.xml"); 
+            users = UserParser.ParseUsers("../../../../users.xml");
 
             try
             {
@@ -161,7 +161,7 @@ namespace Attendance_Management_System.Forms
                 if (item != null)
                 {
                     Image deleteImage = Image.FromFile("../../../../Assets/delete.png");
-               
+
                     dataTable.Rows.Add(
                         GetPropertyValue(item, "Id"),
                         GetPropertyValue(item, "FirstName"),
@@ -185,7 +185,7 @@ namespace Attendance_Management_System.Forms
         }
 
 
-  
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -239,7 +239,7 @@ namespace Attendance_Management_System.Forms
 
         private void button4_Click(object sender, EventArgs e)
         {
-           string role = "teacher";
+            string role = "teacher";
             LoadUserData(role);
             TeacherAdminForm teacherAdminForm = new TeacherAdminForm(role);
             teacherAdminForm.Role = role;
@@ -323,6 +323,9 @@ namespace Attendance_Management_System.Forms
 
         }
 
-
-    
-}
+        private void btnInsertUser_Click(object sender, EventArgs e)
+        {
+            InsertUserForm insform = new InsertUserForm(users,Role);
+            insform.ShowDialog();
+        }
+    }
