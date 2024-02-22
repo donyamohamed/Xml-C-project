@@ -54,7 +54,7 @@ namespace Attendance_Management_System.Forms
                         foreach (Session session in studentSessions.Sessions)
                         {
                             // Scale the image to 50x50 (you can adjust the size as needed)
-                            Image scaledImage = ScaleImage(Properties.Resources.lang, 50, 50);
+                            Image scaledImage = ScaleImage(Properties.Resources.DeleteIcon, 50, 50);
 
                             dataTable.Rows.Add(classInfo.ClassId, classInfo.CourseId, classInfo.TeacherId, studentSessions.StudentId, session.Date, session.Status, scaledImage, scaledImage);
                         }
@@ -106,42 +106,60 @@ namespace Attendance_Management_System.Forms
         {
             // Handle rows added event
             // You can perform actions when rows are added here
-            MessageBox.Show("Rows Added: " + e.RowCount);
+            //MessageBox.Show("Rows Added: " + e.RowCount);
         }
 
         private void DataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             // Handle rows removed event
             // You can perform actions when rows are removed here
-            MessageBox.Show("Rows Removed: " + e.RowCount);
+            // MessageBox.Show("Rows Removed: " + e.RowCount);
         }
 
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             // Handle cell value changed event
             // You can perform actions when cell values are changed here
-            MessageBox.Show("Cell Value Changed: Row " + e.RowIndex + ", Column " + e.ColumnIndex);
+            // MessageBox.Show("Cell Value Changed: Row " + e.RowIndex + ", Column " + e.ColumnIndex);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            // Implement the search functionality
-            string searchText = textBox1.Text;
+            // Implement the case-insensitive search functionality
+            string searchText = textBox1.Text.ToLower(); // Convert search text to lowercase
 
-            if (!string.IsNullOrEmpty(searchText))
+            try
             {
-                // Use LINQ to filter rows based on the search text
-                var filteredRows = dataTable.AsEnumerable()
-                    .Where(row => row.ItemArray.Any(field => field.ToString().Contains(searchText)))
-                    .CopyToDataTable();
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    // Use LINQ to filter rows based on the case-insensitive search text
+                    var filteredRows = dataTable.AsEnumerable()
+                        .Where(row => row.ItemArray.Any(field => field.ToString().ToLower().Contains(searchText)))
+                        .CopyToDataTable();
 
-                dataGridView1.DataSource = filteredRows;
+                    dataGridView1.DataSource = filteredRows;
+                }
+                else
+                {
+                    // If the search text is empty, display all rows
+                    dataGridView1.DataSource = dataTable;
+                }
             }
-            else
+            catch (InvalidOperationException ex)
             {
-                // If the search text is empty, display all rows
-                dataGridView1.DataSource = dataTable;
+                // Handle the exception when CopyToDataTable has no matching rows
+                dataGridView1.DataSource = null;
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error during search: " + ex.Message);
+            }
+        }
+
+
+        private void classAdmin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

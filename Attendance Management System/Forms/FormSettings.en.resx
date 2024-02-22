@@ -1,0 +1,638 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pictureBoxClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="pictureBoxClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBoxClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 50</value>
+  </data>
+  <data name="pictureBoxClose.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBoxMinimize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="pictureBoxMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        gg==
+</value>
+  </data>
+  <data name="pictureBoxMinimize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBoxMinimize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 50</value>
+  </data>
+  <data name="pictureBoxMinimize.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 30pt, style=Bold, Italic</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>678, 50</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Attendance System Management</value>
+  </data>
+  <data name="labelAppCreationDate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt</value>
+  </data>
+  <data name="labelAppCreationDate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelAppCreationDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 115</value>
+  </data>
+  <data name="labelAppCreationDate.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="labelAppCreationDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 21</value>
+  </data>
+  <data name="labelAppCreationDate.Text" xml:space="preserve">
+    <value>App Description</value>
+  </data>
+  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+  </data>
+  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 115</value>
+  </data>
+  <data name="label9.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 21</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>App Creation Date:</value>
+  </data>
+  <data name="listBoxDevelopers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
+  </data>
+  <data name="listBoxDevelopers.ItemHeight" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="listBoxDevelopers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 88</value>
+  </data>
+  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+  </data>
+  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 195</value>
+  </data>
+  <data name="label8.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 21</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>App Developers</value>
+  </data>
+  <data name="labelAppDescription.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt</value>
+  </data>
+  <data name="labelAppDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelAppDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 155</value>
+  </data>
+  <data name="labelAppDescription.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="labelAppDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 21</value>
+  </data>
+  <data name="labelAppDescription.Text" xml:space="preserve">
+    <value>App Description</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 155</value>
+  </data>
+  <data name="label5.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 21</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>App Description:</value>
+  </data>
+  <data name="labelAppVersion.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt</value>
+  </data>
+  <data name="labelAppVersion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelAppVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>116, 75</value>
+  </data>
+  <data name="labelAppVersion.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="labelAppVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 21</value>
+  </data>
+  <data name="labelAppVersion.Text" xml:space="preserve">
+    <value>App Version</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 75</value>
+  </data>
+  <data name="label4.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 21</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>App Version:</value>
+  </data>
+  <data name="labelAppName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt</value>
+  </data>
+  <data name="labelAppName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelAppName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 35</value>
+  </data>
+  <data name="labelAppName.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="labelAppName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>342, 21</value>
+  </data>
+  <data name="labelAppName.Text" xml:space="preserve">
+    <value>App Name</value>
+  </data>
+  <data name="UserEmail.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+  </data>
+  <data name="UserEmail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="UserEmail.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="UserEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 21</value>
+  </data>
+  <data name="UserEmail.Text" xml:space="preserve">
+    <value>App Name:</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>457, 306</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>About The System</value>
+  </data>
+  <data name="labelshowdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt</value>
+  </data>
+  <data name="labelshowdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelshowdate.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="labelshowdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
+  </data>
+  <data name="labelshowdate.Text" xml:space="preserve">
+    <value>save your changes</value>
+  </data>
+  <data name="buttonLoginSaveSettings.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 22pt</value>
+  </data>
+  <data name="buttonLoginSaveSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonLoginSaveSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>255, 52</value>
+  </data>
+  <data name="buttonLoginSaveSettings.Text" xml:space="preserve">
+    <value>Save Settings</value>
+  </data>
+  <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+  </data>
+  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label12.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Settings Changed at: </value>
+  </data>
+  <data name="numericUpDownBackup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 27</value>
+  </data>
+  <data name="listBoxSysLang.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
+  </data>
+  <data name="listBoxSysLang.ItemHeight" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="listBoxSysLang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 46</value>
+  </data>
+  <data name="listBoxDateFormat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
+  </data>
+  <data name="listBoxDateFormat.ItemHeight" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="listBoxDateFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>197, 119</value>
+  </data>
+  <data name="listBoxDateFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 88</value>
+  </data>
+  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+  </data>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 119</value>
+  </data>
+  <data name="label11.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>System Date Format</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label7.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 21</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>System Language</value>
+  </data>
+  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+  </data>
+  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label10.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 21</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Backup Interval (in minutes)</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 306</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>System Configurations</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt, style=Bold</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 23</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 16</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Current Date</value>
+  </data>
+  <data name="labelDteTimeNow.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelDteTimeNow.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt, style=Bold</value>
+  </data>
+  <data name="labelDteTimeNow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelDteTimeNow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 16</value>
+  </data>
+  <data name="labelDteTimeNow.Text" xml:space="preserve">
+    <value>Current Date ...</value>
+  </data>
+  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 22pt</value>
+  </data>
+  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>255, 52</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Restore Backups</value>
+  </data>
+  <data name="listBoxBackupFileLocations.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
+  </data>
+  <data name="listBoxBackupFileLocations.ItemHeight" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="listBoxBackupFileLocations.Items" xml:space="preserve">
+    <value>Program.appConfig.UsersBackupFilePath</value>
+  </data>
+  <data name="listBoxBackupFileLocations.Items1" xml:space="preserve">
+    <value>Program.appConfig.CoursesBackupFilePath</value>
+  </data>
+  <data name="listBoxBackupFileLocations.Items2" xml:space="preserve">
+    <value>Program.appConfig.ClassesBackupFilePath</value>
+  </data>
+  <data name="listBoxBackupFileLocations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 26</value>
+  </data>
+  <data name="listBoxBackupFileLocations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 67</value>
+  </data>
+  <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt, style=Bold, Italic</value>
+  </data>
+  <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label13.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 21</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Backup File Location</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 217</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>App Data Info.</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1200, 749</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+</root>

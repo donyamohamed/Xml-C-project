@@ -117,7 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-<<<<<<< HEAD:Attendance Management System/Forms/StudentAdminForm.resx
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>en</value>
   </metadata>
@@ -141,6 +140,3 @@
     <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
-=======
-</root>
->>>>>>> 5cc7829f781d3112dfc14bead4e0d6ba744f67ed:Attendance Management System/Forms/InsertUserForm.resx

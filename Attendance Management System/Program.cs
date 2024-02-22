@@ -6,6 +6,7 @@ namespace Attendance_Management_System.Forms
 {
     internal static class Program
     {
+
         public static string newCulture = "en";
 
         public static string usersPath = "../../../../users.xml";
@@ -29,7 +30,7 @@ namespace Attendance_Management_System.Forms
             // see https://aka.ms/applicationconfiguration.
 
             ApplicationConfiguration.Initialize();
-            Application.Run(new testAdmin());
+            Application.Run(new classAdmin());
 
 
             /*

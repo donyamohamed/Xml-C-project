@@ -535,6 +535,7 @@
             Controls.Add(panel3);
             Name = "classAdmin";
             Text = "classAdmin";
+            Load += classAdmin_Load;
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)closebox).EndInit();
             ((System.ComponentModel.ISupportInitialize)minimizebox).EndInit();

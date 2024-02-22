@@ -21,7 +21,7 @@ namespace Attendance_Management_System.Forms
         public StudentForm()
         {
             InitializeComponent();
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.newCulture);
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.newCulture);
             InitializeForm();
         }
         private void InitializeForm()
