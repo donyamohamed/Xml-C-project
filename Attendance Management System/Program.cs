@@ -14,10 +14,10 @@ namespace Attendance_Management_System.Forms
         
 
         //public static string newCulture = "en";
-        public static string appLanguage = AppConfig.AppSettings.Language;
         public static string appConfigPath = "C:\\Users\\Orginal\\Downloads\\Donyabranch\\Xml-C-project\\Attendance Management System\\appConfigurations\\appConfigurations.xml";
         public static AppConfig appConfig = AppConfigParser.ParseAppConfig(appConfigPath);
         
+        public static string appLanguage = AppConfig.AppSettings.Language;
         public static string usersPath = appConfig.UsersFilePath;
         // public static string usersPath = "../../../../users.xml";
         public static string coursesPath = appConfig.CoursesFilePath;
@@ -48,11 +48,11 @@ namespace Attendance_Management_System.Forms
             ApplicationConfiguration.Initialize();
             //Application.Run(new classAdmin());
 
-            Application.Run(new testAdmin());
+            // Application.Run(new testAdmin());
             // Application.Run(new FormSettings());
 
             // Application.Run(new testAdmin());
-
+            Application.Run(new FormLogin());
 
 
 

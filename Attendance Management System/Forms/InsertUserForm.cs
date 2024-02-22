@@ -73,7 +73,7 @@ namespace Attendance_Management_System.Forms
             users.Add(newUser);
 
             // Update the XML file with the new user data
-            UserParser.UpdateUsers(users, "../../../../users.xml");
+            UserParser.InsertUsers(users, "../../../../users.xml");
 
             // Close the form
             this.Close();

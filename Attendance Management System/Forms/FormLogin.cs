@@ -71,7 +71,9 @@ namespace Attendance_Management_System.Forms
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            // Thread.CurrentThread.CurrentUICulture = 
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(AppConfig.AppSettings.Language);
+            this.Controls.Clear();
+            this.InitializeComponent();
                 // new CultureInfo(Program.appLanguage);
                 // new CultureInfo(Program.newCulture);
             timerBackup.Start();
