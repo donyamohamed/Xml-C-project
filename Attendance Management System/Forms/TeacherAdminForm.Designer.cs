@@ -82,6 +82,7 @@ namespace Attendance_Management_System.Forms
             button5 = new Button();
             button6 = new Button();
             button7 = new Button();
+            btnInsertUser = new Button();
             textBox1 = new TextBox();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)teacherGrid).BeginInit();
@@ -653,6 +654,15 @@ namespace Attendance_Management_System.Forms
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click;
             // 
+            // btnInsertUser
+            // 
+            btnInsertUser.Location = new Point(487, 825);
+            btnInsertUser.Name = "btnInsertUser";
+            btnInsertUser.Size = new Size(154, 52);
+            btnInsertUser.TabIndex = 5;
+            btnInsertUser.Text = "Add User";
+            btnInsertUser.UseVisualStyleBackColor = true;
+            btnInsertUser.Click += btnInsertUser_Click;
             // textBox1
             // 
             textBox1.Location = new Point(664, 220);
@@ -676,6 +686,7 @@ namespace Attendance_Management_System.Forms
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1924, 1055);
+            Controls.Add(btnInsertUser);
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(panel4);
@@ -755,6 +766,7 @@ namespace Attendance_Management_System.Forms
         private DataGridViewTextBoxColumn address;
         private DataGridViewImageColumn delete;
         private DataGridViewImageColumn update;
+        private Button btnInsertUser;
         private TextBox textBox1;
         private Label label1;
     }

@@ -44,11 +44,11 @@
             texEmail = new TextBox();
             texPass = new TextBox();
             texPhone = new TextBox();
-            textBox5 = new TextBox();
+            texAddress = new TextBox();
             label8 = new Label();
             label9 = new Label();
-            listBox1 = new ListBox();
             btnAdd = new Button();
+            comboBoxRole = new ComboBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -139,6 +139,7 @@
             // 
             TexUserID.Location = new Point(188, 232);
             TexUserID.Name = "TexUserID";
+            TexUserID.ReadOnly = true;
             TexUserID.Size = new Size(156, 27);
             TexUserID.TabIndex = 8;
             // 
@@ -184,12 +185,12 @@
             texPhone.Size = new Size(156, 27);
             texPhone.TabIndex = 14;
             // 
-            // textBox5
+            // texAddress
             // 
-            textBox5.Location = new Point(834, 342);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(156, 27);
-            textBox5.TabIndex = 15;
+            texAddress.Location = new Point(834, 342);
+            texAddress.Name = "texAddress";
+            texAddress.Size = new Size(156, 27);
+            texAddress.TabIndex = 15;
             // 
             // label8
             // 
@@ -209,15 +210,6 @@
             label9.TabIndex = 17;
             label9.Text = "Role";
             // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Items.AddRange(new object[] { "Student", "Teacher" });
-            listBox1.Location = new Point(516, 234);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(150, 24);
-            listBox1.TabIndex = 18;
-            // 
             // btnAdd
             // 
             btnAdd.BackColor = Color.FromArgb(255, 192, 192);
@@ -227,6 +219,16 @@
             btnAdd.TabIndex = 19;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // comboBoxRole
+            // 
+            comboBoxRole.FormattingEnabled = true;
+            comboBoxRole.Items.AddRange(new object[] { "Student", "Teacher" });
+            comboBoxRole.Location = new Point(516, 232);
+            comboBoxRole.Name = "comboBoxRole";
+            comboBoxRole.Size = new Size(156, 28);
+            comboBoxRole.TabIndex = 20;
             // 
             // InsertUserForm
             // 
@@ -234,11 +236,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1047, 506);
+            Controls.Add(comboBoxRole);
             Controls.Add(btnAdd);
-            Controls.Add(listBox1);
             Controls.Add(label9);
             Controls.Add(label8);
-            Controls.Add(textBox5);
+            Controls.Add(texAddress);
             Controls.Add(texPhone);
             Controls.Add(texPass);
             Controls.Add(texEmail);
@@ -281,10 +283,10 @@
         private TextBox texEmail;
         private TextBox texPass;
         private TextBox texPhone;
-        private TextBox textBox5;
+        private TextBox texAddress;
         private Label label8;
         private Label label9;
-        private ListBox listBox1;
         private Button btnAdd;
+        private ComboBox comboBoxRole;
     }
 }
