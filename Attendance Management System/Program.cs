@@ -6,11 +6,19 @@ namespace Attendance_Management_System.Forms
 {
     internal static class Program
     {
-        public static string newCulture = "en";
+        public static DateTime appOpenDateandTime = DateTime.Now;
+        public static DateTime backupDateandTime = DateTime.Now.AddMinutes(AppConfig.AppSettings.BackupInterval);
+        
 
-        public static string usersPath = "../../../../users.xml";
-        public static string coursesPath = "../../../../courses.xml";
-        public static string claSSesPath = "../../../../class.xml";
+        public static string newCulture = "en";
+        public static string appLanguage = AppConfig.AppSettings.Language;
+        public static string appConfigPath = "G:\\ITI\\Xml-C-project\\Attendance Management System\\appConfigurations\\appConfigurations.xml";
+        public static AppConfig appConfig = AppConfigParser.ParseAppConfig(appConfigPath);
+        
+        public static string usersPath = appConfig.UsersFilePath;
+        // public static string usersPath = "../../../../users.xml";
+        public static string coursesPath = appConfig.CoursesFilePath;
+        public static string claSSesPath = appConfig.ClassesFilePath;
 
         public static List<classes.User> users = UserParser.ParseUsers(usersPath);
         // Accessable from any form by Program.users
@@ -18,6 +26,12 @@ namespace Attendance_Management_System.Forms
         // Accessable from any form by Program.courses
         public static List<classes.Class> claSSes = ClassParser.ParseClasses(claSSesPath);
         // Accessable from any form by Program.claSSes
+
+        // set time interval for the timer every 5 minutes
+        public static int timeInterval = 300000; // 5 minutes
+
+        // Test the backup method 
+        
 
         /// <summary>
         ///  The main entry point for the application.
@@ -29,6 +43,10 @@ namespace Attendance_Management_System.Forms
             // see https://aka.ms/applicationconfiguration.
 
             ApplicationConfiguration.Initialize();
+
+            // Application.Run(new FormLogin());
+            // Application.Run(new FormSettings());
+
             Application.Run(new testAdmin());
 
 
@@ -65,67 +83,39 @@ namespace Attendance_Management_System.Forms
             }
 
             return students;
+
+        }
+        
+        ///
+        ///<summary>
+        /// The AppSettings method to set the application settings (language, date format, backup interval)
+        /// </summary>
+        /// in progress ...
+
+        ///
+        ///<summary>
+            /// The Backup method to backup the data (users, courses, classes) 
+            /// every time interval (user can set it from 5 to 60 min) to the xml files
+        ///</summary>
+            public static void SaveDataAsXml(string usersPath, string coursesPath, string claSSesPath)
+        {
+            UserParser.SaveUsersAsXml(users, usersPath);
+            CourseParser.SaveCoursesAsXml(courses, coursesPath);
+            ClassParser.SaveClassesAsXml(claSSes, claSSesPath);
+        }
+
+        /// <summary>
+        /// The GetDataFromXml method to get the data (users, courses, classes) from the xml files
+        /// </summary>
+        /// <param name="usersPath"></param>
+        /// <param name="coursesPath"></param>
+        /// <param name="claSSesPath"></param>
+            public static void GetDataFromXml(string usersPath, string coursesPath, string claSSesPath)
+        {
+            users = UserParser.ParseUsers(usersPath);
+            courses = CourseParser.ParseCourses(coursesPath);
+            claSSes = ClassParser.ParseClasses(claSSesPath);
         }
         */
-        
-
-
-/*        public static class CourseList
-        {
-            public static List<Course> Courses { get; private set;}
-            
-            static CourseList()
-            {
-                XmlDocument courseDoc = new XmlDocument();
-                courseDoc.Load("../../../../courses.xml");
-
-                Courses = new List<Course>();
-                XmlNodeList courseNodes = courseDoc.SelectNodes("//course");
-
-
-                foreach (XmlNode courseNode in courseNodes)
-                {
-                    string courseId = courseNode.SelectSingleNode("courseId").InnerText;
-                    string courseName = courseNode.SelectSingleNode("courseName").InnerText;
-                    int sessionsNumber = Convert.ToInt32(courseNode.SelectSingleNode("sessionsNumber").InnerText);
-                    string description = courseNode.SelectSingleNode("description").InnerText;
-
-                    Course course = new Course(courseId, courseName, description, sessionsNumber);
-                    Courses.Add(course);
-                }
-
-
-            }
-
-        }
-*/        
-/*        
-        static List<Course> GetCourses(XmlDocument courseDoc)
-        {
-            List<Course> courses = new List<Course>();
-
-            // Select all courses nodes
-            XmlNodeList courseNodes = courseDoc.SelectNodes("//course");
-            // XmlNodeList studentNodes = usersDoc.SelectNodes("//user[@role='student']");
-            // foreach (XmlNode studentNode in studentNodes)
-            foreach (XmlNode courseNode in courseNodes)
-            {
-                //  Course information
-
-                string courseId = courseNode.SelectSingleNode("courseId").InnerText;
-                string courseName = courseNode.SelectSingleNode("courseName").InnerText;
-                int sessionsNumber = Convert.ToInt32(courseNode.SelectSingleNode("sessionsNumber").InnerText);
-                string description = courseNode.SelectSingleNode("description").InnerText;
-
-                // Create Student object and add to list
-                //Student student = new Student(id, firstName, lastName, age, email, password, phone, address);
-                Course course = new Course(courseId, courseName, description, sessionsNumber);
-                courses.Add(course);
-                // Course.Add(student);
-            }
-
-            return courses;
-        }
-*/
     }
 }
