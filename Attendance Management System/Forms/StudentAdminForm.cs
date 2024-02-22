@@ -14,7 +14,7 @@ namespace Attendance_Management_System.Forms
     {
         public StudentAdminForm()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
     }
 }

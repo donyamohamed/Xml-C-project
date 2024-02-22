@@ -237,12 +237,46 @@ namespace Attendance_Management_System.Forms
 
         private void button4_Click(object sender, EventArgs e)
         {
-           string role = "teacher";
+            string role = "teacher";
 
             TeacherAdminForm teacherAdminForm = new TeacherAdminForm(role);
             teacherAdminForm.Role = role;
             teacherAdminForm.Show();
             Hide();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string searchText = textBox1.Text.ToLower(); // Convert search text to lowercase for case-insensitive search
+
+                // Clear any previous filters
+                ((DataTable)teacherGrid.DataSource).DefaultView.RowFilter = "";
+
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    // Build a filter expression for each column
+                    StringBuilder filterExpression = new StringBuilder();
+
+                    foreach (DataColumn column in ((DataTable)teacherGrid.DataSource).Columns)
+                    {
+                        if (filterExpression.Length > 0)
+                            filterExpression.Append(" OR ");
+
+                        filterExpression.Append($"CONVERT({column.ColumnName}, 'System.String') LIKE '%{searchText}%'");
+                    }
+
+                    // Apply the filter
+                    ((DataTable)teacherGrid.DataSource).DefaultView.RowFilter = filterExpression.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error searching data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
     }
 }

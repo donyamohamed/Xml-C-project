@@ -40,6 +40,16 @@ namespace Attendance_Management_System.Forms
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherAdminForm));
             teacherGrid = new DataGridView();
+            id = new DataGridViewTextBoxColumn();
+            teacherFname = new DataGridViewTextBoxColumn();
+            teacherLname = new DataGridViewTextBoxColumn();
+            age = new DataGridViewTextBoxColumn();
+            email = new DataGridViewTextBoxColumn();
+            password = new DataGridViewTextBoxColumn();
+            phone = new DataGridViewTextBoxColumn();
+            address = new DataGridViewTextBoxColumn();
+            delete = new DataGridViewImageColumn();
+            update = new DataGridViewImageColumn();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel3 = new Panel();
             closebox = new PictureBox();
@@ -71,16 +81,8 @@ namespace Attendance_Management_System.Forms
             button5 = new Button();
             button6 = new Button();
             button7 = new Button();
-            id = new DataGridViewTextBoxColumn();
-            teacherFname = new DataGridViewTextBoxColumn();
-            teacherLname = new DataGridViewTextBoxColumn();
-            age = new DataGridViewTextBoxColumn();
-            email = new DataGridViewTextBoxColumn();
-            password = new DataGridViewTextBoxColumn();
-            phone = new DataGridViewTextBoxColumn();
-            address = new DataGridViewTextBoxColumn();
-            delete = new DataGridViewImageColumn();
-            update = new DataGridViewImageColumn();
+            textBox1 = new TextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)teacherGrid).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)closebox).BeginInit();
@@ -134,6 +136,90 @@ namespace Attendance_Management_System.Forms
             teacherGrid.TabIndex = 0;
             teacherGrid.CellContentClick += TeacherGrid_CellContentClick;
             // 
+            // id
+            // 
+            id.HeaderText = "ID";
+            id.MinimumWidth = 6;
+            id.Name = "id";
+            id.ReadOnly = true;
+            id.Width = 125;
+            // 
+            // teacherFname
+            // 
+            teacherFname.HeaderText = "Fname";
+            teacherFname.MinimumWidth = 6;
+            teacherFname.Name = "teacherFname";
+            teacherFname.ReadOnly = true;
+            teacherFname.Width = 170;
+            // 
+            // teacherLname
+            // 
+            teacherLname.HeaderText = "Lname";
+            teacherLname.MinimumWidth = 6;
+            teacherLname.Name = "teacherLname";
+            teacherLname.ReadOnly = true;
+            teacherLname.Width = 125;
+            // 
+            // age
+            // 
+            age.HeaderText = "Age";
+            age.MinimumWidth = 6;
+            age.Name = "age";
+            age.ReadOnly = true;
+            age.Width = 125;
+            // 
+            // email
+            // 
+            email.HeaderText = "Email";
+            email.MinimumWidth = 6;
+            email.Name = "email";
+            email.ReadOnly = true;
+            email.Width = 200;
+            // 
+            // password
+            // 
+            password.HeaderText = "Password";
+            password.MinimumWidth = 6;
+            password.Name = "password";
+            password.ReadOnly = true;
+            password.Width = 125;
+            // 
+            // phone
+            // 
+            phone.HeaderText = "Phone";
+            phone.MinimumWidth = 11;
+            phone.Name = "phone";
+            phone.ReadOnly = true;
+            phone.Width = 125;
+            // 
+            // address
+            // 
+            address.HeaderText = "Address";
+            address.MinimumWidth = 6;
+            address.Name = "address";
+            address.ReadOnly = true;
+            address.Width = 125;
+            // 
+            // delete
+            // 
+            delete.HeaderText = "Delete";
+            delete.Image = (System.Drawing.Image)resources.GetObject("delete.Image");
+            delete.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            delete.MinimumWidth = 6;
+            delete.Name = "delete";
+            delete.ReadOnly = true;
+            delete.Width = 125;
+            // 
+            // update
+            // 
+            update.HeaderText = "Update";
+            update.Image = (System.Drawing.Image)resources.GetObject("update.Image");
+            update.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            update.MinimumWidth = 6;
+            update.Name = "update";
+            update.ReadOnly = true;
+            update.Width = 125;
+            // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(255, 192, 192);
@@ -152,7 +238,7 @@ namespace Attendance_Management_System.Forms
             // 
             closebox.Image = (System.Drawing.Image)resources.GetObject("closebox.Image");
             closebox.ImeMode = ImeMode.NoControl;
-            closebox.Location = new Point(1899, 0);
+            closebox.Location = new Point(1881, 0);
             closebox.Name = "closebox";
             closebox.Size = new Size(43, 43);
             closebox.SizeMode = PictureBoxSizeMode.Zoom;
@@ -164,7 +250,7 @@ namespace Attendance_Management_System.Forms
             // 
             minimizebox.Image = (System.Drawing.Image)resources.GetObject("minimizebox.Image");
             minimizebox.ImeMode = ImeMode.NoControl;
-            minimizebox.Location = new Point(1850, 0);
+            minimizebox.Location = new Point(1832, 0);
             minimizebox.Name = "minimizebox";
             minimizebox.Size = new Size(52, 43);
             minimizebox.SizeMode = PictureBoxSizeMode.Zoom;
@@ -553,89 +639,22 @@ namespace Attendance_Management_System.Forms
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click;
             // 
-            // id
+            // textBox1
             // 
-            id.HeaderText = "ID";
-            id.MinimumWidth = 6;
-            id.Name = "id";
-            id.ReadOnly = true;
-            id.Width = 125;
+            textBox1.Location = new Point(664, 220);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(184, 41);
+            textBox1.TabIndex = 5;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
-            // teacherFname
+            // label1
             // 
-            teacherFname.HeaderText = "Fname";
-            teacherFname.MinimumWidth = 6;
-            teacherFname.Name = "teacherFname";
-            teacherFname.ReadOnly = true;
-            teacherFname.Width = 170;
-            // 
-            // teacherLname
-            // 
-            teacherLname.HeaderText = "Lname";
-            teacherLname.MinimumWidth = 6;
-            teacherLname.Name = "teacherLname";
-            teacherLname.ReadOnly = true;
-            teacherLname.Width = 125;
-            // 
-            // age
-            // 
-            age.HeaderText = "Age";
-            age.MinimumWidth = 6;
-            age.Name = "age";
-            age.ReadOnly = true;
-            age.Width = 125;
-            // 
-            // email
-            // 
-            email.HeaderText = "Email";
-            email.MinimumWidth = 6;
-            email.Name = "email";
-            email.ReadOnly = true;
-            email.Width = 200;
-            // 
-            // password
-            // 
-            password.HeaderText = "Password";
-            password.MinimumWidth = 6;
-            password.Name = "password";
-            password.ReadOnly = true;
-            password.Width = 125;
-            // 
-            // phone
-            // 
-            phone.HeaderText = "Phone";
-            phone.MinimumWidth = 11;
-            phone.Name = "phone";
-            phone.ReadOnly = true;
-            phone.Width = 125;
-            // 
-            // address
-            // 
-            address.HeaderText = "Address";
-            address.MinimumWidth = 6;
-            address.Name = "address";
-            address.ReadOnly = true;
-            address.Width = 125;
-            // 
-            // delete
-            // 
-            delete.HeaderText = "Delete";
-            delete.Image = (System.Drawing.Image)resources.GetObject("delete.Image");
-            delete.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            delete.MinimumWidth = 6;
-            delete.Name = "delete";
-            delete.ReadOnly = true;
-            delete.Width = 125;
-            // 
-            // update
-            // 
-            update.HeaderText = "Update";
-            update.Image = (System.Drawing.Image)resources.GetObject("update.Image");
-            update.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            update.MinimumWidth = 6;
-            update.Name = "update";
-            update.ReadOnly = true;
-            update.Width = 125;
+            label1.AutoSize = true;
+            label1.Location = new Point(564, 220);
+            label1.Name = "label1";
+            label1.Size = new Size(94, 35);
+            label1.TabIndex = 6;
+            label1.Text = "Search:";
             // 
             // TeacherAdminForm
             // 
@@ -643,6 +662,8 @@ namespace Attendance_Management_System.Forms
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1924, 1055);
+            Controls.Add(label1);
+            Controls.Add(textBox1);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(teacherGrid);
@@ -671,6 +692,7 @@ namespace Attendance_Management_System.Forms
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -717,5 +739,7 @@ namespace Attendance_Management_System.Forms
         private DataGridViewTextBoxColumn address;
         private DataGridViewImageColumn delete;
         private DataGridViewImageColumn update;
+        private TextBox textBox1;
+        private Label label1;
     }
 }

@@ -60,6 +60,8 @@
             button6 = new Button();
             button7 = new Button();
             dataGridView1 = new DataGridView();
+            label1 = new Label();
+            textBox1 = new TextBox();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)closebox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)minimizebox).BeginInit();
@@ -497,18 +499,37 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(477, 238);
+            dataGridView1.Location = new Point(482, 286);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(883, 476);
             dataGridView1.TabIndex = 6;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F);
+            label1.Location = new Point(467, 224);
+            label1.Name = "label1";
+            label1.Size = new Size(101, 35);
+            label1.TabIndex = 8;
+            label1.Text = "Search :";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(574, 232);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(184, 27);
+            textBox1.TabIndex = 7;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // classAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1497, 1055);
+            Controls.Add(label1);
+            Controls.Add(textBox1);
             Controls.Add(dataGridView1);
             Controls.Add(panel4);
             Controls.Add(panel3);
@@ -533,6 +554,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -568,5 +590,7 @@
         private Button button6;
         private Button button7;
         private DataGridView dataGridView1;
+        private Label label1;
+        private TextBox textBox1;
     }
 }
