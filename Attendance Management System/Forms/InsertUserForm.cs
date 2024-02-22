@@ -15,7 +15,7 @@ namespace Attendance_Management_System.Forms
     {
         private string NextUserId;
         private List<User> users;
-        public InsertUserForm(List<User> existingUsers,string role)
+        public InsertUserForm(List<User> existingUsers, string role)
         {
             InitializeComponent();
             users = existingUsers;
@@ -73,10 +73,10 @@ namespace Attendance_Management_System.Forms
             users.Add(newUser);
 
             // Update the XML file with the new user data
-            UserParser.UpdateUsers(users, "../../../../users.xml");
+            UserParser.InsertUsers(users, "../../../../users.xml");
 
             // Close the form
             this.Close();
         }
     }
-    }
+}

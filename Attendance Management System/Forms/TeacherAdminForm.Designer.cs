@@ -662,7 +662,7 @@ namespace Attendance_Management_System.Forms
             btnInsertUser.TabIndex = 5;
             btnInsertUser.Text = "Add User";
             btnInsertUser.UseVisualStyleBackColor = true;
-            btnInsertUser.Click += btnInsertUser_Click;
+        btnInsertUser.Click += btnInsertUser_Click;
             // textBox1
             // 
             textBox1.Location = new Point(664, 220);

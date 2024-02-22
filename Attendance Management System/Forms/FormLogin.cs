@@ -71,9 +71,11 @@ namespace Attendance_Management_System.Forms
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            // Thread.CurrentThread.CurrentUICulture = 
-                // new CultureInfo(Program.appLanguage);
-                // new CultureInfo(Program.newCulture);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(AppConfig.AppSettings.Language);
+            this.Controls.Clear();
+            this.InitializeComponent();
+            // new CultureInfo(Program.appLanguage);
+            // new CultureInfo(Program.newCulture);
             timerBackup.Start();
             labelOpenDateTime.Text = Program.appOpenDateandTime.ToString(AppConfig.AppSettings.DateFormats) + " " + Program.appOpenDateandTime.ToShortTimeString();
             pictureBoxHide.Hide();
@@ -247,12 +249,12 @@ namespace Attendance_Management_System.Forms
         /// <param name="e"></param>
         private void timerBackup_Tick(object sender, EventArgs e)
         {
-            
+
             TimeSpan timeSpan = DateTime.Now - Program.appOpenDateandTime;
             // labelOpenDateTime.Text = timeSpan.ToString(@"dd\.hh\:mm\:ss");
-            labelBackupIn.Text = 
+            labelBackupIn.Text =
                 timeSpan.ToString(@"dd\.hh\:mm\:ss");
-                // DateTime.Now.ToString();
+            // DateTime.Now.ToString();
             if (timeSpan.TotalMinutes >= AppConfig.AppSettings.BackupInterval)
             {
                 Program.SaveDataAsXml(Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath);
