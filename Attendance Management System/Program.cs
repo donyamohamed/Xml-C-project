@@ -44,10 +44,10 @@ namespace Attendance_Management_System.Forms
 
             ApplicationConfiguration.Initialize();
 
-            // Application.Run(new FormLogin());
+            Application.Run(new FormLogin());
             // Application.Run(new FormSettings());
 
-            Application.Run(new testAdmin());
+            // Application.Run(new testAdmin());
 
 
 
@@ -57,7 +57,7 @@ namespace Attendance_Management_System.Forms
 
         }
 
-        /*
+        
         static List<Student> GetStudents(XmlDocument usersDoc)
         {
             List<Student> students = new List<Student>();
@@ -116,6 +116,6 @@ namespace Attendance_Management_System.Forms
             courses = CourseParser.ParseCourses(coursesPath);
             claSSes = ClassParser.ParseClasses(claSSesPath);
         }
-        */
+        
     }
 }
