@@ -54,7 +54,7 @@ namespace Attendance_Management_System.Forms
 
 
             // validate the backup interval value > 5 & < 60 // < 1 just for testing purposes
-            if (numericUpDownBackup.Value > 1 && numericUpDownBackup.Value < 60)
+            if (numericUpDownBackup.Value < 1 && numericUpDownBackup.Value > 60)
             {
                 MessageBox.Show("Backup interval must be between 5 and 60 minutes", "Settings", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -86,5 +86,9 @@ namespace Attendance_Management_System.Forms
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

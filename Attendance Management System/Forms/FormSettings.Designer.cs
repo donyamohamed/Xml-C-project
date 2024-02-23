@@ -295,6 +295,7 @@
             button1.Name = "button1";
             toolTip1.SetToolTip(button1, resources.GetString("button1.ToolTip"));
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // groupBox3
             // 

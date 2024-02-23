@@ -237,12 +237,22 @@ namespace Attendance_Management_System.Forms
 
         private void button4_Click(object sender, EventArgs e)
         {
-           string role = "teacher";
+            string role = "teacher";
 
             TeacherAdminForm teacherAdminForm = new TeacherAdminForm(role);
             teacherAdminForm.Role = role;
             teacherAdminForm.Show();
             Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

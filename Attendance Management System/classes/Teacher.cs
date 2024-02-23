@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using Attendance_Management_System.Forms;
 using System.Windows.Forms;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Attendance_Management_System.classes
 {
@@ -107,6 +108,45 @@ namespace Attendance_Management_System.classes
             }
             return sessions;
         }
+        /// <summary>
+        /// Get a list of dates for the course or courses 
+        /// if two courses have the same date, it will be added only once
+        /// </summary>
+        /// <param name="myCIDs"></param>
+        /// <returns></returns>
+        public static List<DateTime> getCDatesbyCIds(List<string> myCIDs)
+        {
+            List<DateTime> dates = new List<DateTime>();
+            List<Session> sessions = new List<Session>();
+            sessions = getListofSessions(myCIDs);
+            
+            foreach (Session sess in sessions)
+            {
+                if(!dates.Contains(sess.Date))
+                {
+                    dates.Add(sess.Date);
+                }
+            }
+            return dates;
+
+            /*
+            foreach (string courseID in myCIDs)
+            {
+                List<string> cousres = new List<string>();
+                cousres.Add(courseID);
+                List<Session> sessions = Session.getSObjByCID(cousres);
+                foreach (Session session in sessions)
+                {
+                    // Convert the DateTime to DateOnly
+                    // session.Date - sessin.dateonly
+                    if (!dates.Contains))
+                    {
+                        dates.Add(DateOnly.Parse(session.Date.ToString()));
+                    }
+                }
+            }*/
+        }
+
         public class Student_Status
         {
             public string studentID { get; set; }

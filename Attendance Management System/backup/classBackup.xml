@@ -52,11 +52,11 @@
       </session>
       <session>
         <date>2023-04-05</date>
-        <status>-1</status>
+        <status>1</status>
       </session>
       <session>
         <date>2023-04-06</date>
-        <status>-1</status>
+        <status>1</status>
       </session>
     </studentId>
     <studentId id="3S">
@@ -66,11 +66,11 @@
       </session>
       <session>
         <date>2023-04-05</date>
-        <status>-1</status>
+        <status>1</status>
       </session>
       <session>
         <date>2023-04-06</date>
-        <status>-1</status>
+        <status>1</status>
       </session>
     </studentId>
   </class>
