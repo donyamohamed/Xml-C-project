@@ -27,7 +27,7 @@ namespace Attendance_Management_System.Forms
     {
         public static List<string> myCIDs = getCoursesIDbyTeacherID(FormLogin.meTeacher.Id);
         public static List<Course> myCoursesObj = getListofCourse(myCIDs);
-        public static List<StudentSessions> myStdSessionsObj = getListofmyStudentSessions(FormLogin.meTeacher.Id,  myCIDs);
+        public static List<StudentSessions> myStdSessionsObj = getListofStudentSessions(myCIDs);
         public static List<Session> mySessionsObj = getListofSessions(myCIDs);
         public static List<DateTime> courseDates = getCDatesbyCIds(myCIDs);
 
@@ -283,7 +283,6 @@ namespace Attendance_Management_System.Forms
                 student.Status = "Attend";
                 changeStudentAttendance(FormLogin.meTeacher.Id, textBoxCouseID.Text, student.StudentID, Convert.ToDateTime(textBoxDate.Text), 1);
             }
-            selectedStudents = new List<Obj>();
             dataGridViewStudentStatus.DataSource = RenderAttTable(textBoxDate.Text, myStdSessionsObj);
             dataGridViewAttendance.DataSource = RenderStdAttofTecherTable(mySessionsObj, myStdSessionsObj);
 
@@ -291,23 +290,9 @@ namespace Attendance_Management_System.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-                selectedStudents = new List<Obj>();
+            selectedStudents = new List<Obj>();
             textBoxDate.Text = comboBoxCourseDates.Text;
             dataGridViewStudentStatus.DataSource = RenderAttTable(textBoxDate.Text, myStdSessionsObj);
-
-        }
-
-        private void buttonAbsent_Click(object sender, EventArgs e)
-        {
-            // make the selected students present 
-            foreach (var student in selectedStudents)
-            {
-                student.Status = "Attend";
-                changeStudentAttendance(FormLogin.meTeacher.Id, textBoxCouseID.Text, student.StudentID, Convert.ToDateTime(textBoxDate.Text), -1);
-            }
-            selectedStudents = new List<Obj>();
-            dataGridViewStudentStatus.DataSource = RenderAttTable(textBoxDate.Text, myStdSessionsObj);
-            dataGridViewAttendance.DataSource = RenderStdAttofTecherTable(mySessionsObj, myStdSessionsObj);
 
         }
 

@@ -12,14 +12,14 @@ namespace Attendance_Management_System.classes
 {
     internal class RenderAttendanceTable
     {
-        public static DataTable RenderAttTable (string Date, List<StudentSessions> myCourseStduents)
+        public static DataTable RenderAttTable (string Date, List<StudentSessions> myStduentsSessions)
         {
             DataTable dataTable = new DataTable();
             // dataTable.Columns.Add(Date, typeof(string));
             dataTable.Columns.Add("StudentId", typeof(string));
-            dataTable.Columns.Add("Status", typeof(string));
             dataTable.Columns.Add("Name", typeof(string));
-            foreach (var student in myCourseStduents)
+            dataTable.Columns.Add("Status", typeof(string));
+            foreach (var student in myStduentsSessions)
             {
                 // add the student status to the table
                 // add rows of the student ids and their status
@@ -27,10 +27,13 @@ namespace Attendance_Management_System.classes
                 row["StudentId"] = student.StudentId;
                 foreach (var session in student.Sessions)
                 {
-                    row["Status"] = session.Status;
-                    Student std = getStudentByStudentID(student.StudentId, Program.users);
-                    string fullName = std.FirstName + " " + std.LastName;
-                    row["Name"] = fullName;
+                    if (session.Date == DateTime.Parse(Date))
+                    {
+                        Student std = getStudentByStudentID(student.StudentId, Program.users);
+                        string fullName = std.FirstName + " " + std.LastName;
+                        row["Name"] = fullName;
+                        row["Status"] = session.Status;
+                    }
                 }
                 dataTable.Rows.Add(row);
             }

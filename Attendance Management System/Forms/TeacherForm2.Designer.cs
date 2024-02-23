@@ -1,6 +1,11 @@
-﻿namespace Attendance_Management_System.Forms
+﻿using static System.Net.Mime.MediaTypeNames;
+using System.Drawing.Printing;
+using System.Windows.Forms;
+using System.Xml.Linq;
+
+namespace Attendance_Management_System.Forms
 {
-    partial class TeacherForm
+    partial class TeacherForm2
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +35,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherForm));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             toolTip1 = new ToolTip(components);
             pictureBoxMinimize = new PictureBox();
             pictureBoxClose = new PictureBox();
@@ -103,33 +108,33 @@
             pictureBoxMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBoxMinimize.BorderStyle = BorderStyle.Fixed3D;
             pictureBoxMinimize.Cursor = Cursors.Hand;
-            pictureBoxMinimize.Image = (Image)resources.GetObject("pictureBoxMinimize.Image");
+//            pictureBoxMinimize.Image = (Image)resources.GetObject("pictureBoxMinimize.Image");
             pictureBoxMinimize.Location = new Point(1073, 12);
             pictureBoxMinimize.Name = "pictureBoxMinimize";
             pictureBoxMinimize.Size = new Size(50, 50);
             pictureBoxMinimize.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxMinimize.TabIndex = 1;
             pictureBoxMinimize.TabStop = false;
-            pictureBoxMinimize.Click += pictureBoxMinimize_Click;
+//            pictureBoxMinimize.Click += pictureBoxMinimize_Click;
             // 
             // pictureBoxClose
             // 
             pictureBoxClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBoxClose.BorderStyle = BorderStyle.Fixed3D;
             pictureBoxClose.Cursor = Cursors.Hand;
-            pictureBoxClose.Image = (Image)resources.GetObject("pictureBoxClose.Image");
+//            pictureBoxClose.Image = (Image)resources.GetObject("pictureBoxClose.Image");
             pictureBoxClose.Location = new Point(1138, 12);
             pictureBoxClose.Name = "pictureBoxClose";
             pictureBoxClose.Size = new Size(50, 50);
             pictureBoxClose.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxClose.TabIndex = 2;
             pictureBoxClose.TabStop = false;
-            pictureBoxClose.Click += pictureBoxClose_Click;
+//            pictureBoxClose.Click += pictureBoxClose_Click;
             // 
             // labelWellcome
             // 
             labelWellcome.AutoSize = true;
-            labelWellcome.Font = new Font("Century Gothic", 30F, FontStyle.Bold | FontStyle.Italic);
+//            labelWellcome.Font = new Font("Century Gothic", 30F, FontStyle.Bold | FontStyle.Italic);
             labelWellcome.ForeColor = Color.Purple;
             labelWellcome.Location = new Point(48, 39);
             labelWellcome.Name = "labelWellcome";
@@ -140,7 +145,7 @@
             // labelTeacher_Name
             // 
             labelTeacher_Name.AutoSize = true;
-            labelTeacher_Name.Font = new Font("Century Gothic", 30F, FontStyle.Bold | FontStyle.Italic);
+//            labelTeacher_Name.Font = new Font("Century Gothic", 30F, FontStyle.Bold | FontStyle.Italic);
             labelTeacher_Name.ForeColor = Color.Purple;
             labelTeacher_Name.Location = new Point(274, 39);
             labelTeacher_Name.Name = "labelTeacher_Name";
@@ -261,7 +266,7 @@
             buttonEditYourData.TabIndex = 1;
             buttonEditYourData.Text = "Edit Your Data";
             buttonEditYourData.UseVisualStyleBackColor = false;
-            buttonEditYourData.Click += buttonEditYourData_Click;
+//            buttonEditYourData.Click += buttonEditYourData_Click;
             // 
             // labelPhone
             // 
@@ -349,13 +354,13 @@
             comboBoxCourseDates.Name = "comboBoxCourseDates";
             comboBoxCourseDates.Size = new Size(186, 29);
             comboBoxCourseDates.TabIndex = 9;
-            comboBoxCourseDates.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+//            comboBoxCourseDates.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+//            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(879, 387);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(342, 350);
@@ -372,7 +377,7 @@
             buttonMyCourses.TabIndex = 4;
             buttonMyCourses.Text = "Get My Courses";
             buttonMyCourses.UseVisualStyleBackColor = false;
-            buttonMyCourses.Click += buttonMyCourses_Click;
+//            buttonMyCourses.Click += buttonMyCourses_Click;
             // 
             // dataGridViewCourses
             // 
@@ -381,14 +386,14 @@
             dataGridViewCourses.AllowUserToOrderColumns = true;
             dataGridViewCourses.AutoGenerateColumns = false;
             dataGridViewCourses.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = Color.Orange;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridViewCourses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+//            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Orange;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewCourses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCourses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCourses.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, descriptionDataGridViewTextBoxColumn, numberofsessionsDataGridViewTextBoxColumn });
             dataGridViewCourses.DataSource = courseBindingSource;
@@ -397,7 +402,7 @@
             dataGridViewCourses.ReadOnly = true;
             dataGridViewCourses.Size = new Size(628, 88);
             dataGridViewCourses.TabIndex = 5;
-            dataGridViewCourses.CellClick += dataGridViewCourses_CellClick;
+//            dataGridViewCourses.CellClick += dataGridViewCourses_CellClick;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -441,7 +446,7 @@
             dataGridViewAttendance.Name = "dataGridViewAttendance";
             dataGridViewAttendance.Size = new Size(417, 308);
             dataGridViewAttendance.TabIndex = 6;
-            dataGridViewAttendance.CellFormatting += dataGridViewAttendance_CellFormatting;
+//            dataGridViewAttendance.CellFormatting += dataGridViewAttendance_CellFormatting;
             // 
             // courseBindingSource1
             // 
@@ -460,13 +465,13 @@
             dataGridViewDateStatus.Name = "dataGridViewDateStatus";
             dataGridViewDateStatus.Size = new Size(242, 150);
             dataGridViewDateStatus.TabIndex = 7;
-            dataGridViewDateStatus.CellContentClick += dataGridViewDateStatus_CellContentClick;
+//            dataGridViewDateStatus.CellContentClick += dataGridViewDateStatus_CellContentClick;
             // 
             // dateDataGridViewTextBoxColumn
             // 
             dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             dateDataGridViewTextBoxColumn.HeaderText = "Date";
             dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             // 
@@ -481,18 +486,15 @@
             // 
             // dataGridViewStudentStatus
             // 
-            dataGridViewStudentStatus.AllowUserToAddRows = false;
-            dataGridViewStudentStatus.AllowUserToDeleteRows = false;
             dataGridViewStudentStatus.AllowUserToOrderColumns = true;
             dataGridViewStudentStatus.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewStudentStatus.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewStudentStatus.GridColor = SystemColors.WindowText;
             dataGridViewStudentStatus.Location = new Point(12, 473);
             dataGridViewStudentStatus.Name = "dataGridViewStudentStatus";
-            dataGridViewStudentStatus.ReadOnly = true;
             dataGridViewStudentStatus.Size = new Size(628, 206);
             dataGridViewStudentStatus.TabIndex = 8;
-            dataGridViewStudentStatus.CellClick += dataGridViewStudentStatus_CellClick;
+//            dataGridViewStudentStatus.CellClick += dataGridViewStudentStatus_CellClick;
             // 
             // textBoxCouseID
             // 
@@ -545,7 +547,7 @@
             buttonGenATTTAble.TabIndex = 9;
             buttonGenATTTAble.Text = "Generate Attendance Table";
             buttonGenATTTAble.UseVisualStyleBackColor = false;
-            buttonGenATTTAble.Click += buttonGenATTTAble_Click;
+//            buttonGenATTTAble.Click += buttonGenATTTAble_Click;
             // 
             // buttonAttend
             // 
@@ -558,7 +560,7 @@
             buttonAttend.Text = "Attend";
             buttonAttend.UseVisualStyleBackColor = false;
             buttonAttend.Visible = false;
-            buttonAttend.Click += buttonAttend_Click;
+//            buttonAttend.Click += buttonAttend_Click;
             // 
             // buttonAbsent
             // 
@@ -571,7 +573,6 @@
             buttonAbsent.Text = "Absent";
             buttonAbsent.UseVisualStyleBackColor = false;
             buttonAbsent.Visible = false;
-            buttonAbsent.Click += buttonAbsent_Click;
             // 
             // sessionsBindingSource1
             // 
@@ -597,7 +598,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 30F, FontStyle.Bold | FontStyle.Italic);
+//            label3.Font = new Font("Century Gothic", 30F, FontStyle.Bold | FontStyle.Italic);
             label3.ForeColor = Color.Purple;
             label3.Location = new Point(646, 268);
             label3.Name = "label3";
@@ -633,7 +634,7 @@
             Controls.Add(labelWellcome);
             Controls.Add(pictureBoxMinimize);
             Controls.Add(pictureBoxClose);
-            Font = new Font("Century Gothic", 12F);
+//            Font = new Font("Century Gothic", 12F);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
@@ -641,7 +642,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TeacherForm";
             WindowState = FormWindowState.Maximized;
-            Load += TeacherForm_Load;
+//            Load += TeacherForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).EndInit();
             groupBoxProfileData.ResumeLayout(false);

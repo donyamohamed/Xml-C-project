@@ -1,6 +1,6 @@
 ﻿namespace Attendance_Management_System.Forms
 {
-    partial class TeacherForm
+    partial class TeacherForm1
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherForm));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             toolTip1 = new ToolTip(components);
             pictureBoxMinimize = new PictureBox();
             pictureBoxClose = new PictureBox();
@@ -96,7 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewStudentStatus).BeginInit();
             ((System.ComponentModel.ISupportInitialize)sessionsBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)sessionsBindingSource2).BeginInit();
-            SuspendLayout();
+//            SuspendLayout();
             // 
             // pictureBoxMinimize
             // 
@@ -110,7 +110,7 @@
             pictureBoxMinimize.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxMinimize.TabIndex = 1;
             pictureBoxMinimize.TabStop = false;
-            pictureBoxMinimize.Click += pictureBoxMinimize_Click;
+            //pictureBoxMinimize.Click += pictureBoxMinimize_Click;
             // 
             // pictureBoxClose
             // 
@@ -124,7 +124,7 @@
             pictureBoxClose.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxClose.TabIndex = 2;
             pictureBoxClose.TabStop = false;
-            pictureBoxClose.Click += pictureBoxClose_Click;
+//            pictureBoxClose.Click += pictureBoxClose_Click;
             // 
             // labelWellcome
             // 
@@ -225,7 +225,7 @@
             buttonCancel.TabIndex = 2;
             buttonCancel.Text = "Cancel";
             buttonCancel.UseVisualStyleBackColor = false;
-            buttonCancel.Click += buttonCancel_Click;
+//            buttonCancel.Click += buttonCancel_Click;
             // 
             // textBoxPhoneNumber
             // 
@@ -261,7 +261,7 @@
             buttonEditYourData.TabIndex = 1;
             buttonEditYourData.Text = "Edit Your Data";
             buttonEditYourData.UseVisualStyleBackColor = false;
-            buttonEditYourData.Click += buttonEditYourData_Click;
+//            buttonEditYourData.Click += buttonEditYourData_Click;
             // 
             // labelPhone
             // 
@@ -349,7 +349,7 @@
             comboBoxCourseDates.Name = "comboBoxCourseDates";
             comboBoxCourseDates.Size = new Size(186, 29);
             comboBoxCourseDates.TabIndex = 9;
-            comboBoxCourseDates.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+//            comboBoxCourseDates.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // pictureBox1
             // 
@@ -372,7 +372,7 @@
             buttonMyCourses.TabIndex = 4;
             buttonMyCourses.Text = "Get My Courses";
             buttonMyCourses.UseVisualStyleBackColor = false;
-            buttonMyCourses.Click += buttonMyCourses_Click;
+//            buttonMyCourses.Click += buttonMyCourses_Click;
             // 
             // dataGridViewCourses
             // 
@@ -381,14 +381,14 @@
             dataGridViewCourses.AllowUserToOrderColumns = true;
             dataGridViewCourses.AutoGenerateColumns = false;
             dataGridViewCourses.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = Color.Orange;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridViewCourses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Orange;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewCourses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCourses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCourses.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, descriptionDataGridViewTextBoxColumn, numberofsessionsDataGridViewTextBoxColumn });
             dataGridViewCourses.DataSource = courseBindingSource;
@@ -397,7 +397,7 @@
             dataGridViewCourses.ReadOnly = true;
             dataGridViewCourses.Size = new Size(628, 88);
             dataGridViewCourses.TabIndex = 5;
-            dataGridViewCourses.CellClick += dataGridViewCourses_CellClick;
+//            dataGridViewCourses.CellClick += dataGridViewCourses_CellClick;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -441,7 +441,7 @@
             dataGridViewAttendance.Name = "dataGridViewAttendance";
             dataGridViewAttendance.Size = new Size(417, 308);
             dataGridViewAttendance.TabIndex = 6;
-            dataGridViewAttendance.CellFormatting += dataGridViewAttendance_CellFormatting;
+//            dataGridViewAttendance.CellFormatting += dataGridViewAttendance_CellFormatting;
             // 
             // courseBindingSource1
             // 
@@ -460,13 +460,13 @@
             dataGridViewDateStatus.Name = "dataGridViewDateStatus";
             dataGridViewDateStatus.Size = new Size(242, 150);
             dataGridViewDateStatus.TabIndex = 7;
-            dataGridViewDateStatus.CellContentClick += dataGridViewDateStatus_CellContentClick;
+//            dataGridViewDateStatus.CellContentClick += dataGridViewDateStatus_CellContentClick;
             // 
             // dateDataGridViewTextBoxColumn
             // 
             dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             dateDataGridViewTextBoxColumn.HeaderText = "Date";
             dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             // 
@@ -481,18 +481,15 @@
             // 
             // dataGridViewStudentStatus
             // 
-            dataGridViewStudentStatus.AllowUserToAddRows = false;
-            dataGridViewStudentStatus.AllowUserToDeleteRows = false;
             dataGridViewStudentStatus.AllowUserToOrderColumns = true;
             dataGridViewStudentStatus.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewStudentStatus.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewStudentStatus.GridColor = SystemColors.WindowText;
             dataGridViewStudentStatus.Location = new Point(12, 473);
             dataGridViewStudentStatus.Name = "dataGridViewStudentStatus";
-            dataGridViewStudentStatus.ReadOnly = true;
             dataGridViewStudentStatus.Size = new Size(628, 206);
             dataGridViewStudentStatus.TabIndex = 8;
-            dataGridViewStudentStatus.CellClick += dataGridViewStudentStatus_CellClick;
+//            dataGridViewStudentStatus.CellClick += dataGridViewStudentStatus_CellClick;
             // 
             // textBoxCouseID
             // 
@@ -545,7 +542,7 @@
             buttonGenATTTAble.TabIndex = 9;
             buttonGenATTTAble.Text = "Generate Attendance Table";
             buttonGenATTTAble.UseVisualStyleBackColor = false;
-            buttonGenATTTAble.Click += buttonGenATTTAble_Click;
+//            buttonGenATTTAble.Click += buttonGenATTTAble_Click;
             // 
             // buttonAttend
             // 
@@ -558,7 +555,7 @@
             buttonAttend.Text = "Attend";
             buttonAttend.UseVisualStyleBackColor = false;
             buttonAttend.Visible = false;
-            buttonAttend.Click += buttonAttend_Click;
+//            buttonAttend.Click += buttonAttend_Click;
             // 
             // buttonAbsent
             // 
@@ -571,7 +568,6 @@
             buttonAbsent.Text = "Absent";
             buttonAbsent.UseVisualStyleBackColor = false;
             buttonAbsent.Visible = false;
-            buttonAbsent.Click += buttonAbsent_Click;
             // 
             // sessionsBindingSource1
             // 
@@ -607,41 +603,41 @@
             // 
             // TeacherForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(1200, 749);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(buttonAbsent);
-            Controls.Add(buttonAttend);
-            Controls.Add(comboBoxCourseDates);
-            Controls.Add(buttonGenATTTAble);
-            Controls.Add(textBoxDate);
-            Controls.Add(textBoxCourseSessions);
-            Controls.Add(textBoxCourseDescription);
-            Controls.Add(textBoxCourseName);
-            Controls.Add(textBoxCouseID);
-            Controls.Add(dataGridViewStudentStatus);
-            Controls.Add(dataGridViewDateStatus);
-            Controls.Add(dataGridViewAttendance);
-            Controls.Add(dataGridViewCourses);
-            Controls.Add(buttonMyCourses);
-            Controls.Add(pictureBox1);
-            Controls.Add(groupBoxProfileData);
-            Controls.Add(labelTeacher_Name);
-            Controls.Add(labelWellcome);
-            Controls.Add(pictureBoxMinimize);
-            Controls.Add(pictureBoxClose);
-            Font = new Font("Century Gothic", 12F);
-            ForeColor = Color.White;
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4);
-            Name = "TeacherForm";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "TeacherForm";
-            WindowState = FormWindowState.Maximized;
-            Load += TeacherForm_Load;
+//            AutoScaleDimensions = new SizeF(10F, 21F);
+//            AutoScaleMode = AutoScaleMode.Font;
+//            BackColor = Color.White;
+//            ClientSize = new Size(1200, 749);
+//            Controls.Add(label3);
+//            Controls.Add(label2);
+//            Controls.Add(buttonAbsent);
+//            Controls.Add(buttonAttend);
+//            Controls.Add(comboBoxCourseDates);
+//            Controls.Add(buttonGenATTTAble);
+//            Controls.Add(textBoxDate);
+//            Controls.Add(textBoxCourseSessions);
+//            Controls.Add(textBoxCourseDescription);
+//            Controls.Add(textBoxCourseName);
+//            Controls.Add(textBoxCouseID);
+//            Controls.Add(dataGridViewStudentStatus);
+//            Controls.Add(dataGridViewDateStatus);
+//            Controls.Add(dataGridViewAttendance);
+//            Controls.Add(dataGridViewCourses);
+//            Controls.Add(buttonMyCourses);
+//            Controls.Add(pictureBox1);
+//            Controls.Add(groupBoxProfileData);
+//            Controls.Add(labelTeacher_Name);
+//            Controls.Add(labelWellcome);
+//            Controls.Add(pictureBoxMinimize);
+//            Controls.Add(pictureBoxClose);
+//            Font = new Font("Century Gothic", 12F);
+//            ForeColor = Color.White;
+//            FormBorderStyle = FormBorderStyle.None;
+//            Margin = new Padding(4);
+//            Name = "TeacherForm";
+//            StartPosition = FormStartPosition.CenterScreen;
+//            Text = "TeacherForm";
+//            WindowState = FormWindowState.Maximized;
+//            Load += TeacherForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).EndInit();
             groupBoxProfileData.ResumeLayout(false);
@@ -657,8 +653,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewStudentStatus).EndInit();
             ((System.ComponentModel.ISupportInitialize)sessionsBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)sessionsBindingSource2).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+//            ResumeLayout(false);
+//            PerformLayout();
         }
 
         #endregion

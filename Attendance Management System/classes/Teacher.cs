@@ -180,14 +180,14 @@ namespace Attendance_Management_System.classes
             return stdst;
         }
        
-        public static List<StudentSessions> getListofStudentSessions(List<string> CIDs)
+        public static List<StudentSessions> getListofmyStudentSessions(string TID, List<string> CIDs)
         {
             List<StudentSessions> studentSessions = new List<StudentSessions>();
             foreach (string CID in CIDs)
             {
                 foreach (Class claSS in Program.claSSes)
                 {
-                    if (claSS.CourseId == CID)
+                    if (claSS.CourseId == CID && claSS.TeacherId == TID)
                     {
                         foreach (StudentSessions SS in claSS.StudentSessions)
                         {
