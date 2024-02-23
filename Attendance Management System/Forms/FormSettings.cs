@@ -21,7 +21,7 @@ namespace Attendance_Management_System.Forms
         private void FormSettings_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            labelDteTimeNow.Text = DateTime.Now.ToString(AppConfig.AppSettings.DateFormats);
+            labelDteTimeNow.Text = DateTime.Now.ToString(Program.appConfig.DateFormats);
             labelAppName.Text = Program.appConfig.AppName;
             labelAppVersion.Text = Program.appConfig.AppVersion;
             labelAppCreationDate.Text = Program.appConfig.AppCreationDate.ToString();
@@ -31,10 +31,10 @@ namespace Attendance_Management_System.Forms
             {
                 listBoxDevelopers.Items.Add(author);
             }
-            numericUpDownBackup.Value = AppConfig.AppSettings.BackupInterval;
+            numericUpDownBackup.Value = Program.appConfig.BackupInterval;
             // numericUpDownBackup.Accelerations = new NumericUpDownAcceleration[] { new NumericUpDownAcceleration(60*Program.timeInterval, 5) };
-            listBoxSysLang.Text = AppConfig.AppSettings.Language;
-            listBoxDateFormat.Text = AppConfig.AppSettings.DateFormats;
+            listBoxSysLang.Text = Program.appConfig.Language;
+            listBoxDateFormat.Text = Program.appConfig.DateFormats;
             listBoxBackupFileLocations.DataSource = new string[] { Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath };
 
         }
@@ -62,12 +62,12 @@ namespace Attendance_Management_System.Forms
 
 
             // numericUpDownBackup.Value = AppConfig.AppSettings.BackupInterval;
-            AppConfig.AppSettings.BackupInterval = (int)numericUpDownBackup.Value;
-            AppConfig.AppSettings.Language = listBoxSysLang.Text;
-            AppConfig.AppSettings.DateFormats = listBoxDateFormat.Text;
+            Program.appConfig.BackupInterval = (int)numericUpDownBackup.Value;
+            Program.appConfig.Language = listBoxSysLang.Text;
+            Program.appConfig.DateFormats = listBoxDateFormat.Text;
             //         public static void SaveAppConfigAsXml(AppConfig appConfig, string filePath)
             AppConfigParser.SaveAppConfigAsXml(Program.appConfig, Program.appConfigPath);
-            labelshowdate.Text = DateTime.Now.ToString(AppConfig.AppSettings.DateFormats);
+            labelshowdate.Text = DateTime.Now.ToString(Program.appConfig.DateFormats);
             MessageBox.Show("Settings saved successfully", "Settings", MessageBoxButtons.OK, MessageBoxIcon.Information);
             // set the open date and time to the current date and time
             Program.appOpenDateandTime = DateTime.Now;

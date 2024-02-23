@@ -7,15 +7,16 @@ namespace Attendance_Management_System.Forms
     internal static class Program
     {
 
+        public static string newCulture = "en";
+        public static int timeInterval = 300000; // 5 minutes
         public static DateTime appOpenDateandTime = DateTime.Now;
-        public static DateTime backupDateandTime = DateTime.Now.AddMinutes(AppConfig.AppSettings.BackupInterval);
         
 
-        public static string newCulture = "en";
-        public static string appLanguage = AppConfig.AppSettings.Language;
         public static string appConfigPath = "G:\\ITI\\Xml-C-project\\Attendance Management System\\appConfigurations\\appConfigurations.xml";
         public static AppConfig appConfig = AppConfigParser.ParseAppConfig(appConfigPath);
         
+        public static DateTime backupDateandTime = DateTime.Now.AddMinutes(appConfig.BackupInterval);
+        public static string appLanguage = appConfig.Language;
         public static string usersPath = appConfig.UsersFilePath;
         // public static string usersPath = "../../../../users.xml";
         public static string coursesPath = appConfig.CoursesFilePath;
@@ -26,13 +27,7 @@ namespace Attendance_Management_System.Forms
         public static List<classes.Course> courses = CourseParser.ParseCourses(coursesPath);
         // Accessable from any form by Program.courses
         public static List<classes.Class> claSSes = ClassParser.ParseClasses(claSSesPath);
-        // Accessable from any form by Program.claSSes
-
-        // set time interval for the timer every 5 minutes
-        public static int timeInterval = 300000; // 5 minutes
-
-        // Test the backup method 
-        
+        // Accessable from any form by Program.claSSes        
 
         /// <summary>
         ///  The main entry point for the application.

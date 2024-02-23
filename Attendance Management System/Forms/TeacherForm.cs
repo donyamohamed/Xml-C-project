@@ -46,6 +46,34 @@ namespace Attendance_Management_System.Forms
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
+            // message to make sure the user want to save the data or not
+            // if yes save the data and close the form
+            // if no close the form
+            // if cancel do nothing just return to the form
+
+            DialogResult dialogResult = MessageBox.Show("Do you want to save the data before you leave?", "Save Data", MessageBoxButtons.YesNoCancel);
+            if (dialogResult == DialogResult.Yes)
+            {
+                // save the data
+                Program.SaveDataAsXml(Program.usersPath, Program.coursesPath, Program.claSSesPath);
+                // close the form
+                Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                // close the form
+                Close();
+            }
+            else if (dialogResult == DialogResult.Cancel)
+            {
+                // do nothing
+                return;
+            }
+
+            FormLogin Formlogin = new FormLogin();
+            Formlogin.Show();
+            Hide();
+            
             Close();
         }
 

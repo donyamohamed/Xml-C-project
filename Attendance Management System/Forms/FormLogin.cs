@@ -30,8 +30,10 @@ namespace Attendance_Management_System.Forms
 
         public FormLogin()
         {
-            // when the form is created, get the users from the xml file and store them in the users list
-            // List<classes.User> users = UserParser.ParseUsers("../../../../users.xml");
+            // Get the current UI culture from the configuration file
+            // change the current UI culture to the new culture
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
+
             InitializeComponent();
         }
 
@@ -75,7 +77,7 @@ namespace Attendance_Management_System.Forms
                 // new CultureInfo(Program.appLanguage);
                 // new CultureInfo(Program.newCulture);
             timerBackup.Start();
-            labelOpenDateTime.Text = Program.appOpenDateandTime.ToString(AppConfig.AppSettings.DateFormats) + " " + Program.appOpenDateandTime.ToShortTimeString();
+            labelOpenDateTime.Text = Program.appOpenDateandTime.ToString(Program.appConfig.DateFormats) + " " + Program.appOpenDateandTime.ToShortTimeString();
             pictureBoxHide.Hide();
             pictureBoxError.Hide();
             labelInvalidUserName.Hide();
@@ -253,12 +255,12 @@ namespace Attendance_Management_System.Forms
             labelBackupIn.Text = 
                 timeSpan.ToString(@"dd\.hh\:mm\:ss");
                 // DateTime.Now.ToString();
-            if (timeSpan.TotalMinutes >= AppConfig.AppSettings.BackupInterval)
+            if (timeSpan.TotalMinutes >= Program.appConfig.BackupInterval)
             {
                 Program.SaveDataAsXml(Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath);
                 Program.appOpenDateandTime = DateTime.Now;
 
-                labelOpenDateTime.Text = Program.appOpenDateandTime.ToString(AppConfig.AppSettings.DateFormats)
+                labelOpenDateTime.Text = Program.appOpenDateandTime.ToString(Program.appConfig.DateFormats)
                  + " " + Program.appOpenDateandTime.ToShortTimeString();
 
             }
