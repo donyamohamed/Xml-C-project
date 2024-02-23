@@ -104,6 +104,13 @@ namespace Attendance_Management_System.Forms
             listBoxCourses.DataSource = myCIDs;
             listBoxCDates.DataSource = courseDates;
 
+
+            foreach (Control c in this.Controls)
+            {
+                ComponentResourceManager resources = new ComponentResourceManager(typeof(FormSettings));
+                resources.ApplyResources(c, c.Name, new System.Globalization.CultureInfo(Program.appConfig.Language));
+            }
+
         }
 
         private void buttonEditYourData_Click(object sender, EventArgs e)

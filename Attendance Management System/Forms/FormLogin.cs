@@ -219,7 +219,7 @@ namespace Attendance_Management_System.Forms
             this.Controls.Clear();
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
             this.InitializeComponent();
-            
+
 
         }
 
@@ -287,5 +287,6 @@ namespace Attendance_Management_System.Forms
 
 
         }
+
     }
 }

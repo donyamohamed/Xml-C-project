@@ -36,6 +36,14 @@ namespace Attendance_Management_System.Forms
             listBoxSysLang.Text = Program.appConfig.Language;
             listBoxDateFormat.Text = Program.appConfig.DateFormats;
             listBoxBackupFileLocations.DataSource = new string[] { Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath };
+            
+            // Change the languare of the form after loading the form to the Program.appConfig.Language loaded from the xml file
+            // Change the languare
+            foreach (Control c in this.Controls)
+            {
+                ComponentResourceManager resources = new ComponentResourceManager(typeof(FormSettings));
+                resources.ApplyResources(c, c.Name, new System.Globalization.CultureInfo(Program.appConfig.Language));
+            }
 
         }
 

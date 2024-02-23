@@ -153,6 +153,26 @@ namespace Attendance_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap OIP2 {
+            get {
+                object obj = ResourceManager.GetObject("OIP2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OIP3 {
+            get {
+                object obj = ResourceManager.GetObject("OIP3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Webalys_Kameleon_pics_Student_3_512 {
             get {
                 object obj = ResourceManager.GetObject("Webalys-Kameleon.pics-Student-3.512", resourceCulture);
