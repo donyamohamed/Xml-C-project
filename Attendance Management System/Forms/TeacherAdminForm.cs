@@ -288,18 +288,22 @@ namespace Attendance_Management_System.Forms
             {
                 
                     string idToDelete = teacherGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+                string roleToDelete = Role.ToLower();
 
-                    Console.WriteLine($"Attempting to delete row at index {e.RowIndex}");
+                Console.WriteLine($"Attempting to delete row at index {e.RowIndex}");
+                DialogResult result = MessageBox.Show($"Are you sure you want to delete the {roleToDelete} with ID '{idToDelete}'?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                if (result == DialogResult.Yes)
+                {
                     if (Role == "teacher")
                     {
                         Teacher teacherToRemove = teachers.FirstOrDefault(t => t.Id == idToDelete);
                         if (teacherToRemove != null)
                         {
-                           
+
                             users.Remove(teacherToRemove);
 
-                          // -> update xml
+                            // -> update xml
                             UserParser.RemoveUserById(users, "../../../../users.xml", "../../../../class.xml", idToDelete);
 
                             teachers.Remove(teacherToRemove); //->update grid
@@ -313,13 +317,13 @@ namespace Attendance_Management_System.Forms
                         Student studentToRemove = students.FirstOrDefault(s => s.Id == idToDelete);
                         if (studentToRemove != null)
                         {
-                       
+
                             users.Remove(studentToRemove);
 
-                       
+
                             UserParser.RemoveUserById(users, "../../../../users.xml", "../../../../class.xml", idToDelete);
 
-                      
+
                             students.Remove(studentToRemove);
                             PopulateGrid(students);
 
@@ -335,11 +339,11 @@ namespace Attendance_Management_System.Forms
                     catch (Exception ex)
                     {
                         Console.WriteLine("Error removing row from DataGridView: " + ex.Message);
-                      
+
                     }
 
                     Console.WriteLine($"Row removed successfully. Remaining rows: {teacherGrid.Rows.Count}");
-                
+                }
             }
         }
 

@@ -251,6 +251,10 @@ namespace Attendance_Management_System.classes
 
                                 MessageBox.Show($"Class associated with the teacher (ID: {userId}) removed from the Classes XML.");
                             }
+                            else
+                            {
+                                MessageBox.Show("Deletion canceled.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
                         }
                     }
                  
@@ -274,6 +278,10 @@ namespace Attendance_Management_System.classes
                             classDoc.Save(classXmlFilePath);
 
                             MessageBox.Show($"Student (ID: {userId}) removed from all classes");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Deletion canceled.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }

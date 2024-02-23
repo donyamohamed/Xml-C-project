@@ -33,6 +33,16 @@ namespace Attendance_Management_System.Forms
             CreateCourseButtons();
             UpdateUserInfo();
         }
+        private string GetDateFormatFromConfig()
+        {
+            string xmlFilePath = "../../../appConfigurations/appConfigurations.xml"; 
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(xmlFilePath);
+
+            // Retrieve the date format from the configuration XML
+            string dateFormat = xmlDoc.SelectSingleNode("//DateFormat")?.InnerText;
+            return dateFormat;
+        }
 
         private void LoadSessionDataForUser(string userId)
         {
@@ -72,6 +82,7 @@ namespace Attendance_Management_System.Forms
                 foreach (XmlNode sessionNode in sessionNodes)
                 {
                     string date = sessionNode.SelectSingleNode("date")?.InnerText;
+
                     string status = sessionNode.SelectSingleNode("status")?.InnerText;
 
                     sessionData.Add((date, courseName, teacherName, sessionNumber, status));
@@ -82,12 +93,17 @@ namespace Attendance_Management_System.Forms
 
         private void PopulateDataGridView()
         {
+            string dateFormat = GetDateFormatFromConfig();
             studentGrid.Rows.Clear();
 
             foreach (var session in sessionData)
             {
+                DateTime date = DateTime.ParseExact(session.date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+              
+                string formattedDate = date.ToString(dateFormat);
+
                 string attendanceStatus = GetAttendanceStatusString(session.status);
-                studentGrid.Rows.Add(session.date, session.courseName, session.teacherName, session.sessionNumber, attendanceStatus);
+                studentGrid.Rows.Add(formattedDate, session.courseName, session.teacherName, session.sessionNumber, attendanceStatus);
             }
         }
 
@@ -269,7 +285,8 @@ namespace Attendance_Management_System.Forms
                 {
                     if (string.IsNullOrEmpty(selectedCourseName) || session.courseName == selectedCourseName)
                     {
-                        xsltBuilder.Append($"<tr><td>{session.date}</td><td>{session.courseName}</td><td>{session.teacherName}</td><td>{session.sessionNumber}</td><td>{GetAttendanceStatusString(session.status)}</td></tr>");
+                        string formattedDate = "<xsl:value-of select=\"format-date(" + "\"" + session.date + "\"" + ", $dateFormat)\"/>";
+                        xsltBuilder.Append($"<tr><td>{formattedDate}</td><td>{session.courseName}</td><td>{session.teacherName}</td><td>{session.sessionNumber}</td><td>{GetAttendanceStatusString(session.status)}</td></tr>");
                     }
                 }
                 xsltBuilder.Append("</table>");
@@ -282,7 +299,8 @@ namespace Attendance_Management_System.Forms
                 {
                     if (string.IsNullOrEmpty(selectedCourseName) || session.courseName == selectedCourseName)
                     {
-                        xsltBuilder.Append($"<li>Date: {session.date}, Course Name: {session.courseName}, Teacher Name: {session.teacherName}, Session Number: {session.sessionNumber}, Status: {GetAttendanceStatusString(session.status)}</li>");
+                        string formattedDate = "<xsl:value-of select=\"format-date(" + "\"" + session.date + "\"" + ", $dateFormat)\"/>";
+                        xsltBuilder.Append($"<li>Date: {formattedDate}, Course Name: {session.courseName}, Teacher Name: {session.teacherName}, Session Number: {session.sessionNumber}, Status: {GetAttendanceStatusString(session.status)}</li>");
                     }
                 }
                 xsltBuilder.Append("</ul>");

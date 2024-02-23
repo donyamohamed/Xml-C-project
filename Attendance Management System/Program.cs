@@ -51,13 +51,13 @@ namespace Attendance_Management_System.Forms
             //Application.Run(new FormLogin());
             // Application.Run(new FormSettings());
 
-          Application.Run(new testAdmin());
+            //  Application.Run(new testAdmin());
+
+
+            Application.Run(new StudentForm());
 
 
 
-
-
-          
 
         }
 
