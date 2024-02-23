@@ -13,7 +13,7 @@ namespace Attendance_Management_System.Forms
         public static DateTime appOpenDateandTime = DateTime.Now;
         
 
-        public static string appConfigPath = "G:\\ITI\\Xml-C-project\\Attendance Management System\\appConfigurations\\appConfigurations.xml";
+        public static string appConfigPath = "../../../appConfigurations/appConfigurations.xml";
         public static AppConfig appConfig = AppConfigParser.ParseAppConfig(appConfigPath);
         
         public static DateTime backupDateandTime = DateTime.Now.AddMinutes(appConfig.BackupInterval);
