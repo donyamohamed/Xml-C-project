@@ -79,7 +79,7 @@ namespace Attendance_Management_System.Forms
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(339, 591);
+            panel1.Size = new Size(339, 706);
             panel1.TabIndex = 3;
             // 
             // logout

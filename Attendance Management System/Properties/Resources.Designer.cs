@@ -73,6 +73,26 @@ namespace Attendance_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3403551_2001 {
+            get {
+                object obj = ResourceManager.GetObject("3403551-2001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backarrow {
+            get {
+                object obj = ResourceManager.GetObject("backarrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Delete_Red_X_Button_Transparent {
             get {
                 object obj = ResourceManager.GetObject("Delete-Red-X-Button-Transparent", resourceCulture);

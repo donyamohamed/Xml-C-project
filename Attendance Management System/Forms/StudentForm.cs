@@ -21,7 +21,7 @@ namespace Attendance_Management_System.Forms
         public StudentForm()
         {
             InitializeComponent();
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.newCulture);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
             InitializeForm();
         }
 
@@ -191,17 +191,17 @@ namespace Attendance_Management_System.Forms
 
         private void pictureBoxLang_Click(object sender, EventArgs e)
         {
-            if(Program.newCulture == "en")
+            if(Program.appLanguage == "en")
             {
-                Program.newCulture = "ar";
+                Program.appLanguage = "ar";
                 InitializeComponent();
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.newCulture);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
                 InitializeForm();
-            } else if (Program.newCulture == "ar")
+            } else if (Program.appLanguage == "ar")
             {
-                Program.newCulture = "en";
+                Program.appLanguage = "en";
                 InitializeComponent();
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.newCulture);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
                 InitializeForm();
             }
             // lang.Text = (lang.Text == "en") ? "ar" : "en";

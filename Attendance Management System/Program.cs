@@ -1,4 +1,5 @@
 using Attendance_Management_System.classes;
+using System.Globalization;
 using System.Xml;
 // using static Attendance_Management_System.classes.CourseParser;
 
@@ -21,6 +22,9 @@ namespace Attendance_Management_System.Forms
         // public static string usersPath = "../../../../users.xml";
         public static string coursesPath = appConfig.CoursesFilePath;
         public static string claSSesPath = appConfig.ClassesFilePath;
+        public static string backupUsersPath = appConfig.UsersBackupFilePath;
+        public static string backupCoursesPath = appConfig.CoursesBackupFilePath;
+        public static string backupClaSSesPath = appConfig.ClassesBackupFilePath;
 
         public static List<classes.User> users = UserParser.ParseUsers(usersPath);
         // Accessable from any form by Program.users
@@ -37,7 +41,7 @@ namespace Attendance_Management_System.Forms
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
             ApplicationConfiguration.Initialize();
             Application.Run(new FormLogin());
             // Application.Run(new FormSettings());
@@ -63,11 +67,14 @@ namespace Attendance_Management_System.Forms
 
         /// <summary>
         /// The GetDataFromXml method to get the data (users, courses, classes) from the xml files
+        /// calling 
+        /// GetDataFromXml(usersPath, coursesPath, claSSesPath);
+        /// Program.GetDataFromXml(Program.backupUsersPath, Program.backupCoursesPath, Program.backupClaSSesPath);
         /// </summary>
         /// <param name="usersPath"></param>
         /// <param name="coursesPath"></param>
         /// <param name="claSSesPath"></param>
-            public static void GetDataFromXml(string usersPath, string coursesPath, string claSSesPath)
+        public static void GetDataFromXml(string usersPath, string coursesPath, string claSSesPath)
         {
             users = UserParser.ParseUsers(usersPath);
             courses = CourseParser.ParseCourses(coursesPath);

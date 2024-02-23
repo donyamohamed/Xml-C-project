@@ -919,37 +919,6 @@
   <data name="textBoxPassword.PlaceholderText" xml:space="preserve">
     <value>Enter Your  Password ...</value>
   </data>
-  <data name="buttonLanguage.Text" xml:space="preserve">
-    <value>Language: English</value>
-  </data>
-  <data name="buttonSetTimerBackup.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 22pt</value>
-  </data>
-  <data name="buttonSetTimerBackup.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonSetTimerBackup.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="buttonSetTimerBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>342, 51</value>
-  </data>
-  <data name="buttonSetTimerBackup.Text" xml:space="preserve">
-    <value>Set Timer Backup</value>
-  </data>
-  <data name="textBoxSetTimerBackup.PlaceholderText" xml:space="preserve">
-    <value>Set Timer Interval for Backup</value>
-  </data>
-  <data name="textBoxSetTimerBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>342, 27</value>
-  </data>
-  <data name="textBoxSetTimerBackup.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="textBoxSetTimerBackup.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="pictureBoxSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -1021,6 +990,9 @@
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Backup in</value>
+  </data>
+  <data name="buttonLanguage.Text" xml:space="preserve">
+    <value>التحويل للغة العربية</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

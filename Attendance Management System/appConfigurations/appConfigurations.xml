@@ -22,8 +22,8 @@
     </authors>
     <appSettings>
       <updateInterval>1</updateInterval>
-      <language>ar</language>
-      <DateFormat>MM-dd-yyyy</DateFormat>
+      <language>en</language>
+      <DateFormat>yyyy-MM-dd</DateFormat>
     </appSettings>
   </appConfiguration>
 </appConfigurations>

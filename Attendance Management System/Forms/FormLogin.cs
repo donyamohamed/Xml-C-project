@@ -30,11 +30,12 @@ namespace Attendance_Management_System.Forms
 
         public FormLogin()
         {
-            // Get the current UI culture from the configuration file
-            // change the current UI culture to the new culture
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
-
             InitializeComponent();
+            // Get the current UI culture from the configuration file
+            // Update the UI
+            // UpdateUI();
+
         }
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
@@ -73,9 +74,19 @@ namespace Attendance_Management_System.Forms
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
+            // Change the current UI culture to the new culture from the configuration file
+            // Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
+            // Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
+            // this.Controls.Clear();
+            // Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
+            // this.InitializeComponent();
+
+
             //Thread.CurrentThread.CurrentUICulture = 
-                // new CultureInfo(Program.appLanguage);
-                // new CultureInfo(Program.newCulture);
+            // new CultureInfo(Program.appLanguage);
+            // new CultureInfo(Program.newCulture);
+            // UpdateUI();
+
             timerBackup.Start();
             labelOpenDateTime.Text = Program.appOpenDateandTime.ToString(Program.appConfig.DateFormats) + " " + Program.appOpenDateandTime.ToShortTimeString();
             pictureBoxHide.Hide();
@@ -83,7 +94,7 @@ namespace Attendance_Management_System.Forms
             labelInvalidUserName.Hide();
 
             // test the backup method
-            Program.SaveDataAsXml(Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath);
+            //Program.SaveDataAsXml(Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath);
 
 
         }
@@ -186,22 +197,19 @@ namespace Attendance_Management_System.Forms
 
         private void buttonLanguage_Click(object sender, EventArgs e)
         {
-            string newCulture;
-
             if (buttonLanguage.Text == "Language: Arabic")
             {
                 buttonLanguage.Text = "Language: English";
-                newCulture = "en";
+                Program.appLanguage = "en";
             }
             else
             {
                 buttonLanguage.Text = "Language: Arabic";
-                newCulture = "ar";
+                Program.appLanguage = "ar";
             }
 
             // Change the current UI culture
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(newCulture);
-
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
 
             // Update the UI
             UpdateUI();
@@ -209,24 +217,10 @@ namespace Attendance_Management_System.Forms
         private void UpdateUI()
         {
             this.Controls.Clear();
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
             this.InitializeComponent();
+            
 
-        }
-
-        private void buttonSetTimerBackup_Click(object sender, EventArgs e)
-        {
-            if (buttonSetTimerBackup.Text == "Set Timer for Backup")
-            {
-                textBoxSetTimerBackup.Visible = true;
-                buttonSetTimerBackup.Text = "Save";
-            }
-            else
-            {
-                buttonSetTimerBackup.Text = "Set Timer for Backup";
-                textBoxSetTimerBackup.Visible = false;
-                // Save the time in the configuration file
-                // 
-            }
         }
 
         private void pictureBoxSettings_Click(object sender, EventArgs e)
@@ -249,12 +243,12 @@ namespace Attendance_Management_System.Forms
         /// <param name="e"></param>
         private void timerBackup_Tick(object sender, EventArgs e)
         {
-            
+
             TimeSpan timeSpan = DateTime.Now - Program.appOpenDateandTime;
             // labelOpenDateTime.Text = timeSpan.ToString(@"dd\.hh\:mm\:ss");
-            labelBackupIn.Text = 
+            labelBackupIn.Text =
                 timeSpan.ToString(@"dd\.hh\:mm\:ss");
-                // DateTime.Now.ToString();
+            // DateTime.Now.ToString();
             if (timeSpan.TotalMinutes >= Program.appConfig.BackupInterval)
             {
                 Program.SaveDataAsXml(Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath);
@@ -264,6 +258,32 @@ namespace Attendance_Management_System.Forms
                  + " " + Program.appOpenDateandTime.ToShortTimeString();
 
             }
+
+
+        }
+
+        private void buttonLanguage_Click_1(object sender, EventArgs e)
+        {
+            // Get the current UI culture from the configuration file
+            // change the current UI culture to the new culture
+            if (Program.appLanguage == "ar")
+            {
+                buttonLanguage.Text = "Language: English";
+                Program.appLanguage = "en";
+            }
+            else if (Program.appLanguage == "en")
+            {
+                buttonLanguage.Text = "تغيير اللغة إلى العربية";
+                Program.appLanguage = "ar";
+            }
+            // Change the current UI culture to the new culture from the configuration file
+            // Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
+            // this.Controls.Clear();
+            // Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
+            // this.InitializeComponent();
+
+            // Update the UI
+            UpdateUI();
 
 
         }

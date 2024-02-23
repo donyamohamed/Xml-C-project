@@ -67,6 +67,7 @@ namespace Attendance_Management_System.Forms
             Program.appConfig.DateFormats = listBoxDateFormat.Text;
             //         public static void SaveAppConfigAsXml(AppConfig appConfig, string filePath)
             AppConfigParser.SaveAppConfigAsXml(Program.appConfig, Program.appConfigPath);
+            Program.GetDataFromXml(Program.backupUsersPath, Program.backupCoursesPath, Program.backupClaSSesPath);
             labelshowdate.Text = DateTime.Now.ToString(Program.appConfig.DateFormats);
             MessageBox.Show("Settings saved successfully", "Settings", MessageBoxButtons.OK, MessageBoxIcon.Information);
             // set the open date and time to the current date and time
@@ -88,6 +89,16 @@ namespace Attendance_Management_System.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void pictureBoxBack_Click(object sender, EventArgs e)
+        {
+            // Change the languare 
+
+            FormLogin Formlogin = new FormLogin();
+            Formlogin.Show();
+            Hide();
 
         }
     }
