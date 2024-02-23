@@ -27,7 +27,7 @@ namespace Attendance_Management_System.Forms
     {
         public static List<string> myCIDs = getCoursesIDbyTeacherID(FormLogin.meTeacher.Id);
         public static List<Course> myCoursesObj = getListofCourse(myCIDs);
-        public static List<StudentSessions> myStdSessionsObj = getListofmyStudentSessions(FormLogin.meTeacher.Id,  myCIDs);
+        public static List<StudentSessions> myStdSessionsObj = getListofmyStudentSessions(FormLogin.meTeacher.Id, myCIDs);
         public static List<Session> mySessionsObj = getListofSessions(myCIDs);
         public static List<DateTime> courseDates = getCDatesbyCIds(myCIDs);
 
@@ -49,18 +49,13 @@ namespace Attendance_Management_System.Forms
             Close();
         }
 
-        private void buttonMyCourses_Click(object sender, EventArgs e)
-        {
-            // get list of meTeacher's courses by Teacher.getCoursesIDbyTeacherID
-            getCoursesIDbyTeacherID(FormLogin.meTeacher.Id);
-        }
 
         private void TeacherForm_Load(object sender, EventArgs e)
         {
             dataGridViewCourses.DataSource = RenderDateTable(myCoursesObj);
             //Console.WriteLine(Program.claSSes);
             // dataGridViewAttendance.DataSource = RenderDateTable(mySessionsObj);
-            dataGridViewDateStatus.DataSource = RenderDateTable(mySessionsObj);
+            // dataGridViewDateStatus.DataSource = RenderDateTable(mySessionsObj);
 
 
 
@@ -203,22 +198,6 @@ namespace Attendance_Management_System.Forms
 
         }
 
-        private void dataGridViewDateStatus_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int indexRow = e.RowIndex;
-            if (indexRow < 0)
-            {
-                return;
-            }
-            DataGridViewRow row = dataGridViewDateStatus.Rows[indexRow];
-            textBoxDate.Text = row.Cells[0].Value.ToString();
-        }
-
-        private void buttonGenATTTAble_Click(object sender, EventArgs e)
-        {
-
-        }
-
         class Obj
         {
             public string StudentID { get; set; }
@@ -291,7 +270,7 @@ namespace Attendance_Management_System.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-                selectedStudents = new List<Obj>();
+            selectedStudents = new List<Obj>();
             textBoxDate.Text = comboBoxCourseDates.Text;
             dataGridViewStudentStatus.DataSource = RenderAttTable(textBoxDate.Text, myStdSessionsObj);
 
@@ -308,6 +287,33 @@ namespace Attendance_Management_System.Forms
             selectedStudents = new List<Obj>();
             dataGridViewStudentStatus.DataSource = RenderAttTable(textBoxDate.Text, myStdSessionsObj);
             dataGridViewAttendance.DataSource = RenderStdAttofTecherTable(mySessionsObj, myStdSessionsObj);
+
+        }
+
+        private void dataGridViewStudentStatus_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex % 2 == 0)
+            {
+                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
+            }
+            else
+            {
+                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+            }
+            // if cell contains "Absent" then change the color to red 
+            // else if cell contains "Attend" then change the color to green
+            if (e.Value != null && e.Value.ToString() == "Absent")
+            {
+                e.CellStyle.BackColor = Color.Red;
+            }
+            else if (e.Value != null && e.Value.ToString() == "Attend")
+            {
+                e.CellStyle.BackColor = Color.Green;
+            }
+            else
+            {
+                e.CellStyle.BackColor = Color.Orange;
+            }
 
         }
 
