@@ -674,6 +674,7 @@ namespace Attendance_Management_System.Forms
             // 
             delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             delete.HeaderText = "Delete";
+            delete.Image = (System.Drawing.Image)resources.GetObject("delete.Image");
             delete.ImageLayout = DataGridViewImageCellLayout.Zoom;
             delete.MinimumWidth = 6;
             delete.Name = "delete";

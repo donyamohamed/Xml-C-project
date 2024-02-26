@@ -345,9 +345,30 @@ namespace Attendance_Management_System.Forms
                     Console.WriteLine($"Row removed successfully. Remaining rows: {teacherGrid.Rows.Count}");
                 }
             }
+
+            else if (e.ColumnIndex == teacherGrid.Columns["Update"].Index && e.RowIndex >= 0 && e.RowIndex < teacherGrid.Rows.Count)
+            {
+                // Extract data of the corresponding user row
+                DataGridViewRow selectedRow = teacherGrid.Rows[e.RowIndex];
+                string idToUpdate = selectedRow.Cells["ID"].Value.ToString();
+                int age = Convert.ToInt32(selectedRow.Cells["Age"].Value);
+                string password = selectedRow.Cells["Password"].Value.ToString();
+                string phone = selectedRow.Cells["Phone"].Value.ToString();
+                string address = selectedRow.Cells["Address"].Value.ToString();
+
+                // Pass the user data to the update form
+                UpdateUserForm updateForm = new UpdateUserForm(users,idToUpdate, password, age,   phone, address);
+
+                // Display the update form
+                DialogResult result = updateForm.ShowDialog();
+
+               
+              
+            }
         }
 
-
+        //update 
+   
 
 
         private void btnInsertUser_Click(object sender, EventArgs e)

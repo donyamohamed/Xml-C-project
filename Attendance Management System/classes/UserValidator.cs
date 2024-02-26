@@ -65,7 +65,13 @@ namespace Attendance_Management_System.classes
             Regex regex = new Regex("(011|012|015|010)\\d{8}");
             return regex.IsMatch(phone);
         }
+        public static bool ValidateAddress(string address)
+        {
+            if (string.IsNullOrEmpty(address))
+                return false;
 
+            return address.Length >= 4;
+        }
         public static bool ValidateRole(string role)
         {
             if (string.IsNullOrEmpty(role))
