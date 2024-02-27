@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Classes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="C:\Users\Orginal\Downloads\Xml-C-project\Xml-C-project-main\classSchema2.xsd">
   <class>
     <classId>1CS</classId>
@@ -24,7 +24,7 @@
     </studentId>
   </class>
   <class>
-    <classId>1CS</classId>
+    <classId>2CS</classId>
     <courseId>2C</courseId>
     <teacherId>2T</teacherId>
     <studentId id="3S">
