@@ -1,6 +1,7 @@
 using Attendance_Management_System.classes;
 using System.Globalization;
 using System.Xml;
+using System.Windows.Forms;
 // using static Attendance_Management_System.classes.CourseParser;
 
 namespace Attendance_Management_System.Forms
@@ -43,8 +44,45 @@ namespace Attendance_Management_System.Forms
             // see https://aka.ms/applicationconfiguration.
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormLogin());
-            // Application.Run(new FormSettings());
+            Application.Run(new testAdmin());
+
+            // Application.Run(new testAdmin());
+            //Application.Run(new FormSettings());
+
+            // Application.Run(new testAdmin());
+           // Application.Run(new FormLogin());
+
+
+
+        }
+
+        
+        static List<Student> GetStudents(XmlDocument usersDoc)
+        {
+            List<Student> students = new List<Student>();
+
+            // Select all user nodes --> role attribute --> "student"
+            XmlNodeList studentNodes = usersDoc.SelectNodes("//user[@role='student']");
+            foreach (XmlNode studentNode in studentNodes)
+            {
+                //  student information
+
+                string id = studentNode.SelectSingleNode("id").InnerText;
+                string firstName = studentNode.SelectSingleNode("fname").InnerText;
+                string lastName = studentNode.SelectSingleNode("lname").InnerText;
+                int age = Convert.ToInt32(studentNode.SelectSingleNode("age").InnerText);
+                string email = studentNode.SelectSingleNode("email").InnerText;
+                string password = studentNode.SelectSingleNode("password").InnerText;
+                string phone = studentNode.SelectSingleNode("phone").InnerText;
+                string address = studentNode.SelectSingleNode("address").InnerText;
+
+                // Create Student object and add to list
+                Student student = new Student(id, firstName, lastName, age, email, password, phone, address);
+                students.Add(student);
+            }
+
+            return students;
+
         }
         
         ///
@@ -80,5 +118,6 @@ namespace Attendance_Management_System.Forms
             courses = CourseParser.ParseCourses(coursesPath);
             claSSes = ClassParser.ParseClasses(claSSesPath);
         }
+        
     }
 }

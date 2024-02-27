@@ -93,9 +93,6 @@ namespace Attendance_Management_System.Forms
             pictureBoxError.Hide();
             labelInvalidUserName.Hide();
 
-            // test the backup method
-            //Program.SaveDataAsXml(Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath);
-
 
         }
 

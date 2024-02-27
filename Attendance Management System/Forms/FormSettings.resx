@@ -188,8 +188,8 @@
   <data name="&gt;&gt;button1.Parent" xml:space="preserve">
     <value>groupBox3</value>
   </data>
-  <data name="listBoxDateFormat.Items1" xml:space="preserve">
-    <value>dd-MM-yyyy</value>
+  <data name="&gt;&gt;timer1.Name" xml:space="preserve">
+    <value>timer1</value>
   </data>
   <data name="pictureBoxBack.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 50</value>
@@ -263,8 +263,8 @@
   <data name="label13.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
   </data>
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -293,8 +293,8 @@
   <data name="labelAppVersion.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
+  <data name="&gt;&gt;numericUpDown1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="listBoxDateFormat.ToolTip" xml:space="preserve">
     <value />
@@ -417,8 +417,8 @@
   <data name="pictureBoxClose.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;listBoxDevelopers.Name" xml:space="preserve">
+    <value>listBoxDevelopers</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>10, 21</value>
@@ -546,8 +546,8 @@
   <data name="listBoxSysLang.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
+  <data name="&gt;&gt;UserEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label7.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -627,8 +627,8 @@
   <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
     <value>groupBox2</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 146</value>
   </data>
   <data name="label6.ToolTip" xml:space="preserve">
     <value />
@@ -738,8 +738,8 @@
   <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>564, 487</value>
+  <data name="&gt;&gt;pictureBoxMinimize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;listBoxDevelopers.Name" xml:space="preserve">
     <value>listBoxDevelopers</value>
@@ -927,8 +927,8 @@
   <data name="listBoxDateFormate.Items2" xml:space="preserve">
     <value>MM-dd-yyyy</value>
   </data>
-  <data name="listBoxBackupFileLocations.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;listBoxDevelopers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;timer1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -975,8 +975,8 @@
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 95</value>
   </data>
-  <data name="&gt;&gt;listBoxBackupFileLocations.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 23</value>
@@ -1059,8 +1059,8 @@
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>237, 32</value>
   </data>
-  <data name="listBoxBackupFileLocations.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+  <data name="&gt;&gt;labelAppName.Name" xml:space="preserve">
+    <value>labelAppName</value>
   </data>
   <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -1095,8 +1095,8 @@
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 199</value>
   </data>
-  <data name="labelAppCreationDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 95</value>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 65</value>
   </data>
   <data name="&gt;&gt;buttonLoginSaveSettings.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -1139,5 +1139,14 @@
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>en</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>114, 17</value>
   </metadata>
 </root>

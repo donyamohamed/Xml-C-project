@@ -30,9 +30,9 @@ namespace Attendance_Management_System.Forms
             InitializeComponent();
             Role = role;
             InitializeDataGridView();
-            MessageBox.Show(Role);
+            //MessageBox.Show(Role);
 
-            users = UserParser.ParseUsers("../../../../users.xml");
+
 
             if (!string.IsNullOrEmpty(Role))
             {
@@ -54,7 +54,7 @@ namespace Attendance_Management_System.Forms
             // Set up DataGridView properties
             teacherGrid.AutoGenerateColumns = false;
             teacherGrid.AllowUserToAddRows = false;
-
+            teacherGrid.RowTemplate.Height = 60;
             // Define DataGridView columns
             id.DataPropertyName = "ID";
             teacherFname.DataPropertyName = "Fname";
@@ -64,6 +64,8 @@ namespace Attendance_Management_System.Forms
             password.DataPropertyName = "Password";
             phone.DataPropertyName = "Phone";
             address.DataPropertyName = "Address";
+
+
         }
 
         /*  private void LoadTeacherData()
@@ -120,6 +122,8 @@ namespace Attendance_Management_System.Forms
 
         private void LoadUserData(string role)
         {
+            users = UserParser.ParseUsers("../../../../users.xml");
+
             try
             {
                 if (role == "teacher")
@@ -157,6 +161,7 @@ namespace Attendance_Management_System.Forms
                 if (item != null)
                 {
                     Image deleteImage = Image.FromFile("../../../../Assets/delete.png");
+
                     dataTable.Rows.Add(
                         GetPropertyValue(item, "Id"),
                         GetPropertyValue(item, "FirstName"),
@@ -180,11 +185,7 @@ namespace Attendance_Management_System.Forms
         }
 
 
-        private void TeacherGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // This event is typically used for handling user interactions with the cells.
-            // If you don't have specific actions to perform on cell click, you can leave this empty.
-        }
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -229,6 +230,7 @@ namespace Attendance_Management_System.Forms
         private void button7_Click(object sender, EventArgs e)
         {
             string role = "student";
+            LoadUserData(role);
             TeacherAdminForm studentAdminForm = new TeacherAdminForm(role);
             studentAdminForm.Role = role;
             studentAdminForm.Show();
@@ -238,21 +240,140 @@ namespace Attendance_Management_System.Forms
         private void button4_Click(object sender, EventArgs e)
         {
             string role = "teacher";
-
+            LoadUserData(role);
             TeacherAdminForm teacherAdminForm = new TeacherAdminForm(role);
             teacherAdminForm.Role = role;
             teacherAdminForm.Show();
             Hide();
         }
-
-        private void button6_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                string searchText = textBox1.Text.ToLower(); // Convert search text to lowercase for case-insensitive search
 
+                // Clear any previous filters
+                ((DataTable)teacherGrid.DataSource).DefaultView.RowFilter = "";
+
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    // Build a filter expression for each column
+                    StringBuilder filterExpression = new StringBuilder();
+
+                    foreach (DataColumn column in ((DataTable)teacherGrid.DataSource).Columns)
+                    {
+                        if (filterExpression.Length > 0)
+                            filterExpression.Append(" OR ");
+
+                        filterExpression.Append($"CONVERT({column.ColumnName}, 'System.String') LIKE '%{searchText}%'");
+                    }
+
+                    // Apply the filter
+                    ((DataTable)teacherGrid.DataSource).DefaultView.RowFilter = filterExpression.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error searching data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+         
         }
 
-        private void button8_Click_1(object sender, EventArgs e)
-        {
+        // handle delete btn
 
+        private void TeacherGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == teacherGrid.Columns["Delete"].Index && e.RowIndex >= 0 && e.RowIndex < teacherGrid.Rows.Count)
+            {
+                
+                    string idToDelete = teacherGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+                string roleToDelete = Role.ToLower();
+
+                Console.WriteLine($"Attempting to delete row at index {e.RowIndex}");
+                DialogResult result = MessageBox.Show($"Are you sure you want to delete the {roleToDelete} with ID '{idToDelete}'?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    if (Role == "teacher")
+                    {
+                        Teacher teacherToRemove = teachers.FirstOrDefault(t => t.Id == idToDelete);
+                        if (teacherToRemove != null)
+                        {
+
+                            users.Remove(teacherToRemove);
+
+                            // -> update xml
+                            UserParser.RemoveUserById(users, "../../../../users.xml", "../../../../class.xml", idToDelete);
+
+                            teachers.Remove(teacherToRemove); //->update grid
+                            PopulateGrid(teachers);
+
+                            Console.WriteLine($"Row deleted successfully. Remaining rows: {teacherGrid.Rows.Count}");
+                        }
+                    }
+                    else if (Role == "student")
+                    {
+                        Student studentToRemove = students.FirstOrDefault(s => s.Id == idToDelete);
+                        if (studentToRemove != null)
+                        {
+
+                            users.Remove(studentToRemove);
+
+
+                            UserParser.RemoveUserById(users, "../../../../users.xml", "../../../../class.xml", idToDelete);
+
+
+                            students.Remove(studentToRemove);
+                            PopulateGrid(students);
+
+                            Console.WriteLine($"Row deleted successfully. Remaining rows: {teacherGrid.Rows.Count}");
+                        }
+                    }
+
+                    // --------  > Remove the row from the DataGridView
+                    try
+                    {
+                        teacherGrid.Rows.RemoveAt(e.RowIndex);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error removing row from DataGridView: " + ex.Message);
+
+                    }
+
+                    Console.WriteLine($"Row removed successfully. Remaining rows: {teacherGrid.Rows.Count}");
+                }
+            }
+
+            else if (e.ColumnIndex == teacherGrid.Columns["Update"].Index && e.RowIndex >= 0 && e.RowIndex < teacherGrid.Rows.Count)
+            {
+                // Extract data of the corresponding user row
+                DataGridViewRow selectedRow = teacherGrid.Rows[e.RowIndex];
+                string idToUpdate = selectedRow.Cells["ID"].Value.ToString();
+                int age = Convert.ToInt32(selectedRow.Cells["Age"].Value);
+                string password = selectedRow.Cells["Password"].Value.ToString();
+                string phone = selectedRow.Cells["Phone"].Value.ToString();
+                string address = selectedRow.Cells["Address"].Value.ToString();
+
+                // Pass the user data to the update form
+                UpdateUserForm updateForm = new UpdateUserForm(users,idToUpdate, password, age,   phone, address);
+
+                // Display the update form
+                DialogResult result = updateForm.ShowDialog();
+
+               
+              
+            }
+        }
+
+        //update 
+   
+
+
+        private void btnInsertUser_Click(object sender, EventArgs e)
+        {
+            InsertUserForm insform = new InsertUserForm(users, Role);
+            insform.ShowDialog();
         }
     }
 }

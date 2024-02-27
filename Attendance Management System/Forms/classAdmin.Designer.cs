@@ -1,11 +1,6 @@
-﻿using static System.Net.Mime.MediaTypeNames;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using Font = System.Drawing.Font;
-
-namespace Attendance_Management_System.Forms
+﻿namespace Attendance_Management_System.Forms
 {
-    partial class TeacherAdminForm
+    partial class classAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -31,29 +26,9 @@ namespace Attendance_Management_System.Forms
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-         // Declare a Button for the back arrow
-
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherAdminForm));
-            teacherGrid = new DataGridView();
-            id = new DataGridViewTextBoxColumn();
-            teacherFname = new DataGridViewTextBoxColumn();
-            teacherLname = new DataGridViewTextBoxColumn();
-            age = new DataGridViewTextBoxColumn();
-            email = new DataGridViewTextBoxColumn();
-            password = new DataGridViewTextBoxColumn();
-            phone = new DataGridViewTextBoxColumn();
-            address = new DataGridViewTextBoxColumn();
-            delete = new DataGridViewImageColumn();
-            update = new DataGridViewImageColumn();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(classAdmin));
             panel3 = new Panel();
             closebox = new PictureBox();
             minimizebox = new PictureBox();
@@ -82,11 +57,11 @@ namespace Attendance_Management_System.Forms
             pictureBox8 = new PictureBox();
             pictureBox9 = new PictureBox();
             button5 = new Button();
-            button6 = new Button();
+            coursebutton = new Button();
             button7 = new Button();
-            contextMenuStrip1 = new ContextMenuStrip(components);
-            button8 = new Button();
-            ((System.ComponentModel.ISupportInitialize)teacherGrid).BeginInit();
+            dataGridView1 = new DataGridView();
+            label1 = new Label();
+            textBox1 = new TextBox();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)closebox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)minimizebox).BeginInit();
@@ -104,143 +79,8 @@ namespace Attendance_Management_System.Forms
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // teacherGrid
-            // 
-            teacherGrid.AllowUserToAddRows = false;
-            teacherGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.Padding = new Padding(5);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            teacherGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            teacherGrid.BackgroundColor = SystemColors.Control;
-            teacherGrid.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.Orchid;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new Padding(5);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 192, 192);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            teacherGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            teacherGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            teacherGrid.Columns.AddRange(new DataGridViewColumn[] { id, teacherFname, teacherLname, age, email, password, phone, address, delete, update });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new Padding(5);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            teacherGrid.DefaultCellStyle = dataGridViewCellStyle3;
-            teacherGrid.Location = new Point(472, 270);
-            teacherGrid.Margin = new Padding(5);
-            teacherGrid.Name = "teacherGrid";
-            teacherGrid.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            teacherGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            teacherGrid.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.Padding = new Padding(5, 10, 5, 10);
-            teacherGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            teacherGrid.Size = new Size(1372, 467);
-            teacherGrid.TabIndex = 0;
-            teacherGrid.CellContentClick += TeacherGrid_CellContentClick;
-            // 
-            // id
-            // 
-            id.HeaderText = "ID";
-            id.MinimumWidth = 6;
-            id.Name = "id";
-            id.ReadOnly = true;
-            id.Width = 125;
-            // 
-            // teacherFname
-            // 
-            teacherFname.HeaderText = "Fname";
-            teacherFname.MinimumWidth = 6;
-            teacherFname.Name = "teacherFname";
-            teacherFname.ReadOnly = true;
-            teacherFname.Width = 170;
-            // 
-            // teacherLname
-            // 
-            teacherLname.HeaderText = "Lname";
-            teacherLname.MinimumWidth = 6;
-            teacherLname.Name = "teacherLname";
-            teacherLname.ReadOnly = true;
-            teacherLname.Width = 125;
-            // 
-            // age
-            // 
-            age.HeaderText = "Age";
-            age.MinimumWidth = 6;
-            age.Name = "age";
-            age.ReadOnly = true;
-            age.Width = 125;
-            // 
-            // email
-            // 
-            email.HeaderText = "Email";
-            email.MinimumWidth = 6;
-            email.Name = "email";
-            email.ReadOnly = true;
-            email.Width = 200;
-            // 
-            // password
-            // 
-            password.HeaderText = "Password";
-            password.MinimumWidth = 6;
-            password.Name = "password";
-            password.ReadOnly = true;
-            password.Width = 125;
-            // 
-            // phone
-            // 
-            phone.HeaderText = "Phone";
-            phone.MinimumWidth = 11;
-            phone.Name = "phone";
-            phone.ReadOnly = true;
-            phone.Width = 125;
-            // 
-            // address
-            // 
-            address.HeaderText = "Address";
-            address.MinimumWidth = 6;
-            address.Name = "address";
-            address.ReadOnly = true;
-            address.Width = 125;
-            // 
-            // delete
-            // 
-            delete.HeaderText = "Delete";
-            delete.Image = (System.Drawing.Image)resources.GetObject("delete.Image");
-            delete.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            delete.MinimumWidth = 6;
-            delete.Name = "delete";
-            delete.ReadOnly = true;
-            delete.Width = 125;
-            // 
-            // update
-            // 
-            update.HeaderText = "Update";
-            update.Image = (System.Drawing.Image)resources.GetObject("update.Image");
-            update.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            update.MinimumWidth = 6;
-            update.Name = "update";
-            update.ReadOnly = true;
-            update.Width = 125;
             // 
             // panel3
             // 
@@ -253,34 +93,30 @@ namespace Attendance_Management_System.Forms
             panel3.Location = new Point(0, 0);
             panel3.Margin = new Padding(5, 6, 5, 6);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1370, 188);
-            panel3.TabIndex = 2;
+            panel3.Size = new Size(1497, 188);
+            panel3.TabIndex = 3;
             // 
             // closebox
             // 
-            closebox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            closebox.Image = (System.Drawing.Image)resources.GetObject("closebox.Image");
+            closebox.Image = (Image)resources.GetObject("closebox.Image");
             closebox.ImeMode = ImeMode.NoControl;
-            closebox.Location = new Point(1881, 0);
+            closebox.Location = new Point(1899, 0);
             closebox.Name = "closebox";
             closebox.Size = new Size(43, 43);
             closebox.SizeMode = PictureBoxSizeMode.Zoom;
             closebox.TabIndex = 18;
             closebox.TabStop = false;
-            closebox.Click += closebox_Click;
             // 
             // minimizebox
             // 
-            minimizebox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            minimizebox.Image = (System.Drawing.Image)resources.GetObject("minimizebox.Image");
+            minimizebox.Image = (Image)resources.GetObject("minimizebox.Image");
             minimizebox.ImeMode = ImeMode.NoControl;
-            minimizebox.Location = new Point(1832, 0);
+            minimizebox.Location = new Point(1850, 0);
             minimizebox.Name = "minimizebox";
             minimizebox.Size = new Size(52, 43);
             minimizebox.SizeMode = PictureBoxSizeMode.Zoom;
             minimizebox.TabIndex = 17;
             minimizebox.TabStop = false;
-            minimizebox.Click += minimizebox_Click;
             // 
             // teacherData
             // 
@@ -295,9 +131,8 @@ namespace Attendance_Management_System.Forms
             teacherData.Name = "teacherData";
             teacherData.Size = new Size(223, 55);
             teacherData.TabIndex = 15;
-            teacherData.Text = "Teachers Data";
+            teacherData.Text = "Classes Data";
             teacherData.UseVisualStyleBackColor = true;
-            teacherData.Click += button8_Click;
             // 
             // panel1
             // 
@@ -337,7 +172,7 @@ namespace Attendance_Management_System.Forms
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = (System.Drawing.Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.ImeMode = ImeMode.NoControl;
             pictureBox4.InitialImage = null;
             pictureBox4.Location = new Point(34, 838);
@@ -349,7 +184,7 @@ namespace Attendance_Management_System.Forms
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.ImeMode = ImeMode.NoControl;
             pictureBox1.Location = new Point(23, 391);
             pictureBox1.Name = "pictureBox1";
@@ -376,7 +211,7 @@ namespace Attendance_Management_System.Forms
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.ImeMode = ImeMode.NoControl;
             pictureBox2.Location = new Point(23, 270);
             pictureBox2.Name = "pictureBox2";
@@ -388,7 +223,7 @@ namespace Attendance_Management_System.Forms
             // picstudents
             // 
             picstudents.BackColor = Color.FromArgb(255, 192, 192);
-            picstudents.Image = (System.Drawing.Image)resources.GetObject("picstudents.Image");
+            picstudents.Image = (Image)resources.GetObject("picstudents.Image");
             picstudents.ImeMode = ImeMode.NoControl;
             picstudents.Location = new Point(23, 528);
             picstudents.Name = "picstudents";
@@ -399,7 +234,7 @@ namespace Attendance_Management_System.Forms
             // 
             // picclass
             // 
-            picclass.Image = (System.Drawing.Image)resources.GetObject("picclass.Image");
+            picclass.Image = (Image)resources.GetObject("picclass.Image");
             picclass.ImeMode = ImeMode.NoControl;
             picclass.Location = new Point(34, 688);
             picclass.Name = "picclass";
@@ -482,7 +317,7 @@ namespace Attendance_Management_System.Forms
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = (System.Drawing.Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.ImeMode = ImeMode.NoControl;
             pictureBox3.Location = new Point(139, 34);
             pictureBox3.Name = "pictureBox3";
@@ -503,14 +338,14 @@ namespace Attendance_Management_System.Forms
             panel4.Controls.Add(pictureBox8);
             panel4.Controls.Add(pictureBox9);
             panel4.Controls.Add(button5);
-            panel4.Controls.Add(button6);
+            panel4.Controls.Add(coursebutton);
             panel4.Controls.Add(button7);
             panel4.Dock = DockStyle.Left;
             panel4.Location = new Point(0, 188);
             panel4.Margin = new Padding(5, 6, 5, 6);
             panel4.Name = "panel4";
-            panel4.Size = new Size(387, 561);
-            panel4.TabIndex = 4;
+            panel4.Size = new Size(387, 867);
+            panel4.TabIndex = 5;
             // 
             // logout_button
             // 
@@ -526,7 +361,6 @@ namespace Attendance_Management_System.Forms
             logout_button.TabIndex = 18;
             logout_button.Text = "Log Out";
             logout_button.UseVisualStyleBackColor = true;
-            logout_button.Click += logoutButton_Click;
             // 
             // button2
             // 
@@ -545,7 +379,7 @@ namespace Attendance_Management_System.Forms
             // 
             // pictureBox5
             // 
-            pictureBox5.Image = (System.Drawing.Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
             pictureBox5.ImeMode = ImeMode.NoControl;
             pictureBox5.InitialImage = null;
             pictureBox5.Location = new Point(23, 681);
@@ -557,7 +391,7 @@ namespace Attendance_Management_System.Forms
             // 
             // pictureBox6
             // 
-            pictureBox6.Image = (System.Drawing.Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
             pictureBox6.ImeMode = ImeMode.NoControl;
             pictureBox6.Location = new Point(23, 191);
             pictureBox6.Name = "pictureBox6";
@@ -581,11 +415,10 @@ namespace Attendance_Management_System.Forms
             button4.TabIndex = 14;
             button4.Text = "Teachers";
             button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
             // 
             // pictureBox7
             // 
-            pictureBox7.Image = (System.Drawing.Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
             pictureBox7.ImeMode = ImeMode.NoControl;
             pictureBox7.Location = new Point(23, 33);
             pictureBox7.Name = "pictureBox7";
@@ -597,7 +430,7 @@ namespace Attendance_Management_System.Forms
             // pictureBox8
             // 
             pictureBox8.BackColor = Color.FromArgb(255, 192, 192);
-            pictureBox8.Image = (System.Drawing.Image)resources.GetObject("pictureBox8.Image");
+            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
             pictureBox8.ImeMode = ImeMode.NoControl;
             pictureBox8.Location = new Point(23, 360);
             pictureBox8.Name = "pictureBox8";
@@ -608,7 +441,7 @@ namespace Attendance_Management_System.Forms
             // 
             // pictureBox9
             // 
-            pictureBox9.Image = (System.Drawing.Image)resources.GetObject("pictureBox9.Image");
+            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
             pictureBox9.ImeMode = ImeMode.NoControl;
             pictureBox9.Location = new Point(23, 519);
             pictureBox9.Name = "pictureBox9";
@@ -619,6 +452,7 @@ namespace Attendance_Management_System.Forms
             // 
             // button5
             // 
+            button5.BackColor = Color.FromArgb(255, 128, 128);
             button5.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 192);
             button5.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
             button5.FlatStyle = FlatStyle.Flat;
@@ -630,23 +464,24 @@ namespace Attendance_Management_System.Forms
             button5.Size = new Size(223, 55);
             button5.TabIndex = 10;
             button5.Text = "Classes";
-            button5.UseVisualStyleBackColor = true;
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
-            // button6
+            // coursebutton
             // 
-            button6.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 192);
-            button6.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Sitka Text", 13F, FontStyle.Bold);
-            button6.ForeColor = Color.Cornsilk;
-            button6.ImeMode = ImeMode.NoControl;
-            button6.Location = new Point(140, 372);
-            button6.Name = "button6";
-            button6.Size = new Size(223, 55);
-            button6.TabIndex = 8;
-            button6.Text = "Courses";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
+            coursebutton.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 192);
+            coursebutton.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
+            coursebutton.FlatStyle = FlatStyle.Flat;
+            coursebutton.Font = new Font("Sitka Text", 13F, FontStyle.Bold);
+            coursebutton.ForeColor = Color.Cornsilk;
+            coursebutton.ImeMode = ImeMode.NoControl;
+            coursebutton.Location = new Point(140, 372);
+            coursebutton.Name = "coursebutton";
+            coursebutton.Size = new Size(223, 55);
+            coursebutton.TabIndex = 8;
+            coursebutton.Text = "Courses";
+            coursebutton.UseVisualStyleBackColor = true;
+            coursebutton.Click += button6_Click;
             // 
             // button7
             // 
@@ -662,42 +497,50 @@ namespace Attendance_Management_System.Forms
             button7.TabIndex = 6;
             button7.Text = "Students";
             button7.UseVisualStyleBackColor = true;
-            button7.Click += button7_Click;
             // 
-            // contextMenuStrip1
+            // dataGridView1
             // 
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
+            dataGridView1.BackgroundColor = SystemColors.Control;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(482, 286);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(935, 571);
+            dataGridView1.TabIndex = 6;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // button8
+            // label1
             // 
-            button8.Location = new Point(451, 221);
-            button8.Name = "button8";
-            button8.Size = new Size(175, 41);
-            button8.TabIndex = 6;
-            button8.Text = "button8";
-            button8.UseVisualStyleBackColor = true;
-            button8.Click += button8_Click_1;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F);
+            label1.Location = new Point(467, 224);
+            label1.Name = "label1";
+            label1.Size = new Size(101, 35);
+            label1.TabIndex = 8;
+            label1.Text = "Search :";
             // 
-            // TeacherAdminForm
+            // textBox1
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            textBox1.Location = new Point(574, 232);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(184, 27);
+            textBox1.TabIndex = 7;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // classAdmin
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
-            ClientSize = new Size(1370, 749);
-            Controls.Add(button8);
+            ClientSize = new Size(1497, 1055);
+            Controls.Add(label1);
+            Controls.Add(textBox1);
+            Controls.Add(dataGridView1);
             Controls.Add(panel4);
             Controls.Add(panel3);
-            Controls.Add(teacherGrid);
-            Font = new Font("Segoe UI", 15F);
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(5);
-            Name = "TeacherAdminForm";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "AdminTeacherForm";
-            WindowState = FormWindowState.Maximized;
-            Load += TeacherAdminForm_Load;
-            ((System.ComponentModel.ISupportInitialize)teacherGrid).EndInit();
+            Name = "classAdmin";
+            Text = "classAdmin";
+            Load += classAdmin_Load;
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)closebox).EndInit();
             ((System.ComponentModel.ISupportInitialize)minimizebox).EndInit();
@@ -715,15 +558,17 @@ namespace Attendance_Management_System.Forms
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView teacherGrid;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Panel panel3;
+        private PictureBox closebox;
+        private PictureBox minimizebox;
+        private Button teacherData;
         private Panel panel1;
         private Button button3;
         private PictureBox pictureBox4;
@@ -739,6 +584,7 @@ namespace Attendance_Management_System.Forms
         private Button button1;
         private PictureBox pictureBox3;
         private Panel panel4;
+        private Button logout_button;
         private Button button2;
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
@@ -747,26 +593,10 @@ namespace Attendance_Management_System.Forms
         private PictureBox pictureBox8;
         private PictureBox pictureBox9;
         private Button button5;
-        private Button button6;
+        private Button coursebutton;
         private Button button7;
-        private Button logout_button;
-        private Button teacherData;
-        private PictureBox minimizebox;
-        private PictureBox closebox;
-        private Button btnInsertUser;
-        private TextBox textBox1;
+        private DataGridView dataGridView1;
         private Label label1;
-        private DataGridViewTextBoxColumn id;
-        private DataGridViewTextBoxColumn teacherFname;
-        private DataGridViewTextBoxColumn teacherLname;
-        private DataGridViewTextBoxColumn age;
-        private DataGridViewTextBoxColumn email;
-        private DataGridViewTextBoxColumn password;
-        private DataGridViewTextBoxColumn phone;
-        private DataGridViewTextBoxColumn address;
-        private DataGridViewImageColumn delete;
-        private DataGridViewImageColumn update;
-        private ContextMenuStrip contextMenuStrip1;
-        private Button button8;
+        private TextBox textBox1;
     }
 }
