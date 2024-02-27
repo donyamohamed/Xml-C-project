@@ -249,12 +249,12 @@ namespace Attendance_Management_System.Forms
         /// <param name="e"></param>
         private void timerBackup_Tick(object sender, EventArgs e)
         {
-            
+
             TimeSpan timeSpan = DateTime.Now - Program.appOpenDateandTime;
             // labelOpenDateTime.Text = timeSpan.ToString(@"dd\.hh\:mm\:ss");
-            labelBackupIn.Text = 
+            labelBackupIn.Text =
                 timeSpan.ToString(@"dd\.hh\:mm\:ss");
-                // DateTime.Now.ToString();
+            // DateTime.Now.ToString();
             if (timeSpan.TotalMinutes >= AppConfig.AppSettings.BackupInterval)
             {
                 Program.SaveDataAsXml(Program.appConfig.UsersBackupFilePath, Program.appConfig.CoursesBackupFilePath, Program.appConfig.ClassesBackupFilePath);

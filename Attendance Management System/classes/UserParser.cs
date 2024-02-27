@@ -13,11 +13,11 @@ namespace Attendance_Management_System.classes
         {
             List<User> users = new List<User>();
 
-         
+
             XmlDocument doc = new XmlDocument();
             doc.Load(xmlFilePath);
 
-            
+
             XmlNodeList userNodes = doc.SelectNodes("//user");
             foreach (XmlNode userNode in userNodes)
             {
@@ -31,7 +31,7 @@ namespace Attendance_Management_System.classes
                 string address = userNode.SelectSingleNode("address").InnerText;
                 string role = userNode.Attributes["role"].Value;
 
-               
+
                 User user;
                 switch (role)
                 {
@@ -45,12 +45,12 @@ namespace Attendance_Management_System.classes
                         user = new Teacher(id, firstName, lastName, age, email, password, phone, address);
                         break;
                     default:
-                       
+
                         user = null;
                         break;
                 }
 
-            
+
                 if (user != null)
                 {
                     users.Add(user);
@@ -204,11 +204,26 @@ namespace Attendance_Management_System.classes
                 Console.WriteLine("Error updating XML file: " + ex.Message);
             }
         }
+<<<<<<< HEAD
+        /////// Delete Student Or Teacher Done :)
+=======
         ///////Remove
+>>>>>>> 897f1a9b23cb769df97c1bda40aac7a503cd4748
         public static void RemoveUserById(List<User> users, string usersXmlFilePath, string classXmlFilePath, string userId)
         {
             try
             {
+<<<<<<< HEAD
+             
+                XmlDocument usersDoc = new XmlDocument();
+                usersDoc.Load(usersXmlFilePath);
+
+               
+                XmlDocument classDoc = new XmlDocument();
+                classDoc.Load(classXmlFilePath);
+
+                // Find the user 
+=======
                 // Load Users XML
                 XmlDocument usersDoc = new XmlDocument();
                 usersDoc.Load(usersXmlFilePath);
@@ -241,10 +256,79 @@ namespace Attendance_Management_System.classes
                 }
 
                 // Find the user node with the specified ID in Users XML
+>>>>>>> 897f1a9b23cb769df97c1bda40aac7a503cd4748
                 XmlNode userNodeToRemove = usersDoc.SelectSingleNode($"//user[id='{userId}']");
 
                 if (userNodeToRemove != null)
                 {
+<<<<<<< HEAD
+                    
+                    userNodeToRemove.ParentNode.RemoveChild(userNodeToRemove);
+
+               
+                    usersDoc.Save(usersXmlFilePath);
+
+                 
+
+               
+                    if (userNodeToRemove.Attributes["role"].Value == "teacher")
+                    {
+                      
+                        XmlNode classNodeToRemove = classDoc.SelectSingleNode($"//class[teacherId='{userId}']");
+
+                        if (classNodeToRemove != null)
+                        {
+                           
+                            DialogResult result = MessageBox.Show($"Do you want to remove the class associated with the teacher (ID: {userId})?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                            if (result == DialogResult.Yes)
+                            {
+                               
+                                classNodeToRemove.ParentNode.RemoveChild(classNodeToRemove);
+
+                           
+                                classDoc.Save(classXmlFilePath);
+
+                                MessageBox.Show($"Class associated with the teacher (ID: {userId}) removed from the Classes XML.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Deletion canceled.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                    }
+                 
+                    else if (userNodeToRemove.Attributes["role"].Value == "student")
+                    {
+                    
+                        XmlNodeList studentIdNodes = classDoc.SelectNodes($"//studentId[@id='{userId}']");
+
+                       
+                        DialogResult result = MessageBox.Show($"Do you want fire this student (ID: {userId}) ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                         
+                            foreach (XmlNode studentIdNode in studentIdNodes)
+                            {
+                                studentIdNode.ParentNode.RemoveChild(studentIdNode);
+                            }
+
+                        
+                            classDoc.Save(classXmlFilePath);
+
+                            MessageBox.Show($"Student (ID: {userId}) removed from all classes");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Deletion canceled.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"User with ID '{userId}' not found in the Users XML.");
+=======
                     // Remove the user from the Users XML
                     userNodeToRemove.ParentNode.RemoveChild(userNodeToRemove);
 
@@ -256,6 +340,7 @@ namespace Attendance_Management_System.classes
                 else
                 {
                     MessageBox.Show($"User with ID '{userId}' not found.");
+>>>>>>> 897f1a9b23cb769df97c1bda40aac7a503cd4748
                 }
             }
             catch (Exception ex)
@@ -264,8 +349,12 @@ namespace Attendance_Management_System.classes
             }
         }
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 897f1a9b23cb769df97c1bda40aac7a503cd4748
 
 
     }
 }
-
