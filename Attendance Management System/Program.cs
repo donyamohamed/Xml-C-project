@@ -1,5 +1,6 @@
 using Attendance_Management_System.classes;
 using System.Xml;
+using System.Windows.Forms;
 // using static Attendance_Management_System.classes.CourseParser;
 
 namespace Attendance_Management_System.Forms
@@ -46,13 +47,13 @@ namespace Attendance_Management_System.Forms
             // see https://aka.ms/applicationconfiguration.
 
             ApplicationConfiguration.Initialize();
-            //Application.Run(new classAdmin());
+            Application.Run(new testAdmin());
 
             // Application.Run(new testAdmin());
-            // Application.Run(new FormSettings());
+            //Application.Run(new FormSettings());
 
             // Application.Run(new testAdmin());
-            Application.Run(new FormLogin());
+           // Application.Run(new FormLogin());
 
 
 
