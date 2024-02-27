@@ -204,11 +204,16 @@ namespace Attendance_Management_System.classes
                 Console.WriteLine("Error updating XML file: " + ex.Message);
             }
         }
+<<<<<<< HEAD
         /////// Delete Student Or Teacher Done :)
+=======
+        ///////Remove
+>>>>>>> 897f1a9b23cb769df97c1bda40aac7a503cd4748
         public static void RemoveUserById(List<User> users, string usersXmlFilePath, string classXmlFilePath, string userId)
         {
             try
             {
+<<<<<<< HEAD
              
                 XmlDocument usersDoc = new XmlDocument();
                 usersDoc.Load(usersXmlFilePath);
@@ -218,10 +223,45 @@ namespace Attendance_Management_System.classes
                 classDoc.Load(classXmlFilePath);
 
                 // Find the user 
+=======
+                // Load Users XML
+                XmlDocument usersDoc = new XmlDocument();
+                usersDoc.Load(usersXmlFilePath);
+
+                // Load Classes XML
+                XmlDocument classDoc = new XmlDocument();
+                classDoc.Load(classXmlFilePath);
+
+                // Check if the user is part of any class
+                XmlNodeList studentIdNodes = classDoc.SelectNodes($"//studentId[@id='{userId}']");
+
+                if (studentIdNodes.Count > 0)
+                {
+                    // Ask the user if they want to be removed from the class
+                    DialogResult removeResult = MessageBox.Show("Do you want to leave this class?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (removeResult == DialogResult.Yes)
+                    {
+                        // Remove the studentId from all occurrences in the Classes XML
+                        foreach (XmlNode studentIdNode in studentIdNodes)
+                        {
+                            studentIdNode.ParentNode.RemoveChild(studentIdNode);
+                        }
+
+                        // Save the updated Class XML file
+                        classDoc.Save(classXmlFilePath);
+
+                        MessageBox.Show($"User with ID '{userId}' removed from the class.");
+                    }
+                }
+
+                // Find the user node with the specified ID in Users XML
+>>>>>>> 897f1a9b23cb769df97c1bda40aac7a503cd4748
                 XmlNode userNodeToRemove = usersDoc.SelectSingleNode($"//user[id='{userId}']");
 
                 if (userNodeToRemove != null)
                 {
+<<<<<<< HEAD
                     
                     userNodeToRemove.ParentNode.RemoveChild(userNodeToRemove);
 
@@ -288,6 +328,19 @@ namespace Attendance_Management_System.classes
                 else
                 {
                     MessageBox.Show($"User with ID '{userId}' not found in the Users XML.");
+=======
+                    // Remove the user from the Users XML
+                    userNodeToRemove.ParentNode.RemoveChild(userNodeToRemove);
+
+                    // Save the updated Users XML file
+                    usersDoc.Save(usersXmlFilePath);
+
+                    MessageBox.Show($"User with ID '{userId}' removed from the Users.");
+                }
+                else
+                {
+                    MessageBox.Show($"User with ID '{userId}' not found.");
+>>>>>>> 897f1a9b23cb769df97c1bda40aac7a503cd4748
                 }
             }
             catch (Exception ex)
@@ -296,8 +349,11 @@ namespace Attendance_Management_System.classes
             }
         }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 897f1a9b23cb769df97c1bda40aac7a503cd4748
 
 
     }

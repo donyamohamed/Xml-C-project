@@ -30,8 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherForm));
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             toolTip1 = new ToolTip(components);
             pictureBoxMinimize = new PictureBox();
             pictureBoxClose = new PictureBox();
@@ -128,7 +128,7 @@
             labelWellcome.ForeColor = Color.Purple;
             labelWellcome.Location = new Point(48, 39);
             labelWellcome.Name = "labelWellcome";
-            labelWellcome.Size = new Size(220, 50);
+            labelWellcome.Size = new Size(271, 62);
             labelWellcome.TabIndex = 0;
             labelWellcome.Text = "Wellcome";
             // 
@@ -139,7 +139,7 @@
             labelTeacher_Name.ForeColor = Color.Purple;
             labelTeacher_Name.Location = new Point(274, 39);
             labelTeacher_Name.Name = "labelTeacher_Name";
-            labelTeacher_Name.Size = new Size(320, 50);
+            labelTeacher_Name.Size = new Size(397, 62);
             labelTeacher_Name.TabIndex = 0;
             labelTeacher_Name.Text = "Teacher_Name";
             // 
@@ -173,10 +173,10 @@
             // listBoxCourses
             // 
             listBoxCourses.FormattingEnabled = true;
-            listBoxCourses.ItemHeight = 21;
+            listBoxCourses.ItemHeight = 23;
             listBoxCourses.Location = new Point(830, 22);
             listBoxCourses.Name = "listBoxCourses";
-            listBoxCourses.Size = new Size(120, 88);
+            listBoxCourses.Size = new Size(120, 73);
             listBoxCourses.TabIndex = 5;
             // 
             // labelYourCourses
@@ -185,7 +185,7 @@
             labelYourCourses.ForeColor = Color.White;
             labelYourCourses.Location = new Point(690, 22);
             labelYourCourses.Name = "labelYourCourses";
-            labelYourCourses.Size = new Size(118, 21);
+            labelYourCourses.Size = new Size(147, 23);
             labelYourCourses.TabIndex = 8;
             labelYourCourses.Text = "Your Courses: ";
             // 
@@ -243,7 +243,7 @@
             labelPhone.ForeColor = Color.White;
             labelPhone.Location = new Point(317, 66);
             labelPhone.Name = "labelPhone";
-            labelPhone.Size = new Size(134, 21);
+            labelPhone.Size = new Size(168, 23);
             labelPhone.TabIndex = 2;
             labelPhone.Text = "Phone Number :";
             // 
@@ -253,7 +253,7 @@
             labelTID.ForeColor = Color.White;
             labelTID.Location = new Point(6, 33);
             labelTID.Name = "labelTID";
-            labelTID.Size = new Size(35, 21);
+            labelTID.Size = new Size(41, 23);
             labelTID.TabIndex = 1;
             labelTID.Text = "ID: ";
             // 
@@ -263,7 +263,7 @@
             labelTAddress.ForeColor = Color.White;
             labelTAddress.Location = new Point(6, 66);
             labelTAddress.Name = "labelTAddress";
-            labelTAddress.Size = new Size(76, 21);
+            labelTAddress.Size = new Size(93, 23);
             labelTAddress.TabIndex = 0;
             labelTAddress.Text = "Address:";
             // 
@@ -282,7 +282,7 @@
             labelTEmail.ForeColor = Color.White;
             labelTEmail.Location = new Point(201, 33);
             labelTEmail.Name = "labelTEmail";
-            labelTEmail.Size = new Size(55, 21);
+            labelTEmail.Size = new Size(67, 23);
             labelTEmail.TabIndex = 0;
             labelTEmail.Text = "Email:";
             // 
@@ -292,7 +292,7 @@
             labelAge.ForeColor = Color.White;
             labelAge.Location = new Point(457, 33);
             labelAge.Name = "labelAge";
-            labelAge.Size = new Size(42, 21);
+            labelAge.Size = new Size(50, 23);
             labelAge.TabIndex = 0;
             labelAge.Text = "age";
             // 
@@ -302,7 +302,7 @@
             labelTAge.ForeColor = Color.White;
             labelTAge.Location = new Point(403, 33);
             labelTAge.Name = "labelTAge";
-            labelTAge.Size = new Size(48, 21);
+            labelTAge.Size = new Size(56, 23);
             labelTAge.TabIndex = 0;
             labelTAge.Text = "Age:";
             // 
@@ -312,7 +312,7 @@
             labelID.ForeColor = Color.White;
             labelID.Location = new Point(47, 33);
             labelID.Name = "labelID";
-            labelID.Size = new Size(24, 21);
+            labelID.Size = new Size(27, 23);
             labelID.TabIndex = 0;
             labelID.Text = "id";
             // 
@@ -344,19 +344,20 @@
             dataGridViewCourses.AllowUserToOrderColumns = true;
             dataGridViewCourses.AutoGenerateColumns = false;
             dataGridViewCourses.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Century Gothic", 12F);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = Color.Orange;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridViewCourses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Orange;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewCourses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCourses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCourses.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, descriptionDataGridViewTextBoxColumn, numberofsessionsDataGridViewTextBoxColumn });
             dataGridViewCourses.DataSource = courseBindingSource;
             dataGridViewCourses.Location = new Point(12, 270);
             dataGridViewCourses.Name = "dataGridViewCourses";
+            dataGridViewCourses.RowHeadersWidth = 51;
             dataGridViewCourses.Size = new Size(628, 150);
             dataGridViewCourses.TabIndex = 5;
             dataGridViewCourses.CellClick += dataGridViewCourses_CellClick;
@@ -365,24 +366,28 @@
             // 
             idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.MinimumWidth = 6;
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             // 
             // nameDataGridViewTextBoxColumn
             // 
             nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
             descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
             descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
             descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             // 
             // numberofsessionsDataGridViewTextBoxColumn
             // 
             numberofsessionsDataGridViewTextBoxColumn.DataPropertyName = "Numberofsessions";
             numberofsessionsDataGridViewTextBoxColumn.HeaderText = "Numberofsessions";
+            numberofsessionsDataGridViewTextBoxColumn.MinimumWidth = 6;
             numberofsessionsDataGridViewTextBoxColumn.Name = "numberofsessionsDataGridViewTextBoxColumn";
             // 
             // courseBindingSource
@@ -397,6 +402,7 @@
             dataGridViewAttendance.GridColor = SystemColors.WindowText;
             dataGridViewAttendance.Location = new Point(12, 426);
             dataGridViewAttendance.Name = "dataGridViewAttendance";
+            dataGridViewAttendance.RowHeadersWidth = 51;
             dataGridViewAttendance.Size = new Size(628, 150);
             dataGridViewAttendance.TabIndex = 6;
             dataGridViewAttendance.CellFormatting += dataGridViewAttendance_CellFormatting;
@@ -416,6 +422,7 @@
             dataGridViewDateStatus.GridColor = SystemColors.WindowText;
             dataGridViewDateStatus.Location = new Point(646, 270);
             dataGridViewDateStatus.Name = "dataGridViewDateStatus";
+            dataGridViewDateStatus.RowHeadersWidth = 51;
             dataGridViewDateStatus.Size = new Size(242, 150);
             dataGridViewDateStatus.TabIndex = 7;
             dataGridViewDateStatus.CellContentClick += dataGridViewDateStatus_CellContentClick;
@@ -423,9 +430,10 @@
             // dateDataGridViewTextBoxColumn
             // 
             dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            dateDataGridViewTextBoxColumn.MinimumWidth = 6;
             dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             // 
             // sessionsBindingSource
@@ -445,6 +453,7 @@
             dataGridViewStudentStatus.GridColor = SystemColors.WindowText;
             dataGridViewStudentStatus.Location = new Point(12, 582);
             dataGridViewStudentStatus.Name = "dataGridViewStudentStatus";
+            dataGridViewStudentStatus.RowHeadersWidth = 51;
             dataGridViewStudentStatus.Size = new Size(542, 150);
             dataGridViewStudentStatus.TabIndex = 8;
             dataGridViewStudentStatus.CellClick += dataGridViewStudentStatus_CellClick;
@@ -453,7 +462,7 @@
             // 
             textBoxCouseID.Location = new Point(656, 444);
             textBoxCouseID.Name = "textBoxCouseID";
-            textBoxCouseID.Size = new Size(100, 27);
+            textBoxCouseID.Size = new Size(100, 32);
             textBoxCouseID.TabIndex = 9;
             textBoxCouseID.Text = "textBoxID";
             // 
@@ -461,7 +470,7 @@
             // 
             textBoxCourseName.Location = new Point(656, 477);
             textBoxCourseName.Name = "textBoxCourseName";
-            textBoxCourseName.Size = new Size(100, 27);
+            textBoxCourseName.Size = new Size(100, 32);
             textBoxCourseName.TabIndex = 10;
             textBoxCourseName.Text = "textBoxID";
             // 
@@ -469,7 +478,7 @@
             // 
             textBoxCourseDescription.Location = new Point(656, 510);
             textBoxCourseDescription.Name = "textBoxCourseDescription";
-            textBoxCourseDescription.Size = new Size(100, 27);
+            textBoxCourseDescription.Size = new Size(100, 32);
             textBoxCourseDescription.TabIndex = 11;
             textBoxCourseDescription.Text = "textBoxCourseDescription";
             // 
@@ -477,7 +486,7 @@
             // 
             textBoxCourseSessions.Location = new Point(656, 543);
             textBoxCourseSessions.Name = "textBoxCourseSessions";
-            textBoxCourseSessions.Size = new Size(100, 27);
+            textBoxCourseSessions.Size = new Size(100, 32);
             textBoxCourseSessions.TabIndex = 12;
             textBoxCourseSessions.Text = "textBoxCourseSessions";
             // 
@@ -539,7 +548,7 @@
             // 
             // TeacherForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1200, 749);

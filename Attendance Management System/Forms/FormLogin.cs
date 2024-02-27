@@ -74,8 +74,8 @@ namespace Attendance_Management_System.Forms
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(AppConfig.AppSettings.Language);
             this.Controls.Clear();
             this.InitializeComponent();
-            // new CultureInfo(Program.appLanguage);
-            // new CultureInfo(Program.newCulture);
+                // new CultureInfo(Program.appLanguage);
+                // new CultureInfo(Program.newCulture);
             timerBackup.Start();
             labelOpenDateTime.Text = Program.appOpenDateandTime.ToString(AppConfig.AppSettings.DateFormats) + " " + Program.appOpenDateandTime.ToShortTimeString();
             pictureBoxHide.Hide();

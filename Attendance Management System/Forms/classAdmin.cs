@@ -161,5 +161,10 @@ namespace Attendance_Management_System.Forms
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
