@@ -30,7 +30,7 @@
         {
             btnAdd = new Button();
             label8 = new Label();
-            textBox5 = new TextBox();
+            texAddress = new TextBox();
             texPhone = new TextBox();
             texPass = new TextBox();
             texAge = new TextBox();
@@ -53,6 +53,7 @@
             btnAdd.TabIndex = 39;
             btnAdd.Text = "Update";
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // label8
             // 
@@ -63,12 +64,12 @@
             label8.TabIndex = 36;
             label8.Text = "Address";
             // 
-            // textBox5
+            // texAddress
             // 
-            textBox5.Location = new Point(677, 280);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(156, 27);
-            textBox5.TabIndex = 35;
+            texAddress.Location = new Point(677, 280);
+            texAddress.Name = "texAddress";
+            texAddress.Size = new Size(156, 27);
+            texAddress.TabIndex = 35;
             // 
             // texPhone
             // 
@@ -161,7 +162,7 @@
             ClientSize = new Size(974, 543);
             Controls.Add(btnAdd);
             Controls.Add(label8);
-            Controls.Add(textBox5);
+            Controls.Add(texAddress);
             Controls.Add(texPhone);
             Controls.Add(texPass);
             Controls.Add(texAge);
@@ -183,7 +184,7 @@
 
         private Button btnAdd;
         private Label label8;
-        private TextBox textBox5;
+        private TextBox texAddress;
         private TextBox texPhone;
         private TextBox texPass;
         private TextBox texAge;
