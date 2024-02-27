@@ -14,12 +14,7 @@ namespace Attendance_Management_System.Forms
         
 
         //public static string newCulture = "en";
-<<<<<<< HEAD
-        public static string appLanguage = AppConfig.AppSettings.Language;
-        public static string appConfigPath = "C:\\Users\\Asmaa Elfatairy\\Desktop\\asmaa branch xml\\Xml-C-project\\Attendance Management System\\appConfigurations\\appConfigurations.xml";
-=======
         public static string appConfigPath = "C:\\Users\\Orginal\\Downloads\\Donyabranch\\Xml-C-project\\Attendance Management System\\appConfigurations\\appConfigurations.xml";
->>>>>>> 897f1a9b23cb769df97c1bda40aac7a503cd4748
         public static AppConfig appConfig = AppConfigParser.ParseAppConfig(appConfigPath);
         
         public static string appLanguage = AppConfig.AppSettings.Language;
