@@ -45,14 +45,13 @@
             buttonClear = new Button();
             buttonLogin = new Button();
             textBoxPassword = new TextBox();
-            buttonLanguage = new Button();
-            buttonSetTimerBackup = new Button();
-            textBoxSetTimerBackup = new TextBox();
             pictureBoxSettings = new PictureBox();
             labelOpenDateTime = new Label();
             label3 = new Label();
             labelBackupIn = new Label();
             label5 = new Label();
+            buttonLanguage = new Button();
+            groupBox1 = new GroupBox();
             timerBackup = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
@@ -61,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxHide).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxError).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxSettings).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBoxClose
@@ -78,6 +78,7 @@
             // 
             resources.ApplyResources(pictureBoxMinimize, "pictureBoxMinimize");
             pictureBoxMinimize.Cursor = Cursors.Hand;
+            pictureBoxMinimize.InitialImage = Properties.Resources.OIP3;
             pictureBoxMinimize.Name = "pictureBoxMinimize";
             pictureBoxMinimize.TabStop = false;
             toolTip.SetToolTip(pictureBoxMinimize, resources.GetString("pictureBoxMinimize.ToolTip"));
@@ -183,35 +184,11 @@
             toolTip.SetToolTip(textBoxPassword, resources.GetString("textBoxPassword.ToolTip"));
             textBoxPassword.UseSystemPasswordChar = true;
             // 
-            // buttonLanguage
-            // 
-            resources.ApplyResources(buttonLanguage, "buttonLanguage");
-            buttonLanguage.BackColor = Color.Green;
-            buttonLanguage.Name = "buttonLanguage";
-            toolTip.SetToolTip(buttonLanguage, resources.GetString("buttonLanguage.ToolTip"));
-            buttonLanguage.UseVisualStyleBackColor = false;
-            buttonLanguage.Click += buttonLanguage_Click;
-            // 
-            // buttonSetTimerBackup
-            // 
-            resources.ApplyResources(buttonSetTimerBackup, "buttonSetTimerBackup");
-            buttonSetTimerBackup.BackColor = Color.Green;
-            buttonSetTimerBackup.Name = "buttonSetTimerBackup";
-            toolTip.SetToolTip(buttonSetTimerBackup, resources.GetString("buttonSetTimerBackup.ToolTip"));
-            buttonSetTimerBackup.UseVisualStyleBackColor = false;
-            buttonSetTimerBackup.Click += buttonSetTimerBackup_Click;
-            // 
-            // textBoxSetTimerBackup
-            // 
-            resources.ApplyResources(textBoxSetTimerBackup, "textBoxSetTimerBackup");
-            textBoxSetTimerBackup.Name = "textBoxSetTimerBackup";
-            toolTip.SetToolTip(textBoxSetTimerBackup, resources.GetString("textBoxSetTimerBackup.ToolTip"));
-            // 
             // pictureBoxSettings
             // 
             resources.ApplyResources(pictureBoxSettings, "pictureBoxSettings");
             pictureBoxSettings.Cursor = Cursors.Hand;
-            pictureBoxSettings.Image = Properties.Resources.OIP;
+            pictureBoxSettings.Image = Properties.Resources.OIP2;
             pictureBoxSettings.Name = "pictureBoxSettings";
             pictureBoxSettings.TabStop = false;
             toolTip.SetToolTip(pictureBoxSettings, resources.GetString("pictureBoxSettings.ToolTip"));
@@ -245,6 +222,29 @@
             label5.Name = "label5";
             toolTip.SetToolTip(label5, resources.GetString("label5.ToolTip"));
             // 
+            // buttonLanguage
+            // 
+            resources.ApplyResources(buttonLanguage, "buttonLanguage");
+            buttonLanguage.BackColor = Color.Green;
+            buttonLanguage.ForeColor = Color.White;
+            buttonLanguage.Name = "buttonLanguage";
+            toolTip.SetToolTip(buttonLanguage, resources.GetString("buttonLanguage.ToolTip"));
+            buttonLanguage.UseVisualStyleBackColor = false;
+            buttonLanguage.Click += buttonLanguage_Click_1;
+            // 
+            // groupBox1
+            // 
+            resources.ApplyResources(groupBox1, "groupBox1");
+            groupBox1.Controls.Add(pictureBoxShow);
+            groupBox1.Controls.Add(pictureBoxHide);
+            groupBox1.Controls.Add(UserEmail);
+            groupBox1.Controls.Add(textBoxEmail);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(textBoxPassword);
+            groupBox1.Name = "groupBox1";
+            groupBox1.TabStop = false;
+            toolTip.SetToolTip(groupBox1, resources.GetString("groupBox1.ToolTip"));
+            // 
             // timerBackup
             // 
             timerBackup.Tick += timerBackup_Tick;
@@ -254,28 +254,21 @@
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(groupBox1);
+            Controls.Add(buttonLanguage);
             Controls.Add(labelBackupIn);
             Controls.Add(label5);
             Controls.Add(labelOpenDateTime);
             Controls.Add(label3);
             Controls.Add(pictureBoxSettings);
-            Controls.Add(textBoxSetTimerBackup);
-            Controls.Add(buttonSetTimerBackup);
-            Controls.Add(buttonLanguage);
             Controls.Add(pictureBoxError);
             Controls.Add(labelInvalidUserName);
-            Controls.Add(pictureBoxHide);
-            Controls.Add(pictureBoxShow);
             Controls.Add(buttonLogin);
             Controls.Add(buttonClear);
-            Controls.Add(textBoxPassword);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             Controls.Add(pictureBoxMinimize);
             Controls.Add(pictureBoxClose);
-            Controls.Add(UserEmail);
-            Controls.Add(label1);
-            Controls.Add(textBoxEmail);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormLogin";
@@ -289,6 +282,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxHide).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxError).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxSettings).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -310,14 +305,13 @@
         private Button buttonClear;
         private Button buttonLogin;
         private TextBox textBoxPassword;
-        private Button buttonLanguage;
-        private Button buttonSetTimerBackup;
-        private TextBox textBoxSetTimerBackup;
         private PictureBox pictureBoxSettings;
         private Label labelOpenDateTime;
         private Label label3;
         private Label labelBackupIn;
         private Label label5;
         public System.Windows.Forms.Timer timerBackup;
+        private Button buttonLanguage;
+        private GroupBox groupBox1;
     }
 }

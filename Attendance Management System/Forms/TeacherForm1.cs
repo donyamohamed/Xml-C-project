@@ -27,7 +27,7 @@ namespace Attendance_Management_System.Forms
     {
         public static List<string> myCIDs = getCoursesIDbyTeacherID(FormLogin.meTeacher.Id);
         public static List<Course> myCoursesObj = getListofCourse(myCIDs);
-        public static List<StudentSessions> myStdSessionsObj = getListofmyStudentSessions(FormLogin.meTeacher.Id, myCIDs);
+        public static List<StudentSessions> myStdSessionsObj = getListofStudentSessions(myCIDs);
         public static List<Session> mySessionsObj = getListofSessions(myCIDs);
         public static List<DateTime> courseDates = getCDatesbyCIds(myCIDs);
 
@@ -46,44 +46,21 @@ namespace Attendance_Management_System.Forms
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
-            // message to make sure the user want to save the data or not
-            // if yes save the data and close the form
-            // if no close the form
-            // if cancel do nothing just return to the form
-
-            DialogResult dialogResult = MessageBox.Show("Do you want to save the data before you leave?", "Save Data", MessageBoxButtons.YesNoCancel);
-            if (dialogResult == DialogResult.Yes)
-            {
-                // save the data
-                Program.SaveDataAsXml(Program.usersPath, Program.coursesPath, Program.claSSesPath);
-                // close the form
-                Close();
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                // close the form
-                Close();
-            }
-            else if (dialogResult == DialogResult.Cancel)
-            {
-                // do nothing
-                return;
-            }
-
-            FormLogin Formlogin = new FormLogin();
-            Formlogin.Show();
-            Hide();
-            
             Close();
         }
 
+        private void buttonMyCourses_Click(object sender, EventArgs e)
+        {
+            // get list of meTeacher's courses by Teacher.getCoursesIDbyTeacherID
+            getCoursesIDbyTeacherID(FormLogin.meTeacher.Id);
+        }
 
         private void TeacherForm_Load(object sender, EventArgs e)
         {
             dataGridViewCourses.DataSource = RenderDateTable(myCoursesObj);
             //Console.WriteLine(Program.claSSes);
             // dataGridViewAttendance.DataSource = RenderDateTable(mySessionsObj);
-            // dataGridViewDateStatus.DataSource = RenderDateTable(mySessionsObj);
+            dataGridViewDateStatus.DataSource = RenderDateTable(mySessionsObj);
 
 
 
@@ -103,13 +80,6 @@ namespace Attendance_Management_System.Forms
             // listBoxCourses.DataSource = FormLogin.meTeacher.getCoursesIDbyTeacherID(FormLogin.meTeacher.Id).ToString();
             listBoxCourses.DataSource = myCIDs;
             listBoxCDates.DataSource = courseDates;
-
-
-            foreach (Control c in this.Controls)
-            {
-                ComponentResourceManager resources = new ComponentResourceManager(typeof(FormSettings));
-                resources.ApplyResources(c, c.Name, new System.Globalization.CultureInfo(Program.appConfig.Language));
-            }
 
         }
 
@@ -233,6 +203,22 @@ namespace Attendance_Management_System.Forms
 
         }
 
+        private void dataGridViewDateStatus_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indexRow = e.RowIndex;
+            if (indexRow < 0)
+            {
+                return;
+            }
+            DataGridViewRow row = dataGridViewDateStatus.Rows[indexRow];
+            textBoxDate.Text = row.Cells[0].Value.ToString();
+        }
+
+        private void buttonGenATTTAble_Click(object sender, EventArgs e)
+        {
+
+        }
+
         class Obj
         {
             public string StudentID { get; set; }
@@ -297,7 +283,6 @@ namespace Attendance_Management_System.Forms
                 student.Status = "Attend";
                 changeStudentAttendance(FormLogin.meTeacher.Id, textBoxCouseID.Text, student.StudentID, Convert.ToDateTime(textBoxDate.Text), 1);
             }
-            selectedStudents = new List<Obj>();
             dataGridViewStudentStatus.DataSource = RenderAttTable(textBoxDate.Text, myStdSessionsObj);
             dataGridViewAttendance.DataSource = RenderStdAttofTecherTable(mySessionsObj, myStdSessionsObj);
 
@@ -308,47 +293,6 @@ namespace Attendance_Management_System.Forms
             selectedStudents = new List<Obj>();
             textBoxDate.Text = comboBoxCourseDates.Text;
             dataGridViewStudentStatus.DataSource = RenderAttTable(textBoxDate.Text, myStdSessionsObj);
-
-        }
-
-        private void buttonAbsent_Click(object sender, EventArgs e)
-        {
-            // make the selected students present 
-            foreach (var student in selectedStudents)
-            {
-                student.Status = "Attend";
-                changeStudentAttendance(FormLogin.meTeacher.Id, textBoxCouseID.Text, student.StudentID, Convert.ToDateTime(textBoxDate.Text), -1);
-            }
-            selectedStudents = new List<Obj>();
-            dataGridViewStudentStatus.DataSource = RenderAttTable(textBoxDate.Text, myStdSessionsObj);
-            dataGridViewAttendance.DataSource = RenderStdAttofTecherTable(mySessionsObj, myStdSessionsObj);
-
-        }
-
-        private void dataGridViewStudentStatus_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.RowIndex % 2 == 0)
-            {
-                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
-            }
-            else
-            {
-                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
-            }
-            // if cell contains "Absent" then change the color to red 
-            // else if cell contains "Attend" then change the color to green
-            if (e.Value != null && e.Value.ToString() == "Absent")
-            {
-                e.CellStyle.BackColor = Color.Red;
-            }
-            else if (e.Value != null && e.Value.ToString() == "Attend")
-            {
-                e.CellStyle.BackColor = Color.Green;
-            }
-            else
-            {
-                e.CellStyle.BackColor = Color.Orange;
-            }
 
         }
 

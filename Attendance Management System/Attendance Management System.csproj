@@ -11,6 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Forms\TeacherForm1.cs" />
+    <Compile Remove="Forms\TeacherForm1.Designer.cs" />
+    <Compile Remove="Forms\TeacherForm2.cs" />
+    <Compile Remove="Forms\TeacherForm2.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Forms\TeacherForm1.resx" />
+    <EmbeddedResource Remove="Forms\TeacherForm2.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Webalys-Kameleon.ico" />
   </ItemGroup>
 

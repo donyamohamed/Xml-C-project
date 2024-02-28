@@ -62,6 +62,7 @@
             groupBox3 = new GroupBox();
             listBoxBackupFileLocations = new ListBox();
             label13 = new Label();
+            pictureBoxBack = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
@@ -69,6 +70,7 @@
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownBackup).BeginInit();
             groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBack).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -84,6 +86,7 @@
             pictureBoxClose.Image = Properties.Resources.Delete_Red_X_Button_Transparent;
             pictureBoxClose.Name = "pictureBoxClose";
             pictureBoxClose.TabStop = false;
+            pictureBoxClose.Tag = "x";
             toolTip1.SetToolTip(pictureBoxClose, resources.GetString("pictureBoxClose.ToolTip"));
             pictureBoxClose.Click += pictureBoxClose_Click;
             // 
@@ -91,8 +94,10 @@
             // 
             resources.ApplyResources(pictureBoxMinimize, "pictureBoxMinimize");
             pictureBoxMinimize.Cursor = Cursors.Hand;
+            pictureBoxMinimize.Image = Properties.Resources._3403551_2001;
             pictureBoxMinimize.Name = "pictureBoxMinimize";
             pictureBoxMinimize.TabStop = false;
+            pictureBoxMinimize.Tag = "-";
             toolTip1.SetToolTip(pictureBoxMinimize, resources.GetString("pictureBoxMinimize.ToolTip"));
             pictureBoxMinimize.Click += pictureBoxMinimize_Click;
             // 
@@ -101,6 +106,7 @@
             resources.ApplyResources(label2, "label2");
             label2.ForeColor = Color.Purple;
             label2.Name = "label2";
+            label2.Tag = "العنوان نظام الحضور والإنصراف";
             toolTip1.SetToolTip(label2, resources.GetString("label2.ToolTip"));
             // 
             // groupBox1
@@ -118,6 +124,7 @@
             groupBox1.Controls.Add(UserEmail);
             groupBox1.Name = "groupBox1";
             groupBox1.TabStop = false;
+            groupBox1.Tag = "معلمومات عن الناظام";
             toolTip1.SetToolTip(groupBox1, resources.GetString("groupBox1.ToolTip"));
             // 
             // labelAppCreationDate
@@ -125,6 +132,7 @@
             resources.ApplyResources(labelAppCreationDate, "labelAppCreationDate");
             labelAppCreationDate.ForeColor = Color.Black;
             labelAppCreationDate.Name = "labelAppCreationDate";
+            labelAppCreationDate.Tag = "App Description";
             toolTip1.SetToolTip(labelAppCreationDate, resources.GetString("labelAppCreationDate.ToolTip"));
             // 
             // label9
@@ -132,6 +140,7 @@
             resources.ApplyResources(label9, "label9");
             label9.ForeColor = SystemColors.HotTrack;
             label9.Name = "label9";
+            label9.Tag = "وقت تصميم البرنامج";
             toolTip1.SetToolTip(label9, resources.GetString("label9.ToolTip"));
             // 
             // listBoxDevelopers
@@ -139,6 +148,7 @@
             resources.ApplyResources(listBoxDevelopers, "listBoxDevelopers");
             listBoxDevelopers.FormattingEnabled = true;
             listBoxDevelopers.Name = "listBoxDevelopers";
+            listBoxDevelopers.Tag = "...";
             toolTip1.SetToolTip(listBoxDevelopers, resources.GetString("listBoxDevelopers.ToolTip"));
             // 
             // label8
@@ -146,6 +156,7 @@
             resources.ApplyResources(label8, "label8");
             label8.ForeColor = SystemColors.HotTrack;
             label8.Name = "label8";
+            label8.Tag = "المصممون";
             toolTip1.SetToolTip(label8, resources.GetString("label8.ToolTip"));
             // 
             // labelAppDescription
@@ -153,6 +164,7 @@
             resources.ApplyResources(labelAppDescription, "labelAppDescription");
             labelAppDescription.ForeColor = Color.Black;
             labelAppDescription.Name = "labelAppDescription";
+            labelAppDescription.Tag = "App Description";
             toolTip1.SetToolTip(labelAppDescription, resources.GetString("labelAppDescription.ToolTip"));
             // 
             // label5
@@ -160,6 +172,7 @@
             resources.ApplyResources(label5, "label5");
             label5.ForeColor = SystemColors.HotTrack;
             label5.Name = "label5";
+            label5.Tag = "وصف البرنامحج";
             toolTip1.SetToolTip(label5, resources.GetString("label5.ToolTip"));
             // 
             // labelAppVersion
@@ -167,6 +180,7 @@
             resources.ApplyResources(labelAppVersion, "labelAppVersion");
             labelAppVersion.ForeColor = Color.Black;
             labelAppVersion.Name = "labelAppVersion";
+            labelAppVersion.Tag = "App Version";
             toolTip1.SetToolTip(labelAppVersion, resources.GetString("labelAppVersion.ToolTip"));
             // 
             // label4
@@ -174,6 +188,7 @@
             resources.ApplyResources(label4, "label4");
             label4.ForeColor = SystemColors.HotTrack;
             label4.Name = "label4";
+            label4.Tag = "نسخة البرنامج";
             toolTip1.SetToolTip(label4, resources.GetString("label4.ToolTip"));
             // 
             // labelAppName
@@ -181,6 +196,7 @@
             resources.ApplyResources(labelAppName, "labelAppName");
             labelAppName.ForeColor = Color.Black;
             labelAppName.Name = "labelAppName";
+            labelAppName.Tag = "App Name";
             toolTip1.SetToolTip(labelAppName, resources.GetString("labelAppName.ToolTip"));
             // 
             // UserEmail
@@ -188,6 +204,7 @@
             resources.ApplyResources(UserEmail, "UserEmail");
             UserEmail.ForeColor = SystemColors.HotTrack;
             UserEmail.Name = "UserEmail";
+            UserEmail.Tag = "";
             toolTip1.SetToolTip(UserEmail, resources.GetString("UserEmail.ToolTip"));
             // 
             // groupBox2
@@ -211,6 +228,7 @@
             resources.ApplyResources(labelshowdate, "labelshowdate");
             labelshowdate.ForeColor = Color.Black;
             labelshowdate.Name = "labelshowdate";
+            labelshowdate.Tag = "save your changes";
             toolTip1.SetToolTip(labelshowdate, resources.GetString("labelshowdate.ToolTip"));
             // 
             // buttonLoginSaveSettings
@@ -219,6 +237,7 @@
             buttonLoginSaveSettings.BackColor = Color.Green;
             buttonLoginSaveSettings.ForeColor = Color.White;
             buttonLoginSaveSettings.Name = "buttonLoginSaveSettings";
+            buttonLoginSaveSettings.Tag = "Save Settings";
             toolTip1.SetToolTip(buttonLoginSaveSettings, resources.GetString("buttonLoginSaveSettings.ToolTip"));
             buttonLoginSaveSettings.UseVisualStyleBackColor = false;
             buttonLoginSaveSettings.Click += buttonLoginSaveSettings_Click;
@@ -228,6 +247,7 @@
             resources.ApplyResources(label12, "label12");
             label12.ForeColor = SystemColors.HotTrack;
             label12.Name = "label12";
+            label12.Tag = "Settings Changed at: ";
             toolTip1.SetToolTip(label12, resources.GetString("label12.ToolTip"));
             // 
             // numericUpDownBackup
@@ -257,6 +277,7 @@
             resources.ApplyResources(label11, "label11");
             label11.ForeColor = SystemColors.HotTrack;
             label11.Name = "label11";
+            label11.Tag = "System Date Format";
             toolTip1.SetToolTip(label11, resources.GetString("label11.ToolTip"));
             // 
             // label7
@@ -264,6 +285,7 @@
             resources.ApplyResources(label7, "label7");
             label7.ForeColor = SystemColors.HotTrack;
             label7.Name = "label7";
+            label7.Tag = "لغة البرنامج";
             toolTip1.SetToolTip(label7, resources.GetString("label7.ToolTip"));
             // 
             // label10
@@ -271,6 +293,7 @@
             resources.ApplyResources(label10, "label10");
             label10.ForeColor = SystemColors.HotTrack;
             label10.Name = "label10";
+            label10.Tag = "Backup Interval (in minutes)";
             toolTip1.SetToolTip(label10, resources.GetString("label10.ToolTip"));
             // 
             // label3
@@ -278,6 +301,7 @@
             resources.ApplyResources(label3, "label3");
             label3.ForeColor = Color.Purple;
             label3.Name = "label3";
+            label3.Tag = "الوقت الحالى";
             toolTip1.SetToolTip(label3, resources.GetString("label3.ToolTip"));
             // 
             // labelDteTimeNow
@@ -285,6 +309,7 @@
             resources.ApplyResources(labelDteTimeNow, "labelDteTimeNow");
             labelDteTimeNow.ForeColor = Color.Black;
             labelDteTimeNow.Name = "labelDteTimeNow";
+            labelDteTimeNow.Tag = "الوقت الحالى ...";
             toolTip1.SetToolTip(labelDteTimeNow, resources.GetString("labelDteTimeNow.ToolTip"));
             // 
             // button1
@@ -295,6 +320,7 @@
             button1.Name = "button1";
             toolTip1.SetToolTip(button1, resources.GetString("button1.ToolTip"));
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // groupBox3
             // 
@@ -319,7 +345,19 @@
             resources.ApplyResources(label13, "label13");
             label13.ForeColor = SystemColors.HotTrack;
             label13.Name = "label13";
+            label13.Tag = "Backup File Location";
             toolTip1.SetToolTip(label13, resources.GetString("label13.ToolTip"));
+            // 
+            // pictureBoxBack
+            // 
+            resources.ApplyResources(pictureBoxBack, "pictureBoxBack");
+            pictureBoxBack.Cursor = Cursors.Hand;
+            pictureBoxBack.Image = Properties.Resources.backarrow;
+            pictureBoxBack.Name = "pictureBoxBack";
+            pictureBoxBack.TabStop = false;
+            pictureBoxBack.Tag = "-";
+            toolTip1.SetToolTip(pictureBoxBack, resources.GetString("pictureBoxBack.ToolTip"));
+            pictureBoxBack.Click += pictureBoxBack_Click;
             // 
             // timer1
             // 
@@ -330,6 +368,7 @@
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(pictureBoxBack);
             Controls.Add(groupBox3);
             Controls.Add(labelDteTimeNow);
             Controls.Add(label3);
@@ -351,6 +390,7 @@
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numericUpDownBackup).EndInit();
             groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBack).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -391,5 +431,7 @@
         private GroupBox groupBox3;
         private ListBox listBoxBackupFileLocations;
         private Label label13;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBoxBack;
     }
 }
