@@ -4,7 +4,7 @@
     <name>Attendance Management System</name>
     <version>1.0</version>
     <description>Attendance Management System Description</description>
-    <createdDate>6/1/2021</createdDate>
+    <createdDate>06/01/2021</createdDate>
     <dataPathes>
       <Users>../../../../users.xml</Users>
       <Courses>../../../../courses.xml</Courses>
@@ -23,7 +23,7 @@
     <appSettings>
       <updateInterval>4</updateInterval>
       <language>en</language>
-      <DateFormat>dd-MM-yyyy</DateFormat>
+      <DateFormat>yyyy-MM-dd</DateFormat>
     </appSettings>
   </appConfiguration>
 </appConfigurations>
