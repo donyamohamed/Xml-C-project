@@ -129,7 +129,7 @@
             Controls.Add(comboclassId);
             Name = "ClassAdminForm";
             Size = new Size(1020, 767);
-            Load += ClassAdminForm_Load;
+          //  Load += ClassAdminForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -125,10 +125,10 @@
             // 
             labelWellcome.AutoSize = true;
             labelWellcome.Font = new Font("Century Gothic", 30F, FontStyle.Bold | FontStyle.Italic);
-            labelWellcome.ForeColor = Color.Purple;
+            labelWellcome.ForeColor = Color.IndianRed;
             labelWellcome.Location = new Point(12, 9);
             labelWellcome.Name = "labelWellcome";
-            labelWellcome.Size = new Size(220, 50);
+            labelWellcome.Size = new Size(271, 62);
             labelWellcome.TabIndex = 0;
             labelWellcome.Text = "Wellcome";
             // 
@@ -136,17 +136,17 @@
             // 
             labelTeacher_Name.AutoSize = true;
             labelTeacher_Name.Font = new Font("Century Gothic", 30F, FontStyle.Bold | FontStyle.Italic);
-            labelTeacher_Name.ForeColor = Color.Purple;
+            labelTeacher_Name.ForeColor = Color.IndianRed;
             labelTeacher_Name.Location = new Point(238, 9);
             labelTeacher_Name.Name = "labelTeacher_Name";
-            labelTeacher_Name.Size = new Size(320, 50);
+            labelTeacher_Name.Size = new Size(397, 62);
             labelTeacher_Name.TabIndex = 0;
             labelTeacher_Name.Text = "Teacher_Name";
             // 
             // groupBoxProfileData
             // 
             groupBoxProfileData.Anchor = AnchorStyles.Top;
-            groupBoxProfileData.BackColor = Color.MediumOrchid;
+            groupBoxProfileData.BackColor = Color.IndianRed;
             groupBoxProfileData.Controls.Add(listBoxCDates);
             groupBoxProfileData.Controls.Add(label1);
             groupBoxProfileData.Controls.Add(listBoxCourses);
@@ -163,7 +163,7 @@
             groupBoxProfileData.Controls.Add(labelAge);
             groupBoxProfileData.Controls.Add(labelTAge);
             groupBoxProfileData.Controls.Add(labelID);
-            groupBoxProfileData.ForeColor = SystemColors.HotTrack;
+            groupBoxProfileData.ForeColor = SystemColors.ControlDarkDark;
             groupBoxProfileData.Location = new Point(12, 67);
             groupBoxProfileData.Margin = new Padding(3, 2, 3, 2);
             groupBoxProfileData.Name = "groupBoxProfileData";
@@ -176,10 +176,10 @@
             // listBoxCDates
             // 
             listBoxCDates.FormattingEnabled = true;
-            listBoxCDates.ItemHeight = 21;
+            listBoxCDates.ItemHeight = 23;
             listBoxCDates.Location = new Point(1050, 22);
             listBoxCDates.Name = "listBoxCDates";
-            listBoxCDates.Size = new Size(120, 88);
+            listBoxCDates.Size = new Size(120, 73);
             listBoxCDates.TabIndex = 11;
             // 
             // label1
@@ -188,17 +188,17 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(914, 20);
             label1.Name = "label1";
-            label1.Size = new Size(127, 21);
+            label1.Size = new Size(158, 23);
             label1.TabIndex = 10;
             label1.Text = "Your Calender:";
             // 
             // listBoxCourses
             // 
             listBoxCourses.FormattingEnabled = true;
-            listBoxCourses.ItemHeight = 21;
+            listBoxCourses.ItemHeight = 23;
             listBoxCourses.Location = new Point(791, 22);
             listBoxCourses.Name = "listBoxCourses";
-            listBoxCourses.Size = new Size(120, 88);
+            listBoxCourses.Size = new Size(120, 73);
             listBoxCourses.TabIndex = 5;
             // 
             // labelYourCourses
@@ -207,7 +207,7 @@
             labelYourCourses.ForeColor = Color.White;
             labelYourCourses.Location = new Point(633, 20);
             labelYourCourses.Name = "labelYourCourses";
-            labelYourCourses.Size = new Size(149, 21);
+            labelYourCourses.Size = new Size(186, 23);
             labelYourCourses.TabIndex = 8;
             labelYourCourses.Text = "Your Courses List:  ";
             // 
@@ -225,7 +225,7 @@
             // 
             // textBoxPhoneNumber
             // 
-            textBoxPhoneNumber.BackColor = Color.MediumOrchid;
+            textBoxPhoneNumber.BackColor = Color.IndianRed;
             textBoxPhoneNumber.BorderStyle = BorderStyle.None;
             textBoxPhoneNumber.Location = new Point(456, 66);
             textBoxPhoneNumber.Multiline = true;
@@ -237,7 +237,7 @@
             // 
             // textBoxAddress
             // 
-            textBoxAddress.BackColor = Color.MediumOrchid;
+            textBoxAddress.BackColor = Color.IndianRed;
             textBoxAddress.BorderStyle = BorderStyle.None;
             textBoxAddress.Location = new Point(88, 66);
             textBoxAddress.Multiline = true;
@@ -265,7 +265,7 @@
             labelPhone.ForeColor = Color.White;
             labelPhone.Location = new Point(314, 64);
             labelPhone.Name = "labelPhone";
-            labelPhone.Size = new Size(134, 21);
+            labelPhone.Size = new Size(168, 23);
             labelPhone.TabIndex = 2;
             labelPhone.Text = "Phone Number :";
             // 
@@ -275,7 +275,7 @@
             labelTID.ForeColor = Color.White;
             labelTID.Location = new Point(3, 31);
             labelTID.Name = "labelTID";
-            labelTID.Size = new Size(35, 21);
+            labelTID.Size = new Size(41, 23);
             labelTID.TabIndex = 1;
             labelTID.Text = "ID: ";
             // 
@@ -285,7 +285,7 @@
             labelTAddress.ForeColor = Color.White;
             labelTAddress.Location = new Point(3, 64);
             labelTAddress.Name = "labelTAddress";
-            labelTAddress.Size = new Size(76, 21);
+            labelTAddress.Size = new Size(93, 23);
             labelTAddress.TabIndex = 0;
             labelTAddress.Text = "Address:";
             // 
@@ -304,7 +304,7 @@
             labelTEmail.ForeColor = Color.White;
             labelTEmail.Location = new Point(198, 31);
             labelTEmail.Name = "labelTEmail";
-            labelTEmail.Size = new Size(55, 21);
+            labelTEmail.Size = new Size(67, 23);
             labelTEmail.TabIndex = 0;
             labelTEmail.Text = "Email:";
             // 
@@ -314,7 +314,7 @@
             labelAge.ForeColor = Color.White;
             labelAge.Location = new Point(454, 31);
             labelAge.Name = "labelAge";
-            labelAge.Size = new Size(42, 21);
+            labelAge.Size = new Size(50, 23);
             labelAge.TabIndex = 0;
             labelAge.Text = "age";
             // 
@@ -324,7 +324,7 @@
             labelTAge.ForeColor = Color.White;
             labelTAge.Location = new Point(400, 31);
             labelTAge.Name = "labelTAge";
-            labelTAge.Size = new Size(48, 21);
+            labelTAge.Size = new Size(56, 23);
             labelTAge.TabIndex = 0;
             labelTAge.Text = "Age:";
             // 
@@ -334,7 +334,7 @@
             labelID.ForeColor = Color.White;
             labelID.Location = new Point(44, 31);
             labelID.Name = "labelID";
-            labelID.Size = new Size(24, 21);
+            labelID.Size = new Size(27, 23);
             labelID.TabIndex = 0;
             labelID.Text = "id";
             // 
@@ -343,7 +343,7 @@
             comboBoxCourseDates.FormattingEnabled = true;
             comboBoxCourseDates.Location = new Point(12, 304);
             comboBoxCourseDates.Name = "comboBoxCourseDates";
-            comboBoxCourseDates.Size = new Size(186, 29);
+            comboBoxCourseDates.Size = new Size(186, 31);
             comboBoxCourseDates.TabIndex = 9;
             comboBoxCourseDates.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -370,6 +370,7 @@
             dataGridViewCourses.Location = new Point(219, 227);
             dataGridViewCourses.Name = "dataGridViewCourses";
             dataGridViewCourses.ReadOnly = true;
+            dataGridViewCourses.RowHeadersWidth = 51;
             dataGridViewCourses.Size = new Size(546, 182);
             dataGridViewCourses.TabIndex = 5;
             dataGridViewCourses.CellClick += dataGridViewCourses_CellClick;
@@ -422,6 +423,7 @@
             dataGridViewAttendance.GridColor = SystemColors.WindowText;
             dataGridViewAttendance.Location = new Point(771, 227);
             dataGridViewAttendance.Name = "dataGridViewAttendance";
+            dataGridViewAttendance.RowHeadersWidth = 51;
             dataGridViewAttendance.Size = new Size(417, 510);
             dataGridViewAttendance.TabIndex = 6;
             dataGridViewAttendance.CellFormatting += dataGridViewAttendance_CellFormatting;
@@ -452,6 +454,7 @@
             dataGridViewStudentStatus.Location = new Point(137, 415);
             dataGridViewStudentStatus.Name = "dataGridViewStudentStatus";
             dataGridViewStudentStatus.ReadOnly = true;
+            dataGridViewStudentStatus.RowHeadersWidth = 51;
             dataGridViewStudentStatus.Size = new Size(628, 238);
             dataGridViewStudentStatus.TabIndex = 8;
             dataGridViewStudentStatus.CellClick += dataGridViewStudentStatus_CellClick;
@@ -461,7 +464,7 @@
             // 
             textBoxCouseID.Location = new Point(12, 395);
             textBoxCouseID.Name = "textBoxCouseID";
-            textBoxCouseID.Size = new Size(119, 27);
+            textBoxCouseID.Size = new Size(119, 32);
             textBoxCouseID.TabIndex = 9;
             textBoxCouseID.Text = "textBoxID";
             // 
@@ -469,7 +472,7 @@
             // 
             textBoxCourseName.Location = new Point(12, 433);
             textBoxCourseName.Name = "textBoxCourseName";
-            textBoxCourseName.Size = new Size(119, 27);
+            textBoxCourseName.Size = new Size(119, 32);
             textBoxCourseName.TabIndex = 10;
             textBoxCourseName.Text = "textBoxID";
             // 
@@ -477,7 +480,7 @@
             // 
             textBoxCourseDescription.Location = new Point(12, 471);
             textBoxCourseDescription.Name = "textBoxCourseDescription";
-            textBoxCourseDescription.Size = new Size(119, 27);
+            textBoxCourseDescription.Size = new Size(119, 32);
             textBoxCourseDescription.TabIndex = 11;
             textBoxCourseDescription.Text = "textBoxCourseDescription";
             // 
@@ -485,7 +488,7 @@
             // 
             textBoxCourseSessions.Location = new Point(12, 509);
             textBoxCourseSessions.Name = "textBoxCourseSessions";
-            textBoxCourseSessions.Size = new Size(119, 27);
+            textBoxCourseSessions.Size = new Size(119, 32);
             textBoxCourseSessions.TabIndex = 12;
             textBoxCourseSessions.Text = "textBoxCourseSessions";
             // 
@@ -495,7 +498,7 @@
             textBoxDate.Font = new Font("Century Gothic", 20F);
             textBoxDate.Location = new Point(12, 356);
             textBoxDate.Name = "textBoxDate";
-            textBoxDate.Size = new Size(186, 33);
+            textBoxDate.Size = new Size(186, 41);
             textBoxDate.TabIndex = 13;
             textBoxDate.Text = "Date ...";
             textBoxDate.TextAlign = HorizontalAlignment.Center;
@@ -541,10 +544,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 20F, FontStyle.Bold | FontStyle.Italic);
-            label2.ForeColor = Color.Purple;
+            label2.ForeColor = Color.IndianRed;
             label2.Location = new Point(12, 227);
             label2.Name = "label2";
-            label2.Size = new Size(201, 33);
+            label2.Size = new Size(256, 40);
             label2.TabIndex = 16;
             label2.Text = "Select Course:";
             // 
@@ -552,16 +555,16 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 20F, FontStyle.Bold | FontStyle.Italic);
-            label3.ForeColor = Color.Purple;
+            label3.ForeColor = Color.IndianRed;
             label3.Location = new Point(12, 268);
             label3.Name = "label3";
-            label3.Size = new Size(172, 33);
+            label3.Size = new Size(217, 40);
             label3.TabIndex = 17;
             label3.Text = "Select Date:";
             // 
             // buttonExpPDF
             // 
-            buttonExpPDF.BackColor = Color.Purple;
+            buttonExpPDF.BackColor = Color.IndianRed;
             buttonExpPDF.ForeColor = Color.White;
             buttonExpPDF.Location = new Point(12, 547);
             buttonExpPDF.Name = "buttonExpPDF";
@@ -585,7 +588,7 @@
             // 
             // TeacherForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1200, 749);

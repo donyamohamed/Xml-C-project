@@ -70,7 +70,7 @@
             // 
             // addcourse
             // 
-            addcourse.Image = Properties.Resources.add__1_;
+         //   addcourse.Image = Properties.Resources.add__1_;
             addcourse.ImeMode = ImeMode.NoControl;
             addcourse.Location = new Point(832, 73);
             addcourse.Name = "addcourse";

@@ -47,8 +47,6 @@
             panel3 = new Panel();
             admin_profile = new Button();
             pictureBox3 = new PictureBox();
-            classAdminForm2 = new controls.ClassAdminForm();
-            courseAdminForm2 = new controls.CourseAdminForm();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)closebox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)minimizebox).BeginInit();
@@ -64,7 +62,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(255, 192, 192);
+            panel2.BackColor = Color.IndianRed;
             panel2.Controls.Add(closebox);
             panel2.Controls.Add(minimizebox);
             panel2.Controls.Add(admin);
@@ -113,7 +111,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(255, 192, 192);
+            panel1.BackColor = Color.IndianRed;
             panel1.Controls.Add(logout);
             panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(pictureBox1);
@@ -272,6 +270,7 @@
             // 
             // panel3
             // 
+            panel3.BackColor = Color.IndianRed;
             panel3.Controls.Add(admin_profile);
             panel3.Controls.Add(pictureBox3);
             panel3.Dock = DockStyle.Top;
@@ -308,28 +307,12 @@
             pictureBox3.TabIndex = 4;
             pictureBox3.TabStop = false;
             // 
-            // classAdminForm2
-            // 
-            classAdminForm2.Location = new Point(505, 205);
-            classAdminForm2.Name = "classAdminForm2";
-            classAdminForm2.Size = new Size(1275, 959);
-            classAdminForm2.TabIndex = 7;
-            // 
-            // courseAdminForm2
-            // 
-            courseAdminForm2.Location = new Point(515, 254);
-            courseAdminForm2.Name = "courseAdminForm2";
-            courseAdminForm2.Size = new Size(1276, 1011);
-            courseAdminForm2.TabIndex = 8;
-            // 
             // AdminDashboardForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1589, 1030);
             ControlBox = false;
-            Controls.Add(courseAdminForm2);
-            Controls.Add(classAdminForm2);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
