@@ -296,7 +296,7 @@ namespace Attendance_Management_System.Forms
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            labTimeDate.Text = DateTime.Now.ToString();
+            labTimeDate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
 
         private void picLogOut_Click(object sender, EventArgs e)
