@@ -73,17 +73,7 @@ namespace Attendance_Management_System.Forms
             string dateFormat = xmlDoc.SelectSingleNode("//DateFormat")?.InnerText;
             return dateFormat;
         }
-        private string GetDateFormatFromConfig()
-        {
-            string xmlFilePath = "../../../appConfigurations/appConfigurations.xml"; 
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(xmlFilePath);
-
-            // Retrieve the date format from the configuration XML
-            string dateFormat = xmlDoc.SelectSingleNode("//DateFormat")?.InnerText;
-            return dateFormat;
-        }
-
+      
         private void LoadSessionDataForUser(string userId)
         {
             XmlDocument classesDoc = new XmlDocument();

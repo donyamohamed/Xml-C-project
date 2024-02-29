@@ -44,7 +44,8 @@
             // 
             // btnAdd
             // 
-            btnAdd.BackColor = Color.FromArgb(255, 192, 192);
+            btnAdd.BackColor = Color.IndianRed;
+            btnAdd.ForeColor = SystemColors.ButtonHighlight;
             btnAdd.ImeMode = ImeMode.NoControl;
             btnAdd.Location = new Point(20, 462);
             btnAdd.Name = "btnAdd";
@@ -60,7 +61,6 @@
             texname.Name = "texname";
             texname.Size = new Size(156, 27);
             texname.TabIndex = 30;
-           // texname.TextChanged += texname_TextChanged;
             // 
             // TexcourseID
             // 
@@ -69,7 +69,6 @@
             TexcourseID.ReadOnly = true;
             TexcourseID.Size = new Size(156, 27);
             TexcourseID.TabIndex = 29;
-           // TexcourseID.TextChanged += TexCourseID_TextChanged;
             // 
             // label2
             // 
@@ -93,7 +92,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(255, 192, 192);
+            panel1.BackColor = Color.IndianRed;
             panel1.Controls.Add(formGoal);
             panel1.Location = new Point(-68, 34);
             panel1.Name = "panel1";
@@ -104,13 +103,15 @@
             // 
             formGoal.AutoSize = true;
             formGoal.Font = new Font("Lucida Handwriting", 16.2F);
+            formGoal.ForeColor = SystemColors.ButtonHighlight;
             formGoal.ImeMode = ImeMode.NoControl;
-            formGoal.Location = new Point(398, 55);
+            formGoal.Location = new Point(270, 52);
             formGoal.Name = "formGoal";
             formGoal.Size = new Size(292, 36);
             formGoal.TabIndex = 0;
             formGoal.Text = "Insert New Course";
             formGoal.TextAlign = ContentAlignment.MiddleCenter;
+            formGoal.Click += formGoal_Click;
             // 
             // label5
             // 
@@ -129,7 +130,6 @@
             texdescription.Name = "texdescription";
             texdescription.Size = new Size(221, 109);
             texdescription.TabIndex = 33;
-           // texdescription.TextChanged += texCourse_TextChanged;
             // 
             // label9
             // 
@@ -149,7 +149,6 @@
             combosessionnumber.Size = new Size(156, 28);
             combosessionnumber.TabIndex = 40;
             combosessionnumber.Text = "Session Number";
-            //combosessionnumber.SelectedIndexChanged += comboBoxRole_SelectedIndexChanged;
             // 
             // InsertCourseForm
             // 

@@ -101,5 +101,10 @@ namespace Attendance_Management_System.Forms
 
             this.Close();
         }
+
+        private void formGoal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
