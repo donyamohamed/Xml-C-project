@@ -10,6 +10,16 @@
     <phone>01123568123</phone>
     <address>Alex</address>
   </user>
+  <user role="student">
+    <id>2S</id>
+    <fname>Mahmoud</fname>
+    <lname>Ibrahim</lname>
+    <age>23</age>
+    <email>mohmoud11@gmail.com</email>
+    <password>Aab@123</password>
+    <phone>01123568123</phone>
+    <address>Alex</address>
+  </user>
   <user role="admin">
     <id>1A</id>
     <fname>Asmaa</fname>

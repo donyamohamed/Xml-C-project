@@ -29,7 +29,7 @@ namespace Attendance_Management_System.classes
         {
             return $"ID: {Id}, Name: {Name}, \n Description: {Description}, #sessions: {Numberofsessions}";
         }
-        public static Course getCourseByID(string CID)
+        public static Course getCObjByCID(string CID)
         {
             Course course = new Course();
             foreach (var cour in Program.courses)

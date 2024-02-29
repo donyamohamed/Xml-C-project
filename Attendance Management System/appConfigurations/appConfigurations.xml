@@ -21,9 +21,9 @@
       <author>Author 3</author>
     </authors>
     <appSettings>
-      <updateInterval>1</updateInterval>
+      <updateInterval>4</updateInterval>
       <language>en</language>
-      <DateFormat>yyyy-MM-dd</DateFormat>
+      <DateFormat>dd-MM-yyyy</DateFormat>
     </appSettings>
   </appConfiguration>
 </appConfigurations>

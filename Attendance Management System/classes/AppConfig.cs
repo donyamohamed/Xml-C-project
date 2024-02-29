@@ -23,12 +23,12 @@ namespace Attendance_Management_System.classes
         public string ClassesBackupFilePath { get; set; }
 
         public string[] Authors         {get; set;}
-        public static class AppSettings
-        {
-            public static int BackupInterval   {get; set;}
-            public static string Language   {get; set;}
-            public static string DateFormats {get; set;}
-}
+        //public static class AppSettings
+        // {
+        public int BackupInterval   {get; set;}
+        public string Language   {get; set;}
+        public string DateFormats {get; set;}
+    //}
 
         public AppConfig(
             string _AppName,
@@ -58,9 +58,12 @@ namespace Attendance_Management_System.classes
             CoursesBackupFilePath = _CoursesBackupFilePath;
             ClassesBackupFilePath = _ClassesBackupFilePath;
             Authors = _Authors;
-            AppSettings.BackupInterval = _BackupInterval;
-            AppSettings.Language = _Language;
-            AppSettings.DateFormats = _DateFormats;
+            // AppSettings.BackupInterval = _BackupInterval;
+            // AppSettings.Language = _Language;
+            // AppSettings.DateFormats = _DateFormats;
+            BackupInterval = _BackupInterval;
+            Language = _Language;
+            DateFormats = _DateFormats;
         }
 
         public AppConfig() { }

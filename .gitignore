@@ -5,12 +5,15 @@
 *.sln.docstates
 
 # Binaries
-bin/
-obj/
+*/bin/
+*/obj/
+*/*/bin/
+*/*/obj/
 
 # Visual Studio files
 .vscode/
 .vs/
+*/.vs/
 *.vssscc
 *_i.c
 *_p.c

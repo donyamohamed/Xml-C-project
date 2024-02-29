@@ -14,27 +14,37 @@ using static Attendance_Management_System.classes.Teacher;
 using static Attendance_Management_System.classes.Course;
 using static Attendance_Management_System.classes.RenderTable;
 using static Attendance_Management_System.classes.RenderAttendanceTable;
+using static Attendance_Management_System.classes.RenderStduentAttendanceofTecherTable;
 using static Attendance_Management_System.classes.Class;
 using Microsoft.VisualBasic.Logging;
 using System.Reflection.Emit;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Globalization;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using Microsoft.Office.Interop.Excel;
+using OfficeOpenXml;
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Spreadsheet;
+using DocumentFormat.OpenXml.VariantTypes;
 
 
 namespace Attendance_Management_System.Forms
 {
     public partial class TeacherForm : Form
     {
-        public static List<string> myCourses = getCoursesIDbyTeacherID(FormLogin.meTeacher.Id);
-        public static List<Course> myCoursesObj = getListofCourse(myCourses);
-        public static List<StudentSessions> myStdSessionsObj = getListofStudentSessions(myCourses);
-        public static List<Session> mySessionsObj = getListofSessions(myCourses);
+        public static List<string> myCIDs = getCoursesIDbyTeacherID(FormLogin.meTeacher.Id);
+        public static List<Course> myCoursesObj = getListofCourse(myCIDs);
+        public static List<StudentSessions> myStdSessionsObj = getListofmyStudentSessions(FormLogin.meTeacher.Id, myCIDs);
+        public static List<Session> mySessionsObj = getListofSessions(myCIDs);
+        public static List<DateTime> courseDates = getCDatesbyCIds(myCIDs);
+
         // public static List<Course> myCoursesObj = getCourseByID()
 
         public TeacherForm()
         {
-
-
-
-
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
             InitializeComponent();
         }
 
@@ -45,64 +55,48 @@ namespace Attendance_Management_System.Forms
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
+            // message to make sure the user want to save the data or not
+            // if yes save the data and close the form
+            // if no close the form
+            // if cancel do nothing just return to the form
+
+            DialogResult dialogResult = MessageBox.Show("Do you want to save the data before you leave?", "Save Data", MessageBoxButtons.YesNoCancel);
+            if (dialogResult == DialogResult.Yes)
+            {
+                // save the data
+                Program.SaveDataAsXml(Program.usersPath, Program.coursesPath, Program.claSSesPath);
+                // close the form
+                Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                // close the form
+                Close();
+            }
+            else if (dialogResult == DialogResult.Cancel)
+            {
+                // do nothing
+                return;
+            }
+
+            FormLogin Formlogin = new FormLogin();
+            Formlogin.Show();
+            Hide();
+
             Close();
         }
 
-        private void buttonMyCourses_Click(object sender, EventArgs e)
-        {
-            // get list of meTeacher's courses by Teacher.getCoursesIDbyTeacherID
-            getCoursesIDbyTeacherID(FormLogin.meTeacher.Id);
-        }
 
         private void TeacherForm_Load(object sender, EventArgs e)
         {
-            //Console.WriteLine(Program.claSSes);
             dataGridViewCourses.DataSource = RenderDateTable(myCoursesObj);
+            //Console.WriteLine(Program.claSSes);
             // dataGridViewAttendance.DataSource = RenderDateTable(mySessionsObj);
-            dataGridViewDateStatus.DataSource = RenderDateTable(mySessionsObj);
+            // dataGridViewDateStatus.DataSource = RenderDateTable(mySessionsObj);
 
 
-            DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("Stduent ID / Session Date", typeof(string));
 
-            foreach (Session session in mySessionsObj)
-            {
-                string columnName = session.Date.ToString();
-
-                // Check if the column already exists
-                if (!dataTable.Columns.Contains(columnName))
-                {
-                    dataTable.Columns.Add(columnName, typeof(string));
-                }
-            }
-
-            foreach (StudentSessions SS in myStdSessionsObj)
-            {
-                DataRow row = dataTable.NewRow();
-                // make this row red 
-
-
-                row["Stduent ID / Session Date"] = SS.StudentId;
-
-                foreach (Session session in mySessionsObj)
-                {
-                    var matchingSession = SS.Sessions.FirstOrDefault(s => s.Date == session.Date);
-
-                    if (matchingSession != null)
-                    {
-                        row[session.Date.ToString()] = matchingSession.Status == 1 ? "Attend" : "Absent";
-                    }
-                    else
-                    {
-                        // Handle the case where a matching session is not found
-                        row[session.Date.ToString()] = "N/A";
-                    }
-                }
-
-                dataTable.Rows.Add(row);
-            }
-
-            dataGridViewAttendance.DataSource = dataTable;
+            dataGridViewAttendance.DataSource = RenderStdAttofTecherTable(mySessionsObj, myStdSessionsObj);
 
 
 
@@ -116,7 +110,15 @@ namespace Attendance_Management_System.Forms
             labelTeacher_Name.Text = FormLogin.meTeacher.FirstName.ToString() + " " + FormLogin.meTeacher.LastName.ToString();
 
             // listBoxCourses.DataSource = FormLogin.meTeacher.getCoursesIDbyTeacherID(FormLogin.meTeacher.Id).ToString();
-            listBoxCourses.DataSource = myCourses;
+            listBoxCourses.DataSource = myCIDs;
+            listBoxCDates.DataSource = courseDates;
+
+
+            //foreach (Control c in this.Controls)
+            //{
+            //    ComponentResourceManager resources = new ComponentResourceManager(typeof(FormSettings));
+            //    resources.ApplyResources(c, c.Name, new System.Globalization.CultureInfo(Program.appConfig.Language));
+            //}
 
         }
 
@@ -176,59 +178,67 @@ namespace Attendance_Management_System.Forms
             // Chagne the Color of the row
             if (e.RowIndex % 2 == 0)
             {
-                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
+                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.LightGray;
             }
             else
             {
-                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.White;
             }
             // if cell contains "Absent" then change the color to red 
             // else if cell contains "Attend" then change the color to green
             if (e.Value != null && e.Value.ToString() == "Absent")
             {
-                e.CellStyle.BackColor = Color.Red;
+                e.CellStyle.BackColor = System.Drawing.Color.Red;
             }
             else if (e.Value != null && e.Value.ToString() == "Attend")
             {
-                e.CellStyle.BackColor = Color.Green;
+                e.CellStyle.BackColor = System.Drawing.Color.Green;
             }
             else
             {
-                e.CellStyle.BackColor = Color.Orange;
+                e.CellStyle.BackColor = System.Drawing.Color.Orange;
             }
         }
 
         private void dataGridViewCourses_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indexRow = e.RowIndex;
+            // prevent se
+            if (indexRow < 0)
+            {
+                return;
+            }
+            selectedStudents = new List<Obj>(); ;
+
             DataGridViewRow row = dataGridViewCourses.Rows[indexRow];
             textBoxCouseID.Text = row.Cells[0].Value.ToString();
             textBoxCourseName.Text = row.Cells[1].Value.ToString();
             textBoxCourseDescription.Text = row.Cells[2].Value.ToString();
             textBoxCourseSessions.Text = row.Cells[3].Value.ToString();
 
+            List<string> selectedCourse = new List<string>();
+            selectedCourse.Add(row.Cells[0].Value.ToString());
+            List<DateTime> courseDates = getCDatesbyCIds(selectedCourse);
+            comboBoxCourseDates.DataSource = courseDates;
+
+
+            /*
+            if (selectedCourse.Contains(row.Cells[0].Value.ToString()))
+                selectedCourse.Add(row.Cells[0].Value.ToString());
+            else
+                selectedCourse.Remove(row.Cells[0].Value.ToString());
+            */
+
+
 
 
             // textBoxID.Text = row.Cells[0].Value.ToString();
             // textBoxName.Text = row.Cells[1].Value.ToString();
             // textBoxDescription.Text = row.Cells[2].Value.ToString();
-
-        }
-
-        private void dataGridViewDateStatus_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int indexRow = e.RowIndex;
-            if (indexRow < 0)
-            {
-                return;
-            }
-            DataGridViewRow row = dataGridViewDateStatus.Rows[indexRow];
-            textBoxDate.Text = row.Cells[0].Value.ToString();
-        }
-
-        private void buttonGenATTTAble_Click(object sender, EventArgs e)
-        {
+            //dataGridViewAttendance.DataSource = 
             dataGridViewStudentStatus.DataSource = RenderAttTable(textBoxDate.Text, myStdSessionsObj);
+            dataGridViewAttendance.DataSource = RenderStdAttofTecherTable(mySessionsObj, myStdSessionsObj);
+
 
         }
 
@@ -252,6 +262,10 @@ namespace Attendance_Management_System.Forms
         private void dataGridViewStudentStatus_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indexRow = e.RowIndex;
+            if (indexRow < 0)
+            {
+                return;
+            }
             DataGridViewRow row = dataGridViewStudentStatus.Rows[indexRow];
 
 
@@ -292,7 +306,267 @@ namespace Attendance_Management_System.Forms
                 student.Status = "Attend";
                 changeStudentAttendance(FormLogin.meTeacher.Id, textBoxCouseID.Text, student.StudentID, Convert.ToDateTime(textBoxDate.Text), 1);
             }
+            selectedStudents = new List<Obj>();
             dataGridViewStudentStatus.DataSource = RenderAttTable(textBoxDate.Text, myStdSessionsObj);
+            dataGridViewAttendance.DataSource = RenderStdAttofTecherTable(mySessionsObj, myStdSessionsObj);
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedStudents = new List<Obj>();
+            textBoxDate.Text = comboBoxCourseDates.Text;
+            dataGridViewStudentStatus.DataSource = RenderAttTable(textBoxDate.Text, myStdSessionsObj);
+
+        }
+
+        private void buttonAbsent_Click(object sender, EventArgs e)
+        {
+            // make the selected students present 
+            foreach (var student in selectedStudents)
+            {
+                student.Status = "Attend";
+                changeStudentAttendance(FormLogin.meTeacher.Id, textBoxCouseID.Text, student.StudentID, Convert.ToDateTime(textBoxDate.Text), -1);
+            }
+            selectedStudents = new List<Obj>();
+            dataGridViewStudentStatus.DataSource = RenderAttTable(textBoxDate.Text, myStdSessionsObj);
+            dataGridViewAttendance.DataSource = RenderStdAttofTecherTable(mySessionsObj, myStdSessionsObj);
+
+        }
+
+        private void dataGridViewStudentStatus_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex % 2 == 0)
+            {
+                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.LightGray;
+            }
+            else
+            {
+                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            }
+
+            // if cells of column "Satus" contains "1" then change the 1 to "Attend"
+
+            if (e.Value != null && e.Value.ToString() == "1")
+            {
+                e.Value = "Attend";
+            }
+            else if (e.Value != null && e.Value.ToString() == "-1")
+            {
+                e.Value = "Absent";
+            }
+            else
+            {
+                e.CellStyle.BackColor = System.Drawing.Color.Orange;
+            }
+
+            // if cell contains "Absent" then change the color to red 
+            // else if cell contains "Attend" then change the color to green
+            if (e.Value != null && e.Value.ToString() == "Absent")
+            {
+                e.CellStyle.BackColor = System.Drawing.Color.Red;
+            }
+            else if (e.Value != null && e.Value.ToString() == "Attend")
+            {
+                e.CellStyle.BackColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                e.CellStyle.BackColor = System.Drawing.Color.Orange;
+            }
+
+        }
+
+        private void buttonExpPDF_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewStudentStatus.Rows.Count > 0)
+            {
+                SaveFileDialog save = new SaveFileDialog();
+                save.Filter = "PDF (*.pdf)|*.pdf";
+                save.FileName = "Result.pdf";
+                bool ErrorMessage = false;
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    if (File.Exists(save.FileName))
+                    {
+                        try
+                        {
+                            File.Delete(save.FileName);
+                        }
+                        catch (Exception ex)
+                        {
+                            ErrorMessage = true;
+                            MessageBox.Show("Unable to wride data in disk" + ex.Message);
+                        }
+                    }
+                    if (!ErrorMessage)
+                    {
+                        try
+                        {
+                            PdfPTable pTable = new PdfPTable(dataGridViewStudentStatus.Columns.Count);
+                            pTable.DefaultCell.Padding = 2;
+                            pTable.WidthPercentage = 100;
+                            pTable.HorizontalAlignment = Element.ALIGN_LEFT;
+                            foreach (DataGridViewColumn col in dataGridViewStudentStatus.Columns)
+                            {
+                                PdfPCell pCell = new PdfPCell(new Phrase(col.HeaderText));
+                                pTable.AddCell(pCell);
+                            }
+                            foreach (DataGridViewRow viewRow in dataGridViewStudentStatus.Rows)
+                            {
+                                foreach (DataGridViewCell dcell in viewRow.Cells)
+                                {
+                                    pTable.AddCell(dcell.Value.ToString());
+                                }
+                            }
+                            using (FileStream fileStream = new FileStream(save.FileName, FileMode.Create))
+                            {
+                                Document document = new Document(PageSize.A4, 8f, 16f, 16f, 8f);
+                                PdfWriter.GetInstance(document, fileStream);
+                                document.Open();
+                                document.Add(pTable);
+                                document.Close();
+                                fileStream.Close();
+                            }
+                            MessageBox.Show("Data Export Successfully", "info");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error while exporting Data" + ex.Message);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Record Found", "Info");
+            }
+        }
+
+        private void dataGridViewCourses_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Chagne the Color of the row
+            if (e.RowIndex % 2 == 0)
+            {
+                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.LightGray;
+            }
+            else
+            {
+                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            }
+            // if cell contains "Absent" then change the color to red 
+            // else if cell contains "Attend" then change the color to green
+            if (e.Value != null && e.Value.ToString() == "Absent")
+            {
+                e.CellStyle.BackColor = System.Drawing.Color.Red;
+            }
+            else if (e.Value != null && e.Value.ToString() == "Attend")
+            {
+                e.CellStyle.BackColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                e.CellStyle.BackColor = System.Drawing.Color.Orange;
+            }
+
+        }
+
+        private void buttonToExcel_Click(object sender, EventArgs e)
+        {
+                if (dataGridViewStudentStatus.Rows.Count > 0)
+                {
+                    SaveFileDialog save = new SaveFileDialog();
+                    save.Filter = "Excel (.xlsx)|.xlsx";
+                    save.FileName = "Result";
+                    bool ErrorMessage = false;
+                    if (save.ShowDialog() == DialogResult.OK)
+                    {
+                        if (File.Exists(save.FileName))
+                        {
+                            try
+                            {
+                                File.Delete(save.FileName);
+                            }
+                            catch (Exception ex)
+                            {
+                                ErrorMessage = true;
+                                MessageBox.Show("Unable to write data to disk: " + ex.Message);
+                            }
+                        }
+                        if (!ErrorMessage)
+                        {
+                            try
+                            {
+                                using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Create(save.FileName, SpreadsheetDocumentType.Workbook))
+                                {
+                                    WorkbookPart workbookPart = spreadsheetDocument.AddWorkbookPart();
+                                    workbookPart.Workbook = new DocumentFormat.OpenXml.Spreadsheet.Workbook();
+
+                                    WorksheetPart worksheetPart = workbookPart.AddNewPart<WorksheetPart>();
+                                    worksheetPart.Worksheet = new DocumentFormat.OpenXml.Spreadsheet.Worksheet(new SheetData());
+
+                                DocumentFormat.OpenXml.Spreadsheet.Sheets sheets = spreadsheetDocument.WorkbookPart.Workbook.AppendChild(new DocumentFormat.OpenXml.Spreadsheet.Sheets());
+                                    Sheet sheet = new Sheet() { Id = spreadsheetDocument.WorkbookPart.GetIdOfPart(worksheetPart), SheetId = 1, Name = "Attendance" };
+                                    sheets.Append(sheet);
+
+                                // Add header information before the data
+                                SheetData sheetData = worksheetPart.Worksheet.GetFirstChild<SheetData>();
+
+                                Row headerRow = new Row();
+                                // headerRow.Append(CreateTextCell("Date: " + dateTimePicker1.Value.ToShortDateString()));
+                                sheetData.AppendChild(headerRow);
+
+                                Row classRow = new Row();
+                                // classRow.Append(CreateTextCell("Class Name: " + CompoClass.Text));
+                                sheetData.AppendChild(classRow);
+
+                                Row courseRow = new Row();
+                                // courseRow.Append(CreateTextCell("Course: " + CompoCourse.Text));
+                                sheetData.AppendChild(courseRow);
+
+                                // Add headers
+                                Row headerDataRow = new Row();
+                                    foreach (DataGridViewColumn col in dataGridViewStudentStatus.Columns)
+                                    {
+                                        headerDataRow.Append(CreateTextCell(col.HeaderText));
+                                    }
+                                    sheetData.AppendChild(headerDataRow);
+
+                                    // Add data
+                                    for (int i = 0; i < dataGridViewStudentStatus.Rows.Count; i++)
+                                    {
+                                        Row newRow = new Row();
+                                        foreach (DataGridViewCell cell in dataGridViewStudentStatus.Rows[i].Cells)
+                                        {
+                                            newRow.Append(CreateTextCell(cell.Value?.ToString() ?? ""));
+                                        }
+                                    sheetData.AppendChild(newRow);
+                                    }
+
+                                    workbookPart.Workbook.Save();
+                                }
+
+                                MessageBox.Show("Data Exported Successfully", "Info");
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Error while exporting Data: " + ex.Message);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No Record Found", "Info");
+                }
+        }
+
+        private static Cell CreateTextCell(string text)
+        {
+            Cell cell = new Cell();
+            cell.DataType = CellValues.String;
+            cell.CellValue = new CellValue(text);
+            return cell;
         }
 
 

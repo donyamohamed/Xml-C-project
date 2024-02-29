@@ -22,24 +22,6 @@
         <status>-1</status>
       </session>
     </studentId>
-    <studentId id="2S">
-      <session>
-        <date>2022-03-22</date>
-        <status>1</status>
-      </session>
-      <session>
-        <date>2022-03-24</date>
-        <status>-1</status>
-      </session>
-      <session>
-        <date>2022-03-25</date>
-        <status>-1</status>
-      </session>
-      <session>
-        <date>2022-03-26</date>
-        <status>-1</status>
-      </session>
-    </studentId>
   </class>
   <class>
     <classId>1CS</classId>
