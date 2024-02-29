@@ -15,14 +15,20 @@ namespace Attendance_Management_System.Forms
     {
         public AdminDashboardForm()
         {
+
+            //teacherAdminForm1.Visible = false;
+            // studentsAdminForm1.Visible = false;
             InitializeComponent();
+
+            courseAdminForm2.Visible = false;
+            classAdminForm2.Visible = false;
         }
 
         private void AdminDashboardForm_Load(object sender, EventArgs e)
         {
             //  teacherAdminForm1.Visible = false;
             // studentsAdminForm1.Visible = false;
-           // courseAdminForm1.Visible = false;
+            // courseAdminForm1.Visible = false;
         }
 
         private void teacher_data_Click(object sender, EventArgs e)
@@ -39,14 +45,45 @@ namespace Attendance_Management_System.Forms
 
         private void course_data_Click(object sender, EventArgs e)
         {
-            courseAdminForm1.Visible = true;
-            classAdminForm1.Visible = false;
+            courseAdminForm2.Visible = true;
+            classAdminForm2.Visible = false;
         }
 
         private void classes_data_Click(object sender, EventArgs e)
         {
-            classAdminForm1.Visible=true;
-            courseAdminForm1.Visible = false;
+            classAdminForm2.Visible = true;
+            courseAdminForm2.Visible = false;
+        }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Check the user's response
+            if (result == DialogResult.Yes)
+            {
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();
+
+                this.Hide();
+
+            }
+
+        }
+
+        private void closebox_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Check the user's response
+            if (result == DialogResult.Yes)
+            {
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();
+
+                this.Hide();
+
+            }
         }
     }
 }

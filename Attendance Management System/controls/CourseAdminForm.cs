@@ -12,7 +12,9 @@ namespace Attendance_Management_System.controls
     public partial class CourseAdminForm : UserControl
     {
         private DataTable originalDataTable;
-        private List<Course> coursesData = CourseParser.ParseCourses("../../../../courses.xml");
+        // private List<Course> coursesData = CourseParser.ParseCourses("../../../../courses.xml") is null ? CourseParser.ParseCourses("C:\\Users\\Orginal\\Downloads\\Donyabranch\\Xml-C-project\\courses.xml") : CourseParser.ParseCourses("../../../../courses.xml");
+
+        private List<Course> coursesData =CourseParser.ParseCourses("C:\\Users\\Orginal\\Downloads\\Donyabranch\\Xml-C-project\\courses.xml");
 
         public CourseAdminForm()
         {
@@ -135,6 +137,11 @@ namespace Attendance_Management_System.controls
             InsertCourseForm insertCourseForm = new InsertCourseForm(coursesData, action, courseToUpdate);
             insertCourseForm.ShowDialog();
             LoadAndDisplayCourseData();
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

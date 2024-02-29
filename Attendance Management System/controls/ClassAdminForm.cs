@@ -18,7 +18,7 @@ namespace Attendance_Management_System.controls
         {
             InitializeComponent();
             LoadClassIds();
-            
+
         }
         private void LoadClassIds()
         {

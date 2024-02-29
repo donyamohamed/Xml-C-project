@@ -35,6 +35,7 @@
             courseId = new Label();
             teacherId = new Label();
             dataGridView1 = new DataGridView();
+            delete = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -105,10 +106,20 @@
             dataGridView1.Size = new Size(881, 457);
             dataGridView1.TabIndex = 6;
             // 
+            // delete
+            // 
+            delete.Location = new Point(78, 681);
+            delete.Name = "delete";
+            delete.Size = new Size(94, 29);
+            delete.TabIndex = 7;
+            delete.Text = "Delete";
+            delete.UseVisualStyleBackColor = true;
+            // 
             // ClassAdminForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(delete);
             Controls.Add(dataGridView1);
             Controls.Add(teacherId);
             Controls.Add(courseId);
@@ -118,6 +129,7 @@
             Controls.Add(comboclassId);
             Name = "ClassAdminForm";
             Size = new Size(1020, 767);
+            Load += ClassAdminForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -132,5 +144,6 @@
         private Label courseId;
         private Label teacherId;
         private DataGridView dataGridView1;
+        private Button delete;
     }
 }

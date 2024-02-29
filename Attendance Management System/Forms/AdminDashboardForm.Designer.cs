@@ -47,7 +47,8 @@
             panel3 = new Panel();
             admin_profile = new Button();
             pictureBox3 = new PictureBox();
-            studentsAdminForm1 = new controls.StudentsAdminForm();
+            classAdminForm2 = new controls.ClassAdminForm();
+            courseAdminForm2 = new controls.CourseAdminForm();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)closebox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)minimizebox).BeginInit();
@@ -79,12 +80,13 @@
             closebox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             closebox.Image = (Image)resources.GetObject("closebox.Image");
             closebox.ImeMode = ImeMode.NoControl;
-            closebox.Location = new Point(1991, 3);
+            closebox.Location = new Point(1159, 0);
             closebox.Name = "closebox";
             closebox.Size = new Size(43, 43);
             closebox.SizeMode = PictureBoxSizeMode.Zoom;
             closebox.TabIndex = 17;
             closebox.TabStop = false;
+            closebox.Click += closebox_Click;
             // 
             // minimizebox
             // 
@@ -103,7 +105,7 @@
             admin.AutoSize = true;
             admin.Font = new Font("Sitka Text", 13F, FontStyle.Bold);
             admin.ForeColor = Color.Transparent;
-            admin.Location = new Point(165, 49);
+            admin.Location = new Point(186, 43);
             admin.Name = "admin";
             admin.Size = new Size(210, 32);
             admin.TabIndex = 0;
@@ -144,6 +146,7 @@
             logout.TabIndex = 17;
             logout.Text = "Log Out";
             logout.UseVisualStyleBackColor = true;
+            logout.Click += logout_Click;
             // 
             // pictureBox4
             // 
@@ -305,12 +308,19 @@
             pictureBox3.TabIndex = 4;
             pictureBox3.TabStop = false;
             // 
-            // studentsAdminForm1
+            // classAdminForm2
             // 
-            studentsAdminForm1.Location = new Point(436, 256);
-            studentsAdminForm1.Name = "studentsAdminForm1";
-            studentsAdminForm1.Size = new Size(1723, 985);
-            studentsAdminForm1.TabIndex = 7;
+            classAdminForm2.Location = new Point(505, 205);
+            classAdminForm2.Name = "classAdminForm2";
+            classAdminForm2.Size = new Size(1275, 959);
+            classAdminForm2.TabIndex = 7;
+            // 
+            // courseAdminForm2
+            // 
+            courseAdminForm2.Location = new Point(515, 254);
+            courseAdminForm2.Name = "courseAdminForm2";
+            courseAdminForm2.Size = new Size(1276, 1011);
+            courseAdminForm2.TabIndex = 8;
             // 
             // AdminDashboardForm
             // 
@@ -318,10 +328,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1589, 1030);
             ControlBox = false;
-            Controls.Add(studentsAdminForm1);
+            Controls.Add(courseAdminForm2);
+            Controls.Add(classAdminForm2);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "AdminDashboardForm";
+            ShowInTaskbar = false;
+            SizeGripStyle = SizeGripStyle.Show;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminDashboardForm";
             WindowState = FormWindowState.Maximized;
             Load += AdminDashboardForm_Load;
@@ -363,6 +378,8 @@
         private controls.CourseAdminForm courseAdminForm1;
         private controls.ClassAdminForm classAdminForm1;
         private controls.StudentsAdminForm studentsAdminForm1;
+        private controls.ClassAdminForm classAdminForm2;
+        private controls.CourseAdminForm courseAdminForm2;
         // private Attendance_Management_System.TeacherAdminForm teacherAdminForm1;
         //private StudentsAdminForm studentsAdminForm1;
     }

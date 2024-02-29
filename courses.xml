@@ -18,4 +18,10 @@
     <sessionsNumber>4</sessionsNumber>
     <description>ewrtgyju</description>
   </course>
+  <course>
+    <courseId>4C</courseId>
+    <courseName>java</courseName>
+    <sessionsNumber>4</sessionsNumber>
+    <description>tghyyn</description>
+  </course>
 </Courses>
