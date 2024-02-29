@@ -44,7 +44,7 @@ namespace Attendance_Management_System.Forms
             // see https://aka.ms/applicationconfiguration.
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
             ApplicationConfiguration.Initialize();
-            Application.Run(new testAdmin());
+         //   Application.Run(new testAdmin());
 
             // Application.Run(new testAdmin());
          //Application.Run(new FormSettings());

@@ -156,7 +156,7 @@ namespace Attendance_Management_System.Forms
                 string message = "This password is Correct";
                 string caption = "Wellcome";
                 // Show message box
-                MessageBox.Show(message, caption);
+              //  MessageBox.Show(message, caption);
             }
             else
             {

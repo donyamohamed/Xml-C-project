@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -32,10 +33,29 @@ namespace Attendance_Management_System.Forms
             loggedUser = FormLogin.meStudent;
             LoadSessionDataForUser(loggedUser.Id);
             PopulateDataGridView();
-          //  textSearch.TextChanged += TxtSearch_TextChanged;
             CreateCourseButtons();
             UpdateUserInfo();
+
+            // hide all btn and disaple generate btn if no courses
+            if (studentGrid.Rows.Count == 0)
+            {
+                MessageBox.Show("You Didn't Join To Any Courses Yet!");
+                Button allCourse = panelCourses.Controls["allCourses"] as Button;
+                if (allCourse != null)
+                {
+                    allCourse.Visible = false;
+                }
+
+         
+                butReport.Enabled = false;
+            }
+            else
+            {
+              
+                butReport.Enabled = true;
+            }
         }
+
         private string GetDateFormatFromConfig()
         {
             string xmlFilePath = "../../../appConfigurations/appConfigurations.xml";
@@ -65,19 +85,11 @@ namespace Attendance_Management_System.Forms
                 string courseId = classNode.SelectSingleNode("courseId")?.InnerText;
                 string teacherId = classNode.SelectSingleNode("teacherId")?.InnerText;
 
-
-
                 XmlNode courseNode = coursesDoc.SelectSingleNode($"//course[courseId='{courseId}']");
                 string courseName = courseNode.SelectSingleNode("courseName").InnerText;
 
-                // Retrieve teacher's name using teacher ID
-
-
                 XmlNode teacherNode = usersDoc?.SelectSingleNode($"//user[id='{teacherId}']");
-
-
                 string teacherName = $"{teacherNode?.SelectSingleNode("fname").InnerText} {teacherNode.SelectSingleNode("lname")?.InnerText}";
-
 
                 XmlNodeList sessionNodes = classNode.SelectNodes($"studentId[@id='{userId}']/session");
                 int sessionNumber = 1;
@@ -85,7 +97,6 @@ namespace Attendance_Management_System.Forms
                 foreach (XmlNode sessionNode in sessionNodes)
                 {
                     string date = sessionNode.SelectSingleNode("date")?.InnerText;
-
                     string status = sessionNode.SelectSingleNode("status")?.InnerText;
 
                     sessionData.Add((date, courseName, teacherName, sessionNumber, status));
@@ -102,7 +113,6 @@ namespace Attendance_Management_System.Forms
             foreach (var session in sessionData)
             {
                 DateTime date = DateTime.ParseExact(session.date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-
                 string formattedDate = date.ToString(dateFormat);
 
                 string attendanceStatus = GetAttendanceStatusString(session.status);
@@ -125,25 +135,11 @@ namespace Attendance_Management_System.Forms
             }
         }
 
- /*       private void TxtSearch_TextChanged(object sender, EventArgs e)
-        {
-            string searchText = textSearch.Text.ToLower();
-            var filteredSessions = sessionData.Where(session =>
-                session.date.ToLower().Contains(searchText) ||
-                session.courseName.ToLower().Contains(searchText) ||
-                session.teacherName.ToLower().Contains(searchText) ||
-                session.sessionNumber.ToString().Contains(searchText) ||
-                GetAttendanceStatusString(session.status).ToLower().Contains(searchText)
-            );
-
-            UpdateDataGridView(filteredSessions.ToList());
-        }
- */
         private void UpdateUserInfo()
         {
             if (loggedUser != null)
             {
-                labelName.Text = $"{loggedUser.FirstName}  {loggedUser.LastName}   ^_^";
+                labelName.Text = $"{loggedUser.FirstName}  {loggedUser.LastName}  ";
                 labStdId.Text = loggedUser.Id;
             }
         }
@@ -166,7 +162,7 @@ namespace Attendance_Management_System.Forms
             };
             panelCourses.Controls.Add(allCourse);
 
-            allCourse.Click += (sender, e) => PopulateDataGridView();
+            allCourse.Click += (sender, e) => { PopulateDataGridView(); butReport.Tag = null; };
 
 
             foreach (var session in sessionData)
@@ -221,34 +217,7 @@ namespace Attendance_Management_System.Forms
             WindowState = FormWindowState.Minimized;
         }
 
-        private void pictureBoxLang_Click(object sender, EventArgs e)
-        {
-            if(Program.appLanguage == "en")
-            {
-                Program.appLanguage = "ar";
-                InitializeComponent();
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
-                InitializeForm();
-            } else if (Program.appLanguage == "ar")
-            {
-                Program.appLanguage = "en";
-                InitializeComponent();
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
-                InitializeForm();
-            }
-            // lang.Text = (lang.Text == "en") ? "ar" : "en";
-            // UpdateLanguage();
-        }
 
-        private void UpdateLanguage()
-        {
-            string newCulture = (lang.Text == "en") ? "en" : "ar";
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(newCulture);
-            CultureInfo.CurrentCulture = new CultureInfo(newCulture);
-            CultureInfo.CurrentUICulture = new CultureInfo(newCulture);
-            UpdateUserInfo();
-
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -259,83 +228,14 @@ namespace Attendance_Management_System.Forms
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-
                 pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
             }
         }
 
+   
         // start handle report
-        private string GenerateXSLTTemplate(string userName, string userId, string selectedCourseName, bool includeCourseFilter, List<(string date, string courseName, string teacherName, int sessionNumber, string status)> sessionData)
-        {
-            StringBuilder xsltBuilder = new StringBuilder();
-
-            xsltBuilder.Append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-            xsltBuilder.Append("<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\">");
-
-            xsltBuilder.Append($"<xsl:param name=\"userName\" select=\"'{userName}'\" />");
-            xsltBuilder.Append($"<xsl:param name=\"userId\" select=\"'{userId}'\" />");
-            xsltBuilder.Append($"<xsl:param name=\"selectedCourseName\" select=\"'{selectedCourseName}'\" />");
-
-            xsltBuilder.Append("<xsl:template match=\"/\">");
-            xsltBuilder.Append("<html>");
-            xsltBuilder.Append("<head>");
-            xsltBuilder.Append("<title>Attendance Report</title>");
-            xsltBuilder.Append("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\"/>");
-            xsltBuilder.Append("</head>");
-            xsltBuilder.Append("<body>");
-            xsltBuilder.Append("<h1>Attendance Report</h1>");
-            xsltBuilder.Append("<p>Student Name: <xsl:value-of select=\"$userName\"/></p>");
-            xsltBuilder.Append("<p>Student ID: <xsl:value-of select=\"$userId\"/></p>");
-
-            // Check if selectedCourseName is not empty
-            if (!string.IsNullOrEmpty(selectedCourseName))
-            {
-                xsltBuilder.Append("<p>Course Name: <xsl:value-of select=\"$selectedCourseName\"/></p>");
-            }
-
-            if (includeCourseFilter)
-            {
-                xsltBuilder.Append("<table>");
-                xsltBuilder.Append("<tr><th>Date</th><th>Course Name</th><th>Teacher Name</th><th>Session Number</th><th>Status</th></tr>");
-                foreach (var session in sessionData)
-                {
-                    if (string.IsNullOrEmpty(selectedCourseName) || session.courseName == selectedCourseName)
-                    {
-                        string formattedDate = "<xsl:value-of select=\"format-date(" + "\"" + session.date + "\"" + ", $dateFormat)\"/>";
-                        xsltBuilder.Append($"<tr><td>{formattedDate}</td><td>{session.courseName}</td><td>{session.teacherName}</td><td>{session.sessionNumber}</td><td>{GetAttendanceStatusString(session.status)}</td></tr>");
-                    }
-                }
-                xsltBuilder.Append("</table>");
-            }
-            else
-            {
-                xsltBuilder.Append("<p>All Sessions:</p>");
-                xsltBuilder.Append("<ul>");
-                foreach (var session in sessionData)
-                {
-                    if (string.IsNullOrEmpty(selectedCourseName) || session.courseName == selectedCourseName)
-                    {
-                        string formattedDate = "<xsl:value-of select=\"format-date(" + "\"" + session.date + "\"" + ", $dateFormat)\"/>";
-                        xsltBuilder.Append($"<li>Date: {formattedDate}, Course Name: {session.courseName}, Teacher Name: {session.teacherName}, Session Number: {session.sessionNumber}, Status: {GetAttendanceStatusString(session.status)}</li>");
-                    }
-                }
-                xsltBuilder.Append("</ul>");
-            }
-
-            xsltBuilder.Append("</body></html>");
-            xsltBuilder.Append("</xsl:template>");
-
-            xsltBuilder.Append("</xsl:stylesheet>");
-
-            return xsltBuilder.ToString();
-        }
-
-
-
-
-
-
-
+        
+       
 
         private void butReport_Click(object sender, EventArgs e)
         {
@@ -348,7 +248,8 @@ namespace Attendance_Management_System.Forms
             {
                 bool includeCourseFilter = true;
 
-                string xsltTemplate = GenerateXSLTTemplate(userName, userId, selectedCourseName, includeCourseFilter, sessionData);
+              
+                string xsltTemplate = XsltGenerator.GenerateXSLTTemplateForStudent(userName, userId, selectedCourseName, includeCourseFilter, sessionData);
 
                 string xmlFilePath = "../../../../class.xml";
                 string xmlFileDirectory = Path.GetDirectoryName(xmlFilePath);
@@ -381,15 +282,21 @@ namespace Attendance_Management_System.Forms
         }
 
 
-
         private void StudentForm_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             labTimeDate.Text = DateTime.Now.ToString();
+        }
+
+        private void picLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormLogin loginForm = new FormLogin();
+            loginForm.Show();
         }
     }
 }
