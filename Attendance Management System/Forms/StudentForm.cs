@@ -22,6 +22,7 @@ namespace Attendance_Management_System.Forms
         {
             InitializeComponent();
             InitializeForm();
+            timer1.Start();
         }
 
         private void InitializeForm()
@@ -29,13 +30,13 @@ namespace Attendance_Management_System.Forms
             loggedUser = FormLogin.meStudent;
             LoadSessionDataForUser(loggedUser.Id);
             PopulateDataGridView();
-            textSearch.TextChanged += TxtSearch_TextChanged;
+          //  textSearch.TextChanged += TxtSearch_TextChanged;
             CreateCourseButtons();
             UpdateUserInfo();
         }
         private string GetDateFormatFromConfig()
         {
-            string xmlFilePath = "../../../appConfigurations/appConfigurations.xml"; 
+            string xmlFilePath = "../../../appConfigurations/appConfigurations.xml";
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(xmlFilePath);
 
@@ -99,7 +100,7 @@ namespace Attendance_Management_System.Forms
             foreach (var session in sessionData)
             {
                 DateTime date = DateTime.ParseExact(session.date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-              
+
                 string formattedDate = date.ToString(dateFormat);
 
                 string attendanceStatus = GetAttendanceStatusString(session.status);
@@ -122,7 +123,7 @@ namespace Attendance_Management_System.Forms
             }
         }
 
-        private void TxtSearch_TextChanged(object sender, EventArgs e)
+ /*       private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
             string searchText = textSearch.Text.ToLower();
             var filteredSessions = sessionData.Where(session =>
@@ -135,7 +136,7 @@ namespace Attendance_Management_System.Forms
 
             UpdateDataGridView(filteredSessions.ToList());
         }
-
+ */
         private void UpdateUserInfo()
         {
             if (loggedUser != null)
@@ -369,6 +370,11 @@ namespace Attendance_Management_System.Forms
         private void StudentForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            labTimeDate.Text = DateTime.Now.ToString();
         }
     }
 }

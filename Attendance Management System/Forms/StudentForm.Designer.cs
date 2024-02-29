@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentForm));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
@@ -55,6 +56,8 @@
             pictureBoxLang = new PictureBox();
             pictureBoxMinm = new PictureBox();
             pictureBoxClose = new PictureBox();
+            timer1 = new System.Windows.Forms.Timer(components);
+            labTimeDate = new Label();
             ((System.ComponentModel.ISupportInitialize)studentGrid).BeginInit();
             panelCourses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -110,7 +113,6 @@
             dataGridViewCellStyle5.BackColor = Color.FromArgb(224, 224, 224);
             dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             studentGrid.RowsDefaultCellStyle = dataGridViewCellStyle5;
-          //  studentGrid.CellContentClick += studentGrid_CellContentClick;
             // 
             // date
             // 
@@ -246,12 +248,22 @@
             pictureBoxClose.TabStop = false;
             pictureBoxClose.Click += pictureBoxClose_Click;
             // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
+            // labTimeDate
+            // 
+            resources.ApplyResources(labTimeDate, "labTimeDate");
+            labTimeDate.Name = "labTimeDate";
+            // 
             // StudentForm
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ControlBox = false;
+            Controls.Add(labTimeDate);
             Controls.Add(panel2);
             Controls.Add(panelCourses);
             Controls.Add(butReport);
@@ -297,5 +309,7 @@
         private DataGridViewTextBoxColumn teacherId;
         private DataGridViewTextBoxColumn sessionNo;
         private DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.Timer timer1;
+        private Label labTimeDate;
     }
 }
