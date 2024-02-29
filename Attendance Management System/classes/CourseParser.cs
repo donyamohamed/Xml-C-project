@@ -4,36 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Windows.Forms;
 
 namespace Attendance_Management_System.classes
 {
     public static class CourseParser
     {
-        public static List<Course> ParseCourses(string filePath)
+        public static List<Course> ParseCourses(string xmlFilePath)
         {
             List<Course> courses = new List<Course>();
 
             XmlDocument doc = new XmlDocument();
-            doc.Load(filePath);
+            doc.Load(xmlFilePath);
 
             XmlNodeList courseNodes = doc.SelectNodes("//course");
-            foreach (XmlNode node in courseNodes)
+            foreach (XmlNode courseNode in courseNodes)
             {
-                string courseId = node.SelectSingleNode("courseId").InnerText;
-                string courseName = node.SelectSingleNode("courseName").InnerText;
-                int sessionsNumber = int.Parse(node.SelectSingleNode("sessionsNumber").InnerText);
-                string description = node.SelectSingleNode("description").InnerText;
+                string courseId = courseNode.SelectSingleNode("courseId").InnerText;
+                string courseName = courseNode.SelectSingleNode("courseName").InnerText;
+                int sessionsNumber = int.Parse(courseNode.SelectSingleNode("sessionsNumber").InnerText);
+                string description = courseNode.SelectSingleNode("description").InnerText;
 
-                courses.Add(new Course(courseId, courseName, description, sessionsNumber));
+                Course course = new Course(courseId, courseName, description, sessionsNumber);
+                courses.Add(course);
             }
 
             return courses;
         }
+
         public static void SaveCoursesAsXml(List<Course> courses, string filePath)
         {
             XmlDocument doc = new XmlDocument();
 
-            // Create the XML Declaration, and append it to XML document
+            // Create the XML Declaration, and append it to the XML document
             XmlDeclaration xmlDeclaration = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
             doc.AppendChild(xmlDeclaration);
 
@@ -44,7 +47,6 @@ namespace Attendance_Management_System.classes
             att.Value = filePath;
             root.Attributes.Append(att);
 
-            // foearch course in the list
             foreach (Course course in courses)
             {
                 XmlElement courseElement = doc.CreateElement("course");
@@ -67,11 +69,15 @@ namespace Attendance_Management_System.classes
 
                 root.AppendChild(courseElement);
             }
+
             doc.AppendChild(root);
             doc.Save(filePath);
         }
+
+        
     }
 }
+
 /*
 <?xml version="1.0" encoding="UTF-8"?>
 <appConfigurations>

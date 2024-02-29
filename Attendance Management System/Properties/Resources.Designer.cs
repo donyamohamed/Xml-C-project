@@ -73,7 +73,9 @@ namespace Attendance_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
         internal static System.Drawing.Bitmap _3403551_2001 {
+
             get {
                 object obj = ResourceManager.GetObject("3403551-2001", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,9 +145,19 @@ namespace Attendance_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OIP {
+        internal static System.Drawing.Bitmap update {
             get {
-                object obj = ResourceManager.GetObject("OIP", resourceCulture);
+                object obj = ResourceManager.GetObject("update", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UpdateIcon {
+            get {
+                object obj = ResourceManager.GetObject("UpdateIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

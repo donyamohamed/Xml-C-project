@@ -73,6 +73,16 @@ namespace Attendance_Management_System.Forms
             string dateFormat = xmlDoc.SelectSingleNode("//DateFormat")?.InnerText;
             return dateFormat;
         }
+        private string GetDateFormatFromConfig()
+        {
+            string xmlFilePath = "../../../appConfigurations/appConfigurations.xml"; 
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(xmlFilePath);
+
+            // Retrieve the date format from the configuration XML
+            string dateFormat = xmlDoc.SelectSingleNode("//DateFormat")?.InnerText;
+            return dateFormat;
+        }
 
         private void LoadSessionDataForUser(string userId)
         {
@@ -104,6 +114,7 @@ namespace Attendance_Management_System.Forms
                 foreach (XmlNode sessionNode in sessionNodes)
                 {
                     string date = sessionNode.SelectSingleNode("date")?.InnerText;
+
                     string status = sessionNode.SelectSingleNode("status")?.InnerText;
 
                     sessionData.Add((date, courseName, teacherName, sessionNumber, status));
@@ -241,8 +252,6 @@ namespace Attendance_Management_System.Forms
 
    
         // start handle report
-        
-       
 
         private void butReport_Click(object sender, EventArgs e)
         {

@@ -43,16 +43,6 @@ namespace Attendance_Management_System.Forms
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherAdminForm));
             teacherGrid = new DataGridView();
-            id = new DataGridViewTextBoxColumn();
-            teacherFname = new DataGridViewTextBoxColumn();
-            teacherLname = new DataGridViewTextBoxColumn();
-            age = new DataGridViewTextBoxColumn();
-            email = new DataGridViewTextBoxColumn();
-            password = new DataGridViewTextBoxColumn();
-            phone = new DataGridViewTextBoxColumn();
-            address = new DataGridViewTextBoxColumn();
-            delete = new DataGridViewImageColumn();
-            update = new DataGridViewImageColumn();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel3 = new Panel();
             closebox = new PictureBox();
@@ -84,8 +74,10 @@ namespace Attendance_Management_System.Forms
             button5 = new Button();
             button6 = new Button();
             button7 = new Button();
+
             contextMenuStrip1 = new ContextMenuStrip(components);
             button8 = new Button();
+
             ((System.ComponentModel.ISupportInitialize)teacherGrid).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)closebox).BeginInit();
@@ -158,6 +150,7 @@ namespace Attendance_Management_System.Forms
             teacherGrid.TabIndex = 0;
             teacherGrid.CellContentClick += TeacherGrid_CellContentClick;
             // 
+
             // id
             // 
             id.HeaderText = "ID";
@@ -665,6 +658,7 @@ namespace Attendance_Management_System.Forms
             // 
             // contextMenuStrip1
             // 
+
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
@@ -676,6 +670,90 @@ namespace Attendance_Management_System.Forms
             button8.TabIndex = 6;
             button8.Text = "button8";
             button8.UseVisualStyleBackColor = true;
+            // 
+            // id
+            // 
+            id.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            id.HeaderText = "ID";
+            id.MinimumWidth = 10;
+            id.Name = "id";
+            id.ReadOnly = true;
+            // 
+            // teacherFname
+            // 
+            teacherFname.HeaderText = "Fname";
+            teacherFname.MinimumWidth = 6;
+            teacherFname.Name = "teacherFname";
+            teacherFname.ReadOnly = true;
+            teacherFname.Width = 170;
+            // 
+            // teacherLname
+            // 
+            teacherLname.HeaderText = "Lname";
+            teacherLname.MinimumWidth = 6;
+            teacherLname.Name = "teacherLname";
+            teacherLname.ReadOnly = true;
+            teacherLname.Width = 125;
+            // 
+            // age
+            // 
+            age.HeaderText = "Age";
+            age.MinimumWidth = 6;
+            age.Name = "age";
+            age.ReadOnly = true;
+            age.Width = 125;
+            // 
+            // email
+            // 
+            email.HeaderText = "Email";
+            email.MinimumWidth = 6;
+            email.Name = "email";
+            email.ReadOnly = true;
+            email.Width = 200;
+            // 
+            // password
+            // 
+            password.HeaderText = "Password";
+            password.MinimumWidth = 6;
+            password.Name = "password";
+            password.ReadOnly = true;
+            password.Width = 125;
+            // 
+            // phone
+            // 
+            phone.HeaderText = "Phone";
+            phone.MinimumWidth = 11;
+            phone.Name = "phone";
+            phone.ReadOnly = true;
+            phone.Width = 125;
+            // 
+            // address
+            // 
+            address.HeaderText = "Address";
+            address.MinimumWidth = 6;
+            address.Name = "address";
+            address.ReadOnly = true;
+            address.Width = 125;
+            // 
+            // delete
+            // 
+            delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            delete.HeaderText = "Delete";
+            delete.Image = (System.Drawing.Image)resources.GetObject("delete.Image");
+            delete.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            delete.MinimumWidth = 6;
+            delete.Name = "delete";
+            delete.ReadOnly = true;
+            // 
+            // update
+            // 
+            update.HeaderText = "Update";
+            update.Image = (System.Drawing.Image)resources.GetObject("update.Image");
+            update.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            update.MinimumWidth = 6;
+            update.Name = "update";
+            update.ReadOnly = true;
+            update.Width = 125;
             // 
             // TeacherAdminForm
             // 
@@ -764,7 +842,9 @@ namespace Attendance_Management_System.Forms
         private DataGridViewTextBoxColumn address;
         private DataGridViewImageColumn delete;
         private DataGridViewImageColumn update;
+
         private ContextMenuStrip contextMenuStrip1;
         private Button button8;
+
     }
 }

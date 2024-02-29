@@ -56,7 +56,7 @@ namespace Attendance_Management_System.classes
             XmlElement root = doc.CreateElement("Classes");
             // set attributes
             root.SetAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
-            XmlAttribute att = doc.CreateAttribute("xsi", "noNamespaceSchemaLocation","http://www.w3.org/2001/XMLSchema-instance");
+            XmlAttribute att = doc.CreateAttribute("xsi", "noNamespaceSchemaLocation", "http://www.w3.org/2001/XMLSchema-instance");
             att.Value = filePath;
             root.SetAttributeNode(att);
 
@@ -105,7 +105,7 @@ namespace Attendance_Management_System.classes
             doc.AppendChild(root);
             doc.Save(filePath);
         }
-      
+
 
 
     }
