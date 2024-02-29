@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Classes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="C:\Users\Orginal\Downloads\Xml-C-project\Xml-C-project-main\classSchema2.xsd">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Classes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../class.xml">
   <class>
     <classId>1CS</classId>
     <courseId>1C</courseId>
@@ -30,15 +30,15 @@
     <studentId id="3S">
       <session>
         <date>2023-04-04</date>
-        <status>1</status>
+        <status>-1</status>
       </session>
       <session>
         <date>2023-04-05</date>
-        <status>-1</status>
+        <status>1</status>
       </session>
       <session>
         <date>2023-04-06</date>
-        <status>-1</status>
+        <status>1</status>
       </session>
     </studentId>
   </class>

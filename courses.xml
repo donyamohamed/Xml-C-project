@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Courses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="courseSchema2.xsd">
-	<course>
-		<courseId>1C</courseId>
-		<courseName>Xml</courseName>
-		<sessionsNumber>4</sessionsNumber>
-		<description>drftgyhujk</description>
-	</course>
-	<course>
-		<courseId>2C</courseId>
-		<courseName>Java</courseName>
-		<sessionsNumber>3</sessionsNumber>
-		<description>drftgyhujk</description>
-	</course>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Courses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../courses.xml">
+  <course>
+    <courseId>1C</courseId>
+    <courseName>Xml</courseName>
+    <sessionsNumber>4</sessionsNumber>
+    <description>drftgyhujk</description>
+  </course>
+  <course>
+    <courseId>2C</courseId>
+    <courseName>Java</courseName>
+    <sessionsNumber>3</sessionsNumber>
+    <description>drftgyhujk</description>
+  </course>
 </Courses>

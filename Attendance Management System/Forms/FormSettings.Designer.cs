@@ -268,7 +268,7 @@
             // 
             resources.ApplyResources(listBoxDateFormat, "listBoxDateFormat");
             listBoxDateFormat.FormattingEnabled = true;
-            listBoxDateFormat.Items.AddRange(new object[] { resources.GetString("listBoxDateFormat.Items"), resources.GetString("listBoxDateFormat.Items1"), resources.GetString("listBoxDateFormat.Items2") });
+            listBoxDateFormat.Items.AddRange(new object[] { resources.GetString("listBoxDateFormat.Items"), resources.GetString("listBoxDateFormat.Items1") });
             listBoxDateFormat.Name = "listBoxDateFormat";
             toolTip1.SetToolTip(listBoxDateFormat, resources.GetString("listBoxDateFormat.ToolTip"));
             // 

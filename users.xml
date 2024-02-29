@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../users.xml">
   <user role="student">
     <id>1S</id>
@@ -19,6 +19,16 @@
     <password>Aabe@123</password>
     <phone>01143568123</phone>
     <address>cairo</address>
+  </user>
+  <user role="student">
+    <id>3S</id>
+    <fname>Muhamed</fname>
+    <lname>Samy</lname>
+    <age>26</age>
+    <email>Qamary@gmail.com</email>
+    <password>Qamary@123</password>
+    <phone>01093591700</phone>
+    <address>mansoura</address>
   </user>
   <user role="admin">
     <id>1A</id>
@@ -41,4 +51,3 @@
     <address>alex</address>
   </user>
 </Users>
-
