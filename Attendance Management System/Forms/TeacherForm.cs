@@ -22,6 +22,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Globalization;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
+using Microsoft.Office.Interop.Excel;
+using OfficeOpenXml;
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Spreadsheet;
+using DocumentFormat.OpenXml.VariantTypes;
 
 
 namespace Attendance_Management_System.Forms
@@ -172,25 +178,25 @@ namespace Attendance_Management_System.Forms
             // Chagne the Color of the row
             if (e.RowIndex % 2 == 0)
             {
-                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
+                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.LightGray;
             }
             else
             {
-                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.White;
             }
             // if cell contains "Absent" then change the color to red 
             // else if cell contains "Attend" then change the color to green
             if (e.Value != null && e.Value.ToString() == "Absent")
             {
-                e.CellStyle.BackColor = Color.Red;
+                e.CellStyle.BackColor = System.Drawing.Color.Red;
             }
             else if (e.Value != null && e.Value.ToString() == "Attend")
             {
-                e.CellStyle.BackColor = Color.Green;
+                e.CellStyle.BackColor = System.Drawing.Color.Green;
             }
             else
             {
-                e.CellStyle.BackColor = Color.Orange;
+                e.CellStyle.BackColor = System.Drawing.Color.Orange;
             }
         }
 
@@ -332,11 +338,11 @@ namespace Attendance_Management_System.Forms
         {
             if (e.RowIndex % 2 == 0)
             {
-                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
+                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.LightGray;
             }
             else
             {
-                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.White;
             }
 
             // if cells of column "Satus" contains "1" then change the 1 to "Attend"
@@ -351,22 +357,22 @@ namespace Attendance_Management_System.Forms
             }
             else
             {
-                e.CellStyle.BackColor = Color.Orange;
+                e.CellStyle.BackColor = System.Drawing.Color.Orange;
             }
 
             // if cell contains "Absent" then change the color to red 
             // else if cell contains "Attend" then change the color to green
             if (e.Value != null && e.Value.ToString() == "Absent")
             {
-                e.CellStyle.BackColor = Color.Red;
+                e.CellStyle.BackColor = System.Drawing.Color.Red;
             }
             else if (e.Value != null && e.Value.ToString() == "Attend")
             {
-                e.CellStyle.BackColor = Color.Green;
+                e.CellStyle.BackColor = System.Drawing.Color.Green;
             }
             else
             {
-                e.CellStyle.BackColor = Color.Orange;
+                e.CellStyle.BackColor = System.Drawing.Color.Orange;
             }
 
         }
@@ -442,37 +448,125 @@ namespace Attendance_Management_System.Forms
             // Chagne the Color of the row
             if (e.RowIndex % 2 == 0)
             {
-                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
+                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.LightGray;
             }
             else
             {
-                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                dataGridViewAttendance.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.White;
             }
             // if cell contains "Absent" then change the color to red 
             // else if cell contains "Attend" then change the color to green
             if (e.Value != null && e.Value.ToString() == "Absent")
             {
-                e.CellStyle.BackColor = Color.Red;
+                e.CellStyle.BackColor = System.Drawing.Color.Red;
             }
             else if (e.Value != null && e.Value.ToString() == "Attend")
             {
-                e.CellStyle.BackColor = Color.Green;
+                e.CellStyle.BackColor = System.Drawing.Color.Green;
             }
             else
             {
-                e.CellStyle.BackColor = Color.Orange;
+                e.CellStyle.BackColor = System.Drawing.Color.Orange;
             }
 
         }
 
         private void buttonToExcel_Click(object sender, EventArgs e)
         {
-            dataGridViewStudentStatus.SelectAll();
-            DataObject dataObj = dataGridViewStudentStatus.GetClipboardContent();
-            if (dataObj != null)
-                Clipboard.SetDataObject(dataObj);
-            // Microsoft.Office.Interop.Excel.Application xlexcel = new Microsoft.Office.Interop.Excel.Application();
+                if (dataGridViewStudentStatus.Rows.Count > 0)
+                {
+                    SaveFileDialog save = new SaveFileDialog();
+                    save.Filter = "Excel (.xlsx)|.xlsx";
+                    save.FileName = "Result";
+                    bool ErrorMessage = false;
+                    if (save.ShowDialog() == DialogResult.OK)
+                    {
+                        if (File.Exists(save.FileName))
+                        {
+                            try
+                            {
+                                File.Delete(save.FileName);
+                            }
+                            catch (Exception ex)
+                            {
+                                ErrorMessage = true;
+                                MessageBox.Show("Unable to write data to disk: " + ex.Message);
+                            }
+                        }
+                        if (!ErrorMessage)
+                        {
+                            try
+                            {
+                                using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Create(save.FileName, SpreadsheetDocumentType.Workbook))
+                                {
+                                    WorkbookPart workbookPart = spreadsheetDocument.AddWorkbookPart();
+                                    workbookPart.Workbook = new DocumentFormat.OpenXml.Spreadsheet.Workbook();
 
+                                    WorksheetPart worksheetPart = workbookPart.AddNewPart<WorksheetPart>();
+                                    worksheetPart.Worksheet = new DocumentFormat.OpenXml.Spreadsheet.Worksheet(new SheetData());
+
+                                DocumentFormat.OpenXml.Spreadsheet.Sheets sheets = spreadsheetDocument.WorkbookPart.Workbook.AppendChild(new DocumentFormat.OpenXml.Spreadsheet.Sheets());
+                                    Sheet sheet = new Sheet() { Id = spreadsheetDocument.WorkbookPart.GetIdOfPart(worksheetPart), SheetId = 1, Name = "Attendance" };
+                                    sheets.Append(sheet);
+
+                                // Add header information before the data
+                                SheetData sheetData = worksheetPart.Worksheet.GetFirstChild<SheetData>();
+
+                                Row headerRow = new Row();
+                                // headerRow.Append(CreateTextCell("Date: " + dateTimePicker1.Value.ToShortDateString()));
+                                sheetData.AppendChild(headerRow);
+
+                                Row classRow = new Row();
+                                // classRow.Append(CreateTextCell("Class Name: " + CompoClass.Text));
+                                sheetData.AppendChild(classRow);
+
+                                Row courseRow = new Row();
+                                // courseRow.Append(CreateTextCell("Course: " + CompoCourse.Text));
+                                sheetData.AppendChild(courseRow);
+
+                                // Add headers
+                                Row headerDataRow = new Row();
+                                    foreach (DataGridViewColumn col in dataGridViewStudentStatus.Columns)
+                                    {
+                                        headerDataRow.Append(CreateTextCell(col.HeaderText));
+                                    }
+                                    sheetData.AppendChild(headerDataRow);
+
+                                    // Add data
+                                    for (int i = 0; i < dataGridViewStudentStatus.Rows.Count; i++)
+                                    {
+                                        Row newRow = new Row();
+                                        foreach (DataGridViewCell cell in dataGridViewStudentStatus.Rows[i].Cells)
+                                        {
+                                            newRow.Append(CreateTextCell(cell.Value?.ToString() ?? ""));
+                                        }
+                                    sheetData.AppendChild(newRow);
+                                    }
+
+                                    workbookPart.Workbook.Save();
+                                }
+
+                                MessageBox.Show("Data Exported Successfully", "Info");
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Error while exporting Data: " + ex.Message);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No Record Found", "Info");
+                }
+        }
+
+        private static Cell CreateTextCell(string text)
+        {
+            Cell cell = new Cell();
+            cell.DataType = CellValues.String;
+            cell.CellValue = new CellValue(text);
+            return cell;
         }
 
 
