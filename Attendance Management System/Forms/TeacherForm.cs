@@ -19,6 +19,7 @@ using static Attendance_Management_System.classes.Class;
 using Microsoft.VisualBasic.Logging;
 using System.Reflection.Emit;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Globalization;
 
 
 namespace Attendance_Management_System.Forms
@@ -35,7 +36,7 @@ namespace Attendance_Management_System.Forms
 
         public TeacherForm()
         {
-
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
             InitializeComponent();
         }
 
@@ -105,11 +106,11 @@ namespace Attendance_Management_System.Forms
             listBoxCDates.DataSource = courseDates;
 
 
-            foreach (Control c in this.Controls)
-            {
-                ComponentResourceManager resources = new ComponentResourceManager(typeof(FormSettings));
-                resources.ApplyResources(c, c.Name, new System.Globalization.CultureInfo(Program.appConfig.Language));
-            }
+            //foreach (Control c in this.Controls)
+            //{
+            //    ComponentResourceManager resources = new ComponentResourceManager(typeof(FormSettings));
+            //    resources.ApplyResources(c, c.Name, new System.Globalization.CultureInfo(Program.appConfig.Language));
+            //}
 
         }
 
