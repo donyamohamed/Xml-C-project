@@ -1,7 +1,6 @@
-﻿
-namespace Attendance_Management_System.Forms
+﻿namespace Attendance_Management_System.Forms
 {
-    partial class testAdmin
+    partial class AdminDashboardForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +28,11 @@ namespace Attendance_Management_System.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(testAdmin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboardForm));
+            panel2 = new Panel();
+            closebox = new PictureBox();
+            minimizebox = new PictureBox();
+            admin = new Label();
             panel1 = new Panel();
             logout = new Button();
             pictureBox4 = new PictureBox();
@@ -44,10 +47,10 @@ namespace Attendance_Management_System.Forms
             panel3 = new Panel();
             admin_profile = new Button();
             pictureBox3 = new PictureBox();
-            panel2 = new Panel();
-            closebox = new PictureBox();
-            minimizebox = new PictureBox();
-            admin = new Label();
+            studentsAdminForm1 = new controls.StudentsAdminForm();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)closebox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)minimizebox).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -56,10 +59,55 @@ namespace Attendance_Management_System.Forms
             ((System.ComponentModel.ISupportInitialize)picclass).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)closebox).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)minimizebox).BeginInit();
             SuspendLayout();
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(255, 192, 192);
+            panel2.Controls.Add(closebox);
+            panel2.Controls.Add(minimizebox);
+            panel2.Controls.Add(admin);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(387, 0);
+            panel2.Margin = new Padding(5, 6, 5, 6);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1202, 120);
+            panel2.TabIndex = 6;
+            // 
+            // closebox
+            // 
+            closebox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            closebox.Image = (Image)resources.GetObject("closebox.Image");
+            closebox.ImeMode = ImeMode.NoControl;
+            closebox.Location = new Point(1991, 3);
+            closebox.Name = "closebox";
+            closebox.Size = new Size(43, 43);
+            closebox.SizeMode = PictureBoxSizeMode.Zoom;
+            closebox.TabIndex = 17;
+            closebox.TabStop = false;
+            // 
+            // minimizebox
+            // 
+            minimizebox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            minimizebox.Image = (Image)resources.GetObject("minimizebox.Image");
+            minimizebox.ImeMode = ImeMode.NoControl;
+            minimizebox.Location = new Point(1933, 3);
+            minimizebox.Name = "minimizebox";
+            minimizebox.Size = new Size(52, 43);
+            minimizebox.SizeMode = PictureBoxSizeMode.Zoom;
+            minimizebox.TabIndex = 16;
+            minimizebox.TabStop = false;
+            // 
+            // admin
+            // 
+            admin.AutoSize = true;
+            admin.Font = new Font("Sitka Text", 13F, FontStyle.Bold);
+            admin.ForeColor = Color.Transparent;
+            admin.Location = new Point(165, 49);
+            admin.Name = "admin";
+            admin.Size = new Size(210, 32);
+            admin.TabIndex = 0;
+            admin.Text = "Admin Dashboard";
             // 
             // panel1
             // 
@@ -79,9 +127,8 @@ namespace Attendance_Management_System.Forms
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(5, 6, 5, 6);
             panel1.Name = "panel1";
-            panel1.Size = new Size(387, 1055);
-            panel1.TabIndex = 3;
-            panel1.Paint += panel1_Paint;
+            panel1.Size = new Size(387, 1030);
+            panel1.TabIndex = 5;
             // 
             // logout
             // 
@@ -97,7 +144,6 @@ namespace Attendance_Management_System.Forms
             logout.TabIndex = 17;
             logout.Text = "Log Out";
             logout.UseVisualStyleBackColor = true;
-            logout.Click += Logout_click;
             // 
             // pictureBox4
             // 
@@ -137,7 +183,7 @@ namespace Attendance_Management_System.Forms
             teacher_data.TabIndex = 14;
             teacher_data.Text = "Teachers";
             teacher_data.UseVisualStyleBackColor = true;
-            teacher_data.Click += Teacherbutton_Click;
+            teacher_data.Click += teacher_data_Click;
             // 
             // pictureBox2
             // 
@@ -247,7 +293,6 @@ namespace Attendance_Management_System.Forms
             admin_profile.TabIndex = 15;
             admin_profile.Text = "Admin";
             admin_profile.UseVisualStyleBackColor = true;
-            admin_profile.Click += admin_profile_Click;
             // 
             // pictureBox3
             // 
@@ -259,71 +304,31 @@ namespace Attendance_Management_System.Forms
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 4;
             pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click;
             // 
-            // panel2
+            // studentsAdminForm1
             // 
-            panel2.BackColor = Color.FromArgb(255, 192, 192);
-            panel2.Controls.Add(closebox);
-            panel2.Controls.Add(minimizebox);
-            panel2.Controls.Add(admin);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(387, 0);
-            panel2.Margin = new Padding(5, 6, 5, 6);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1035, 120);
-            panel2.TabIndex = 4;
+            studentsAdminForm1.Location = new Point(436, 256);
+            studentsAdminForm1.Name = "studentsAdminForm1";
+            studentsAdminForm1.Size = new Size(1723, 985);
+            studentsAdminForm1.TabIndex = 7;
             // 
-            // closebox
-            // 
-            closebox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            closebox.Image = (Image)resources.GetObject("closebox.Image");
-            closebox.ImeMode = ImeMode.NoControl;
-            closebox.Location = new Point(989, 3);
-            closebox.Name = "closebox";
-            closebox.Size = new Size(43, 43);
-            closebox.SizeMode = PictureBoxSizeMode.Zoom;
-            closebox.TabIndex = 17;
-            closebox.TabStop = false;
-            closebox.Click += closebox_Click;
-            // 
-            // minimizebox
-            // 
-            minimizebox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            minimizebox.Image = (Image)resources.GetObject("minimizebox.Image");
-            minimizebox.ImeMode = ImeMode.NoControl;
-            minimizebox.Location = new Point(931, 3);
-            minimizebox.Name = "minimizebox";
-            minimizebox.Size = new Size(52, 43);
-            minimizebox.SizeMode = PictureBoxSizeMode.Zoom;
-            minimizebox.TabIndex = 16;
-            minimizebox.TabStop = false;
-            minimizebox.Click += minimizebox_Click;
-            // 
-            // admin
-            // 
-            admin.AutoSize = true;
-            admin.Font = new Font("Sitka Text", 13F, FontStyle.Bold);
-            admin.ForeColor = Color.Transparent;
-            admin.Location = new Point(165, 49);
-            admin.Name = "admin";
-            admin.Size = new Size(210, 32);
-            admin.TabIndex = 0;
-            admin.Text = "Admin Dashboard";
-            // 
-            // testAdmin
+            // AdminDashboardForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1422, 1055);
+            ClientSize = new Size(1589, 1030);
+            ControlBox = false;
+            Controls.Add(studentsAdminForm1);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "testAdmin";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "testAdmin";
+            Name = "AdminDashboardForm";
+            Text = "AdminDashboardForm";
             WindowState = FormWindowState.Maximized;
-            Load += testAdmin_Load;
+            Load += AdminDashboardForm_Load;
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)closebox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)minimizebox).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -332,18 +337,19 @@ namespace Attendance_Management_System.Forms
             ((System.ComponentModel.ISupportInitialize)picclass).EndInit();
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)closebox).EndInit();
-            ((System.ComponentModel.ISupportInitialize)minimizebox).EndInit();
             ResumeLayout(false);
         }
 
-
-
         #endregion
 
+        private Panel panel2;
+        private PictureBox closebox;
+        private PictureBox minimizebox;
+        private Label admin;
         private Panel panel1;
+        private Button logout;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox1;
         private Button teacher_data;
         private PictureBox pictureBox2;
         private PictureBox picstudents;
@@ -352,14 +358,12 @@ namespace Attendance_Management_System.Forms
         private Button course_data;
         private Button student_data;
         private Panel panel3;
-        private Panel panel2;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox3;
         private Button admin_profile;
-        private PictureBox pictureBox4;
-        private Button logout;
-        private Label admin;
-        private PictureBox closebox;
-        private PictureBox minimizebox;
+        private PictureBox pictureBox3;
+        private controls.CourseAdminForm courseAdminForm1;
+        private controls.ClassAdminForm classAdminForm1;
+        private controls.StudentsAdminForm studentsAdminForm1;
+        // private Attendance_Management_System.TeacherAdminForm teacherAdminForm1;
+        //private StudentsAdminForm studentsAdminForm1;
     }
 }

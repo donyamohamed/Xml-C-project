@@ -13,9 +13,10 @@ namespace Attendance_Management_System.Forms
 {
     public partial class InsertUserForm : Form
     {
+
         private string NextUserId;
         private List<User> users;
-        public InsertUserForm(List<User> existingUsers,string role)
+        public InsertUserForm(List<User> existingUsers, string role)
         {
             InitializeComponent();
             users = existingUsers;
@@ -24,16 +25,22 @@ namespace Attendance_Management_System.Forms
         }
         private string GetNextUserId(string role)
         {
-            // If there are no existing users, return "1U" as the first user ID
+
             if (users.Count == 0)
             {
-                return "1" + role[0].ToString().ToUpper(); // Initialize with '1' and the first character of the role in uppercase
+                return "1" + role[0].ToString().ToUpper();
             }
 
-            // Extract numerical part from the existing user IDs based on the role, convert to integers, and find the maximum
-            int maxId = users.Where(u => u.Id.EndsWith(role[0].ToString().ToUpper())).Max(u => int.Parse(u.Id.Substring(0, u.Id.Length - 1)));
+            
+            var usersWithRole = users.Where(u => u.Id.EndsWith(role[0].ToString().ToUpper()));
+            if (!usersWithRole.Any())
+            {
+                return "1" + role[0].ToString().ToUpper(); 
+            }
 
-            // Increment the maximum ID by one to get the next ID
+
+            int maxId = usersWithRole.Max(u => int.Parse(u.Id.Substring(0, u.Id.Length - 1)));
+
             return (maxId + 1).ToString() + role[0].ToString().ToUpper();
         }
 
@@ -44,14 +51,61 @@ namespace Attendance_Management_System.Forms
             string id = TexUserID.Text;
             string fname = texFname.Text;
             string lname = texLname.Text;
-            int age = int.Parse(texAge.Text);
+            int age;
             string email = texEmail.Text;
             string password = texPass.Text;
             string phone = texPhone.Text;
             string address = texAddress.Text;
-            string role = comboBoxRole.SelectedItem.ToString();
+            string role = comboBoxRole.SelectedItem?.ToString(); 
 
-            // Validate user input (you can implement validation logic here)
+           
+            if (string.IsNullOrEmpty(id) || !UserValidator.ValidateId(id))
+            {
+                MessageBox.Show("Invalid ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(fname) || !UserValidator.ValidateName(fname))
+            {
+                MessageBox.Show("Invalid first name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(lname) || !UserValidator.ValidateName(lname))
+            {
+                MessageBox.Show("Invalid last name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!int.TryParse(texAge.Text, out age) || !UserValidator.ValidateAge(age))
+            {
+                MessageBox.Show("Invalid age.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(email) || !UserValidator.ValidateEmail(email))
+            {
+                MessageBox.Show("Invalid email.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(password) || !UserValidator.ValidatePassword(password))
+            {
+                MessageBox.Show("Invalid password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(phone) || !UserValidator.ValidatePhone(phone))
+            {
+                MessageBox.Show("Invalid phone number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(role) || !UserValidator.ValidateRole(role))
+            {
+                MessageBox.Show("Invalid role.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             // Create a new User object
             User newUser = null;
@@ -69,14 +123,15 @@ namespace Attendance_Management_System.Forms
                     return;
             }
 
-            // Add the new user to the list of users
+           
             users.Add(newUser);
 
-            // Update the XML file with the new user data
+           
             UserParser.InsertUsers(users, "../../../../users.xml");
 
-            // Close the form
+       
             this.Close();
         }
+
     }
-    }
+}

@@ -68,58 +68,6 @@ namespace Attendance_Management_System.Forms
 
         }
 
-        /*  private void LoadTeacherData()
-          {
-              try
-              {
-                  // Assuming UserParser has a method to get a list of users
-                 // users = UserParser.ParseUsers("../../../../users.xml");
-
-                  // Filter users with role "teacher" and add them to the list of teachers
-                  teachers = users.Where(u => u.Role == "teacher").Select(u => u as Teacher).ToList();
-
-                  // Create a DataTable and add columns
-                  DataTable dataTable = new DataTable();
-                  dataTable.Columns.Add("ID");
-                  dataTable.Columns.Add("Fname");
-                  dataTable.Columns.Add("Lname");
-                  dataTable.Columns.Add("Age");
-                  dataTable.Columns.Add("Email");
-                  dataTable.Columns.Add("Password");
-                  dataTable.Columns.Add("Phone");
-                  dataTable.Columns.Add("Address");
-                  dataTable.Columns.Add("Delete", typeof(Image));
-
-                  // Populate DataTable with teacher data
-                  foreach (var user in teachers)
-                  {
-                      if (user != null)
-                      {
-                          Image deleteImage = Image.FromFile("../../../../Assets/delete.png");
-                          dataTable.Rows.Add(
-                              user.Id,
-                              user.FirstName,
-                              user.LastName,
-                              user.Age,
-                              user.Email,
-                              user.Password,
-                              user.Phone,
-                              user.Address,
-                              deleteImage
-                          );
-
-                      }
-                  }
-
-                  // Bind the DataTable to the DataGridView
-                  teacherGrid.DataSource = dataTable;
-              }
-              catch (Exception ex)
-              {
-                  MessageBox.Show("Error loading teacher data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-              }
-          }*/
-
         private void LoadUserData(string role)
         {
             users = UserParser.ParseUsers("../../../../users.xml");
@@ -277,76 +225,36 @@ namespace Attendance_Management_System.Forms
             {
                 MessageBox.Show("Error searching data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            // handle delete btn
+         
         }
 
-        /* private void TeacherGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-         {
-             if (e.ColumnIndex == teacherGrid.Columns["Delete"].Index && e.RowIndex != -1)
-             {
-                 DialogResult result = MessageBox.Show("Are you sure you want to delete this row?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                 if (result == DialogResult.Yes)
-                 {
-                     string idToDelete = teacherGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString();
-
-                     if (Role == "teacher")
-                     {
-                         Teacher teacherToRemove = teachers.FirstOrDefault(t => t.Id == idToDelete);
-                         if (teacherToRemove != null)
-                         {
-                             teachers.Remove(teacherToRemove);
-                             users.Remove(teacherToRemove);
-                         }
-                     }
-                     else if (Role == "student")
-                     {
-                         Student studentToRemove = students.FirstOrDefault(s => s.Id == idToDelete);
-                         if (studentToRemove != null)
-                         {
-                             students.Remove(studentToRemove);
-                             users.Remove(studentToRemove);
-                         }
-                     }
-
-                     teacherGrid.Rows.RemoveAt(e.RowIndex);
-
-                     UserParser.UpdateUsers(users, "../../../../users.xml");
-
-                     foreach (var user in users)
-                     {
-                         MessageBox.Show(user.ToString());
-                     }
-                 }
-             }
-
-         }*/
+        // handle delete btn
 
         private void TeacherGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == teacherGrid.Columns["Delete"].Index && e.RowIndex >= 0 && e.RowIndex < teacherGrid.Rows.Count)
             {
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this row?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                
+                    string idToDelete = teacherGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+                string roleToDelete = Role.ToLower();
+
+                Console.WriteLine($"Attempting to delete row at index {e.RowIndex}");
+                DialogResult result = MessageBox.Show($"Are you sure you want to delete the {roleToDelete} with ID '{idToDelete}'?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
-                    string idToDelete = teacherGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString();
-
-                    Console.WriteLine($"Attempting to delete row at index {e.RowIndex}");
-
                     if (Role == "teacher")
                     {
                         Teacher teacherToRemove = teachers.FirstOrDefault(t => t.Id == idToDelete);
                         if (teacherToRemove != null)
                         {
-                            // Remove the teacher from the users list
+
                             users.Remove(teacherToRemove);
 
-                            // Update the XML file
-                            UserParser.RemoveUserById(users, "../../../../users.xml","../../../../class.xml", idToDelete);
+                            // -> update xml
+                            UserParser.RemoveUserById(users, "../../../../users.xml", "../../../../class.xml", idToDelete);
 
-                            // Update the DataGridView
-                            teachers.Remove(teacherToRemove);
+                            teachers.Remove(teacherToRemove); //->update grid
                             PopulateGrid(teachers);
 
                             Console.WriteLine($"Row deleted successfully. Remaining rows: {teacherGrid.Rows.Count}");
@@ -357,13 +265,13 @@ namespace Attendance_Management_System.Forms
                         Student studentToRemove = students.FirstOrDefault(s => s.Id == idToDelete);
                         if (studentToRemove != null)
                         {
-                            // Remove the student from the users list
+
                             users.Remove(studentToRemove);
 
-                            // Update the XML file
+
                             UserParser.RemoveUserById(users, "../../../../users.xml", "../../../../class.xml", idToDelete);
 
-                            // Update the DataGridView
+
                             students.Remove(studentToRemove);
                             PopulateGrid(students);
 
@@ -371,16 +279,49 @@ namespace Attendance_Management_System.Forms
                         }
                     }
 
-                    teacherGrid.Rows.RemoveAt(e.RowIndex);
+                    // --------  > Remove the row from the DataGridView
+                    try
+                    {
+                        teacherGrid.Rows.RemoveAt(e.RowIndex);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error removing row from DataGridView: " + ex.Message);
+
+                    }
+
+                    Console.WriteLine($"Row removed successfully. Remaining rows: {teacherGrid.Rows.Count}");
                 }
+            }
+
+            else if (e.ColumnIndex == teacherGrid.Columns["Update"].Index && e.RowIndex >= 0 && e.RowIndex < teacherGrid.Rows.Count)
+            {
+                // Extract data of the corresponding user row
+                DataGridViewRow selectedRow = teacherGrid.Rows[e.RowIndex];
+                string idToUpdate = selectedRow.Cells["ID"].Value.ToString();
+                int age = Convert.ToInt32(selectedRow.Cells["Age"].Value);
+                string password = selectedRow.Cells["Password"].Value.ToString();
+                string phone = selectedRow.Cells["Phone"].Value.ToString();
+                string address = selectedRow.Cells["Address"].Value.ToString();
+
+                // Pass the user data to the update form
+                UpdateUserForm updateForm = new UpdateUserForm(users,idToUpdate, password, age,   phone, address);
+
+                // Display the update form
+                DialogResult result = updateForm.ShowDialog();
+
+               
+              
             }
         }
 
+        //update 
+   
 
 
         private void btnInsertUser_Click(object sender, EventArgs e)
         {
-            InsertUserForm insform = new InsertUserForm(users,Role);
+            InsertUserForm insform = new InsertUserForm(users, Role);
             insform.ShowDialog();
         }
     }

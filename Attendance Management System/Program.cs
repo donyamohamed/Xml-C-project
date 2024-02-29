@@ -47,18 +47,15 @@ namespace Attendance_Management_System.Forms
             // see https://aka.ms/applicationconfiguration.
 
             ApplicationConfiguration.Initialize();
-            Application.Run(new testAdmin());
-
+            //Application.Run(new TeacherForm());
+             Application.Run(new AdminDashboardForm());
             // Application.Run(new testAdmin());
             //Application.Run(new FormSettings());
 
             // Application.Run(new testAdmin());
-           // Application.Run(new FormLogin());
+            //Application.Run(new FormLogin());
 
 
-
-
-          
 
         }
 

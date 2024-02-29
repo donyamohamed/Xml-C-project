@@ -211,7 +211,7 @@
             // 
             resources.ApplyResources(pictureBoxSettings, "pictureBoxSettings");
             pictureBoxSettings.Cursor = Cursors.Hand;
-            pictureBoxSettings.Image = Properties.Resources.OIP;
+           // pictureBoxSettings.Image = Properties.Resources.OIP;
             pictureBoxSettings.Name = "pictureBoxSettings";
             pictureBoxSettings.TabStop = false;
             toolTip.SetToolTip(pictureBoxSettings, resources.GetString("pictureBoxSettings.ToolTip"));
