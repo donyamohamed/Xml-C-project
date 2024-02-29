@@ -127,7 +127,7 @@ namespace Attendance_Management_System.Forms
                 TeacherForm teacherForm = new TeacherForm();
 
                 // open AdminForm
-                AdminForm adminForm = new AdminForm();
+                testAdmin adminForm = new testAdmin();
 
                 // open the form according to the role of the user
                 foreach (var user in Program.users)
