@@ -246,7 +246,6 @@ namespace Attendance_Management_System.Forms
             teacherAdminForm.Show();
             Hide();
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             try

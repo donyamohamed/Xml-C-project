@@ -57,7 +57,7 @@
             pictureBox8 = new PictureBox();
             pictureBox9 = new PictureBox();
             button5 = new Button();
-            button6 = new Button();
+            coursebutton = new Button();
             button7 = new Button();
             dataGridView1 = new DataGridView();
             label1 = new Label();
@@ -338,7 +338,7 @@
             panel4.Controls.Add(pictureBox8);
             panel4.Controls.Add(pictureBox9);
             panel4.Controls.Add(button5);
-            panel4.Controls.Add(button6);
+            panel4.Controls.Add(coursebutton);
             panel4.Controls.Add(button7);
             panel4.Dock = DockStyle.Left;
             panel4.Location = new Point(0, 188);
@@ -465,21 +465,23 @@
             button5.TabIndex = 10;
             button5.Text = "Classes";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
-            // button6
+            // coursebutton
             // 
-            button6.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 192);
-            button6.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Sitka Text", 13F, FontStyle.Bold);
-            button6.ForeColor = Color.Cornsilk;
-            button6.ImeMode = ImeMode.NoControl;
-            button6.Location = new Point(140, 372);
-            button6.Name = "button6";
-            button6.Size = new Size(223, 55);
-            button6.TabIndex = 8;
-            button6.Text = "Courses";
-            button6.UseVisualStyleBackColor = true;
+            coursebutton.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 192);
+            coursebutton.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
+            coursebutton.FlatStyle = FlatStyle.Flat;
+            coursebutton.Font = new Font("Sitka Text", 13F, FontStyle.Bold);
+            coursebutton.ForeColor = Color.Cornsilk;
+            coursebutton.ImeMode = ImeMode.NoControl;
+            coursebutton.Location = new Point(140, 372);
+            coursebutton.Name = "coursebutton";
+            coursebutton.Size = new Size(223, 55);
+            coursebutton.TabIndex = 8;
+            coursebutton.Text = "Courses";
+            coursebutton.UseVisualStyleBackColor = true;
+            coursebutton.Click += button6_Click;
             // 
             // button7
             // 
@@ -498,11 +500,13 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = SystemColors.Control;
+            dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(482, 286);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(883, 476);
+            dataGridView1.Size = new Size(935, 571);
             dataGridView1.TabIndex = 6;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -589,7 +593,7 @@
         private PictureBox pictureBox8;
         private PictureBox pictureBox9;
         private Button button5;
-        private Button button6;
+        private Button coursebutton;
         private Button button7;
         private DataGridView dataGridView1;
         private Label label1;

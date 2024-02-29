@@ -77,9 +77,9 @@ namespace Attendance_Management_System.Forms
             panel1.Controls.Add(panel3);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(5, 6, 5, 6);
+            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(387, 1055);
+            panel1.Size = new Size(339, 706);
             panel1.TabIndex = 3;
             // 
             // logout
@@ -90,9 +90,10 @@ namespace Attendance_Management_System.Forms
             logout.Font = new Font("Sitka Text", 13F, FontStyle.Bold);
             logout.ForeColor = Color.Cornsilk;
             logout.ImeMode = ImeMode.NoControl;
-            logout.Location = new Point(140, 855);
+            logout.Location = new Point(122, 641);
+            logout.Margin = new Padding(3, 2, 3, 2);
             logout.Name = "logout";
-            logout.Size = new Size(223, 55);
+            logout.Size = new Size(195, 41);
             logout.TabIndex = 17;
             logout.Text = "Log Out";
             logout.UseVisualStyleBackColor = true;
@@ -103,9 +104,10 @@ namespace Attendance_Management_System.Forms
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.ImeMode = ImeMode.NoControl;
             pictureBox4.InitialImage = null;
-            pictureBox4.Location = new Point(34, 838);
+            pictureBox4.Location = new Point(30, 628);
+            pictureBox4.Margin = new Padding(3, 2, 3, 2);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(100, 87);
+            pictureBox4.Size = new Size(88, 65);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 16;
             pictureBox4.TabStop = false;
@@ -114,9 +116,10 @@ namespace Attendance_Management_System.Forms
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.ImeMode = ImeMode.NoControl;
-            pictureBox1.Location = new Point(23, 391);
+            pictureBox1.Location = new Point(20, 293);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 87);
+            pictureBox1.Size = new Size(88, 65);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 15;
             pictureBox1.TabStop = false;
@@ -130,9 +133,10 @@ namespace Attendance_Management_System.Forms
             teacher_data.Font = new Font("Sitka Text", 13F, FontStyle.Bold);
             teacher_data.ForeColor = Color.Cornsilk;
             teacher_data.ImeMode = ImeMode.NoControl;
-            teacher_data.Location = new Point(140, 285);
+            teacher_data.Location = new Point(122, 214);
+            teacher_data.Margin = new Padding(3, 2, 3, 2);
             teacher_data.Name = "teacher_data";
-            teacher_data.Size = new Size(223, 55);
+            teacher_data.Size = new Size(195, 41);
             teacher_data.TabIndex = 14;
             teacher_data.Text = "Teachers";
             teacher_data.UseVisualStyleBackColor = true;
@@ -142,9 +146,10 @@ namespace Attendance_Management_System.Forms
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.ImeMode = ImeMode.NoControl;
-            pictureBox2.Location = new Point(23, 270);
+            pictureBox2.Location = new Point(20, 202);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(100, 86);
+            pictureBox2.Size = new Size(88, 64);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
@@ -154,9 +159,10 @@ namespace Attendance_Management_System.Forms
             picstudents.BackColor = Color.FromArgb(255, 192, 192);
             picstudents.Image = (Image)resources.GetObject("picstudents.Image");
             picstudents.ImeMode = ImeMode.NoControl;
-            picstudents.Location = new Point(23, 528);
+            picstudents.Location = new Point(20, 396);
+            picstudents.Margin = new Padding(3, 2, 3, 2);
             picstudents.Name = "picstudents";
-            picstudents.Size = new Size(100, 87);
+            picstudents.Size = new Size(88, 65);
             picstudents.SizeMode = PictureBoxSizeMode.Zoom;
             picstudents.TabIndex = 7;
             picstudents.TabStop = false;
@@ -165,9 +171,10 @@ namespace Attendance_Management_System.Forms
             // 
             picclass.Image = (Image)resources.GetObject("picclass.Image");
             picclass.ImeMode = ImeMode.NoControl;
-            picclass.Location = new Point(34, 688);
+            picclass.Location = new Point(30, 516);
+            picclass.Margin = new Padding(3, 2, 3, 2);
             picclass.Name = "picclass";
-            picclass.Size = new Size(100, 87);
+            picclass.Size = new Size(88, 65);
             picclass.SizeMode = PictureBoxSizeMode.Zoom;
             picclass.TabIndex = 9;
             picclass.TabStop = false;
@@ -180,9 +187,10 @@ namespace Attendance_Management_System.Forms
             classes_data.Font = new Font("Sitka Text", 13F, FontStyle.Bold);
             classes_data.ForeColor = Color.Cornsilk;
             classes_data.ImeMode = ImeMode.NoControl;
-            classes_data.Location = new Point(140, 707);
+            classes_data.Location = new Point(122, 530);
+            classes_data.Margin = new Padding(3, 2, 3, 2);
             classes_data.Name = "classes_data";
-            classes_data.Size = new Size(223, 55);
+            classes_data.Size = new Size(195, 41);
             classes_data.TabIndex = 10;
             classes_data.Text = "Classes";
             classes_data.UseVisualStyleBackColor = true;
@@ -196,9 +204,10 @@ namespace Attendance_Management_System.Forms
             course_data.Font = new Font("Sitka Text", 13F, FontStyle.Bold);
             course_data.ForeColor = Color.Cornsilk;
             course_data.ImeMode = ImeMode.NoControl;
-            course_data.Location = new Point(140, 548);
+            course_data.Location = new Point(122, 411);
+            course_data.Margin = new Padding(3, 2, 3, 2);
             course_data.Name = "course_data";
-            course_data.Size = new Size(223, 55);
+            course_data.Size = new Size(195, 41);
             course_data.TabIndex = 8;
             course_data.Text = "Courses";
             course_data.UseVisualStyleBackColor = true;
@@ -212,9 +221,10 @@ namespace Attendance_Management_System.Forms
             student_data.Font = new Font("Sitka Text", 13F, FontStyle.Bold);
             student_data.ForeColor = Color.Cornsilk;
             student_data.ImeMode = ImeMode.NoControl;
-            student_data.Location = new Point(140, 411);
+            student_data.Location = new Point(122, 308);
+            student_data.Margin = new Padding(3, 2, 3, 2);
             student_data.Name = "student_data";
-            student_data.Size = new Size(223, 55);
+            student_data.Size = new Size(195, 41);
             student_data.TabIndex = 6;
             student_data.Text = "Students";
             student_data.UseVisualStyleBackColor = true;
@@ -226,9 +236,9 @@ namespace Attendance_Management_System.Forms
             panel3.Controls.Add(pictureBox3);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
-            panel3.Margin = new Padding(5, 6, 5, 6);
+            panel3.Margin = new Padding(4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(387, 188);
+            panel3.Size = new Size(339, 141);
             panel3.TabIndex = 1;
             // 
             // admin_profile
@@ -240,9 +250,10 @@ namespace Attendance_Management_System.Forms
             admin_profile.Font = new Font("Sitka Text", 13F, FontStyle.Bold);
             admin_profile.ForeColor = Color.Cornsilk;
             admin_profile.ImeMode = ImeMode.NoControl;
-            admin_profile.Location = new Point(71, 126);
+            admin_profile.Location = new Point(62, 94);
+            admin_profile.Margin = new Padding(3, 2, 3, 2);
             admin_profile.Name = "admin_profile";
-            admin_profile.Size = new Size(223, 55);
+            admin_profile.Size = new Size(195, 41);
             admin_profile.TabIndex = 15;
             admin_profile.Text = "Admin";
             admin_profile.UseVisualStyleBackColor = true;
@@ -252,9 +263,10 @@ namespace Attendance_Management_System.Forms
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.ImeMode = ImeMode.NoControl;
-            pictureBox3.Location = new Point(139, 34);
+            pictureBox3.Location = new Point(122, 26);
+            pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(100, 87);
+            pictureBox3.Size = new Size(88, 65);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 4;
             pictureBox3.TabStop = false;
@@ -267,10 +279,10 @@ namespace Attendance_Management_System.Forms
             panel2.Controls.Add(minimizebox);
             panel2.Controls.Add(admin);
             panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(387, 0);
-            panel2.Margin = new Padding(5, 6, 5, 6);
+            panel2.Location = new Point(339, 0);
+            panel2.Margin = new Padding(4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1035, 120);
+            panel2.Size = new Size(874, 90);
             panel2.TabIndex = 4;
             // 
             // closebox
@@ -280,7 +292,7 @@ namespace Attendance_Management_System.Forms
             closebox.ImeMode = ImeMode.NoControl;
             closebox.Location = new Point(989, 3);
             closebox.Name = "closebox";
-            closebox.Size = new Size(43, 43);
+            closebox.Size = new Size(38, 32);
             closebox.SizeMode = PictureBoxSizeMode.Zoom;
             closebox.TabIndex = 17;
             closebox.TabStop = false;
@@ -293,7 +305,7 @@ namespace Attendance_Management_System.Forms
             minimizebox.ImeMode = ImeMode.NoControl;
             minimizebox.Location = new Point(931, 3);
             minimizebox.Name = "minimizebox";
-            minimizebox.Size = new Size(52, 43);
+            minimizebox.Size = new Size(46, 32);
             minimizebox.SizeMode = PictureBoxSizeMode.Zoom;
             minimizebox.TabIndex = 16;
             minimizebox.TabStop = false;
@@ -304,20 +316,21 @@ namespace Attendance_Management_System.Forms
             admin.AutoSize = true;
             admin.Font = new Font("Sitka Text", 13F, FontStyle.Bold);
             admin.ForeColor = Color.Transparent;
-            admin.Location = new Point(165, 49);
+            admin.Location = new Point(144, 37);
             admin.Name = "admin";
-            admin.Size = new Size(210, 32);
+            admin.Size = new Size(170, 26);
             admin.TabIndex = 0;
             admin.Text = "Admin Dashboard";
             // 
             // testAdmin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1422, 1055);
+            ClientSize = new Size(1213, 591);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "testAdmin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "testAdmin";

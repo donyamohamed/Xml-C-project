@@ -42,9 +42,10 @@ namespace Attendance_Management_System.classes
                     {
                         appConfig.Authors[i] = authorsNodes[i].InnerText;
                     }
-                    AppSettings.BackupInterval = int.Parse(appConfigNode.SelectSingleNode("appSettings/updateInterval").InnerText);
-                    AppSettings.Language = appConfigNode.SelectSingleNode("appSettings/language").InnerText;
-                    AppSettings.DateFormats = appConfigNode.SelectSingleNode("appSettings/DateFormat").InnerText;
+                    appConfig.BackupInterval = int.Parse(appConfigNode.SelectSingleNode("appSettings/updateInterval").InnerText);
+                    appConfig.Language = appConfigNode.SelectSingleNode("appSettings/language").InnerText;
+                    appConfig.DateFormats = appConfigNode.SelectSingleNode("appSettings/DateFormat").InnerText;
+                    // appConfig.AppSettings = appSettings;
                 }
             }
             catch (Exception ex)
@@ -128,15 +129,15 @@ namespace Attendance_Management_System.classes
             appConfiguration.AppendChild(appSettings);
 
             XmlElement updateInterval = doc.CreateElement("updateInterval");
-            updateInterval.InnerText = AppSettings.BackupInterval.ToString();
+            updateInterval.InnerText = appConfig.BackupInterval.ToString();
             appSettings.AppendChild(updateInterval);
 
             XmlElement language = doc.CreateElement("language");
-            language.InnerText = AppSettings.Language;
+            language.InnerText = appConfig.Language;
             appSettings.AppendChild(language);
 
             XmlElement DateFormat = doc.CreateElement("DateFormat");
-            DateFormat.InnerText = AppSettings.DateFormats;
+            DateFormat.InnerText = appConfig.DateFormats;
             appSettings.AppendChild(DateFormat);
 
             root.AppendChild(appConfiguration);
