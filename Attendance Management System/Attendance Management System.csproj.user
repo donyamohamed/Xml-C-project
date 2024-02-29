@@ -13,7 +13,7 @@
     <Compile Update="Forms\InsertCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="TeachersAdminForm.cs">
+    <Compile Update="controls\TeachersAdminForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Forms\AdminClasses.cs">
