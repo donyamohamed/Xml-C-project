@@ -4,7 +4,7 @@
     <classId>1CS</classId>
     <courseId>1C</courseId>
     <teacherId>1T</teacherId>
-    <studentId id="2S">
+    <studentId id="1S">
       <session>
         <date>2022-03-22</date>
         <status>1</status>
@@ -24,21 +24,35 @@
     </studentId>
   </class>
   <class>
-    <classId>2CS</classId>
+    <classId>1CS</classId>
     <courseId>2C</courseId>
     <teacherId>2T</teacherId>
-    <studentId id="3S">
+    <studentId id="1S">
       <session>
         <date>2023-04-04</date>
-        <status>-1</status>
+        <status>1</status>
       </session>
       <session>
         <date>2023-04-05</date>
-        <status>1</status>
+        <status>-1</status>
       </session>
       <session>
         <date>2023-04-06</date>
+        <status>-1</status>
+      </session>
+    </studentId>
+    <studentId id="3S">
+      <session>
+        <date>2023-04-04</date>
         <status>1</status>
+      </session>
+      <session>
+        <date>2023-04-05</date>
+        <status>-1</status>
+      </session>
+      <session>
+        <date>2023-04-06</date>
+        <status>-1</status>
       </session>
     </studentId>
   </class>

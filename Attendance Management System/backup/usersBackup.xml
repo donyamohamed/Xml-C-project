@@ -4,31 +4,21 @@
     <id>1S</id>
     <fname>Mahmoud</fname>
     <lname>Ibrahim</lname>
-    <age>18</age>
+    <age>23</age>
     <email>mohmoud@gmail.com</email>
     <password>Aab@123</password>
     <phone>01123568123</phone>
-    <address>alex</address>
+    <address>Alex</address>
   </user>
   <user role="student">
     <id>2S</id>
     <fname>Mahmoud</fname>
     <lname>Ibrahim</lname>
     <age>23</age>
-    <email>mohmoudah@gmail.com</email>
-    <password>Aabe@123</password>
-    <phone>01143568123</phone>
-    <address>cairo</address>
-  </user>
-  <user role="student">
-    <id>3S</id>
-    <fname>Muhamed</fname>
-    <lname>Samy</lname>
-    <age>26</age>
-    <email>Qamary@gmail.com</email>
-    <password>Qamary@123</password>
-    <phone>01093591700</phone>
-    <address>mansoura</address>
+    <email>mohmoud11@gmail.com</email>
+    <password>Aab@123</password>
+    <phone>01123568123</phone>
+    <address>Alex</address>
   </user>
   <user role="admin">
     <id>1A</id>
@@ -41,6 +31,16 @@
     <address>Damitta</address>
   </user>
   <user role="teacher">
+    <id>1T</id>
+    <fname>Ayman</fname>
+    <lname>Ahmed</lname>
+    <age>40</age>
+    <email>Ayman@gmail.com</email>
+    <password>Gam%456</password>
+    <phone>01234567123</phone>
+    <address>Cairo</address>
+  </user>
+  <user role="teacher">
     <id>2T</id>
     <fname>Mohamed</fname>
     <lname>Ahmed</lname>
@@ -48,6 +48,6 @@
     <email>mohamed@gmail.com</email>
     <password>Gab%456</password>
     <phone>01234567123</phone>
-    <address>alex</address>
+    <address>Cairo</address>
   </user>
 </Users>
