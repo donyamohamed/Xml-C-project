@@ -465,6 +465,16 @@ namespace Attendance_Management_System.Forms
 
         }
 
+        private void buttonToExcel_Click(object sender, EventArgs e)
+        {
+            dataGridViewStudentStatus.SelectAll();
+            DataObject dataObj = dataGridViewStudentStatus.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
+            // Microsoft.Office.Interop.Excel.Application xlexcel = new Microsoft.Office.Interop.Excel.Application();
+
+        }
+
 
         /*
         private void dataGridViewStudentStatus_CellClick(object sender, DataGridViewCellEventArgs e)

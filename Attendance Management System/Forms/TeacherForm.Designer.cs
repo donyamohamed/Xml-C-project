@@ -77,6 +77,7 @@
             label2 = new Label();
             label3 = new Label();
             buttonExpPDF = new Button();
+            buttonToExcel = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).BeginInit();
             groupBoxProfileData.SuspendLayout();
@@ -458,7 +459,7 @@
             // 
             // textBoxCouseID
             // 
-            textBoxCouseID.Location = new Point(12, 415);
+            textBoxCouseID.Location = new Point(12, 395);
             textBoxCouseID.Name = "textBoxCouseID";
             textBoxCouseID.Size = new Size(119, 27);
             textBoxCouseID.TabIndex = 9;
@@ -466,7 +467,7 @@
             // 
             // textBoxCourseName
             // 
-            textBoxCourseName.Location = new Point(12, 459);
+            textBoxCourseName.Location = new Point(12, 433);
             textBoxCourseName.Name = "textBoxCourseName";
             textBoxCourseName.Size = new Size(119, 27);
             textBoxCourseName.TabIndex = 10;
@@ -474,7 +475,7 @@
             // 
             // textBoxCourseDescription
             // 
-            textBoxCourseDescription.Location = new Point(12, 503);
+            textBoxCourseDescription.Location = new Point(12, 471);
             textBoxCourseDescription.Name = "textBoxCourseDescription";
             textBoxCourseDescription.Size = new Size(119, 27);
             textBoxCourseDescription.TabIndex = 11;
@@ -482,7 +483,7 @@
             // 
             // textBoxCourseSessions
             // 
-            textBoxCourseSessions.Location = new Point(12, 547);
+            textBoxCourseSessions.Location = new Point(12, 509);
             textBoxCourseSessions.Name = "textBoxCourseSessions";
             textBoxCourseSessions.Size = new Size(119, 27);
             textBoxCourseSessions.TabIndex = 12;
@@ -504,7 +505,7 @@
             // 
             buttonAttend.BackColor = Color.Green;
             buttonAttend.ForeColor = Color.White;
-            buttonAttend.Location = new Point(12, 653);
+            buttonAttend.Location = new Point(12, 647);
             buttonAttend.Name = "buttonAttend";
             buttonAttend.Size = new Size(119, 39);
             buttonAttend.TabIndex = 14;
@@ -517,7 +518,7 @@
             // 
             buttonAbsent.BackColor = Color.Red;
             buttonAbsent.ForeColor = Color.White;
-            buttonAbsent.Location = new Point(12, 698);
+            buttonAbsent.Location = new Point(12, 697);
             buttonAbsent.Name = "buttonAbsent";
             buttonAbsent.Size = new Size(119, 39);
             buttonAbsent.TabIndex = 15;
@@ -562,7 +563,7 @@
             // 
             buttonExpPDF.BackColor = Color.Purple;
             buttonExpPDF.ForeColor = Color.White;
-            buttonExpPDF.Location = new Point(12, 580);
+            buttonExpPDF.Location = new Point(12, 547);
             buttonExpPDF.Name = "buttonExpPDF";
             buttonExpPDF.Size = new Size(119, 39);
             buttonExpPDF.TabIndex = 18;
@@ -570,12 +571,25 @@
             buttonExpPDF.UseVisualStyleBackColor = false;
             buttonExpPDF.Click += buttonExpPDF_Click;
             // 
+            // buttonToExcel
+            // 
+            buttonToExcel.BackColor = Color.RebeccaPurple;
+            buttonToExcel.ForeColor = Color.White;
+            buttonToExcel.Location = new Point(12, 597);
+            buttonToExcel.Name = "buttonToExcel";
+            buttonToExcel.Size = new Size(119, 39);
+            buttonToExcel.TabIndex = 19;
+            buttonToExcel.Text = "to .. EXCEL";
+            buttonToExcel.UseVisualStyleBackColor = false;
+            buttonToExcel.Click += buttonToExcel_Click;
+            // 
             // TeacherForm
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1200, 749);
+            Controls.Add(buttonToExcel);
             Controls.Add(buttonExpPDF);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -672,5 +686,6 @@
         private Label label2;
         private Label label3;
         private Button buttonExpPDF;
+        private Button buttonToExcel;
     }
 }
