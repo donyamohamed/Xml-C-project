@@ -646,10 +646,6 @@ namespace Attendance_Management_System.Forms
             button6.TabIndex = 8;
             button6.Text = "Courses";
             button6.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
-            //button6.Click += button6_Click;
-=======
->>>>>>> fd467c3aa78d535764f73af6dc4b75308695e4fc
             // 
             // button7
             // 
@@ -680,10 +676,6 @@ namespace Attendance_Management_System.Forms
             button8.TabIndex = 6;
             button8.Text = "button8";
             button8.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
-          //  button8.Click += button8_Click_1;
-=======
->>>>>>> fd467c3aa78d535764f73af6dc4b75308695e4fc
             // 
             // TeacherAdminForm
             // 
