@@ -28,7 +28,7 @@ namespace Attendance_Management_System.Forms
 
             timer1.Start();
 
-        
+
         }
         private void StudentForm_Shown(object sender, EventArgs e)
         {
@@ -53,12 +53,12 @@ namespace Attendance_Management_System.Forms
                     allCourse.Visible = false;
                 }
 
-         
+
                 butReport.Enabled = false;
             }
             else
             {
-              
+
                 butReport.Enabled = true;
             }
         }
@@ -216,7 +216,17 @@ namespace Attendance_Management_System.Forms
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Check the user's response
+            if (result == DialogResult.Yes)
+            {
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();
+
+                this.Hide();
+
+            }
         }
 
         private void pictureBoxMinm_Click(object sender, EventArgs e)
@@ -239,10 +249,10 @@ namespace Attendance_Management_System.Forms
             }
         }
 
-   
+
         // start handle report
-        
-       
+
+
 
         private void butReport_Click(object sender, EventArgs e)
         {
@@ -255,7 +265,7 @@ namespace Attendance_Management_System.Forms
             {
                 bool includeCourseFilter = true;
 
-              
+
                 string xsltTemplate = XsltGenerator.GenerateXSLTTemplateForStudent(userName, userId, selectedCourseName, includeCourseFilter, sessionData);
 
                 string xmlFilePath = "../../../../class.xml";
@@ -291,7 +301,7 @@ namespace Attendance_Management_System.Forms
 
         private void StudentForm_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -304,6 +314,11 @@ namespace Attendance_Management_System.Forms
             this.Close();
             FormLogin loginForm = new FormLogin();
             loginForm.Show();
+        }
+
+        private void studentGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

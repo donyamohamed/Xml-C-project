@@ -13,10 +13,10 @@ using System.Xml;
 
 namespace Attendance_Management_System.Forms
 {
-    public partial class testAdmin : Form
+    public partial class StartAdmin : Form
     {
         private string role;
-        public testAdmin()
+        public StartAdmin()
         {
             InitializeComponent();
         }
@@ -35,7 +35,7 @@ namespace Attendance_Management_System.Forms
         {
             role = "teacher";
           
-            TeacherAdminForm teacherAdminForm = new TeacherAdminForm(role);
+            UserAdminForm teacherAdminForm = new UserAdminForm(role);
             teacherAdminForm.Role = role;
             teacherAdminForm.Show();
             Hide();
@@ -51,7 +51,7 @@ namespace Attendance_Management_System.Forms
         private void student_data_Click(object sender, EventArgs e)
         {
             role = "student";
-            TeacherAdminForm studentAdminForm = new TeacherAdminForm(role);
+            UserAdminForm studentAdminForm = new UserAdminForm(role);
             studentAdminForm.Role = role;
             studentAdminForm.Show();
             Hide();
@@ -59,7 +59,7 @@ namespace Attendance_Management_System.Forms
 
         private void classes_data_Click(object sender, EventArgs e)
         {
-            classAdmin classAdmin1 = new classAdmin();
+            StartAdmin classAdmin1 = new StartAdmin();
 
             classAdmin1.Show();
             Hide();
@@ -68,7 +68,7 @@ namespace Attendance_Management_System.Forms
         private void course_data_Click(object sender, EventArgs e)
         {
             role = "course";
-            TeacherAdminForm courseAdminForm = new TeacherAdminForm(role);
+            UserAdminForm courseAdminForm = new UserAdminForm(role);
             courseAdminForm.Role = role;
             courseAdminForm.Show();
             Hide();
@@ -86,7 +86,17 @@ namespace Attendance_Management_System.Forms
 
         private void closebox_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Check the user's response
+            if (result == DialogResult.Yes)
+            {
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();
+
+                this.Hide();
+
+            }
         }
 
         // test student 

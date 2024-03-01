@@ -104,7 +104,7 @@
             // label2
             // 
             resources.ApplyResources(label2, "label2");
-            label2.ForeColor = Color.Purple;
+            label2.ForeColor = Color.IndianRed;
             label2.Name = "label2";
             label2.Tag = "العنوان نظام الحضور والإنصراف";
             toolTip1.SetToolTip(label2, resources.GetString("label2.ToolTip"));
@@ -138,7 +138,7 @@
             // label9
             // 
             resources.ApplyResources(label9, "label9");
-            label9.ForeColor = SystemColors.HotTrack;
+            label9.ForeColor = Color.IndianRed;
             label9.Name = "label9";
             label9.Tag = "وقت تصميم البرنامج";
             toolTip1.SetToolTip(label9, resources.GetString("label9.ToolTip"));
@@ -154,7 +154,7 @@
             // label8
             // 
             resources.ApplyResources(label8, "label8");
-            label8.ForeColor = SystemColors.HotTrack;
+            label8.ForeColor = Color.IndianRed;
             label8.Name = "label8";
             label8.Tag = "المصممون";
             toolTip1.SetToolTip(label8, resources.GetString("label8.ToolTip"));
@@ -170,7 +170,7 @@
             // label5
             // 
             resources.ApplyResources(label5, "label5");
-            label5.ForeColor = SystemColors.HotTrack;
+            label5.ForeColor = Color.IndianRed;
             label5.Name = "label5";
             label5.Tag = "وصف البرنامحج";
             toolTip1.SetToolTip(label5, resources.GetString("label5.ToolTip"));
@@ -186,7 +186,7 @@
             // label4
             // 
             resources.ApplyResources(label4, "label4");
-            label4.ForeColor = SystemColors.HotTrack;
+            label4.ForeColor = Color.IndianRed;
             label4.Name = "label4";
             label4.Tag = "نسخة البرنامج";
             toolTip1.SetToolTip(label4, resources.GetString("label4.ToolTip"));
@@ -202,7 +202,7 @@
             // UserEmail
             // 
             resources.ApplyResources(UserEmail, "UserEmail");
-            UserEmail.ForeColor = SystemColors.HotTrack;
+            UserEmail.ForeColor = Color.IndianRed;
             UserEmail.Name = "UserEmail";
             UserEmail.Tag = "";
             toolTip1.SetToolTip(UserEmail, resources.GetString("UserEmail.ToolTip"));
@@ -234,7 +234,7 @@
             // buttonLoginSaveSettings
             // 
             resources.ApplyResources(buttonLoginSaveSettings, "buttonLoginSaveSettings");
-            buttonLoginSaveSettings.BackColor = Color.Green;
+            buttonLoginSaveSettings.BackColor = Color.IndianRed;
             buttonLoginSaveSettings.ForeColor = Color.White;
             buttonLoginSaveSettings.Name = "buttonLoginSaveSettings";
             buttonLoginSaveSettings.Tag = "Save Settings";
@@ -245,7 +245,7 @@
             // label12
             // 
             resources.ApplyResources(label12, "label12");
-            label12.ForeColor = SystemColors.HotTrack;
+            label12.ForeColor = Color.IndianRed;
             label12.Name = "label12";
             label12.Tag = "Settings Changed at: ";
             toolTip1.SetToolTip(label12, resources.GetString("label12.ToolTip"));
@@ -275,7 +275,7 @@
             // label11
             // 
             resources.ApplyResources(label11, "label11");
-            label11.ForeColor = SystemColors.HotTrack;
+            label11.ForeColor = Color.IndianRed;
             label11.Name = "label11";
             label11.Tag = "System Date Format";
             toolTip1.SetToolTip(label11, resources.GetString("label11.ToolTip"));
@@ -283,7 +283,7 @@
             // label7
             // 
             resources.ApplyResources(label7, "label7");
-            label7.ForeColor = SystemColors.HotTrack;
+            label7.ForeColor = Color.IndianRed;
             label7.Name = "label7";
             label7.Tag = "لغة البرنامج";
             toolTip1.SetToolTip(label7, resources.GetString("label7.ToolTip"));
@@ -291,7 +291,7 @@
             // label10
             // 
             resources.ApplyResources(label10, "label10");
-            label10.ForeColor = SystemColors.HotTrack;
+            label10.ForeColor = Color.IndianRed;
             label10.Name = "label10";
             label10.Tag = "Backup Interval (in minutes)";
             toolTip1.SetToolTip(label10, resources.GetString("label10.ToolTip"));
@@ -299,7 +299,7 @@
             // label3
             // 
             resources.ApplyResources(label3, "label3");
-            label3.ForeColor = Color.Purple;
+            label3.ForeColor = Color.IndianRed;
             label3.Name = "label3";
             label3.Tag = "الوقت الحالى";
             toolTip1.SetToolTip(label3, resources.GetString("label3.ToolTip"));
@@ -315,7 +315,7 @@
             // button1
             // 
             resources.ApplyResources(button1, "button1");
-            button1.BackColor = Color.Green;
+            button1.BackColor = Color.LightSlateGray;
             button1.ForeColor = Color.White;
             button1.Name = "button1";
             toolTip1.SetToolTip(button1, resources.GetString("button1.ToolTip"));
@@ -343,7 +343,7 @@
             // label13
             // 
             resources.ApplyResources(label13, "label13");
-            label13.ForeColor = SystemColors.HotTrack;
+            label13.ForeColor = Color.IndianRed;
             label13.Name = "label13";
             label13.Tag = "Backup File Location";
             toolTip1.SetToolTip(label13, resources.GetString("label13.ToolTip"));

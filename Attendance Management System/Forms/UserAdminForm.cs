@@ -17,7 +17,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Attendance_Management_System.Forms
 {
-    public partial class TeacherAdminForm : Form
+    public partial class UserAdminForm : Form
     {
         public string Role { get; set; }
 
@@ -25,7 +25,7 @@ namespace Attendance_Management_System.Forms
         private List<Teacher> teachers;
         private List<Student> students;
 
-        public TeacherAdminForm(string role)
+        public UserAdminForm(string role)
         {
             InitializeComponent();
             Role = role;
@@ -43,7 +43,7 @@ namespace Attendance_Management_System.Forms
         private void BackButton_Click_1(object sender, EventArgs e)
         {
 
-            AdminForm adminForm = new AdminForm();
+            StartAdmin adminForm = new StartAdmin();
             adminForm.Show();
             Hide();
         }
@@ -55,7 +55,14 @@ namespace Attendance_Management_System.Forms
             teacherGrid.AutoGenerateColumns = false;
             teacherGrid.AllowUserToAddRows = false;
             teacherGrid.RowTemplate.Height = 60;
-            // Define DataGridView columns
+            teacherGrid.DefaultCellStyle.Font = new Font("Arial", 12); // Set the default font
+
+         
+            foreach (DataGridViewColumn column in teacherGrid.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                column.FillWeight = 1; 
+            }
             id.DataPropertyName = "ID";
             teacherFname.DataPropertyName = "Fname";
             teacherLname.DataPropertyName = "Lname";
@@ -189,7 +196,7 @@ namespace Attendance_Management_System.Forms
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            AdminForm adminForm = new AdminForm();
+            StartAdmin adminForm = new StartAdmin();
             adminForm.Show();
             Hide();
         }
@@ -212,7 +219,7 @@ namespace Attendance_Management_System.Forms
 
         }
 
-        private void TeacherAdminForm_Load(object sender, EventArgs e)
+        private void UserAdminForm_Load(object sender, EventArgs e)
         {
 
         }
@@ -224,14 +231,24 @@ namespace Attendance_Management_System.Forms
 
         private void closebox_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Check the user's response
+            if (result == DialogResult.Yes)
+            {
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();
+
+                this.Hide();
+
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             string role = "student";
             LoadUserData(role);
-            TeacherAdminForm studentAdminForm = new TeacherAdminForm(role);
+            UserAdminForm studentAdminForm = new UserAdminForm(role);
             studentAdminForm.Role = role;
             studentAdminForm.Show();
             Hide();
@@ -241,9 +258,24 @@ namespace Attendance_Management_System.Forms
         {
             string role = "teacher";
             LoadUserData(role);
-            TeacherAdminForm teacherAdminForm = new TeacherAdminForm(role);
+            UserAdminForm teacherAdminForm = new UserAdminForm(role);
             teacherAdminForm.Role = role;
             teacherAdminForm.Show();
+            Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)//courses
+        {
+
+            CourseAdminForm courseAdminForm = new CourseAdminForm();
+            courseAdminForm.Show();
+            Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e) //class
+        {
+            ClassAdminForm classAdminForm = new ClassAdminForm();
+            classAdminForm.Show();
             Hide();
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -276,7 +308,7 @@ namespace Attendance_Management_System.Forms
             {
                 MessageBox.Show("Error searching data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-         
+
         }
 
         // handle delete btn
@@ -285,8 +317,8 @@ namespace Attendance_Management_System.Forms
         {
             if (e.ColumnIndex == teacherGrid.Columns["Delete"].Index && e.RowIndex >= 0 && e.RowIndex < teacherGrid.Rows.Count)
             {
-                
-                    string idToDelete = teacherGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+
+                string idToDelete = teacherGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString();
                 string roleToDelete = Role.ToLower();
 
                 Console.WriteLine($"Attempting to delete row at index {e.RowIndex}");
@@ -356,18 +388,18 @@ namespace Attendance_Management_System.Forms
                 string address = selectedRow.Cells["Address"].Value.ToString();
 
                 // Pass the user data to the update form
-                UpdateUserForm updateForm = new UpdateUserForm(users,idToUpdate, password, age,   phone, address);
+                UpdateUserForm updateForm = new UpdateUserForm(users, idToUpdate, password, age, phone, address);
 
                 // Display the update form
                 DialogResult result = updateForm.ShowDialog();
 
-               
-              
+
+
             }
         }
 
         //update 
-   
+
 
 
         private void btnInsertUser_Click(object sender, EventArgs e)
@@ -375,5 +407,13 @@ namespace Attendance_Management_System.Forms
             InsertUserForm insform = new InsertUserForm(users, Role);
             insform.ShowDialog();
         }
+
+        private void buInsert_Click(object sender, EventArgs e)
+        {
+            InsertUserForm insform = new InsertUserForm(users, Role);
+            insform.ShowDialog();
+        }
+
+       
     }
 }

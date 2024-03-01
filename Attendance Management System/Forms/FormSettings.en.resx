@@ -118,8 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 130</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 21</value>
+    <value>72, 23</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBoxClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -128,8 +135,14 @@
   <data name="pictureBoxClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="pictureBoxClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1337, 12</value>
+  </data>
+  <data name="pictureBoxClose.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
   <data name="pictureBoxClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 50</value>
+    <value>60, 55</value>
   </data>
   <data name="pictureBoxClose.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -140,8 +153,14 @@
   <data name="pictureBoxMinimize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="pictureBoxMinimize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1269, 12</value>
+  </data>
+  <data name="pictureBoxMinimize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
   <data name="pictureBoxMinimize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 50</value>
+    <value>60, 55</value>
   </data>
   <data name="pictureBoxMinimize.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -156,8 +175,14 @@
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>323, 104</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>678, 50</value>
+    <value>845, 62</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Attendance System Management</value>
@@ -169,13 +194,16 @@
     <value>NoControl</value>
   </data>
   <data name="labelAppCreationDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 115</value>
+    <value>198, 126</value>
+  </data>
+  <data name="labelAppCreationDate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelAppCreationDate.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="labelAppCreationDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 21</value>
+    <value>343, 23</value>
   </data>
   <data name="labelAppCreationDate.Text" xml:space="preserve">
     <value>App Description</value>
@@ -187,13 +215,16 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 115</value>
+    <value>7, 126</value>
+  </data>
+  <data name="label9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label9.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 21</value>
+    <value>208, 23</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>App Creation Date:</value>
@@ -202,10 +233,16 @@
     <value>On</value>
   </data>
   <data name="listBoxDevelopers.ItemHeight" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>23</value>
+  </data>
+  <data name="listBoxDevelopers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 218</value>
+  </data>
+  <data name="listBoxDevelopers.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="listBoxDevelopers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 88</value>
+    <value>364, 96</value>
   </data>
   <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt, style=Bold, Italic</value>
@@ -214,13 +251,16 @@
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 195</value>
+    <value>7, 214</value>
+  </data>
+  <data name="label8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label8.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 21</value>
+    <value>162, 23</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>App Developers</value>
@@ -232,13 +272,16 @@
     <value>NoControl</value>
   </data>
   <data name="labelAppDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 155</value>
+    <value>176, 170</value>
+  </data>
+  <data name="labelAppDescription.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelAppDescription.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="labelAppDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 21</value>
+    <value>365, 23</value>
   </data>
   <data name="labelAppDescription.Text" xml:space="preserve">
     <value>App Description</value>
@@ -250,13 +293,16 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 155</value>
+    <value>7, 170</value>
+  </data>
+  <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label5.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 21</value>
+    <value>178, 23</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>App Description:</value>
@@ -268,13 +314,16 @@
     <value>NoControl</value>
   </data>
   <data name="labelAppVersion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 75</value>
+    <value>139, 82</value>
+  </data>
+  <data name="labelAppVersion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelAppVersion.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="labelAppVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 21</value>
+    <value>402, 23</value>
   </data>
   <data name="labelAppVersion.Text" xml:space="preserve">
     <value>App Version</value>
@@ -286,13 +335,16 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 75</value>
+    <value>7, 82</value>
+  </data>
+  <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label4.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 21</value>
+    <value>136, 23</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>App Version:</value>
@@ -304,13 +356,16 @@
     <value>NoControl</value>
   </data>
   <data name="labelAppName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>109, 35</value>
+    <value>131, 38</value>
+  </data>
+  <data name="labelAppName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelAppName.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="labelAppName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>342, 21</value>
+    <value>410, 23</value>
   </data>
   <data name="labelAppName.Text" xml:space="preserve">
     <value>App Name</value>
@@ -321,19 +376,21 @@
   <data name="UserEmail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="UserEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 38</value>
+  </data>
+  <data name="UserEmail.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
   <data name="UserEmail.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="UserEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 21</value>
+    <value>136, 23</value>
   </data>
   <data name="UserEmail.Text" xml:space="preserve">
     <value>App Name:</value>
   </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 151</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
@@ -341,7 +398,7 @@
     <value>2, 3, 2, 3</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>381, 279</value>
+    <value>457, 306</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>About The System</value>
@@ -352,11 +409,17 @@
   <data name="labelshowdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="labelshowdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 280</value>
+  </data>
+  <data name="labelshowdate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
   <data name="labelshowdate.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="labelshowdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 21</value>
+    <value>222, 23</value>
   </data>
   <data name="labelshowdate.Text" xml:space="preserve">
     <value>save your changes</value>
@@ -368,10 +431,13 @@
     <value>NoControl</value>
   </data>
   <data name="buttonLoginSaveSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>232, 225</value>
+    <value>278, 246</value>
+  </data>
+  <data name="buttonLoginSaveSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonLoginSaveSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 52</value>
+    <value>306, 57</value>
   </data>
   <data name="buttonLoginSaveSettings.Text" xml:space="preserve">
     <value>Save Settings</value>
@@ -382,41 +448,59 @@
   <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 257</value>
+  </data>
+  <data name="label12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
   <data name="label12.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 21</value>
+    <value>222, 23</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>Settings Changed at: </value>
   </data>
+  <data name="numericUpDownBackup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>278, 36</value>
+  </data>
+  <data name="numericUpDownBackup.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
   <data name="numericUpDownBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 27</value>
+    <value>323, 32</value>
   </data>
   <data name="listBoxSysLang.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>On</value>
   </data>
   <data name="listBoxSysLang.ItemHeight" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>23</value>
+  </data>
+  <data name="listBoxSysLang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>236, 73</value>
+  </data>
+  <data name="listBoxSysLang.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="listBoxSysLang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 46</value>
+    <value>364, 50</value>
   </data>
   <data name="listBoxDateFormat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>On</value>
   </data>
   <data name="listBoxDateFormat.ItemHeight" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="listBoxDateFormat.Items1" xml:space="preserve">
-    <value>dd-MM-yyyy</value>
+    <value>23</value>
   </data>
   <data name="listBoxDateFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>197, 119</value>
+    <value>236, 130</value>
+  </data>
+  <data name="listBoxDateFormat.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="listBoxDateFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 88</value>
+    <value>364, 96</value>
   </data>
   <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt, style=Bold, Italic</value>
@@ -425,13 +509,16 @@
     <value>NoControl</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 119</value>
+    <value>7, 130</value>
+  </data>
+  <data name="label11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label11.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 21</value>
+    <value>222, 23</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
     <value>System Date Format</value>
@@ -442,11 +529,17 @@
   <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 73</value>
+  </data>
+  <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
   <data name="label7.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 21</value>
+    <value>192, 23</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>System Language</value>
@@ -457,17 +550,20 @@
   <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 38</value>
+  </data>
+  <data name="label10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
   <data name="label10.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 21</value>
+    <value>281, 23</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>Backup Interval (in minutes)</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>470, 151</value>
   </data>
   <data name="groupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
@@ -476,10 +572,7 @@
     <value>2, 3, 2, 3</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>522, 279</value>
-  </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+    <value>626, 306</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>System Configurations</value>
@@ -494,10 +587,13 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 23</value>
+    <value>71, 25</value>
+  </data>
+  <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 16</value>
+    <value>110, 19</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -514,8 +610,14 @@
   <data name="labelDteTimeNow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="labelDteTimeNow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 25</value>
+  </data>
+  <data name="labelDteTimeNow.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
   <data name="labelDteTimeNow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 16</value>
+    <value>130, 19</value>
   </data>
   <data name="labelDteTimeNow.Text" xml:space="preserve">
     <value>Current Date ...</value>
@@ -526,8 +628,14 @@
   <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>278, 160</value>
+  </data>
+  <data name="button1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 52</value>
+    <value>306, 57</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Restore Backups</value>
@@ -536,7 +644,7 @@
     <value>On</value>
   </data>
   <data name="listBoxBackupFileLocations.ItemHeight" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>23</value>
   </data>
   <data name="listBoxBackupFileLocations.Items" xml:space="preserve">
     <value>Program.appConfig.UsersBackupFilePath</value>
@@ -548,16 +656,13 @@
     <value>Program.appConfig.ClassesBackupFilePath</value>
   </data>
   <data name="listBoxBackupFileLocations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 26</value>
+    <value>217, 28</value>
+  </data>
+  <data name="listBoxBackupFileLocations.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="listBoxBackupFileLocations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 67</value>
-  </data>
-  <data name="listBoxBackupFileLocations.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="listBoxBackupFileLocations.ToolTip" xml:space="preserve">
-    <value />
+    <value>387, 73</value>
   </data>
   <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 12pt, style=Bold, Italic</value>
@@ -565,17 +670,23 @@
   <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 28</value>
+  </data>
+  <data name="label13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
   <data name="label13.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 21</value>
+    <value>222, 23</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>Backup File Location</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>470, 454</value>
+    <value>564, 497</value>
   </data>
   <data name="groupBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
@@ -584,25 +695,28 @@
     <value>2, 3, 2, 3</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>522, 198</value>
+    <value>626, 217</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>App Data Info.</value>
   </data>
   <data name="pictureBoxBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>782, 11</value>
+    <value>938, 12</value>
   </data>
   <data name="pictureBoxBack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
-  <data name="pictureBoxBack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 46</value>
-  </data>
   <data name="pictureBoxBack.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>12, 23</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1142, 684</value>
+    <value>1399, 749</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

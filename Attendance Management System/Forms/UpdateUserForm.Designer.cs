@@ -46,7 +46,8 @@
             // 
             // btnAdd
             // 
-            btnAdd.BackColor = Color.FromArgb(255, 192, 192);
+            btnAdd.BackColor = Color.IndianRed;
+            btnAdd.ForeColor = Color.Cornsilk;
             btnAdd.Location = new Point(433, 441);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(153, 52);
@@ -132,6 +133,7 @@
             // 
             formGoal.AutoSize = true;
             formGoal.Font = new Font("Lucida Handwriting", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            formGoal.ForeColor = Color.Cornsilk;
             formGoal.Location = new Point(507, 63);
             formGoal.Name = "formGoal";
             formGoal.Size = new Size(204, 36);
@@ -148,7 +150,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(255, 192, 192);
+            panel1.BackColor = Color.IndianRed;
             panel1.Controls.Add(formGoal);
             panel1.Location = new Point(-125, -15);
             panel1.Name = "panel1";
