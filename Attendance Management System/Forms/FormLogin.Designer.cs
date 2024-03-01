@@ -96,14 +96,14 @@
             // label2
             // 
             resources.ApplyResources(label2, "label2");
-            label2.ForeColor = Color.Purple;
+            label2.ForeColor = Color.IndianRed;
             label2.Name = "label2";
             toolTip.SetToolTip(label2, resources.GetString("label2.ToolTip"));
             // 
             // UserEmail
             // 
             resources.ApplyResources(UserEmail, "UserEmail");
-            UserEmail.ForeColor = SystemColors.HotTrack;
+            UserEmail.ForeColor = Color.IndianRed;
             UserEmail.Name = "UserEmail";
             toolTip.SetToolTip(UserEmail, resources.GetString("UserEmail.ToolTip"));
             // 
@@ -116,7 +116,7 @@
             // label1
             // 
             resources.ApplyResources(label1, "label1");
-            label1.ForeColor = SystemColors.HotTrack;
+            label1.ForeColor = Color.IndianRed;
             label1.Name = "label1";
             toolTip.SetToolTip(label1, resources.GetString("label1.ToolTip"));
             // 
@@ -160,7 +160,7 @@
             // buttonClear
             // 
             resources.ApplyResources(buttonClear, "buttonClear");
-            buttonClear.BackColor = Color.Purple;
+            buttonClear.BackColor = Color.IndianRed;
             buttonClear.ForeColor = Color.White;
             buttonClear.Name = "buttonClear";
             toolTip.SetToolTip(buttonClear, resources.GetString("buttonClear.ToolTip"));
@@ -170,7 +170,7 @@
             // buttonLogin
             // 
             resources.ApplyResources(buttonLogin, "buttonLogin");
-            buttonLogin.BackColor = Color.Green;
+            buttonLogin.BackColor = Color.SlateGray;
             buttonLogin.ForeColor = Color.White;
             buttonLogin.Name = "buttonLogin";
             toolTip.SetToolTip(buttonLogin, resources.GetString("buttonLogin.ToolTip"));
@@ -204,7 +204,7 @@
             // label3
             // 
             resources.ApplyResources(label3, "label3");
-            label3.ForeColor = Color.Purple;
+            label3.ForeColor = Color.IndianRed;
             label3.Name = "label3";
             toolTip.SetToolTip(label3, resources.GetString("label3.ToolTip"));
             // 
@@ -218,14 +218,14 @@
             // label5
             // 
             resources.ApplyResources(label5, "label5");
-            label5.ForeColor = Color.Purple;
+            label5.ForeColor = Color.IndianRed;
             label5.Name = "label5";
             toolTip.SetToolTip(label5, resources.GetString("label5.ToolTip"));
             // 
             // buttonLanguage
             // 
             resources.ApplyResources(buttonLanguage, "buttonLanguage");
-            buttonLanguage.BackColor = Color.Green;
+            buttonLanguage.BackColor = Color.IndianRed;
             buttonLanguage.ForeColor = Color.White;
             buttonLanguage.Name = "buttonLanguage";
             toolTip.SetToolTip(buttonLanguage, resources.GetString("buttonLanguage.ToolTip"));

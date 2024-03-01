@@ -2,7 +2,9 @@
 <Courses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../courses.xml">
   <course>
     <courseId>1C</courseId>
-    <courseName>Xml</courseName>
+
+    <courseName>database</courseName>
+
     <sessionsNumber>4</sessionsNumber>
     <description>drftgyhujk</description>
   </course>
@@ -12,4 +14,18 @@
     <sessionsNumber>3</sessionsNumber>
     <description>drftgyhujk</description>
   </course>
+
+  <course>
+    <courseId>3C</courseId>
+    <courseName>c#</courseName>
+    <sessionsNumber>4</sessionsNumber>
+    <description>ewrtgyju</description>
+  </course>
+  <course>
+    <courseId>4C</courseId>
+    <courseName>java</courseName>
+    <sessionsNumber>4</sessionsNumber>
+    <description>tghyyn</description>
+  </course>
+
 </Courses>

@@ -42,15 +42,16 @@ namespace Attendance_Management_System.Forms
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Program.appLanguage);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
             ApplicationConfiguration.Initialize();
+
          //   Application.Run(new testAdmin());
 
             // Application.Run(new testAdmin());
          //Application.Run(new FormSettings());
 
            // Application.Run(new StudentForm());
-        Application.Run(new FormLogin());
+        Application.Run(new testAdmin());
 
 
 

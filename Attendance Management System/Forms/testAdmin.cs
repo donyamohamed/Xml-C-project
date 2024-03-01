@@ -34,7 +34,7 @@ namespace Attendance_Management_System.Forms
         private void Teacherbutton_Click(object sender, EventArgs e)
         {
             role = "teacher";
-          
+
             TeacherAdminForm teacherAdminForm = new TeacherAdminForm(role);
             teacherAdminForm.Role = role;
             teacherAdminForm.Show();
@@ -89,7 +89,12 @@ namespace Attendance_Management_System.Forms
             Close();
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         // test student 
-   
+
     }
 }

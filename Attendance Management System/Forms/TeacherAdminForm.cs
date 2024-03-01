@@ -68,58 +68,6 @@ namespace Attendance_Management_System.Forms
 
         }
 
-        /*  private void LoadTeacherData()
-          {
-              try
-              {
-                  // Assuming UserParser has a method to get a list of users
-                 // users = UserParser.ParseUsers("../../../../users.xml");
-
-                  // Filter users with role "teacher" and add them to the list of teachers
-                  teachers = users.Where(u => u.Role == "teacher").Select(u => u as Teacher).ToList();
-
-                  // Create a DataTable and add columns
-                  DataTable dataTable = new DataTable();
-                  dataTable.Columns.Add("ID");
-                  dataTable.Columns.Add("Fname");
-                  dataTable.Columns.Add("Lname");
-                  dataTable.Columns.Add("Age");
-                  dataTable.Columns.Add("Email");
-                  dataTable.Columns.Add("Password");
-                  dataTable.Columns.Add("Phone");
-                  dataTable.Columns.Add("Address");
-                  dataTable.Columns.Add("Delete", typeof(Image));
-
-                  // Populate DataTable with teacher data
-                  foreach (var user in teachers)
-                  {
-                      if (user != null)
-                      {
-                          Image deleteImage = Image.FromFile("../../../../Assets/delete.png");
-                          dataTable.Rows.Add(
-                              user.Id,
-                              user.FirstName,
-                              user.LastName,
-                              user.Age,
-                              user.Email,
-                              user.Password,
-                              user.Phone,
-                              user.Address,
-                              deleteImage
-                          );
-
-                      }
-                  }
-
-                  // Bind the DataTable to the DataGridView
-                  teacherGrid.DataSource = dataTable;
-              }
-              catch (Exception ex)
-              {
-                  MessageBox.Show("Error loading teacher data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-              }
-          }*/
-
         private void LoadUserData(string role)
         {
             users = UserParser.ParseUsers("../../../../users.xml");
