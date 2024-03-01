@@ -1,8 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="usershema2.xsd">
-  <user role="student">
+
+	<user role="admin">
+	<id>1A</id>
+	<fname>Asmaa</fname>
+	<lname>Omar</lname>
+	<age>22</age>
+	<email>asmaa23@gmail.com</email>
+	<password>@Zab890</password>
+	<phone>01101234565</phone>
+	<address>Damitta</address>
+	</user>
+	<user role="student">
     <id>1S</id>
-    <fname>Mahmoud</fname>
+    <fname>ahmed</fname>
     <lname>Ibrahim</lname>
     <age>23</age>
     <email>mohmoud@gmail.com</email>
@@ -14,22 +25,53 @@
     <id>2S</id>
     <fname>Mahmoud</fname>
     <lname>Ibrahim</lname>
-    <age>23</age>
+    <age>25</age>
     <email>mohmoud11@gmail.com</email>
     <password>Aab@123</password>
-    <phone>01123568123</phone>
-    <address>Alex</address>
+    <phone>01115968123</phone>
+    <address>Mansoura</address>
   </user>
-  <user role="admin">
-    <id>1A</id>
-    <fname>Asmaa</fname>
-    <lname>Omar</lname>
-    <age>22</age>
-    <email>asmaa23@gmail.com</email>
-    <password>@Zab890</password>
-    <phone>01101234565</phone>
-    <address>Damitta</address>
-  </user>
+	<user role="student">
+		<id>3S</id>
+		<fname>Ebrahim</fname>
+		<lname>Samir</lname>
+		<age>21</age>
+		<email>Ebrahim@gmail.com</email>
+		<password>Aadf@123</password>
+		<phone>01137968123</phone>
+		<address>Tanta</address>
+	</user>
+	<user role="student">
+		<id>4S</id>
+		<fname>Hossam</fname>
+		<lname>Aly</lname>
+		<age>22</age>
+		<email>Hossam@gmail.com</email>
+		<password>Aadus@123</password>
+		<phone>01137962923</phone>
+		<address>Aswan</address>
+	</user>
+	<user role="student">
+		<id>5S</id>
+		<fname>Sara</fname>
+		<lname>Omar</lname>
+		<age>23</age>
+		<email>Sara@gmail.com</email>
+		<password>Egdf@123</password>
+		<phone>01293968123</phone>
+		<address>Cairo</address>
+	</user>
+	<user role="student">
+		<id>6S</id>
+		<fname>Asmaa</fname>
+		<lname>Karieem</lname>
+		<age>21</age>
+		<email>Asmaa22@gmail.com</email>
+		<password>Aiod#123</password>
+		<phone>01035768123</phone>
+		<address>Damietta</address>
+	</user>
+
   <user role="teacher">
     <id>1T</id>
     <fname>Ayman</fname>
@@ -50,4 +92,24 @@
     <phone>01234567123</phone>
     <address>Cairo</address>
   </user>
+	<user role="teacher">
+		<id>3T</id>
+		<fname>Eman</fname>
+		<lname>Mohamed</lname>
+		<age>40</age>
+		<email>Eman@gmail.com</email>
+		<password>Gat%586</password>
+		<phone>01234534523</phone>
+		<address>Cairo</address>
+	</user>
+	<user role="teacher">
+		<id>4T</id>
+		<fname>Mohamed</fname>
+		<lname>Abdallah</lname>
+		<age>43</age>
+		<email>mohamed@gmail.com</email>
+		<password>Gab%456</password>
+		<phone>01234567123</phone>
+		<address>Alex</address>
+	</user>
 </Users>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Classes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="C:\Users\Orginal\Downloads\Xml-C-project\Xml-C-project-main\classSchema2.xsd">
+<Classes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="classSchema2.xsd">
 	<class>
 		<classId>1CS</classId>
 		<courseId>1C</courseId>
@@ -43,6 +43,158 @@
 			</session>
 		</studentId>
 		<studentId id="3S">
+			<session>
+				<date>2023-04-04</date>
+				<status>1</status>
+			</session>
+			<session>
+				<date>2023-04-05</date>
+				<status>-1</status>
+			</session>
+			<session>
+				<date>2023-04-06</date>
+				<status>-1</status>
+			</session>
+		</studentId>
+	</class>
+	
+	<class>
+		<classId>1PD</classId>
+		<courseId>3C</courseId>
+		<teacherId >3T</teacherId>
+		<studentId id="1S">
+			<session>
+				<date>2023-04-04</date>
+				<status>1</status>
+			</session>
+			<session>
+				<date>2023-04-05</date>
+				<status>-1</status>
+			</session>
+			<session>
+				<date>2023-04-06</date>
+				<status>-1</status>
+			</session>
+		</studentId>
+		<studentId id="3S">
+			<session>
+				<date>2023-04-04</date>
+				<status>1</status>
+			</session>
+			<session>
+				<date>2023-04-05</date>
+				<status>-1</status>
+			</session>
+			<session>
+				<date>2023-04-06</date>
+				<status>-1</status>
+			</session>
+		</studentId>
+				<studentId id="4S">
+			<session>
+				<date>2023-04-04</date>
+				<status>1</status>
+			</session>
+			<session>
+				<date>2023-04-05</date>
+				<status>-1</status>
+			</session>
+			<session>
+				<date>2023-04-06</date>
+				<status>-1</status>
+			</session>
+		</studentId>
+				<studentId id="5S">
+			<session>
+				<date>2023-04-04</date>
+				<status>1</status>
+			</session>
+			<session>
+				<date>2023-04-05</date>
+				<status>-1</status>
+			</session>
+			<session>
+				<date>2023-04-06</date>
+				<status>-1</status>
+			</session>
+		</studentId>
+				<studentId id="6S">
+			<session>
+				<date>2023-04-04</date>
+				<status>1</status>
+			</session>
+			<session>
+				<date>2023-04-05</date>
+				<status>-1</status>
+			</session>
+			<session>
+				<date>2023-04-06</date>
+				<status>-1</status>
+			</session>
+		</studentId>
+	</class>
+	
+	<class>
+		<classId>1OS</classId>
+		<courseId>4C</courseId>
+		<teacherId >4T</teacherId>
+		<studentId id="2S">
+			<session>
+				<date>2023-04-04</date>
+				<status>1</status>
+			</session>
+			<session>
+				<date>2023-04-05</date>
+				<status>-1</status>
+			</session>
+			<session>
+				<date>2023-04-06</date>
+				<status>-1</status>
+			</session>
+		</studentId>
+		<studentId id="3S">
+			<session>
+				<date>2023-04-04</date>
+				<status>1</status>
+			</session>
+			<session>
+				<date>2023-04-05</date>
+				<status>-1</status>
+			</session>
+			<session>
+				<date>2023-04-06</date>
+				<status>-1</status>
+			</session>
+		</studentId>
+				<studentId id="4S">
+			<session>
+				<date>2023-04-04</date>
+				<status>1</status>
+			</session>
+			<session>
+				<date>2023-04-05</date>
+				<status>-1</status>
+			</session>
+			<session>
+				<date>2023-04-06</date>
+				<status>-1</status>
+			</session>
+		</studentId>
+				<studentId id="6S">
+			<session>
+				<date>2023-04-04</date>
+				<status>1</status>
+			</session>
+			<session>
+				<date>2023-04-05</date>
+				<status>-1</status>
+			</session>
+			<session>
+				<date>2023-04-06</date>
+				<status>-1</status>
+			</session>
+		</studentId>
+				<studentId id="6S">
 			<session>
 				<date>2023-04-04</date>
 				<status>1</status>
