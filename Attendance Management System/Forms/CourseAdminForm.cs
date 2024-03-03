@@ -15,7 +15,7 @@ namespace Attendance_Management_System.Forms
     {
         private DataTable originalDataTable;
         private string role;
-        private List<Course> coursesData = CourseParser.ParseCourses("../../../../courses.xml");
+        private List<Course> coursesData = CourseParser.ParseCourses("../../../courses.xml");
 
         public CourseAdminForm()
         {

@@ -4,12 +4,30 @@
     <courseId>1C</courseId>
     <courseName>Xml</courseName>
     <sessionsNumber>4</sessionsNumber>
-    <description>drftgyhujk</description>
+    <description>crash course about xml</description>
   </course>
   <course>
     <courseId>2C</courseId>
     <courseName>Java</courseName>
     <sessionsNumber>3</sessionsNumber>
-    <description>drftgyhujk</description>
+    <description>learn fundemuntal for jave</description>
+  </course>
+  <course>
+    <courseId>3C</courseId>
+    <courseName>MVC</courseName>
+    <sessionsNumber>6</sessionsNumber>
+    <description>about design pattern</description>
+  </course>
+  <course>
+    <courseId>4C</courseId>
+    <courseName>Node</courseName>
+    <sessionsNumber>4</sessionsNumber>
+    <description>learn about backend</description>
+  </course>
+  <course>
+    <courseId>5C</courseId>
+    <courseName>Sql</courseName>
+    <sessionsNumber>6</sessionsNumber>
+    <description>more about database</description>
   </course>
 </Courses>

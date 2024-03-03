@@ -127,7 +127,7 @@ namespace Attendance_Management_System.Forms
             users.Add(newUser);
 
            
-            UserParser.InsertUsers(users, "../../../../users.xml");
+            UserParser.InsertUsers(users, "../../../users.xml");
 
        
             this.Close();

@@ -129,7 +129,7 @@ namespace Attendance_Management_System.Forms
 
         private void LoadUserData(string role)
         {
-            users = UserParser.ParseUsers("../../../../users.xml");
+            users = UserParser.ParseUsers("../../../users.xml");
 
             try
             {
@@ -335,7 +335,7 @@ namespace Attendance_Management_System.Forms
                             users.Remove(teacherToRemove);
 
                             // -> update xml
-                            UserParser.RemoveUserById(users, "../../../../users.xml", "../../../../class.xml", idToDelete);
+                            UserParser.RemoveUserById(users, "../../users.xml", "../../class.xml", idToDelete);
 
                             teachers.Remove(teacherToRemove); //->update grid
                             PopulateGrid(teachers);
@@ -352,7 +352,7 @@ namespace Attendance_Management_System.Forms
                             users.Remove(studentToRemove);
 
 
-                            UserParser.RemoveUserById(users, "../../../../users.xml", "../../../../class.xml", idToDelete);
+                            UserParser.RemoveUserById(users, "../../users.xml", "../../class.xml", idToDelete);
 
 
                             students.Remove(studentToRemove);

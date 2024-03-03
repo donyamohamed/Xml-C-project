@@ -23,7 +23,7 @@ namespace Attendance_Management_System.Forms
 
         private void LoadClassIds()
         {
-            classesList = ClassParser.ParseClasses("../../../../class.xml");
+            classesList = ClassParser.ParseClasses("../../../class.xml");
 
             foreach (Class cls in classesList)
             {

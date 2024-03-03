@@ -77,13 +77,13 @@ namespace Attendance_Management_System.Forms
         private void LoadSessionDataForUser(string userId)
         {
             XmlDocument classesDoc = new XmlDocument();
-            classesDoc.Load("../../../../class.xml");
+            classesDoc.Load("../../../class.xml");
 
             XmlDocument coursesDoc = new XmlDocument();
-            coursesDoc.Load("../../../../courses.xml");
+            coursesDoc.Load("../../../courses.xml");
 
             XmlDocument usersDoc = new XmlDocument();
-            usersDoc.Load("../../../../users.xml");
+            usersDoc.Load("../../../users.xml");
 
             XmlNodeList classNodes = classesDoc.SelectNodes($"//class[studentId/@id='{userId}']");
 
@@ -268,7 +268,7 @@ namespace Attendance_Management_System.Forms
 
                 string xsltTemplate = XsltGenerator.GenerateXSLTTemplateForStudent(userName, userId, selectedCourseName, includeCourseFilter, sessionData);
 
-                string xmlFilePath = "../../../../class.xml";
+                string xmlFilePath = "../../../class.xml";
                 string xmlFileDirectory = Path.GetDirectoryName(xmlFilePath);
                 string folderPath = Path.Combine(xmlFileDirectory, "student Reports");
                 Directory.CreateDirectory(folderPath);

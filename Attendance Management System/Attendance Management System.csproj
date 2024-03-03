@@ -23,6 +23,27 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="class.xml" />
+    <None Remove="classSchema.xsd" />
+    <None Remove="classSchema2.xsd" />
+    <None Remove="courses.xml" />
+    <None Remove="courseSchema.xsd" />
+    <None Remove="courseSchema2.xsd" />
+    <None Remove="users.xml" />
+    <None Remove="userSchema.xsd" />
+    <None Remove="usershema2.xsd" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="class.xml" />
+    <Content Include="classSchema.xsd" />
+    <Content Include="classSchema2.xsd" />
+    <Content Include="courses.xml" />
+    <Content Include="courseSchema.xsd" />
+    <Content Include="courseSchema2.xsd" />
+    <Content Include="users.xml" />
+    <Content Include="userSchema.xsd" />
+    <Content Include="usershema2.xsd" />
     <Content Include="Webalys-Kameleon.ico" />
   </ItemGroup>
 

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Attendance Management System", "Attendance Management System.csproj", "{D74DB4F2-3A42-46A6-8B4B-692D8DE59A30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Attendance Management System", "Attendance Management System.csproj", "{D74DB4F2-3A42-46A6-8B4B-692D8DE59A30}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AttendanceMangementSystem", "..\AttendanceMangementSystem\AttendanceMangementSystem.vdproj", "{236E3674-7A3C-4791-A4E1-FE438915DB03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{D74DB4F2-3A42-46A6-8B4B-692D8DE59A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D74DB4F2-3A42-46A6-8B4B-692D8DE59A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D74DB4F2-3A42-46A6-8B4B-692D8DE59A30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{236E3674-7A3C-4791-A4E1-FE438915DB03}.Debug|Any CPU.ActiveCfg = Debug
+		{236E3674-7A3C-4791-A4E1-FE438915DB03}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

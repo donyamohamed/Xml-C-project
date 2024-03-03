@@ -77,7 +77,7 @@ namespace Attendance_Management_System.Forms
                 }
 
                 // Save the updated 
-                UserParser.SaveUsersAsXml(users, "../../../../users.xml");
+                UserParser.SaveUsersAsXml(users, "../../../users.xml");
 
                
                 this.Close();

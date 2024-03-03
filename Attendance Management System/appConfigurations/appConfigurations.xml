@@ -6,9 +6,9 @@
     <description>Attendance Management System Description</description>
     <createdDate>6/1/2021</createdDate>
     <dataPathes>
-      <Users>../../../../users.xml</Users>
-      <Courses>../../../../courses.xml</Courses>
-      <Sessions>../../../../class.xml</Sessions>
+      <Users>../../../users.xml</Users>
+      <Courses>../../../courses.xml</Courses>
+      <Sessions>../../../class.xml</Sessions>
     </dataPathes>
     <backupPathes>
       <Users>../../../backup/usersBackup.xml</Users>

@@ -79,7 +79,7 @@ namespace Attendance_Management_System.Forms
                 courseToUpdate.Description = description;
                 courseToUpdate.Numberofsessions = sessionsNumber;
 
-                CourseParser.SaveCoursesAsXml(coursesList, "../../../../courses.xml");
+                CourseParser.SaveCoursesAsXml(coursesList, "../../../courses.xml");
 
                 MessageBox.Show("Course updated successfully.");
             }
@@ -94,7 +94,7 @@ namespace Attendance_Management_System.Forms
                 };
 
                 coursesList.Add(newCourse);
-                CourseParser.SaveCoursesAsXml(coursesList, "../../../../courses.xml");
+                CourseParser.SaveCoursesAsXml(coursesList, "../../../courses.xml");
 
                 MessageBox.Show("Course added successfully.");
             }
